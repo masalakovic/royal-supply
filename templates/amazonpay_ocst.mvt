@@ -1,0 +1,79 @@
+
+<mvt:item name="html_profile" />
+<head>
+	<title>&mvt:store:name;: Checkout: Customer Information</title>
+	<base href="&mvt:global:basehref;" />
+	<mvt:item name="head" param="css_list" />
+	<mvt:item name="head" param="head_tag" />
+	<mvt:item name="amazonpay" />
+</head>
+<body class="OCST one-column">
+<div id="site-container">
+	<div id="global-header"><mvt:item name="hdft" param="global_header" /></div>
+	<div id="navigation-bar"><mvt:item name="navbar" /></div>
+	<table id="content-container">
+		<tr>
+			<td id="left-navigation"><mvt:item name="category_tree" /></td>
+			<td id="main-content">
+				<div id="page-header"><mvt:item name="hdft" param="header" /></div>
+
+				<h1>Order Details</h1>
+
+				<form id="ocst_form" method="post" action="&mvte:global:secure_sessionurl;">
+				<mvt:if expr="l.settings:basket:total GT 0">
+				<input type="hidden" name="Action"	value="AMAZONPAY_ORDR" />
+				<input type="hidden" name="Screen"	value="OUSL" />
+				<mvt:elseif expr="g.Store:req_frship">
+				<input type="hidden" name="Action"	value="AMAZONPAY_ORDR" />
+				<input type="hidden" name="Screen"	value="OUSL" />
+				<mvt:else>
+				<input type="hidden" name="Action" 	value="AMAZONPAY_ORDR,SHIP,CTAX,AUTH" />
+				<input type="hidden" name="Screen"	value="INVC" />
+				</mvt:if>
+				<input type="hidden" name="Store_Code" value="&mvte:store:code;" />
+				<div id="basket-contents" class="non-editable"><mvt:item name="basket" /></div>
+				<mvt:if expr="l.settings:messages:error_message_count">
+
+				<div class="error-message">
+				<mvt:foreach iterator="error" array="messages:error_messages">
+					&mvt:error;
+				</mvt:foreach>
+				</div>
+				</mvt:if>
+				<mvt:if expr="l.settings:messages:information_message_count">
+				<div class="information-message">
+				<mvt:foreach iterator="message" array="messages:information_messages">
+					&mvt:message;
+				</mvt:foreach>
+				</div>
+				</mvt:if>
+
+				<div id="tax-fields">
+				<mvt:foreach iterator="field" array="tax:fields">
+					<mvt:if expr="l.settings:field:invalid">
+						<div class="form_row invalid">
+					<mvt:else>
+						<div class="form_row">
+					</mvt:if>
+
+						<label>&mvt:field:prompt;</label>
+						<mvt:item name="tax" param="field:code" />
+					</div>
+				</mvt:foreach>
+				</div>
+
+				<mvt:item name="amazonpay_address" />
+
+				<div class="continue-button"><mvt:item name="buttons" param="Continue" /></div>
+				</form>
+
+				<div id="page-footer"><mvt:item name="hdft" param="footer" /></div>
+			</td>
+		</tr>
+	</table>
+	<div id="bottom-wrap"></div>
+	<div id="global-footer"><mvt:item name="hdft" param="global_footer" /></div>
+</div>
+</body>
+</html>
+	

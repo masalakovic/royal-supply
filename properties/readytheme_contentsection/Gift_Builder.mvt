@@ -1,0 +1,6 @@
+<div>
+	<h1> Gift Builder </h1>
+	<mvt:item name="readytheme" param="image( 'Gift_Builder' )" />
+	<p> Create a custom gift </p>
+	<p> box from start to finish </p>
+</div>

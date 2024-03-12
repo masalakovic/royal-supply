@@ -1,0 +1,12 @@
+<style>
+#adas-init-access-tool .adas-access-tool-general-left-bottom {
+    bottom: 60px!important;
+    left: 50px!important;
+}
+#adas-init-access-tool .adas-access-tool-general-button>div img {
+    display: inline-block;
+    max-width: 40px;
+}
+</style>
+<a href="https://adasitecompliancetools.com/ap.asp?h=LFCONY" target="_blank"></a>
+<script defer src="https://adasitecompliancetools.com/ADApterGeneric.asp?cid=LFCONY"></script>

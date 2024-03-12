@@ -1,0 +1,62 @@
+.mm_combination_facet_container {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	padding: 1em;
+	border: 1px solid #ddd;
+	box-sizing: border-box;
+}
+
+.mm_combination_facet_container *,
+.mm_combination_facet_container *::before,
+.mm_combination_facet_container *::after {
+	box-sizing: inherit;
+}
+
+.mm_combination_facet_fields {
+	margin-right: auto;
+}
+
+.mm_combination_facet_fields select {
+	font-family: inherit;
+	font-size: 100%;
+	line-height: normal;
+}
+
+.mm_combination_facet_action_container {
+	padding-left: 1em;
+}
+
+.mm_combination_facet_action {
+	display: inline-block;
+	padding: 0.25em 0.5em;
+	color: inherit;
+	font: inherit;
+	line-height: normal;
+	text-align: center;
+	border: 1px solid #ddd;
+	background-color: #fff;
+	cursor: pointer;
+	overflow: visible;
+	user-select: none;
+}
+
+.mm_combination_facet_action:active {
+	box-shadow: 0 0 1px 1px currentColor;
+}
+
+.mm_combination_facet_action.disabled {
+	cursor: auto;
+	border-color: rgba(118, 118, 118, 0.3);
+	opacity: 0.7;
+}
+
+.mm_combination_facet_action:not(.disabled):hover {
+	background-color: #f7f7f7;
+	outline: 0 none;
+}
+
+.mm_combination_facet_action:not(.disabled):focus {
+	box-shadow: 0 0 2px 1px currentColor;
+	outline: 0 none;
+}

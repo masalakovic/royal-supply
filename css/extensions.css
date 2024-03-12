@@ -1,0 +1,2202 @@
+/* ==========================================================================
+   EXTENSIONS LIST
+   ========================================================================== */
+/* ======================================
+   EXTENSIONS / BREADCRUMBS / BREADCRUMBS
+   ====================================== */
+.x-breadcrumbs {
+  margin-bottom: 1em;
+}
+
+@media (min-width: 60em) {
+  .x-breadcrumbs {
+    margin: 0 auto calc(var(--default-spacing-unit) * 2);
+    max-width: var(--default-content-width);
+    width: 100%;
+  }
+}
+.x-breadcrumbs__list {
+  border-bottom: 0 none;
+  color: var(--gray-600);
+  display: flex;
+  flex-wrap: wrap;
+  font-size: var(--message-one);
+  gap: 1em 0;
+  line-height: inherit;
+  list-style: none;
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: var(--default-wrapper-width);
+  padding-left: var(--default-spacing-unit);
+  padding-right: var(--default-spacing-unit);
+  padding-top: 1rem;
+}
+
+.x-breadcrumbs__item:not(:last-child) {
+  margin-right: 1em;
+}
+
+.x-breadcrumbs__item:not(:last-of-type)::after {
+  border-right: 0.2ch solid currentColor;
+  content: "";
+  display: inline-block;
+  height: 1.75ch;
+  position: relative;
+  right: -0.5em;
+  top: 0.25ch;
+  transform: rotate(15deg);
+}
+
+.x-breadcrumbs a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.x-breadcrumbs a:is(:active, :focus, :hover) {
+  text-decoration: underline;
+  text-decoration-thickness: 0.1em;
+  text-underline-offset: 0.15em;
+  transition: -webkit-text-decoration ease-in-out 0.3s;
+  transition: text-decoration ease-in-out 0.3s;
+  transition: text-decoration ease-in-out 0.3s,
+    -webkit-text-decoration ease-in-out 0.3s;
+}
+
+/* ==========================================================================
+   EXTENSIONS / CATEGORY TREE / CATEGORY TREE
+   ========================================================================== */
+.x-category-tree {
+  margin-bottom: var(--default-spacing-unit);
+  position: relative;
+}
+
+.x-category-tree__trigger {
+  display: none;
+}
+
+.x-category-tree__label.x-collapsible-content__toggle {
+  border-bottom: var(--default-border-width) solid var(--gray-400);
+  font-size: 0.75rem;
+  margin: 0 0 1em;
+  min-height: 2em;
+  padding: 1em 0;
+}
+
+.x-category-tree .x-collapsible-content__item[aria-hidden="false"],
+.x-category-tree
+  .x-collapsible-content__item[aria-hidden="false"]
+  .x-category-tree__row {
+  max-height: 100%;
+}
+
+.x-category-tree__title {
+  display: none;
+}
+
+.x-category-tree__heading {
+  font-size: var(--title-four);
+  font-weight: var(--font-bold);
+  line-height: calc(var(--title-four) * 1.4);
+  margin-bottom: var(--title-four);
+}
+
+.x-category-tree__heading--facets {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.x-category-tree__heading--facets a {
+  color: var(--gray-600);
+  font-size: var(--default-input-font-size);
+  font-weight: var(--font-regular);
+}
+
+.x-category-tree__heading--facets a > * {
+  display: inline-block;
+  font-size: 0.625rem;
+  margin-right: 0.5em;
+  text-decoration: none;
+}
+
+.x-category-tree__row {
+  list-style: none;
+  margin: 0;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  padding: 0;
+  transition: 0.2s ease-in-out;
+  visibility: hidden;
+  width: 100%;
+}
+
+.x-category-tree__link,
+.x-category-tree__link-set {
+  color: var(--gray-600);
+  display: block;
+  font-weight: var(--font-medium);
+  line-height: 2;
+  transition: color ease-in-out 0.2s;
+}
+
+.x-category-tree__link {
+  margin: 1em 0;
+  text-decoration: none;
+}
+
+.x-category-tree__link.u-text-underline {
+  text-decoration: underline;
+}
+
+.x-category-tree__link:is(:focus, :focus-within, :hover),
+.x-category-tree__link--current {
+  text-decoration: underline;
+  text-decoration-thickness: 0.1em;
+  text-underline-offset: 0.2em;
+}
+
+.x-category-tree__link-set {
+  font-size: var(--subheading-small);
+}
+
+.x-category-tree__section-title:not(:first-of-type) {
+  margin-top: 2.5rem;
+}
+
+.x-category-tree__list--level-2 .x-category-tree__link,
+.x-category-tree__list--level-3 .x-category-tree__link {
+  font-size: var(--default-input-font-size);
+}
+
+.x-category-tree__list--level-2 .x-category-tree__link {
+  padding-left: var(--title-four);
+}
+
+.x-category-tree__list--level-3 .x-category-tree__link {
+  padding-left: var(--title-two);
+}
+
+@media (min-width: 60em) {
+  .x-category-tree__label.x-collapsible-content__toggle {
+    display: none;
+  }
+  .x-category-tree__title {
+    display: block;
+  }
+  .x-category-tree__row,
+  .x-category-tree__row.x-collapsible-content__item {
+    max-height: none;
+    opacity: 1;
+    overflow: visible;
+    visibility: visible;
+  }
+}
+/**
+ * This section contains the necessary styles when using the built-in search
+ * faceting ability of Miva. Since the functional code is generated at run-time,
+ * these styles do not conform to the tenants used in the rest of the framework.
+ */
+.mm_facet_rangeslider {
+  display: block;
+  height: 2em;
+  margin: 0.25em;
+  position: relative;
+}
+
+.mm_facet_rangeslider_input_container_low,
+.mm_facet_rangeslider_input_container_high {
+  border-bottom: var(--default-border-width) solid var(--gray-300);
+  height: 2em;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 4em;
+}
+
+.mm_facet_rangeslider_input_container_low {
+  border-radius: 0.25em 0 0 0.25em;
+  left: 0;
+}
+
+.mm_facet_rangeslider_input_container_high {
+  border-radius: 0 0.25em 0.25em 0;
+  right: 0;
+}
+
+.mm_facet_rangeslider_input_container_low.mm_facet_rangeslider_input_active,
+.mm_facet_rangeslider_input_container_high.mm_facet_rangeslider_input_active {
+  border-color: var(--gray-300);
+}
+
+.mm_facet_rangeslider_track_container {
+  border-bottom: var(--default-border-width) solid var(--gray-300);
+  border-top: var(--default-border-width) solid var(--gray-300);
+  box-sizing: border-box;
+  height: 2em;
+  left: 4em;
+  position: absolute;
+  right: 4em;
+  top: 0;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.mm_facet_rangeslider_track {
+  height: 0.25em;
+  left: 0.25em;
+  position: absolute;
+  right: 0.25em;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.mm_facet_rangeslider_track_background,
+.mm_facet_rangeslider_track_selection {
+  background: var(--gray-300);
+  bottom: 0;
+  left: 0.5em;
+  position: absolute;
+  right: 0.5em;
+  top: 0;
+}
+
+.mm_facet_rangeslider_track_selection {
+  background: var(--gray-300);
+}
+
+.mm_facet_rangeslider_track_handle_low,
+.mm_facet_rangeslider_track_handle_high {
+  background: var(--white);
+  border: var(--default-border-width) solid var(--gray-300);
+  border-radius: 50%;
+  cursor: pointer;
+  height: 2em;
+  left: -0.5em;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2em;
+}
+
+.mm_facet_rangeslider.mm_facet_rangeslider_mini {
+  height: 6em;
+  margin: 0;
+}
+
+.mm_facet_rangeslider.mm_facet_rangeslider_mini
+  .mm_facet_rangeslider_input_container_low {
+  border-radius: 0.25em 0 0 0;
+  width: 50%;
+}
+
+.mm_facet_rangeslider.mm_facet_rangeslider_mini
+  .mm_facet_rangeslider_input_container_high {
+  border-left: none;
+  border-radius: 0 0.25em 0 0;
+  width: 50%;
+}
+
+.mm_facet_rangeslider.mm_facet_rangeslider_mini
+  .mm_facet_rangeslider_track_container {
+  border: var(--default-border-width) solid var(--gray-300);
+  border-radius: 0 0 0.25em 0.25em;
+  border-top: none;
+  height: 3em;
+  left: 0;
+  right: 0;
+  top: 2em;
+}
+
+.mm_facet_rangeslider.mm_facet_rangeslider_mini
+  .mm_facet_rangeslider_input_container_low.mm_facet_rangeslider_input_active,
+.mm_facet_rangeslider.mm_facet_rangeslider_mini
+  .mm_facet_rangeslider_input_container_high.mm_facet_rangeslider_input_active {
+  border-color: var(--gray-200);
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+/* ==========================================================================
+   EXTENSIONS / DISPLAY LIST FILTERING / DISPLAY LIST FILTERING
+   ========================================================================== */
+/**
+ * Display list filtering is for use in product list filtering as well as any
+ * place a batch list or sortable data is used.
+ */
+.x-display-list-filtering {
+  display: flex;
+  flex-wrap: nowrap;
+  margin-bottom: var(--default-spacing-unit);
+}
+
+.x-display-list-filtering
+  :is(
+    .x-display-list-filtering__per-page,
+    .x-display-list-filtering__sort-by,
+    .c-form-list__item,
+    .c-form-label,
+    .c-form-select
+  ) {
+  color: var(--gray-600);
+  margin-bottom: 0;
+}
+
+.x-display-list-filtering__per-page {
+  margin-right: calc(var(--default-spacing-unit) * 4);
+}
+
+/**
+ * Product List Page Modifications
+ */
+:is(.t-page-ctgy, .t-page-plst, .t-page-srch)
+  :is(.x-display-list-filtering .c-form-select__dropdown) {
+  border: 0 none;
+  color: var(--gray-600);
+  padding: 0;
+}
+
+:is(.t-page-ctgy, .t-page-plst, .t-page-srch)
+  :is(.x-display-list-filtering .c-form-select)::after {
+  right: 0;
+}
+
+/* ==========================================================================
+   EXTENSIONS / HERO
+   ========================================================================== */
+/**
+ * The Hero component provides a dominant piece of media to a page
+ *
+ * 1. Allows for absolute positioning of borders and content.
+ * 2. Hero images set via background-image should cover and center.
+ */
+.x-hero {
+  background-position: center; /* [2] */
+  background-size: cover; /* [2] */
+  display: block;
+  position: relative; /* [1] */
+}
+
+/**
+ * The caption overlays at the bottom of a Hero, providing space for additional
+ * content such as titles or logos.
+ */
+.x-hero__caption {
+  bottom: 0;
+  padding: var(--default-spacing-unit) 0;
+  position: absolute;
+  text-shadow: 0 0 25px rgba(0, 0, 0, 0.25), 1px 1px 1px rgba(0, 0, 0, 0.5);
+  width: 100%;
+}
+
+/**
+ * Hero video needs to be set to `display: block` to avoid spacing issues.
+ */
+.x-hero__video {
+  display: block;
+  height: 100%;
+  -o-object-fit: fill;
+  object-fit: fill;
+  width: 100%;
+}
+
+/**
+ * Hero link inherits the Hero `color` to override anchor element styles.
+ */
+.x-hero__link {
+  color: inherit;
+}
+
+/**
+ * As we cannot set a border property over video, borders are implemented
+ * using pseudo-elements.
+ */
+.x-hero--borders::before {
+  border: calc(var(--default-spacing-unit) / 4) solid rgba(255, 255, 255, 0.3);
+  bottom: 0;
+  content: "";
+  display: block;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+/**
+ * Make any other content below the Hero overlap upwards.
+ */
+.x-hero--overlap {
+  margin-bottom: -10vh;
+}
+
+/**
+* If hero has overlap modifier, shift caption upwards to compensate.
+*/
+.x-hero--overlap .x-hero__caption {
+  bottom: 10vh;
+}
+
+/* ==========================================================================
+   EXTENSIONS / MESSAGES
+   ========================================================================== */
+/**
+ * Messages are block elements used to display information to the visitor about
+ * their current session. Typically these are informational or error messages
+ * such as you would see on a checkout page if there was an error with the
+ * credit card used.
+ */
+.x-messages {
+  background-color: var(--gray-200);
+  border: var(--default-border-width) solid var(--gray-500);
+  color: var(--black);
+  font-size: 0.875rem;
+  margin-bottom: var(--default-spacing-unit);
+  padding: 0.875em 1.25em;
+}
+
+.x-messages *:last-child {
+  margin-bottom: 0;
+}
+
+.x-messages--borderless {
+  border: 0 none;
+}
+
+.x-messages--error {
+  background-color: var(--red-100);
+  border-color: var(--red-200);
+  color: var(--red-400);
+}
+
+.x-messages--info {
+  background-color: var(--blue-100);
+  border-color: var(--blue-200);
+  color: var(--blue-400);
+}
+
+.x-messages--success {
+  background-color: var(--green-100);
+  border-color: var(--green-200);
+  color: var(--green-400);
+}
+
+.x-messages--warning {
+  background-color: var(--yellow-100);
+  border-color: var(--yellow-200);
+  color: var(--yellow-400);
+}
+
+/**
+ * These classes will help format the message if you are adding an icon.
+ */
+.x-messages--with-icon {
+  align-items: center;
+  display: flex;
+  gap: 1.25em;
+}
+
+.x-messages__icon {
+  font-size: 2em;
+}
+
+.x-messages__close {
+  line-height: 1;
+  margin-top: -1rem;
+  position: absolute;
+  right: 0.25rem;
+  text-decoration: none;
+  top: 50%;
+}
+
+/* ==========================================================================
+   EXTENSIONS / PAGINATION
+   ========================================================================== */
+/**
+ * Pagination is for use in product list as well as any place a pageable batch
+ * list or data is used.
+ */
+.x-pagination {
+  margin-bottom: auto var(--default-spacing-unit);
+  max-width: 18rem;
+}
+
+.x-pagination--centered {
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.x-pagination--right {
+  margin-left: auto;
+}
+
+.x-pagination__list {
+  align-items: center;
+  display: flex;
+  gap: var(--default-spacing-unit);
+  justify-content: space-between;
+  list-style: none;
+  margin: 0;
+  width: 100%;
+}
+
+.x-pagination__link {
+  border-color: var(--transparent);
+  border-radius: 50%;
+  color: var(--gray-600);
+  height: 3rem;
+  padding: 0;
+  width: 3rem;
+}
+
+.x-pagination .c-form-select {
+  margin-bottom: 0;
+}
+
+/* ==========================================================================
+   EXTENSIONS / PRODUCT LAYOUT / PRODUCT LAYOUT
+   ========================================================================== */
+/**
+ * This is the default product layout for the product page.
+ */
+.x-product-layout {
+  margin-bottom: calc(var(--default-spacing-unit) * 2);
+}
+
+@media (min-width: 60em) {
+  .x-product-layout {
+    padding-top: calc(var(--default-spacing-unit) * 2);
+  }
+}
+.x-product-layout-images {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1.25rem;
+  margin-left: 0;
+  min-height: var(--prod-img-y);
+}
+
+@media (min-width: 60em) {
+  .x-product-layout-images {
+    flex-direction: row-reverse;
+    max-height: var(--prod-img-y);
+    min-height: 100%;
+    overflow: hidden;
+    place-content: flex-start flex-end;
+  }
+}
+.x-product-layout-images__figure,
+.x-product-layout-images__picture,
+.x-product-layout-images__image {
+  display: block;
+  margin-bottom: 0;
+}
+
+.x-product-layout-images__thumbnail-image {
+  margin-bottom: var(--default-spacing-unit);
+}
+
+.x-product-layout-purchase {
+  margin-bottom: 0;
+}
+
+.x-product-layout-purchase .c-form-list__item {
+  margin-bottom: 0;
+}
+
+.x-product-layout-purchase__sku {
+  display: block;
+  font-size: var(--message-one);
+  font-weight: var(--font-medium);
+}
+
+.x-product-layout-purchase__name {
+  margin-bottom: calc(var(--default-spacing-unit) * 1.5);
+}
+
+.x-product-layout-purchase__pricing {
+  margin-bottom: var(--message-one);
+}
+
+.x-product-layout-purchase__pricing-original,
+.x-product-layout-purchase__pricing-current {
+  font-size: var(--subheading-small);
+}
+
+.x-product-layout-purchase__pricing-current {
+  font-weight: var(--font-medium);
+  padding-right: var(--default-spacing-unit);
+}
+
+.x-product-layout-purchase__product-discounts {
+  margin-bottom: 2rem;
+}
+
+.x-product-layout-purchase__product-discounts *,
+.x-product-layout-purchase__product-weight,
+.x-product-layout-purchase__product-quantity {
+  font-size: var(--message-one);
+  font-weight: var(--font-medium);
+  line-height: var(--title-four);
+}
+
+.x-product-layout-purchase__product-discounts * {
+  color: var(--red-400);
+}
+
+.x-product-layout-purchase__inventory-message:empty {
+  display: none;
+}
+
+.x-product-layout-purchase__options,
+.x-product-layout-purchase__cta {
+  max-width: none;
+  width: auto;
+}
+
+@media (min-width: 75em) {
+  .x-product-layout-purchase__options,
+  .x-product-layout-purchase__cta {
+    max-width: 60%;
+    width: 60%;
+  }
+}
+.x-product-layout-purchase__options-attribute {
+  margin-bottom: calc(var(--default-spacing-unit) / 2);
+  width: 100%;
+}
+
+.x-product-layout-purchase__swatches {
+  min-height: 5em;
+  padding-top: 3px;
+}
+
+.x-product-layout-purchase__swatches button {
+  background-color: transparent;
+  border: 0 none;
+  padding: 0;
+}
+
+.x-product-layout-purchase__swatches img {
+  border: var(--default-border-width) solid var(--gray-400);
+  border-radius: 50%;
+  height: 48px;
+  width: 48px;
+}
+
+.x-product-layout-purchase__swatches--active {
+  border-radius: 50%;
+  outline: var(--default-border-width) solid var(--black);
+  outline-offset: 0.25rem;
+}
+
+.x-product-layout-purchase__cta .x-quantify {
+  height: calc(3.75em - var(--default-border-width));
+}
+
+.x-product-description {
+  margin-bottom: calc(var(--default-spacing-unit) * 6);
+  padding-top: calc(var(--default-spacing-unit) * 4);
+}
+
+/* ==========================================================================
+   EXTENSIONS / PRODUCT LISTS / PRODUCT LISTS
+   ========================================================================== */
+/**
+ * Product lists are used in many spots throughout the store. They can be found 
+ * on the storefront as featured product, the related products section of a 
+ * product page, as an auto-suggest feature during checkout, or wherever.
+ */
+.x-product-list,
+.x-subcategory-list {
+  display: grid;
+  gap: calc(var(--default-spacing-unit) * 2);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-bottom: var(--default-spacing-unit);
+}
+
+.x-subcategory-list {
+  grid-template-columns: repeat(auto-fit, minmax(0, 6.5rem));
+  justify-content: center;
+}
+
+@media (min-width: 60em) {
+  .x-product-list {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .x-subcategory-list {
+    grid-template-columns: repeat(auto-fit, minmax(0, 9.5rem));
+  }
+}
+.x-product-list__heading {
+  margin-bottom: 2em;
+}
+
+.x-product-list__item,
+.x-subcategory-list__item {
+  position: relative;
+}
+
+.x-product-list__item {
+  display: flex;
+}
+
+.x-product-list__figure,
+.x-product-list__figure-caption,
+.x-subcategory-list__figure,
+.x-subcategory-list__figure-caption {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.x-product-list__figure-caption {
+  flex-grow: 1;
+  gap: 1em;
+  justify-content: space-between;
+}
+
+.x-subcategory-list__figure-caption {
+  font-weight: var(--font-medium);
+  text-align: center;
+}
+
+.x-product-list__picture,
+.x-subcategory-list__picture {
+  aspect-ratio: 1;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  width: 100%;
+}
+
+.x-product-list__link,
+.x-subcategory-list__link {
+  text-decoration: none;
+}
+
+.x-product-list__link:hover,
+.x-subcategory-list__link:hover {
+  text-decoration: underline;
+}
+
+.x-product-list__link::before,
+.x-subcategory-list__link::before {
+  bottom: 0;
+  content: "";
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: box-shadow 250ms;
+  z-index: 1;
+}
+
+.x-product-list__name {
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.x-product-list__price {
+  font-size: var(--default-input-font-size);
+}
+
+.x-product-list__price_set {
+  display: inline-flex;
+  gap: 1em;
+}
+
+/**
+* Modifications for related products.
+*/
+.x-product-list--related {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (min-width: 48em) {
+  .x-product-list--related {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (min-width: 75em) {
+  .x-product-list--related {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+@media (min-width: 90em) {
+  .x-product-list--related {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+/* ==========================================================================
+   EXTENSIONS / SUBSCRIPTIONS / SUBSCRIPTIONS
+   ========================================================================== */
+/**
+ * When using the subscription function of Miva, this is the default styling
+ * used for the date picker. You can update the styles in your theme file if
+ * you are looking to make changes.
+ */
+.miva_datepicker {
+  background-color: var(--white);
+  border: var(--default-border-width) solid var(--gray-400);
+  display: none;
+  padding: var(--default-spacing-unit);
+  position: absolute;
+  z-index: 1000;
+}
+
+.miva_datepicker_calendar_container {
+  display: inline-block;
+  position: relative;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+  vertical-align: top;
+  width: 214px;
+}
+
+.miva_datepicker_calendar_month_selector {
+  align-items: center;
+  background-color: var(--gray-400);
+  display: flex;
+  position: relative;
+}
+
+.miva_datepicker_calendar_month_selector_next,
+.miva_datepicker_calendar_month_selector_prev {
+  background: 0 -35px no-repeat;
+  border: 0 none;
+  cursor: pointer;
+  height: 35px;
+  padding: 0;
+  width: 35px;
+}
+
+.miva_datepicker_calendar_month_selector_next:hover,
+.miva_datepicker_calendar_month_selector_prev:hover {
+  background-color: var(--gray-600);
+}
+
+.miva_datepicker_calendar_month_selector_title {
+  color: var(--white);
+  flex-grow: 1;
+  text-align: center;
+}
+
+.miva_datepicker_calendar_month_selector_title_month {
+  display: inline-block;
+}
+
+.miva_datepicker_calendar_month_selector_title_year {
+  display: inline-block;
+  margin-left: 0.25em;
+}
+
+.miva_datepicker_cancel {
+  display: inline-block;
+  margin-top: 0.75em;
+}
+
+.miva_datepicker_calendar_weekday_container {
+  height: 34px;
+  margin: 2px;
+  position: relative;
+}
+
+.miva_datepicker_calendar_weekday_title {
+  display: inline-block;
+  font-weight: 700;
+  padding: 3px 0;
+  position: absolute;
+  text-align: center;
+  width: 28px;
+}
+
+#miva_datepicker_calendar_week_container {
+  margin: 2px;
+  position: relative;
+}
+
+.miva_datepicker_calendar_week {
+  display: block;
+  height: 30px;
+  position: relative;
+}
+
+.miva_datepicker_calendar_day {
+  align-items: center;
+  border: var(--default-border-width) solid var(--gray-400);
+  bottom: 1px;
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 0.75em;
+  justify-content: center;
+  position: absolute;
+  top: 1px;
+  width: 26px;
+}
+
+.miva_datepicker_calendar_day:hover {
+  background-color: var(--gray-400);
+  border-color: var(--gray-600);
+  color: var(--white);
+}
+
+.miva_datepicker_calendar_day_noselect,
+.miva_datepicker_calendar_day_noselect:hover {
+  background-color: var(--gray-300);
+  border-color: var(--gray-600);
+  color: var(--gray-600);
+}
+
+.miva_datepicker_calendar_day_current {
+  border-color: var(--gray-600);
+  color: var(--gray-600);
+  font-weight: 700;
+}
+
+.miva_datepicker_calendar_day_current:hover {
+  background-color: var(--gray-600);
+  color: var(--white);
+}
+
+.miva_datepicker_calendar_day_active {
+  background-color: var(--gray-600);
+  border-color: var(--gray-400);
+  color: var(--white);
+  font-weight: 700;
+}
+
+.miva_datepicker_calendar_day_0 {
+  left: 1px;
+}
+
+.miva_datepicker_calendar_day_1 {
+  left: 31px;
+}
+
+.miva_datepicker_calendar_day_2 {
+  left: 61px;
+}
+
+.miva_datepicker_calendar_day_3 {
+  left: 91px;
+}
+
+.miva_datepicker_calendar_day_4 {
+  left: 121px;
+}
+
+.miva_datepicker_calendar_day_5 {
+  left: 151px;
+}
+
+.miva_datepicker_calendar_day_6 {
+  left: 181px;
+}
+
+/* ==========================================================================
+   EXTENSIONS / SEARCH-PREVIEW / SEARCH-PREVIEW
+   ========================================================================== */
+.x-search-preview {
+  background-color: var(--white);
+  border-radius: 0 0 var(--default-border-radius) var(--default-border-radius);
+  color: var(--gray-600);
+  display: none;
+  flex-direction: column;
+  font-size: var(--default-input-font-size);
+  gap: 1em;
+  list-style: none;
+  margin: 0;
+  outline: var(--default-border-width) solid var(--gray-400);
+  padding: 0.75rem 1rem;
+  position: absolute;
+  right: 0;
+  width: 100%;
+  z-index: 500;
+}
+
+.x-search-preview--open {
+  display: flex;
+}
+
+.x-search-preview__item {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+}
+
+/**
+ * This section contains the necessary styles when using the built-in search
+ * preview ability of Miva. Since the functional code is generated at run-time,
+ * these styles do not conform to the tenants used in the rest of the framework.
+ */
+.mm_searchfield_menuitem_selected {
+  background-color: var(--gray-100);
+}
+
+.x-search-preview__image {
+  height: var(--search-preview-image-y);
+  margin-bottom: 0;
+  overflow: hidden;
+  width: var(--search-preview-image-x);
+}
+
+.x-search-preview__search-all {
+  cursor: pointer;
+  font-style: italic;
+  padding: 0.5rem;
+}
+
+/* ==========================================================================
+   EXTENSIONS / MINI-BASKET / MINI-BASKET
+   ========================================================================== */
+/**
+ * This is an extension to use the mini-basket functionality of Miva in an
+ * off-canvas method.
+ */
+.x-mini-basket {
+  background-color: rgba(34, 34, 34, 0.8);
+  bottom: 0;
+  display: flex;
+  justify-content: flex-end;
+  left: 0;
+  opacity: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transition: all ease-in-out 0.2s;
+  z-index: 500;
+}
+
+.x-mini-basket--open {
+  opacity: 1;
+}
+
+.x-mini-basket__empty-icon {
+  align-items: center;
+  border-radius: 50%;
+  display: inline-flex;
+  height: 4.5rem;
+  justify-content: center;
+  margin-top: 1.875rem;
+  width: 4.5rem;
+}
+
+.x-mini-basket__content {
+  display: flex;
+  flex: 1 1 100%;
+  flex-direction: column;
+  max-width: 25rem;
+  padding: 1rem 0;
+  width: 100vw;
+}
+
+.x-mini-basket__content :is(header, footer),
+.x-mini-basket__list {
+  padding: 0 1rem;
+}
+
+.x-mini-basket__header,
+.x-mini-basket__subtotal {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 1.875rem;
+}
+
+.x-mini-basket__subtotal {
+  color: var(--gray-600);
+  font-weight: var(--font-medium);
+  padding-bottom: 1.75rem;
+}
+
+.x-mini-basket__header button {
+  background-color: var(--white);
+  border: 0 none;
+  cursor: pointer;
+  font-size: 0.625rem;
+}
+
+.x-mini-basket__list {
+  flex-grow: 1;
+  margin-bottom: 1rem;
+  overflow-y: auto;
+}
+
+.x-mini-basket__line {
+  border-top: var(--default-border-width) solid var(--gray-400);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  font-size: 0.875rem;
+  padding: 1.5rem 0;
+}
+
+.x-mini-basket__line:last-of-type {
+  padding: 1rem 0;
+}
+
+.x-mini-basket__image {
+  height: 2.5rem;
+  overflow: hidden;
+  text-align: center;
+  width: 2.5rem;
+}
+
+.x-mini-basket__item {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  justify-content: space-between;
+  text-decoration: none;
+}
+
+.x-mini-basket__item:hover {
+  text-decoration: none;
+}
+
+.x-mini-basket__item-name,
+.x-mini-basket__item-attributes {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.x-mini-basket__item-attributes {
+  font-size: var(--message-one);
+  line-height: 1.75;
+}
+
+.x-mini-basket__subscription {
+  flex-basis: 100%;
+}
+
+.x-mini-basket__item-price {
+  color: var(--black);
+}
+
+.x-mini-basket__item-total {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.x-mini-basket__charges,
+.x-mini-basket__total {
+  display: flex;
+  flex: 1 0 100%;
+  justify-content: space-between;
+}
+
+.x-mini-basket__charges {
+  flex-direction: column;
+  font-size: 0.875rem;
+  margin-bottom: 1em;
+}
+
+.x-mini-basket__charge-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.x-mini-basket__total {
+  font-size: var(--subheading-small);
+  font-weight: var(--font-medium);
+}
+
+.x-mini-basket__cta {
+  display: grid;
+  gap: 0.5rem 0;
+}
+
+/* ==========================================================================
+   EXTENSIONS / QUANTIFY / QUANTIFY
+   ========================================================================== */
+/**
+ * This extension allows for the use of buttons to increase/decrease item
+ * quantities on the product and basket pages. When used on the basket page,
+ * the decrease button becomes a remove button if the quantity is 1.
+ */
+.x-quantify {
+  border: var(--default-border-width) solid var(--gray-400);
+  border-radius: var(--default-border-radius);
+  display: grid;
+  grid-template-columns: 2.5rem 1fr 2.5rem;
+  grid-template-rows: 1fr;
+  height: 2.5rem;
+  width: 7.5rem;
+}
+
+.x-quantify :is(.c-button, .c-form-input) {
+  align-self: stretch;
+  border: 0 none;
+  line-height: normal;
+  margin-bottom: 0;
+  outline-offset: calc(-1 * var(--default-border-width) * 2);
+  padding: 0;
+}
+
+.x-quantify button {
+  color: var(--gray-600);
+  font-size: 0.625rem;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.x-quantify button[aria-disabled="true"] {
+  background-color: var(--white);
+  color: var(--gray-400);
+}
+
+.x-quantify button > * {
+  pointer-events: none;
+}
+
+/* =====
+   EXTENSIONS / TABS / A11Y-TABS
+   ===== */
+/**
+ * This is an accessible tab solution extension based on guidelines documented
+ * by Heydon Pickering on the Inclusive Components Pattern Library.
+ * https://inclusive-components.design/tabbed-interfaces/
+ */
+[data-tab-component] *:focus:not(:focus-visible) {
+  box-shadow: inset 0 0 0 4px var(--transparent);
+  outline: none;
+  text-decoration: none;
+}
+
+[data-tab-component] *:focus-visible {
+  box-shadow: inset 0 0 0 4px var(--focus);
+  outline: none;
+  text-decoration: none;
+}
+
+[data-tab-component] [role="tablist"] {
+  display: flex;
+  gap: 1.75rem;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+[data-tab-component] [role="presentation"],
+[data-tab-component] [role="tab"] {
+  display: inline-block;
+}
+
+[data-tab-component] [role="tab"] {
+  border-bottom: calc(var(--default-border-width) * 2) solid var(--transparent);
+  font-size: var(--paragraph-large);
+  font-weight: var(--font-medium);
+  padding: 0.5rem;
+  text-decoration: none;
+}
+
+[data-tab-component] [role="tab"][aria-selected] {
+  border-color: currentColor;
+}
+
+[data-tab-component] [role="tabpanel"] {
+  font-size: var(--paragraph-large);
+  margin: auto;
+  max-width: 50rem;
+  padding-top: 2rem;
+}
+
+[data-tab-component] [role="tabpanel"] * + * {
+  margin-top: 0.75rem;
+}
+
+@media (max-width: 40em) {
+  [data-tab-component] [role="tablist"],
+  [data-tab-component] [role="presentation"] {
+    display: block;
+  }
+  [data-tab-component] [role="tab"] {
+    border-bottom: var(--default-border-width) solid var(--gray-300);
+    color: var(--black);
+    display: flex;
+    justify-content: space-between;
+  }
+  [data-tab-component] [role="tab"][aria-selected] {
+    border-color: var(--gray-300);
+  }
+  [data-tab-component] [role="tablist"] li + li a {
+    border-top: 0 !important;
+  }
+  [data-tab-component] [role="tab"]::after {
+    content: "+";
+    font-size: 1.25em;
+    line-height: 1;
+  }
+  [data-tab-component] [role="tab"][aria-selected]::after {
+    content: "-";
+  }
+  [data-tab-component] [role="tabpanel"] {
+    border-bottom: var(--default-border-width) solid var(--transparent);
+    padding: 1rem 0.5rem;
+  }
+  [data-tab-component] [role="tabpanel"]:not([hidden]) {
+    border-color: var(--gray-300);
+  }
+}
+/* ==========================================================================
+   EXTENSIONS / NAVIGATION / TRANSFIGURE NAVIGATION
+   ========================================================================== */
+/* @media screen and (max-width: 59.999em) { */
+.has-open-main-menu,
+.has-open-main-menu body {
+  overflow: hidden;
+}
+/* nav */
+.vertical-nav .x-transfigure-navigation {
+  backface-visibility: hidden;
+  background-color: var(--transparent);
+  bottom: 0;
+  left: -100vw;
+  opacity: 0;
+  overflow: hidden;
+  padding: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: all ease-out 0.2s;
+  z-index: -1;
+}
+.vertical-nav .x-transfigure-navigation.is-open {
+  background: rgba(17, 17, 17, 0.65);
+  left: 0;
+  opacity: 1;
+  transform: scaleX(1);
+  transition: all ease-in 0.2s;
+  z-index: 2;
+}
+/* nav > div (wrapper) */
+.vertical-nav .x-transfigure-navigation__wrap {
+  background-color: var(--white);
+  max-width: 22.5rem;
+  min-height: 100%;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+/* header */
+.vertical-nav .x-transfigure-navigation__header {
+  padding: 0.5rem;
+}
+.vertical-nav .x-transfigure-navigation__header .c-button {
+  align-self: auto;
+  padding: calc(1em - var(--default-border-width));
+  text-decoration: none;
+}
+/* div -> ul wrapper */
+.vertical-nav .x-transfigure-navigation__content {
+  font-size: var(--default-font-size);
+  position: relative;
+}
+/* ul */
+.vertical-nav .x-transfigure-navigation__row,
+.vertical-nav .x-transfigure-navigation__row .c-navigation__row,
+.vertical-nav
+  .x-transfigure-navigation__row
+  .c-navigation__row:nth-child(2)
+  .c-navigation__row:last-of-type {
+  background-color: var(--white);
+  display: block;
+  left: 0;
+  list-style: none;
+  min-height: 100%;
+  position: absolute;
+  top: 0;
+  transition: transform 0.3s;
+  width: 100%;
+}
+/* li */
+.vertical-nav .x-transfigure-navigation .c-navigation__list {
+  position: static;
+}
+
+.vertical-nav
+  .x-transfigure-navigation
+  .c-navigation__list:hover
+  > .c-navigation__row,
+.vertical-nav
+  .x-transfigure-navigation
+  .c-navigation__list.focus-within
+  > .c-navigation__row {
+  box-shadow: none;
+  display: block;
+}
+@supports (will-change: auto) {
+  .vertical-nav
+    .x-transfigure-navigation
+    .c-navigation__list:focus-within
+    > .c-navigation__row {
+    display: block;
+    box-shadow: none;
+  }
+}
+.vertical-nav .x-transfigure-navigation .c-navigation__link {
+  align-items: center;
+  backface-visibility: hidden;
+  display: flex;
+  height: 3rem;
+  justify-content: space-between;
+  overflow: hidden;
+  padding: 0 0 0 1rem;
+  text-overflow: ellipsis;
+  transform: translateZ(0);
+  transition: all 0.3s;
+  white-space: nowrap;
+}
+.vertical-nav
+  .x-transfigure-navigation
+  .c-navigation__row:nth-child(2)
+  .c-navigation__link,
+.vertical-nav
+  .x-transfigure-navigation
+  .c-navigation__row:nth-child(2)
+  .c-navigation__row:last-of-type
+  .c-navigation__link {
+  padding-left: 1rem;
+  width: 100%;
+}
+.vertical-nav
+  .x-transfigure-navigation__row
+  .c-navigation__list:last-of-type
+  > .c-navigation__link,
+.vertical-nav
+  .x-transfigure-navigation__row
+  .c-navigation__row
+  .c-navigation__list:last-of-type
+  > .c-navigation__link {
+  border-bottom-width: var(--default-border-width);
+  width: 100%;
+}
+.vertical-nav .x-transfigure-navigation__row.is-hidden,
+.vertical-nav .x-transfigure-navigation__row .c-navigation__row.is-hidden {
+  transform: translateX(100%);
+}
+.vertical-nav
+  .x-transfigure-navigation__row.is-hidden
+  > .cmp-primary-navigation__title,
+.vertical-nav
+  .x-transfigure-navigation__row.show-next
+  > .cmp-primary-navigation__title,
+.vertical-nav
+  .x-transfigure-navigation__row.is-hidden
+  > .c-navigation__list
+  > .c-navigation__link,
+.vertical-nav
+  .x-transfigure-navigation__row.show-next
+  > .c-navigation__list
+  > .c-navigation__link,
+.vertical-nav
+  .x-transfigure-navigation__row
+  .c-navigation__row.is-hidden
+  > .c-navigation__list
+  > .c-navigation__link,
+.vertical-nav
+  .x-transfigure-navigation__row
+  .c-navigation__row.show-next
+  > .c-navigation__list
+  > .c-navigation__link {
+  opacity: 0;
+}
+.vertical-nav
+  .x-transfigure-navigation__row.show-next
+  > .c-navigation__list
+  > .c-navigation__link,
+.vertical-nav
+  .x-transfigure-navigation__row
+  .c-navigation__row.show-next
+  > .c-navigation__list
+  > .c-navigation__link {
+  transform: translateX(-100%);
+}
+.vertical-nav .x-transfigure-navigation .c-navigation__link-carat {
+  display: none;
+}
+.vertical-nav
+  .x-transfigure-navigation
+  .has-child-menu
+  .c-navigation__link-carat {
+  align-self: stretch;
+  display: inline-flex;
+}
+.vertical-nav .x-transfigure-navigation .c-navigation__link-carat > * {
+  align-items: center;
+  display: flex;
+  font-size: 0.75rem;
+  justify-content: center;
+  width: 4rem;
+}
+.vertical-nav .x-transfigure-navigation__footer {
+  border-top: var(--default-border-width) solid var(--gray-300);
+  font-size: var(--default-input-font-size);
+  font-weight: var(--font-regular);
+  margin: 1rem 0 0.5rem 1rem;
+  padding: 1rem 0;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.vertical-nav .x-transfigure-navigation__footer-link {
+  align-items: center;
+  display: flex;
+  height: 2.5rem;
+  text-decoration: none;
+}
+
+.vertical-nav .c-navigation__link a {
+  width: 100% !important;
+}
+/* } */
+
+@media screen and (max-width: 60em) {
+  .horizontal-nav {
+    display: none;
+  }
+}
+@media screen and (min-width: 60em) {
+  .horizontal-nav {
+    display: block;
+  }
+
+  .horizontal-nav .x-transfigure-navigation__row {
+    gap: 0.25rem;
+  }
+  .horizontal-nav .x-transfigure-navigation__row .c-navigation__row {
+    background-color: var(--white);
+    display: none;
+    padding: 0.5rem;
+    position: absolute;
+    white-space: nowrap;
+    width: auto;
+    z-index: 100;
+  }
+  .horizontal-nav .x-transfigure-navigation > .c-navigation__row {
+    display: flex;
+  }
+  .horizontal-nav .x-transfigure-navigation .c-navigation__link span {
+    position: relative;
+  }
+  /* .horizontal-nav .x-transfigure-navigation .c-navigation__link span:after {
+    background-color: currentColor;
+    bottom: -0.4em;
+    content: "";
+    height: 0.2em;
+    left: 0;
+    position: absolute;
+    transform: scaleX(0);
+    transform-origin: bottom left;
+    transition: transform 0.25s ease-out;
+    width: 100%;
+  } 
+  .horizontal-nav
+    .x-transfigure-navigation
+    .c-navigation__link:is(:focus, :focus-within, :hover)
+    span:after {
+    transform: scaleX(1);
+  }
+  
+  .horizontal-nav .x-transfigure-navigation .c-navigation__link:is(:target) {
+    text-decoration: underline;
+    text-decoration-thickness: 0.2em;
+    text-underline-offset: 0.4em;
+  }
+   */
+  .horizontal-nav
+    .x-transfigure-navigation__row
+    .c-navigation__row:nth-child(2)
+    .c-navigation__list {
+    text-align: left;
+  }
+  .horizontal-nav
+    .x-transfigure-navigation__row
+    .c-navigation__row:nth-child(2)
+    .c-navigation__row:last-of-type {
+    left: 100%;
+    top: calc(-1em - 0.5rem);
+    z-index: 200;
+  }
+  .horizontal-nav
+    .x-transfigure-navigation
+    .c-navigation__row:nth-child(2)
+    .c-navigation__link,
+  .horizontal-nav
+    .x-transfigure-navigation
+    .c-navigation__row:nth-child(2)
+    .c-navigation__row:last-of-type
+    .c-navigation__link {
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+  }
+  .horizontal-nav
+    .x-transfigure-navigation
+    .c-navigation__list:hover
+    > .c-navigation__row,
+  .horizontal-nav
+    .x-transfigure-navigation
+    .c-navigation__list:focus-within
+    > .c-navigation__row {
+    box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2);
+    display: flex;
+    gap: 0.25rem;
+    min-width: -moz-fit-content;
+    min-width: fit-content;
+    transform: translateY(calc(1em + var(--default-border-width)));
+    /* adjust height and scroll of the list : 
+    topNavHeight + globalHeaderHeight + horizontalNavHeight = 220px */
+    height: calc(100vh - 220px - 1em);
+  }
+  .horizontal-nav
+    .x-transfigure-navigation
+    .c-navigation__list:hover
+    > .c-navigation__row::before,
+  .horizontal-nav
+    .x-transfigure-navigation
+    .c-navigation__list:focus-within
+    > .c-navigation__row::before {
+    content: "";
+    display: block;
+    height: 1em;
+    position: absolute;
+    top: -1em;
+    width: 100%;
+  }
+  .horizontal-nav
+    .x-transfigure-navigation__row
+    .is-off-screen
+    .c-navigation__row:nth-child(2)
+    .c-navigation__row {
+    box-shadow: -1px 1px 0.25em 0 rgba(17, 17, 17, 0.5);
+    left: auto;
+    right: 100%;
+  }
+  .horizontal-nav
+    .x-transfigure-navigation__row
+    .c-navigation__row:nth-child(2)
+    .c-navigation__row
+    .c-navigation__link,
+  .horizontal-nav
+    .x-transfigure-navigation__row
+    .c-navigation__row:nth-child(2)
+    .c-navigation__row:last-of-type
+    .c-navigation__link {
+    padding-left: 1em;
+  }
+  .horizontal-nav .x-transfigure-navigation .c-navigation__link-carat {
+    font-size: 0.5em;
+    transform: rotate(90deg);
+  }
+  .horizontal-nav
+    .x-transfigure-navigation
+    .c-navigation__row:nth-child(2)
+    .c-navigation__link-carat {
+    transform: rotate(0deg);
+  }
+}
+.x-transfigure-navigation__content {
+  padding-bottom: 1em;
+  padding-top: 1em;
+}
+
+.x-transfigure-navigation .c-navigation__link {
+  text-decoration: none;
+}
+
+.x-transfigure-navigation .c-navigation__link:hover {
+  box-shadow: none;
+}
+
+.x-transfigure-navigation
+  .c-navigation__row:nth-child(2)
+  .c-navigation__link:hover {
+  background-color: var(--gray-100);
+  border-radius: var(--default-border-radius);
+  text-decoration: none;
+  transition: background-color ease-out 0.1s;
+}
+
+/* ==========================================================================
+   EXTENSIONS / FACETS / FACETS
+   ========================================================================== */
+.x-facet-set {
+  margin-bottom: var(--default-spacing-unit);
+}
+
+.x-facet-set__trigger {
+  display: none;
+}
+
+.x-facet-set__label.x-collapsible-content__toggle {
+  color: var(--gray-600);
+  font-size: var(--paragraph-large);
+  font-weight: var(--font-medium);
+  margin-bottom: var(--default-spacing-unit);
+}
+
+.x-facet-set__label > * {
+  font-size: 0.625rem;
+}
+
+.x-facet-set__list:not([aria-hidden="true"]) {
+  display: block;
+  max-height: 0;
+  margin-bottom: var(--default-spacing-unit);
+  opacity: 0;
+  transition-delay: 0.15s, 0s, 0s;
+  visibility: hidden;
+}
+
+.x-facet-set__list.x-collapsible-content__item[aria-hidden="false"] {
+  max-height: 50em;
+}
+
+.x-facet-set .c-form-checkbox {
+  font-size: var(--paragraph-small);
+  line-height: 2;
+  margin: 0.5em 0;
+}
+
+/* ==========================================================================
+   EXTENSIONS / FASTEN HEADER / FASTEN HEADER
+   ========================================================================== */
+.x-fasten-header {
+  display: none;
+}
+
+@media screen and (min-width: 60em) {
+  .x-fasten-header {
+    background-color: var(--white);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    color: var(--gray-600);
+    display: flex;
+    font-size: 0.875rem;
+    left: 0;
+    max-width: none;
+    opacity: 0;
+    padding: 0.5rem 2rem;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transform: translateY(-100%);
+    transform-origin: top;
+    transition: all ease-in-out 0.15s;
+    z-index: 300;
+  }
+  .x-fasten-header--is-active .x-fasten-header {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .x-fasten-header__logo-image {
+    max-height: 4rem;
+  }
+  .x-fasten-header__navigation {
+    position: relative;
+  }
+  .x-fasten-header__navigation::before {
+    content: " ";
+    display: block;
+    height: var(--default-input-font-size);
+    width: 100%;
+  }
+  .x-fasten-header__navigation-element {
+    font-size: var(--default-input-font-size);
+    font-weight: var(--font-medium);
+    cursor: pointer;
+    position: absolute;
+    top: -1em;
+  }
+  .x-fasten-header__navigation-element summary {
+    border-radius: var(--default-border-radius);
+    line-height: 1;
+    margin-bottom: 0;
+    padding: 1em 3.5em 1em 1.5em;
+    -webkit-user-select: none;
+    user-select: none;
+    white-space: nowrap;
+  }
+  .x-fasten-header__navigation-element summary::marker {
+    content: "V";
+    font-family: "ReadyTheme Icons", sans-serif;
+    font-size: var(--default-spacing-unit);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  .x-fasten-header__navigation-element summary span {
+    padding-left: 1em;
+    position: relative;
+    top: calc(
+      -1 * (var(--default-spacing-unit) - var(--default-input-font-size)) / 2
+    );
+  }
+  .x-fasten-header__navigation-element[open] summary {
+    background-color: var(--gray-100);
+    margin-bottom: calc(0.25rem + var(--default-border-width));
+  }
+  .x-fasten-header__navigation-list {
+    background-color: var(--white);
+    border: var(--default-border-width) solid var(--gray-200);
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.08);
+    list-style: none;
+    margin: 0;
+    padding: 0.5em 1.5em;
+  }
+  .x-fasten-header__navigation-item {
+    padding: 0.5em 0;
+  }
+  .x-fasten-header__navigation-link {
+    display: block;
+    padding: 0.5em 0;
+    text-decoration: none;
+  }
+  .x-fasten-header__navigation-link:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 0.1em;
+    text-underline-offset: 0.15em;
+  }
+}
+/* ==========================================================================
+   EXTENSIONS / SHOW PASSWORD / SHOW PASSWORD
+   ========================================================================== */
+/**
+ * This extension allows a user to reveal the password they have typed.
+ */
+input[type="password"]:invalid + .x-toggle-password {
+  color: var(--gray-400);
+}
+
+.x-toggle-password {
+  border: 0 none;
+  border-radius: 0;
+  color: var(--gray-600);
+  font-size: 1.5em;
+  margin-top: -0.125em;
+  padding: 0.25em;
+  position: absolute;
+  right: 0.5em;
+  top: calc(50% - 1px);
+}
+
+.x-toggle-password--no-label {
+  margin-top: -0.25em;
+  top: 25%;
+}
+
+.x-collapsible-content__toggle {
+  align-items: center;
+  background-color: transparent;
+  border: 0 none;
+  color: inherit;
+  display: flex;
+  font-weight: 700;
+  justify-content: space-between;
+  line-height: normal;
+  padding: 0;
+  width: 100%;
+}
+
+.x-collapsible-content__toggle[aria-expanded="true"]
+  [class^="u-icon-"]::before {
+  content: attr(data-toggle);
+}
+
+.x-collapsible-content__item[aria-hidden="false"] {
+  max-height: -moz-fit-content;
+  max-height: fit-content;
+  opacity: 1;
+  overflow: visible;
+  transition: visibility 0s ease, max-height 0.3s ease, opacity 0.3s ease;
+  visibility: visible;
+}
+
+.x-collapsible-content__item {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+/* ==========================================================================
+   EXTENSIONS / CONTACT / CONTACT
+   ========================================================================== */
+.x-contact-form .is-required span {
+  color: var(--red-400);
+}
+
+/**
+	Thumbnail Filmstrip
+ */
+[data-filmstrip-wrapper] {
+  position: relative;
+}
+
+[data-filmstrip] {
+  overflow: hidden;
+  position: relative;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+[data-vertical] [data-filmstrip] {
+  height: 100%;
+  scroll-snap-type: y mandatory;
+}
+
+[data-filmstrip]::-webkit-scrollbar {
+  display: none;
+}
+
+[data-filmstrip] ul {
+  align-items: center;
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 1rem;
+  margin: 0;
+  width: max-content;
+}
+
+[data-filmstrip] ul.has-controls {
+  padding: 0 calc(var(--default-spacing-unit) / 2);
+}
+
+[data-vertical] [data-filmstrip] ul {
+  flex-direction: column;
+  height: max-content;
+}
+
+[data-vertical] [data-filmstrip] ul.has-controls {
+  padding: calc(var(--default-spacing-unit) / 2) 0;
+}
+
+[data-filmstrip] li {
+  height: var(--prod-thumb-y);
+  list-style: none;
+  scroll-snap-align: none;
+  scroll-snap-stop: always;
+  width: var(--prod-thumb-x);
+}
+
+[data-filmstrip] picture {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  width: 100%;
+}
+
+[data-filmstrip] img {
+  height: auto;
+  max-width: 100%;
+  width: 100%;
+}
+
+[data-filmstrip-controls] {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: space-between;
+  left: 0;
+  list-style: none;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+[data-filmstrip-controls] button {
+  border-color: var(--gray-400);
+  border-radius: 50%;
+  height: 3rem;
+  padding: 0;
+  width: 3rem;
+}
+
+[data-filmstrip-controls] button:focus {
+  outline: 3px solid var(--focus);
+  outline-offset: -3px;
+}
+
+[data-filmstrip-controls] button span {
+  pointer-events: none;
+}
+
+[data-vertical] [data-filmstrip-controls] {
+  flex-direction: column;
+}
+
+[data-vertical] [data-filmstrip-controls] button span {
+  transform: rotate(90deg);
+}
+
+/**
+	Modal Photo Viewer
+ */
+.is-inert {
+  pointer-events: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.has-photo-viewer {
+  overflow: hidden;
+}
+
+.x-photo-viewer {
+  background-color: rgba(0, 0, 0, 0.75);
+  border: 0;
+  clip: rect(0 0 0 0);
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  left: 0;
+  margin: 0;
+  opacity: 0;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  transform: scale(0);
+  transition: opacity 0.3s ease, transform 0.2s ease;
+  white-space: nowrap;
+  width: 1px;
+  z-index: 9999;
+}
+
+.x-photo-viewer__visible {
+  clip: auto;
+  height: 100%;
+  opacity: 1;
+  position: fixed;
+  transform: scale(1);
+  width: 100%;
+}
+
+.x-photo-viewer__header,
+.x-photo-viewer__controls {
+  align-items: center;
+  background-color: var(--black);
+  color: var(--gray-100);
+  display: flex;
+  width: 100%;
+}
+
+.x-photo-viewer__title {
+  flex: 1;
+  font-size: var(--title-four);
+  margin: 0;
+  padding-left: 2em;
+  text-align: center;
+  white-space: normal;
+}
+
+.x-photo-viewer__close {
+  height: 2.25em;
+  margin: 0.5em;
+  width: 2.25em;
+}
+
+.x-photo-viewer__close button {
+  height: 100%;
+  padding: 0;
+  width: 100%;
+}
+
+.x-photo-viewer__container {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  padding: 0 1rem;
+  touch-action: manipulation;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.x-photo-viewer__current-image {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity ease-in 0.3s 0.3s;
+  width: 100%;
+}
+
+.x-photo-viewer__current-image.is-loaded {
+  opacity: 1;
+  transition: opacity 0.3s ease-out;
+}
+
+.x-photo-viewer__current-image img {
+  max-height: 80vh;
+}
+
+.x-photo-viewer__controls {
+  justify-content: space-between;
+  padding: 1em 2em;
+}
+
+.x-photo-viewer__count {
+  font-weight: var(--font-medium);
+  text-align: center;
+}
+
+/* ==========================================================================
+   EXTENSIONS / PAYMENT / PAYMENT CARD
+   ========================================================================== */
+/**
+ * This is the default card layout for the saved payment methods page.
+ */
+.x-payment-card {
+  align-items: baseline;
+  display: grid;
+  font-size: var(--default-input-font-size);
+  gap: var(--default-spacing-unit);
+  grid-template-columns: repeat(2, 1fr);
+  padding: var(--default-spacing-unit);
+}
+
+.x-payment-card__image {
+  display: none;
+}
+
+@media (min-width: 48em) {
+  .x-payment-card {
+    align-items: center;
+    grid-template-columns: 38px repeat(4, 1fr);
+  }
+  .x-payment-card__image {
+    display: block;
+    grid-area: 1/1/2/2;
+  }
+  .x-payment-card__number {
+    grid-area: 1/2/2/3;
+  }
+  .x-payment-card__cardholder {
+    grid-area: 1/3/2/4;
+  }
+  .x-payment-card__expiry {
+    grid-area: 1/4/2/5;
+  }
+  .x-payment-card__actions {
+    grid-area: 1/5/2/6;
+    place-self: center end;
+  }
+}
+.x-payment-card__actions > * {
+  align-items: baseline;
+  gap: 2rem;
+}

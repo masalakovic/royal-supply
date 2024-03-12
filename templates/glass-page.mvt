@@ -1,0 +1,72 @@
+<mvt:item name="html_profile" />
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<base href="&mvt:global:basehref;">
+	<mvt:if expr="NOT ISNULL l.settings:page:title">
+		<title>&mvt:page:title;</title>
+	<mvt:else>
+		<title>&mvt:store:name;: &mvt:page:name;</title>
+	</mvt:if>
+	<mvt:item name="head" param="css_list" />
+	<mvt:item name="head" param="head_tag" />
+</head>
+<body id="js-&mvte:page:code;" class="o-site-wrapper t-page-&mvt:global:pageClass;">
+	<mvt:item name="hdft" param="global_header" />
+
+<section class="t-expanded-block u-bg-white">
+        <nav class="o-wrapper x-collapsing-breadcrumbs t-breadcrumbs t-wrapper" data-hook="collapsing-breadcrumbs" aria-label="Breadcrumb">
+            <ul class="o-list-inline x-collapsing-breadcrumbs__list" data-hook="collapsing-breadcrumbs__list" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+                <li class="o-list-inline__item u-hidden" data-hook="collapsing-breadcrumbs__trigger-area" style="">
+                    <button class="c-button c-button--hollow u-border-none u-color-black u-bg-transparent x-collapsing-breadcrumbs__button" data-hook="collapsing-breadcrumbs__button">…</button>
+                </li>
+                <li class="o-list-inline__item" data-hook="collapsing-breadcrumbs__item" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                    <a class="u-inline-block" href="https://www.lafco.com/storefront.html" title="Home" itemprop="item">
+                        <span itemprop="name">Home</span>
+                    </a>
+                    <meta itemprop="position" content="1">
+                </li>
+                <li class="o-list-inline__item" data-hook="collapsing-breadcrumbs__item" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                    <a class="u-inline-block" href="https://www.lafco.com/absolute-collection.html" title="About Lafco" itemprop="item">
+                        <span itemprop="name">ABSOLUTE COLLECTION</span>
+                    </a>
+                    <meta itemprop="position" content="2">
+                </li>
+                <li class="o-list-inline__item" data-hook="collapsing-breadcrumbs__item" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                    <span class="u-inline-block" title="GLASS" itemprop="item" aria-current="page">
+                        <span itemprop="name">GLASS.</span>
+                    </span>
+                    <meta itemprop="url" content="https://www.lafco.com/absolute-collection/glass.html">
+                    <meta itemprop="position" content="3">
+                </li>
+            </ul>
+        </nav>
+        <!-- end .x-collapsing-breadcrumbs -->
+    </section>
+
+	<section class="o-wrapper o-wrapper--flush">
+		<section class="o-layout">
+			<div class="o-layout__item">
+				<mvt:item name="hdft" param="header" />
+			</div>
+		</section>
+
+		<section class="o-layout">
+			<div class="o-layout__item">
+				<mvt:item name="readytheme" param="contentsection( 'glass-page' )" />
+			</div>
+		</section>
+
+		
+		<section class="o-layout">
+			<div class="o-layout__item">
+				<mvt:item name="hdft" param="footer" />
+			</div>
+		</section>
+	</section>
+	<br>
+	
+	<mvt:item name="hdft" param="global_footer" />
+</body>
+</html>

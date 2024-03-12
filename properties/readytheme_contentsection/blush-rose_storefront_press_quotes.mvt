@@ -1,0 +1,8 @@
+<section class="storefront-press-quotes t-defer-object" data-defer>
+	<div class="container">
+	    <h2 class="storefront-press-quotes__quote">“The Best Nontoxic, Clean-Burning Candles.”</h2>
+	    <div class="storefront-press-quotes__logos-box">
+	        <mvt:item name="content"/>
+	    </div>
+    </div>
+</section>

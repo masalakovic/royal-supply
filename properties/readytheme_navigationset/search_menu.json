@@ -1,0 +1,56 @@
+{
+    "items": [
+        {
+            "active": 1,
+            "id": "5eb3263a8aea50265b778af6dc592e70",
+            "link": "<a href=\"https://demo.pcinet.com/shipping-times-and-costs.html\" target=\"_self\">Shipping Times and Costs</a>",
+            "link_dest": "STAC",
+            "link_targ": "_self",
+            "link_type": "G",
+            "name": "Shipping Times and Costs",
+            "url": "https://demo.pcinet.com/shipping-times-and-costs.html"
+        },
+        {
+            "active": 1,
+            "id": "ca70038b822fad4be9511175f2f351d2",
+            "link": "<a href=\"https://demo.pcinet.com/returns-and-refunds.html\" target=\"_self\">Returns and Refunds</a>",
+            "link_dest": "REAR",
+            "link_targ": "_self",
+            "link_type": "G",
+            "name": "Returns and Refunds",
+            "url": "https://demo.pcinet.com/returns-and-refunds.html"
+        },
+        {
+            "active": 0,
+            "id": "245e2ece12e7ff668dc9a63dbb767cc3",
+            "link": "<a href=\"#\" target=\"_self\">Store Locator</a>",
+            "link_dest": "#",
+            "link_targ": "_self",
+            "link_type": "U",
+            "name": "Store Locator",
+            "url": "#"
+        },
+        {
+            "active": 1,
+            "id": "e2dddceb795a167e1835287360cb388c",
+            "link": "<a href=\"https://demo.pcinet.com/mm5/merchant.mvc?Screen=CTGY&Category_Code=gift-certificate\" target=\"_self\">Gift Cards</a>",
+            "link_dest": "gift-certificate",
+            "link_targ": "_self",
+            "link_type": "C",
+            "name": "Gift Cards",
+            "url": "https://demo.pcinet.com/mm5/merchant.mvc?Screen=CTGY&Category_Code=gift-certificate"
+        },
+        {
+            "active": 0,
+            "id": "d6351cc1e20b1e5fd47e54e63f58214f",
+            "link": "<a href=\"#\" target=\"_self\">View all FAQ</a>",
+            "link_dest": "#",
+            "link_targ": "_self",
+            "link_type": "U",
+            "name": "View all FAQ",
+            "url": "#"
+        }
+    ],
+    "layout": "S",
+    "name": "Search menu"
+}

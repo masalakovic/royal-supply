@@ -1,0 +1,56 @@
+{
+    "items": [
+        {
+            "active": 1,
+            "id": "6fc84cd477d876b8ada3e1dbaeeea6d2",
+            "link": "<a href=\"https://demo.pcinet.com/about-lafco.html\" target=\"_self\">About Us</a>",
+            "link_dest": "ABLAFCO",
+            "link_targ": "_self",
+            "link_type": "G",
+            "name": "About Us",
+            "url": "https://demo.pcinet.com/about-lafco.html"
+        },
+        {
+            "active": 1,
+            "id": "aacb21aaa07d8d7eff4c5cdedb2f712f",
+            "link": "<a href=\"https://blog.lafco.com/\" target=\"_blank\">Blog</a>",
+            "link_dest": "https://blog.lafco.com/",
+            "link_targ": "_blank",
+            "link_type": "U",
+            "name": "Blog",
+            "url": "https://blog.lafco.com/"
+        },
+        {
+            "active": 1,
+            "id": "1511f55db251342ea056ebaa56d18be6",
+            "link": "<a href=\"https://demo.pcinet.com/lafco-rewards-709.html\" target=\"_self\">LAFCO Rewards</a>",
+            "link_dest": "rewards",
+            "link_targ": "_self",
+            "link_type": "G",
+            "name": "LAFCO Rewards",
+            "url": "https://demo.pcinet.com/lafco-rewards-709.html"
+        },
+        {
+            "active": 1,
+            "id": "3ddcfa9eb75c8218b86970f0ba46d012",
+            "link": "<a href=\"https://demo.pcinet.com/site-reviews.html\" target=\"_self\">Reviews</a>",
+            "link_dest": "seo-page",
+            "link_targ": "_self",
+            "link_type": "G",
+            "name": "Reviews",
+            "url": "https://demo.pcinet.com/site-reviews.html"
+        },
+        {
+            "active": 1,
+            "id": "2fb2b32bd628f62a4b3e479d500a7fcb",
+            "link": "<a href=\"/retail_locations.html\" target=\"_self\">Store Locator</a>",
+            "link_dest": "/retail_locations.html",
+            "link_targ": "_self",
+            "link_type": "U",
+            "name": "Store Locator",
+            "url": "/retail_locations.html"
+        }
+    ],
+    "layout": "S",
+    "name": "Company"
+}

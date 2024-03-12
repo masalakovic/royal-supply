@@ -1,0 +1,17 @@
+<mvt:if expr="NOT l.settings:mmx:loaded:base">
+	<mvt:item name="head" param="css:mmx-base" />
+	<mvt:item name="head" param="js:mmx-base" />
+	<mvt:assign name="l.settings:mmx:loaded:base" value="1" />
+</mvt:if>
+
+<mvt:if expr="NOT l.settings:mmx:loaded:text">
+	<mvt:item name="head" param="css:mmx-text" />
+	<mvt:item name="head" param="js:mmx-text" />
+	<mvt:assign name="l.settings:mmx:loaded:text" value="1" />
+</mvt:if>
+
+<mvt:if expr="NOT l.settings:mmx:loaded:text_accordion">
+	<mvt:item name="head" param="css:mmx-text-accordion" />
+	<mvt:item name="head" param="js:mmx-text-accordion" />
+	<mvt:assign name="l.settings:mmx:loaded:text_accordion" value="1" />
+</mvt:if>

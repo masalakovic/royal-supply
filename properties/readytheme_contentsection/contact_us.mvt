@@ -1,0 +1,29 @@
+<mvt:item name="readytheme" param="Load_Image('img_perks_call_us', g.img_perks_call_us)" />
+<mvt:item name="readytheme" param="Load_Image('icon_email_us', g.icon_email_us)" />
+<div class="block-static-info-helpful contact_us">
+    <h2>Can’t Find What You Are Looking For?</h2>
+    <div class="o-layout u-grids-1 u-grids-2--s">
+        <div class="o-layout__item">
+            <mvt:comment>
+                <mvt:item name="readytheme" param="image( 'img_perks_call_us' )" />
+            </mvt:comment>
+            <img src="&mvt:global:img_perks_call_us:image;" alt="" width="&mvt:global:img_perks_call_us:image_wdth;"
+                height="&mvt:global:img_perks_call_us:image_hght;">
+            <h3>Call Us</h3>
+            <p>(Monday through Friday | <span class="u-inline-block">9:00 AM TO 5:30 PM EST.)<p>*Excluding
+                        holidays</span><strong><a href="tel:800.362.3677">800.362.3677</a></strong></p>
+        </div>
+        <div class="o-layout__item">
+            <mvt:comment>
+                <mvt:item name="readytheme" param="image( 'icon_email_us' )" />
+            </mvt:comment>
+            <img src="&mvt:global:icon_email_us:image;" alt="" width="&mvt:global:icon_email_us:image_wdth;"
+                height="&mvt:global:icon_email_us:image_hght;">
+            <h3>Email Us</h3>
+            <p>We will reply as soon as possible <strong><a href="mailto:info@lafco.com">info@lafco.com</a></strong></p>
+        </div>
+    </div>
+    <button style="padding: 0;border: none;background-color: inherit;" class="close_block">
+        <span class="sr-only">close</span>
+    </button>
+</div>

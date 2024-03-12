@@ -1,0 +1,74 @@
+<section class="section-static section-static-banner-hero fragrance-page">
+	<mvt:item name="readytheme" param="image( 'glass-main-image' )" />
+	<p class="banner-title">glass.</p>
+</section>
+
+<section class="section-static section-static-promise">
+	<div class="container">
+		<div class="static-centered">
+			<h1>celebrating master craftsmanship</h1>
+		</div>
+		<p>Each glass vessel in our Absolute Collection is a brilliantly colorful one-of-kind work of art, crafted by master artisans using time-honored tools and techniques.</p>
+
+	</div>
+</section>
+
+<section class="absolute-collection card-info">
+	<div class="container category-wrapper">
+		<div class="u-grids-1 u-grids-2--s collection-category">
+			<div class="image-wrapper">
+				<mvt:item name="readytheme" param="image( 'gl-1' )" />
+			</div>
+			<div class="info-wrapper">
+				<h2>the art of glassblowing</h2>
+				<p>Long committed to using handblown glass for its luxury candles, LAFCO worked with Bohemian glassblowers to create vessels that double as modern objets d’art. </p>
+			</div>
+		</div>
+		<div class="u-grids-1 u-grids-2--s collection-category">
+			<div class="image-wrapper">
+				<mvt:item name="readytheme" param="image( 'gl-2' )" />
+			</div>
+			<div class="info-wrapper">
+				<p>Inspired by the Italian expression macchia, meaning daubs or spots of color, each unique pattern is created by layering pigments and shards of glass with a range of tones and transparencies, resulting in a radiant shimmer of hues that reflect and refract the light of the candle flame.</p>
+			</div>
+		</div>
+        <div class="u-grids-1 u-grids-2--s collection-category">
+			<div class="image-wrapper">
+				<mvt:item name="readytheme" param="image( 'gl-3' )" />
+			</div>
+			<div class="info-wrapper">
+				<p>The process begins with custom tinted glass heated in antique furnaces and gathered into a molten ball on metal rods. The colored patterns are created by repeatedly rolling the ball in “grit”—fragments of colored glass and pigments—which fuse into the molten glass, yielding unique patterns. </p>
+			</div>
+		</div>
+		<div class="u-grids-1 u-grids-2--s collection-category">
+			<div class="image-wrapper">
+				<mvt:item name="readytheme" param="image( 'gl-4' )" />
+			</div>
+			<div class="info-wrapper">
+				<p>The glassmakers then cool the glass, blowing and shaping it with wood molds before cutting, grinding, beveling and polishing the finished vessels. This artisanal process, with its reliance on traditional tools and materials, results in objects of timeless beauty and enduring quality.</p>
+			</div>
+		</div>
+
+		<div class="collection-category">
+			<div style="margin: auto;background: #efefee;padding: 50px;width: 100%;">
+			<p style="font-family: &quot;made_canvasregular&quot;; ">take a trip with us to bohemia</p>
+			<div style="padding:56.25% 0 0 0;position:relative;">
+				<iframe src="https://player.vimeo.com/video/682064679?h=7c913133f5&amp;title=0&amp;byline=0&amp;portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>
+			</div>
+			<script src="https://player.vimeo.com/api/player.js"></script>
+		</div>
+	</div>
+
+</div>
+</section>
+
+
+
+<section class="section-static block-background">
+    <div class="image-wrapper">
+		<div class="button_block black">
+			<a href="/absolute" class="next_block begin btn btn--s">SHOP THE COLLECTION</a>
+		</div>
+        <mvt:item name="readytheme" param="image( 'gl-back' )" />
+    </div>
+</section>

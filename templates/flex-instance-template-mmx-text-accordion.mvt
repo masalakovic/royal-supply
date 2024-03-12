@@ -1,0 +1,13 @@
+<mmx-text-accordion class="mmx-wrapper" id="&mvte:instance_item:item_code;">
+
+	<mvt:foreach iterator="collapsible_section" array="instance:collapsible_sections:children">
+		<button type="button" class="toggle" data-a11y-toggle="&mvte:instance_item:item_code;__<mvt:eval expr="POS1"/>">
+			&mvt:collapsible_section:name:value;
+		</button>
+		<div class="content" id="&mvte:instance_item:item_code;__<mvt:eval expr="POS1"/>" aria-hidden="true">
+			&mvt:collapsible_section:content:value;
+		</div>
+
+	</mvt:foreach>
+
+</mmx-text-accordion>

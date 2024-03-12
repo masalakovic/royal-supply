@@ -1,0 +1,30 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">How do I redeem my points</h4>
+    </div>
+    <div class="panel-collapse">
+        <div class="panel-body">
+            Points will be listed as 'pending' for 30 days from the date of purchase. After 30 days have passed, the points will automatically be approved and can be redeemed for rewards if enough points have been accumulated. To redeem, you can either do so directly through the rewards program dashboard or during checkout. If redeeming through the dashboard, you must look for the coupon code that will be sent to your email and apply it to your order to receive the product.
+        </div>
+    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">How long are my points valid?</h4>
+    </div>
+    <div class="panel-collapse">
+        <div class="panel-body">
+            Points remain valid for 365 after they have been approved.
+        </div>
+    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">How long does my tier status last?</h4>
+    </div>
+    <div class="panel-collapse">
+        <div class="panel-body">
+            Tier status is on a 12 month calendar basis and refreshes every January.
+        </div>
+    </div>
+</div>

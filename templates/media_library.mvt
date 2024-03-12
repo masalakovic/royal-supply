@@ -1,0 +1,419 @@
+<mvt:item name="html_profile" />
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base href="&mvt:global:basehref;">
+  <mvt:if expr="NOT ISNULL l.settings:page:title">
+	<title>&mvt:page:title;</title>
+  <mvt:else>
+	<title>&mvt:store:name;: &mvt:page:name;</title>
+  </mvt:if>
+  <mvt:item name="head" param="css_list" />
+  <mvt:item name="head" param="head_tag" />
+</head>
+<body id="js-&mvte:page:code;" class="o-site-wrapper t-page-&mvt:global:pageClass;">
+  	<mvt:item name="hdft" param="global_header" />
+
+	<section class="o-layout t-expanded-block" style="background: #fbf9f9; margin: 0 0 100px; ">
+		<div class="o-layout__item sidebar">
+		  	<h3>Media Library</h3>
+			<ul>
+				<li class="active"><a href="javascript:void(0);" class="js-content-toggler" data-content-id="media-library-logo">Logo</a></li>
+				<li><a href="javascript:void(0);" class="js-content-toggler" data-content-id="media-library-product-silos">Images</a></li>	
+			</ul>
+		</div>
+		
+<div class="content o-layout__item" id="media-library-catalog">
+
+
+        <mvt:assign name="g.RT_ml_images" value="''" />        
+        <mvt:item name="ry_toolbelt" param="query|'
+            SELECT code 
+            FROM s01_ReadyTheme_Images 
+            WHERE code LIKE `%ml_%`
+        '|RT_ml_image_codes" />
+          
+        <mvt:foreach iterator="RT_image_code" array="RT_ml_image_codes">
+            <mvt:assign name="g.image_code" value="l.settings:RT_image_code:code" />
+
+            <mvt:item name="readytheme" param="Load_Image(g.image_code, g.RT_image)" />
+            <mvt:if expr="g.RT_image">
+                <mvt:assign name="g.ok" value="miva_array_insert( g.RT_ml_images, g.RT_image, -1 )"/>
+            </mvt:if>            
+        </mvt:foreach>
+  
+
+    <ul id="media-library-logo" style="">
+        <li>
+            <span>Logo</span>
+            <ul>
+                <li>
+                    <img src="https://www.lafco.com/mm5/graphics/00000001/lafco-logo.png" class="thumbnail">Lafco.png<a href="https://www.lafco.com/mm5/graphics/00000001/lafco-logo.png" class="download-file" download=""><img src="graphics/00000001/download_2.png"></a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+    <ul id="media-library-product-silos" style="display:none;">
+
+        <li>
+            <span>Product Silos</span>
+            <ul>
+                <li>
+                    <span class="list-toggler">Candle</span>
+                    <ul style="display: none;">
+
+                        <mvt:comment></mvt:comment>
+                        <mvt:assign name="g.folder_name" value="'Classic Candle 6.5 oz'" />
+                        <mvt:comment></mvt:comment>
+                        <mvt:assign name="g.ok" value="miva_array_filter( g.RT_ml_images, 0, l.image, 'l.image:css_id EQ g.folder_name', l.settings:filtered_array )"/>
+                        <mvt:if expr="(l.settings:filtered_array)">
+                            <li>
+                                <span class="list-toggler">&mvt:global:folder_name;</span>
+                                <ul style="display:none;">
+                                    <mvt:foreach iterator="image" array="filtered_array">
+                                        <li>
+                                            <img src="&mvt:image:image;" class="thumbnail" >
+                                            &mvt:image:image_alt;
+                                            <a href="&mvt:image:image;" class="download-file" download><img src="graphics/00000001/download_2.png"></a>
+                                        </li>
+                                    </mvt:foreach>
+                                </ul>
+                            </li>
+                        </mvt:if>
+
+                        <mvt:comment></mvt:comment>
+                        <mvt:assign name="g.folder_name" value="'Signature Candle 15.5 oz'" />
+                        <mvt:comment></mvt:comment>
+                        <mvt:assign name="g.ok" value="miva_array_filter( g.RT_ml_images, 0, l.image, 'l.image:css_id EQ g.folder_name', l.settings:filtered_array )"/>
+                        <mvt:if expr="(l.settings:filtered_array)">
+                            <li>
+                                <span class="list-toggler">&mvt:global:folder_name;</span>
+                                <ul style="display:none;">
+                                    <mvt:foreach iterator="image" array="filtered_array">
+                                        <li>
+                                            <img src="&mvt:image:image;" class="thumbnail" >
+                                            &mvt:image:image_alt;
+                                            <a href="&mvt:image:image;" class="download-file" download><img src="graphics/00000001/download_2.png"></a>
+                                        </li>
+                                    </mvt:foreach>
+                                </ul>
+                            </li>
+                        </mvt:if>
+
+                        <mvt:comment></mvt:comment>
+                        <mvt:assign name="g.folder_name" value="'3-Wich Candle 30 oz'" />
+                        <mvt:comment></mvt:comment>
+                        <mvt:assign name="g.ok" value="miva_array_filter( g.RT_ml_images, 0, l.image, 'l.image:css_id EQ g.folder_name', l.settings:filtered_array )"/>
+                        <mvt:if expr="(l.settings:filtered_array)">
+                            <li>
+                                <span class="list-toggler">&mvt:global:folder_name;</span>
+                                <ul style="display:none;">
+                                    <mvt:foreach iterator="image" array="filtered_array">
+                                        <li>
+                                            <img src="&mvt:image:image;" class="thumbnail" >
+                                            &mvt:image:image_alt;
+                                            <a href="&mvt:image:image;" class="download-file" download><img src="graphics/00000001/download_2.png"></a>
+                                        </li>
+                                    </mvt:foreach>
+                                </ul>
+                            </li>
+                        </mvt:if>
+
+                        <mvt:comment></mvt:comment>
+                        <mvt:assign name="g.folder_name" value="'Travel Candle 4 oz'" />
+                        <mvt:comment></mvt:comment>
+                        <mvt:assign name="g.ok" value="miva_array_filter( g.RT_ml_images, 0, l.image, 'l.image:css_id EQ g.folder_name', l.settings:filtered_array )"/>
+                        <mvt:if expr="(l.settings:filtered_array)">
+                            <li>
+                                <span class="list-toggler">&mvt:global:folder_name;</span>
+                                <ul style="display:none;">
+                                    <mvt:foreach iterator="image" array="filtered_array">
+                                        <li>
+                                            <img src="&mvt:image:image;" class="thumbnail" >
+                                            &mvt:image:image_alt;
+                                            <a href="&mvt:image:image;" class="download-file" download><img src="graphics/00000001/download_2.png"></a>
+                                        </li>
+                                    </mvt:foreach>
+                                </ul>
+                            </li>
+                        </mvt:if>
+
+                    </ul>
+                </li>
+
+                <li class="">
+                    <span class="list-toggler">Reed Diffuser</span>
+                    <ul style="display: none;">
+
+                        <mvt:comment></mvt:comment>
+                        <mvt:assign name="g.folder_name" value="'Classic Reed Diffuser 6 fl. oz'" />
+                        <mvt:comment></mvt:comment>
+                        <mvt:assign name="g.ok" value="miva_array_filter( g.RT_ml_images, 0, l.image, 'l.image:css_id EQ g.folder_name', l.settings:filtered_array )"/>
+                        <mvt:if expr="(l.settings:filtered_array)">
+                            <li>
+                                <span class="list-toggler">&mvt:global:folder_name;</span>
+                                <ul style="display:none;">
+                                    <mvt:foreach iterator="image" array="filtered_array">
+                                        <li>
+                                            <img src="&mvt:image:image;" class="thumbnail" >
+                                            &mvt:image:image_alt;
+                                            <a href="&mvt:image:image;" class="download-file" download><img src="graphics/00000001/download_2.png"></a>
+                                        </li>
+                                    </mvt:foreach>
+                                </ul>
+                            </li>
+                        </mvt:if>
+
+                        <mvt:comment></mvt:comment>
+                        <mvt:assign name="g.folder_name" value="'Signature Reed Diffuser 15.5 fl. oz'" />
+                        <mvt:comment></mvt:comment>
+                        <mvt:assign name="g.ok" value="miva_array_filter( g.RT_ml_images, 0, l.image, 'l.image:css_id EQ g.folder_name', l.settings:filtered_array )"/>
+                        <mvt:if expr="(l.settings:filtered_array)">
+                            <li>
+                                <span class="list-toggler">&mvt:global:folder_name;</span>
+                                <ul style="display:none;">
+                                    <mvt:foreach iterator="image" array="filtered_array">
+                                        <li>
+                                            <img src="&mvt:image:image;" class="thumbnail" >
+                                            &mvt:image:image_alt;
+                                            <a href="&mvt:image:image;" class="download-file" download><img src="graphics/00000001/download_2.png"></a>
+                                        </li>
+                                    </mvt:foreach>
+                                </ul>
+                            </li>
+                        </mvt:if>
+
+                        <mvt:comment></mvt:comment>
+                        <mvt:assign name="g.folder_name" value="'Reef Diffuser Refill 8 fl. oz'" />
+                        <mvt:comment></mvt:comment>
+                        <mvt:assign name="g.ok" value="miva_array_filter( g.RT_ml_images, 0, l.image, 'l.image:css_id EQ g.folder_name', l.settings:filtered_array )"/>
+                        <mvt:if expr="(l.settings:filtered_array)">
+                            <li>
+                                <span class="list-toggler">&mvt:global:folder_name;</span>
+                                <ul style="display:none;">
+                                    <mvt:foreach iterator="image" array="filtered_array">
+                                        <li>
+                                            <img src="&mvt:image:image;" class="thumbnail" >
+                                            &mvt:image:image_alt;
+                                            <a href="&mvt:image:image;" class="download-file" download><img src="graphics/00000001/download_2.png"></a>
+                                        </li>
+                                    </mvt:foreach>
+                                </ul>
+                            </li>
+                        </mvt:if>
+
+                    </ul>
+                </li>
+
+
+                <mvt:comment></mvt:comment>
+                <mvt:assign name="g.folder_name" value="'Room Mist'" />
+                <mvt:comment></mvt:comment>
+                <mvt:assign name="g.ok" value="miva_array_filter( g.RT_ml_images, 0, l.image, 'l.image:css_id EQ g.folder_name', l.settings:filtered_array )"/>
+                <mvt:if expr="(l.settings:filtered_array)">
+                    <li>
+                        <span class="list-toggler">&mvt:global:folder_name;</span>
+                        <ul style="display:none;">
+                            <mvt:foreach iterator="image" array="filtered_array">
+                                <li>
+                                    <img src="&mvt:image:image;" class="thumbnail" >
+                                    &mvt:image:image_alt;
+                                    <a href="&mvt:image:image;" class="download-file" download><img src="graphics/00000001/download_2.png"></a>
+                                </li>
+                            </mvt:foreach>
+                        </ul>
+                    </li>
+                </mvt:if>
+
+                <li>
+                    <span class="list-toggler">Body Care</span>
+                    <ul style="display:none;">
+                        
+                        <mvt:comment></mvt:comment>
+                        <mvt:assign name="g.folder_name" value="'Bar Soap 8.5 oz'" />
+                        <mvt:comment></mvt:comment>
+                        <mvt:assign name="g.ok" value="miva_array_filter( g.RT_ml_images, 0, l.image, 'l.image:css_id EQ g.folder_name', l.settings:filtered_array )"/>
+                        <mvt:if expr="(l.settings:filtered_array)">
+                            <li>
+                                <span class="list-toggler">&mvt:global:folder_name;</span>
+                                <ul style="display:none;">
+                                    <mvt:foreach iterator="image" array="filtered_array">
+                                        <li>
+                                            <img src="&mvt:image:image;" class="thumbnail" >
+                                            &mvt:image:image_alt;
+                                            <a href="&mvt:image:image;" class="download-file" download><img src="graphics/00000001/download_2.png"></a>
+                                        </li>
+                                    </mvt:foreach>
+                                </ul>
+                            </li>
+                        </mvt:if>
+
+                                                <mvt:comment></mvt:comment>
+                        <mvt:assign name="g.folder_name" value="'Bar Soap 4.5 oz'" />
+                        <mvt:comment></mvt:comment>
+                        <mvt:assign name="g.ok" value="miva_array_filter( g.RT_ml_images, 0, l.image, 'l.image:css_id EQ g.folder_name', l.settings:filtered_array )"/>
+                        <mvt:if expr="(l.settings:filtered_array)">
+                            <li>
+                                <span class="list-toggler">&mvt:global:folder_name;</span>
+                                <ul style="display:none;">
+                                    <mvt:foreach iterator="image" array="filtered_array">
+                                        <li>
+                                            <img src="&mvt:image:image;" class="thumbnail" >
+                                            &mvt:image:image_alt;
+                                            <a href="&mvt:image:image;" class="download-file" download><img src="graphics/00000001/download_2.png"></a>
+                                        </li>
+                                    </mvt:foreach>
+                                </ul>
+                            </li>
+                        </mvt:if>
+
+                                                <mvt:comment></mvt:comment>
+                        <mvt:assign name="g.folder_name" value="'Liquid Soap 12 fl. oz'" />
+                        <mvt:comment></mvt:comment>
+                        <mvt:assign name="g.ok" value="miva_array_filter( g.RT_ml_images, 0, l.image, 'l.image:css_id EQ g.folder_name', l.settings:filtered_array )"/>
+                        <mvt:if expr="(l.settings:filtered_array)">
+                            <li>
+                                <span class="list-toggler">&mvt:global:folder_name;</span>
+                                <ul style="display:none;">
+                                    <mvt:foreach iterator="image" array="filtered_array">
+                                        <li>
+                                            <img src="&mvt:image:image;" class="thumbnail" >
+                                            &mvt:image:image_alt;
+                                            <a href="&mvt:image:image;" class="download-file" download><img src="graphics/00000001/download_2.png"></a>
+                                        </li>
+                                    </mvt:foreach>
+                                </ul>
+                            </li>
+                        </mvt:if>
+
+                        <mvt:comment></mvt:comment>
+                        <mvt:assign name="g.folder_name" value="'Hand Cream 12 fl. oz'" />
+                        <mvt:comment></mvt:comment>
+                        <mvt:assign name="g.ok" value="miva_array_filter( g.RT_ml_images, 0, l.image, 'l.image:css_id EQ g.folder_name', l.settings:filtered_array )"/>
+                        <mvt:if expr="(l.settings:filtered_array)">
+                            <li>
+                                <span class="list-toggler">&mvt:global:folder_name;</span>
+                                <ul style="display:none;">
+                                    <mvt:foreach iterator="image" array="filtered_array">
+                                        <li>
+                                            <img src="&mvt:image:image;" class="thumbnail" >
+                                            &mvt:image:image_alt;
+                                            <a href="&mvt:image:image;" class="download-file" download><img src="graphics/00000001/download_2.png"></a>
+                                        </li>
+                                    </mvt:foreach>
+                                </ul>
+                            </li>
+                        </mvt:if>
+
+                    </ul>
+                </li>
+
+                <mvt:comment></mvt:comment>
+                <mvt:assign name="g.folder_name" value="'Accessories'" />
+                <mvt:comment></mvt:comment>
+                <mvt:assign name="g.ok" value="miva_array_filter( g.RT_ml_images, 0, l.image, 'l.image:css_id EQ g.folder_name', l.settings:filtered_array )"/>
+                <mvt:if expr="(l.settings:filtered_array)">
+                    <li>
+                        <span class="list-toggler">&mvt:global:folder_name;</span>
+                        <ul style="display:none;">
+                            <mvt:foreach iterator="image" array="filtered_array">
+                                <li>
+                                    <img src="&mvt:image:image;" class="thumbnail" >
+                                    &mvt:image:image_alt;
+                                    <a href="&mvt:image:image;" class="download-file" download><img src="graphics/00000001/download_2.png"></a>
+                                </li>
+                            </mvt:foreach>
+                        </ul>
+                    </li>
+                </mvt:if>
+
+               
+            </ul>
+        </li>
+
+
+        <li>
+            <span >Lifestyle Images</span>
+            <ul>
+                
+
+                <mvt:comment></mvt:comment>
+                <mvt:assign name="g.folder_name" value="'Chamomile Lavender'" />
+                <mvt:comment></mvt:comment>
+                <mvt:assign name="g.ok" value="miva_array_filter( g.RT_ml_images, 0, l.image, 'l.image:css_id EQ g.folder_name', l.settings:filtered_array )"/>
+                <mvt:if expr="(l.settings:filtered_array)">
+                    <li>
+                        <span class="list-toggler">&mvt:global:folder_name;</span>
+                        <ul style="display:none;">
+                            <mvt:foreach iterator="image" array="filtered_array">
+                                <li>
+                                    <img src="&mvt:image:image;" class="thumbnail" >
+                                    &mvt:image:image_alt;
+                                    <a href="&mvt:image:image;" class="download-file" download><img src="graphics/00000001/download_2.png"></a>
+                                </li>
+                            </mvt:foreach>
+                        </ul>
+                    </li>
+                </mvt:if>
+
+
+
+                <mvt:comment></mvt:comment>
+                <mvt:assign name="g.folder_name" value="'Champagne'" />
+                <mvt:comment></mvt:comment>
+                <mvt:assign name="g.ok" value="miva_array_filter( g.RT_ml_images, 0, l.image, 'l.image:css_id EQ g.folder_name', l.settings:filtered_array )"/>
+                <mvt:if expr="(l.settings:filtered_array)">
+                    <li>
+                        <span class="list-toggler">&mvt:global:folder_name;</span>
+                        <ul style="display:none;">
+                            <mvt:foreach iterator="image" array="filtered_array">
+                                <li>
+                                    <img src="&mvt:image:image;" class="thumbnail" >
+                                    &mvt:image:image_alt;
+                                    <a href="&mvt:image:image;" class="download-file" download><img src="graphics/00000001/download_2.png"></a>
+                                </li>
+                            </mvt:foreach>
+                        </ul>
+                    </li>
+                </mvt:if>
+                <li>
+                    <span class="list-toggler">Champagne</span>
+                    <ul style="display:none;">
+                        <li>
+                            <span class="list-toggler">Classic Reed Diffuser 6 fl. oz.</span>
+                            <ul style="display:none;">
+                                <li>
+                                    <img src="graphics/00000001/Bluemercury.jpg" class="thumbnail">
+                                    Bluemercury.jpg
+                                    <a href="graphics/00000001/Bluemercury.jpg" class="download-file" download=""><img src="graphics/00000001/download_2.png"></a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <span class="list-toggler">Signature Reed Diffuser 15.5 fl. oz.</span>
+                            <ul style="display:none;">
+                                <li>
+                                    <img src="graphics/00000001/Bluemercury.jpg" class="thumbnail">
+                                    Bluemercury.jpg
+                                    <a href="graphics/00000001/Bluemercury.jpg" class="download-file" download=""><img src="graphics/00000001/download_2.png"></a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+               
+            </ul>
+        </li>
+
+    </ul>
+</div>
+
+	</section>
+
+
+  	<mvt:item name="hdft" param="global_footer" />
+</body>
+</html>

@@ -1,0 +1,22 @@
+<section class="t-expanded-block t-related-products u-bg-white">
+	<div class="t-related-product-list data-ltk-merchandiseblock="827e6925-463a-402f-80aa-aebde081bcb0”>
+		<nav class="x-product-list" data-hook="related-products">
+			<script type="text/html">
+				<div class="x-product-list__item">
+					<a class="x-product-list__link" href="@Recommendation.LinkUrl">
+						<figure class="x-product-list__figure">
+							<picture class="x-product-list__picture">
+						                    <img src="https://www.lafco.com/@Recommendation.ImageUrl" alt="@Recommendation.Title">
+							</picture>
+							<figcaption class="x-product-list__details">
+								<div class="x-product-list__name">@Recommendation.Title</div>
+								<div class="x-product-list__scent">@Recommendation.Subcategory<</div>
+							</figcaption>
+						</figure>
+					</a>
+				</div>
+			</script>
+		</nav>
+	</div>
+</section>
+<!-- end t-related-products -->

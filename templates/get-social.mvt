@@ -1,0 +1,38 @@
+<mvt:item name="html_profile" />
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="&mvt:global:basehref;">
+    <mvt:if expr="NOT ISNULL l.settings:page:title">
+        <title>&mvt:page:title;</title>
+    <mvt:else>
+        <title>&mvt:store:name;: &mvt:page:name;</title>
+    </mvt:if>
+    <mvt:item name="head" param="css_list" />
+    <mvt:item name="head" param="head_tag" />
+<style>
+.thank_you {
+    max-width: 0;
+    min-height: 0;
+}
+</style>
+</head>
+<body class="&mvt:page:code;" id="JS_&mvt:page:code;">
+
+    <mvt:item name="hdft" param="global_header" />
+
+    <div class="row hdft-header">
+        <mvt:item name="hdft" param="header" />
+    </div>
+    <div class="row get-social-content">
+        <div class="yotpo yotpo-pictures-widget" data-gallery-id="5de94a11f90f762a68da09d9"></div>
+    </div>
+    <div class="row hdft-footer">
+        <mvt:item name="hdft" param="footer" />
+    </div>
+
+    <mvt:item name="hdft" param="global_footer" />  
+
+</body>
+</html>

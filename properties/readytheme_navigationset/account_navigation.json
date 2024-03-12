@@ -1,0 +1,197 @@
+{
+    "descrip": "This is the side navigation for all account pages.",
+    "items": [
+        {
+            "active": 1,
+            "id": "b1ea1d8bbdfcafe3812e25e645415900",
+            "items": [
+                {
+                    "active": 1,
+                    "id": "4893d1d66178a4530c18d99c15a5e128",
+                    "link": "<a href=\"https://royalsupply.mivatest.com/customer-edit.html\" target=\"_self\">Edit Information</a>",
+                    "link_dest": "ACED",
+                    "link_targ": "_self",
+                    "link_type": "G",
+                    "name": "Edit Information",
+                    "url": "https://royalsupply.mivatest.com/customer-edit.html"
+                },
+                {
+                    "active": 1,
+                    "id": "dd4999b6377305473ceeda0ec452b1fb",
+                    "link": "<a href=\"https://royalsupply.mivatest.com/change-email-address.html\" target=\"_self\">Change Email</a>",
+                    "link_dest": "CEML",
+                    "link_targ": "_self",
+                    "link_type": "G",
+                    "name": "Change Email",
+                    "url": "https://royalsupply.mivatest.com/change-email-address.html"
+                },
+                {
+                    "active": 1,
+                    "id": "82b89daa79d9d1f2d917f710cbfccf2b",
+                    "link": "<a href=\"https://royalsupply.mivatest.com/change-password.html\" target=\"_self\">Change Password</a>",
+                    "link_dest": "CPWD",
+                    "link_targ": "_self",
+                    "link_type": "G",
+                    "name": "Change Password",
+                    "url": "https://royalsupply.mivatest.com/change-password.html"
+                }
+            ],
+            "link": "Personal Information",
+            "link_targ": "_self",
+            "link_type": "N",
+            "name": "Personal Information"
+        },
+        {
+            "active": 1,
+            "id": "d86f9d2f1e651b68d58c586c5ae5d838",
+            "items": [
+                {
+                    "active": 1,
+                    "id": "b60523384234ca8ea98abc8f48323bf2",
+                    "link": "<a href=\"https://royalsupply.mivatest.com/customer-payment-cards.html\" target=\"_self\">Edit Cards</a>",
+                    "link_dest": "CPCD",
+                    "link_targ": "_self",
+                    "link_type": "G",
+                    "name": "Edit Cards",
+                    "url": "https://royalsupply.mivatest.com/customer-payment-cards.html"
+                },
+                {
+                    "active": 1,
+                    "id": "32523fc950869eed47a960fd54634064",
+                    "link": "<a href=\"https://royalsupply.mivatest.com/customer-payment-card-add.html\" target=\"_self\">Add New Card</a>",
+                    "link_dest": "CPCA",
+                    "link_targ": "_self",
+                    "link_type": "G",
+                    "name": "Add New Card",
+                    "url": "https://royalsupply.mivatest.com/customer-payment-card-add.html"
+                }
+            ],
+            "link": "Payment Options",
+            "link_targ": "_self",
+            "link_type": "N",
+            "name": "Payment Options"
+        },
+        {
+            "active": 1,
+            "id": "3d979f4d79a97603de1f4085d95e5e50",
+            "items": [
+                {
+                    "active": 1,
+                    "id": "bb37ff38b3a6c11bd397d98b7f4bd1b2",
+                    "link": "<a href=\"https://royalsupply.mivatest.com/order-history-list.html\" target=\"_self\">Order History</a>",
+                    "link_dest": "ORDH",
+                    "link_targ": "_self",
+                    "link_type": "G",
+                    "name": "Order History",
+                    "url": "https://royalsupply.mivatest.com/order-history-list.html"
+                },
+                {
+                    "active": 1,
+                    "id": "7603ef587b85a9e5e0da1c87448741d5",
+                    "link": "<a href=\"https://royalsupply.mivatest.com/customer-subscriptions.html\" target=\"_self\">Manage Subscriptions</a>",
+                    "link_dest": "CSUB",
+                    "link_targ": "_self",
+                    "link_type": "G",
+                    "name": "Manage Subscriptions",
+                    "url": "https://royalsupply.mivatest.com/customer-subscriptions.html"
+                },
+                {
+                    "active": 1,
+                    "id": "498ac82aae27a1e5c7bbb0c1a255cece",
+                    "link": "<a href=\"https://royalsupply.mivatest.com/wish-lists.html\" target=\"_self\">Wish Lists</a>",
+                    "link_dest": "WLST",
+                    "link_targ": "_self",
+                    "link_type": "G",
+                    "name": "Wish Lists",
+                    "url": "https://royalsupply.mivatest.com/wish-lists.html"
+                },
+                {
+                    "active": 1,
+                    "id": "3eea443ff67f43a089934ef9404f0372",
+                    "link": "<a href=\"https://royalsupply.mivatest.com/quote-history-list.html\" target=\"_self\">View Quotes</a>",
+                    "link_dest": "QUOH",
+                    "link_targ": "_self",
+                    "link_type": "G",
+                    "name": "View Quotes",
+                    "url": "https://royalsupply.mivatest.com/quote-history-list.html"
+                }
+            ],
+            "link": "My Orders",
+            "link_targ": "_self",
+            "link_type": "N",
+            "name": "My Orders"
+        },
+        {
+            "active": 1,
+            "id": "8c170a46fd5933ba8eaa42ec0074b580",
+            "items": [
+                {
+                    "active": 1,
+                    "id": "47174bc48370bc326439530021601392",
+                    "link": "<a href=\"https://royalsupply.mivatest.com/customer-account-balance.html\" target=\"_self\">Check Your Balance</a>",
+                    "link_dest": "ABAL",
+                    "link_targ": "_self",
+                    "link_type": "G",
+                    "name": "Check Your Balance",
+                    "url": "https://royalsupply.mivatest.com/customer-account-balance.html"
+                },
+                {
+                    "active": 1,
+                    "id": "f9cd332e2a1301ee63318fddd2f0362e",
+                    "link": "<a href=\"https://royalsupply.mivatest.com/redeem-gift-certificate.html\" target=\"_self\">Redeem Gift Certificate</a>",
+                    "link_dest": "RGFT",
+                    "link_targ": "_self",
+                    "link_type": "G",
+                    "name": "Redeem Gift Certificate",
+                    "url": "https://royalsupply.mivatest.com/redeem-gift-certificate.html"
+                }
+            ],
+            "link": "Customer Credit",
+            "link_targ": "_self",
+            "link_type": "N",
+            "name": "Customer Credit"
+        },
+        {
+            "active": 1,
+            "id": "1bf9556fad28299e9707114394275106",
+            "items": [
+                {
+                    "active": 1,
+                    "id": "9c333d4535b099ca88e825e34ba7a015",
+                    "link": "<a href=\"https://royalsupply.mivatest.com/customer-address-book.html\" target=\"_self\">Edit Addresses</a>",
+                    "link_dest": "CABK",
+                    "link_targ": "_self",
+                    "link_type": "G",
+                    "name": "Edit Addresses",
+                    "url": "https://royalsupply.mivatest.com/customer-address-book.html"
+                },
+                {
+                    "active": 1,
+                    "id": "1e4365242d009fbcbcc1c9c77cd444e2",
+                    "link": "<a href=\"https://royalsupply.mivatest.com/customer-address-add.html\" target=\"_self\">Add New Address</a>",
+                    "link_dest": "CADA",
+                    "link_targ": "_self",
+                    "link_type": "G",
+                    "name": "Add New Address",
+                    "url": "https://royalsupply.mivatest.com/customer-address-add.html"
+                }
+            ],
+            "link": "Address Book",
+            "link_targ": "_self",
+            "link_type": "N",
+            "name": "Address Book"
+        },
+        {
+            "active": 0,
+            "id": "03f9ec3f3514a3bf8b6080ff847664ad",
+            "link": "<a href=\"https://royalsupply.mivatest.com/affiliate-edit.html\" target=\"_self\">Affiliate Information</a>",
+            "link_dest": "AFED",
+            "link_targ": "_self",
+            "link_type": "G",
+            "name": "Affiliate Information",
+            "url": "https://royalsupply.mivatest.com/affiliate-edit.html"
+        }
+    ],
+    "layout": "S",
+    "name": "Account Page Navigation"
+}

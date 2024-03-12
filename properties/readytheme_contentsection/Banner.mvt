@@ -1,0 +1,12 @@
+<div class="o-layout banner"> 
+	<div class="o-layout__item u-width-8">	
+		<div> </div>
+	</div>
+	<div class="o-layout__item u-width-4 banner_text">	
+		<div> 
+			<h1> Celebrate the Magic of the Holidays <h1>
+			<br>
+			<p> Find something for everyone, naughty and nice, on your holiday gift list. </p>
+		</div>
+	</div>
+</div>

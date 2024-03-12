@@ -1,0 +1,4 @@
+<p class="u-text-bold">Have an Amazon account?</p>
+<mvt:item name="amazonpay_button" param="body" />
+<br>
+<hr class="c-keyline">

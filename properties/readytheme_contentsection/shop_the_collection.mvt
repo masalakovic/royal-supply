@@ -1,0 +1,4 @@
+<div class="o-wrapper o-wrapper--flush rtrt-wellness">
+     <a href="#">SHOP THE COLLECTION</a>
+	<mvt:item name="readytheme" param="image( 'shop_the_collection-banner' )" />
+</div>

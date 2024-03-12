@@ -1,0 +1,29 @@
+{
+    "basket": {
+        "advanced": 0,
+        "applycoupons": 0,
+        "b_height": 75,
+        "b_width": 75,
+        "button_wish": 1,
+        "constrain": "B",
+        "discounts": 1,
+        "groups": 1,
+        "handling": 0,
+        "lineitemcoupons": 0,
+        "lineitemdiscounts": 1,
+        "lineitemprice": "base",
+        "redeemgiftcerts": 0,
+        "salestax": 0,
+        "shipping": 0,
+        "splitpayments": 0,
+        "template_filename": "absolute-collection-basket.mvc"
+    },
+    "hdft": {
+        "footer": {
+            "template_filename": "absolute-collection-footer.mvc"
+        },
+        "header": {
+            "template_filename": "absolute-collection-header.mvc"
+        }
+    }
+}

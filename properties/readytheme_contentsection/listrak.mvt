@@ -1,0 +1,212 @@
+<!-- Start Listrak code -->
+<mvt:if expr="l.settings:page:code EQ 'PROD_masters'">
+	
+	<script type="text/javascript"> 
+		(function(d) { if (document.addEventListener) document.addEventListener('ltkAsyncListener', d); 
+		else {e = document.documentElement; e.ltkAsyncProperty = 0; 
+		e.attachEvent('onpropertychange', function (e) { 
+		if (e.propertyName == 'ltkAsyncProperty'){d();}});}})(function() { 
+			/********** Begin Custom Code **********/ 
+		 /* _ltk.Activity.AddProductBrowse('&mvt:product:code;'); */
+                _ltk.SCA.CaptureEmail('footersignup'); 
+                _ltk.SCA.CaptureEmail('l-Customer_LoginEmail'); 
+                _ltk.SCA.CaptureEmail('Customer_PasswordEmail'); 
+				_ltk.Activity.Submit();
+			/********** End Custom Code **********/ 
+		}); 
+	</script>
+<mvt:elseif expr="l.settings:page:code EQ 'PROD'">
+	
+	<script type="text/javascript"> 
+		(function(d) { if (document.addEventListener) document.addEventListener('ltkAsyncListener', d); 
+		else {e = document.documentElement; e.ltkAsyncProperty = 0; 
+		e.attachEvent('onpropertychange', function (e) { 
+		if (e.propertyName == 'ltkAsyncProperty'){d();}});}})(function() { 
+			/********** Begin Custom Code **********/ 
+		_ltk.Activity.AddProductBrowse('&mvt:product:code;');
+                _ltk.SCA.CaptureEmail('footersignup'); 
+                _ltk.SCA.CaptureEmail('l-Customer_LoginEmail'); 
+                _ltk.SCA.CaptureEmail('Customer_PasswordEmail'); 
+				_ltk.Activity.Submit();
+			/********** End Custom Code **********/ 
+		}); 
+	</script>
+
+<mvt:elseif expr="l.settings:page:code EQ 'BASK'">
+
+	<script type="text/javascript"> 
+		(function(d) { if (document.addEventListener) document.addEventListener('ltkAsyncListener', d); 
+		else {e = document.documentElement; e.ltkAsyncProperty = 0; 
+		e.attachEvent('onpropertychange', function (e) { 
+		if (e.propertyName == 'ltkAsyncProperty'){d();}});}})(function() { 
+			/********** Begin Custom Code **********/ 
+                _ltk.SCA.CaptureEmail('footersignup'); 
+                _ltk.SCA.CaptureEmail('l-Customer_LoginEmail'); 
+                _ltk.SCA.CaptureEmail('Customer_PasswordEmail'); 
+			   <mvt:if expr="l.settings:basket:empty">
+				   _ltk.SCA.ClearCart();
+			   <mvt:else>
+				  _ltk.SCA.Meta1 = '&mvt:global:session_id' + '~&mvt:global:basket:basket_id';
+				  <mvt:foreach iterator="item" array="basket:items">
+					  _ltk.SCA.AddItemWithLinks('&mvt:item:code;', &mvt:item:quantity;, '&mvt:item:price;', "&mvt:item:name;", 'https://www.lafco.com/mm5/&mvte:item:imagetypes:main;','&mvt:global:sessionurl;Screen=PROD&Store_Code=&mvta:global:Store_Code;&Product_Code=&mvta:item:code;');
+				  </mvt:foreach>
+				 _ltk.SCA.Submit();
+			   </mvt:if>
+			/********** End Custom Code **********/ 
+		}); 
+	</script>
+	
+<mvt:elseif expr="l.settings:page:code EQ 'INVC'">
+
+	<script type="text/javascript"> 
+		(function(d) { if (document.addEventListener) document.addEventListener('ltkAsyncListener', d);
+		else {e = document.documentElement; e.ltkAsyncProperty = 0; e.attachEvent('onpropertychange', function (e) {
+		if (e.propertyName == 'ltkAsyncProperty'){d();}});}})(function() {
+			/********** Begin Custom Code **********/
+            _ltk.SCA.CaptureEmail('footersignup'); 
+            _ltk.SCA.CaptureEmail('l-Customer_LoginEmail'); 
+            _ltk.SCA.CaptureEmail('Customer_PasswordEmail'); 
+			_ltk.SCA.SetCustomer('&mvte:order:bill_email;', '&mvte:order:bill_fname;', '&mvte:order:bill_lname;');
+			_ltk.SCA.OrderNumber = '&mvt:order:id;';
+			_ltk.SCA.Submit();
+			_ltk.Order.SetCustomer('&mvte:order:bill_email;', '&mvte:order:bill_fname;', '&mvte:order:bill_lname;');
+			_ltk.Order.OrderNumber = '&mvt:order:id;';
+			_ltk.Order.ItemTotal = '&mvt:item:subtotal;';
+			_ltk.Order.OrderTotal = '&mvt:order:total;';
+			<mvt:foreach iterator="item" array="order:items">
+				_ltk.Order.AddItem('&mvt:item:code;', &mvt:item:quantity;, '&mvt:item:price;'); // one line per item ordered
+			</mvt:foreach>
+			_ltk.Order.Submit();
+			/********** End Custom Code **********/
+		});
+	</script>
+
+
+<mvt:elseif expr="l.settings:page:code EQ 'email_preference_center'">
+
+    <script>
+        (function (d) { if (document.addEventListener) document.addEventListener('ltkAsyncListener', d); 
+        else { e = document.documentElement; e.ltkAsyncProperty = 0; e.attachEvent('onpropertychange', function (e) { 
+        if (e.propertyName == 'ltkAsyncProperty') { d(); } }); } })(function () {
+
+            _ltk.Signup.New("AccountCreate", "Customer_PasswordEmail", _ltk.Signup.TYPE.DEFAULT, "register-submit");
+            _ltk.Signup.New("Checkout", "ShipEmail", _ltk.Signup.TYPE.DEFAULT, "checkout-submit");
+            _ltk.SCA.CaptureEmail('footersignup'); 
+            _ltk.SCA.CaptureEmail('l-Customer_LoginEmail'); 
+            _ltk.SCA.CaptureEmail('Customer_PasswordEmail'); 
+            _ltk.SCA.CaptureEmail('ShipEmail');
+            _ltk.SCA.CaptureEmail('BillEmail');
+            _ltk.Click.Submit(); 
+
+
+            _ltk.Signup.New('preference_center', 'ltk_epc_email', _ltk.Signup.TYPE.DEFAULT, 'ltk_epc_save');
+            _ltk.Signup.SetField("preference_center", 'ltk_epc_firstname');
+            _ltk.Signup.SetField("preference_center", 'ltk_epc_lastname');
+            _ltk.Signup.SetField("preference_center", 'ltk_epc_gender');
+            _ltk.Signup.SetField("preference_center", 'ltk_epc_purchaseforwho');
+            _ltk.Signup.SetField("preference_center", 'ltk_epc_introducedhow');
+
+            _ltk.Signup.SetField("preference_center", "ltk_epc_favoriteproducttypes_candle");
+            _ltk.Signup.SetField("preference_center", "ltk_epc_favoriteproducttypes_diffuser");
+            _ltk.Signup.SetField("preference_center", "ltk_epc_favoriteproducttypes_mist");
+            _ltk.Signup.SetField("preference_center", "ltk_epc_favoriteproducttypes_barsoap");
+            _ltk.Signup.SetField("preference_center", "ltk_epc_favoriteproducttypes_liquidsoap");
+            _ltk.Signup.SetField("preference_center", "ltk_epc_favoriteproducttypes_handcream");
+            _ltk.Signup.SetField("preference_center", "ltk_epc_whylafco_natural");
+            _ltk.Signup.SetField("preference_center", "ltk_epc_whylafco_value");
+            _ltk.Signup.SetField("preference_center", "ltk_epc_whylafco_qualityofproduct");
+            _ltk.Signup.SetField("preference_center", "ltk_epc_whylafco_qualityoffragrance");
+            _ltk.Signup.SetField("preference_center", "ltk_epc_whylafco_craftmanship");
+            _ltk.Signup.SetField("preference_center", "ltk_epc_whylafco_other");
+            _ltk.Signup.SetField("preference_center", "ltk_epc_preferredscents_fresh");
+            _ltk.Signup.SetField("preference_center", "ltk_epc_preferredscents_floral");
+            _ltk.Signup.SetField("preference_center", "ltk_epc_preferredscents_woody");
+            _ltk.Signup.SetField("preference_center", "ltk_epc_preferredscents_herbal");
+            _ltk.Signup.SetField("preference_center", "ltk_epc_preferredscents_fruity");
+            _ltk.Signup.SetField("preference_center", "ltk_epc_preferredscents_gourmand");
+            _ltk.Signup.SetField("preference_center", "ltk_epc_preferredscents_citrus");
+
+
+            // _ltk.Signup.SetDateFields("preference_center", "birthdate", "ltk_epc_birthmonth", "ltk_epc_birthday", "ltk_epc_birthyear");
+
+
+            _ltk.Signup.SetDate = function(s, k, m, d, y) {
+                function r(n) {
+                    return n.match(":")? n.replace(/:/, "\\:") : n;
+                };
+                function f(n) {
+                    return jQuery(b(n)).val()
+                }
+                function b(n) {
+                    var i = r(n);
+                    if(jQuery("[id='" + n + "']").length > 0){return "[id='" + n + "']"};
+                    if(jQuery("[name='" + n + "']").length > 0){return "[name='" + n + "']"};
+                    if(jQuery(i).length > 0){return i};
+                }
+                jQuery(document).on('change', b(d) + ',' + b(m) + ',' + b(y), function() {
+                    if (f(d) && f(m) && f(y)) {
+                        console.log('change')
+                        _ltk.Signup.SetValue(s, k, f(m) + '/' + f(d) + '/' + f(y));
+                    }
+                });
+            };
+            _ltk.Signup.SetDate("preference_center", "birthdate", "ltk_epc_birthmonth", "ltk_epc_birthday", "ltk_epc_birthyear");
+
+
+        });
+    </script>
+
+<mvt:elseif expr="l.settings:page:code NE 'PROD'">
+
+    <script type="text/javascript"> 
+        (function(d) { if (document.addEventListener) document.addEventListener('ltkAsyncListener', d); 
+        else {e = document.documentElement; e.ltkAsyncProperty = 0; e.attachEvent('onpropertychange', function (e) { 
+        if (e.propertyName == 'ltkAsyncProperty'){d();}});}})(function() {
+            _ltk.SCA.CaptureEmail('footersignup'); 
+            _ltk.SCA.CaptureEmail('l-Customer_LoginEmail'); 
+            _ltk.SCA.CaptureEmail('Customer_PasswordEmail'); 
+            _ltk.SCA.CaptureEmail('ShipEmail');
+            _ltk.SCA.CaptureEmail('BillEmail');
+            _ltk.Click.Submit(); 
+        }); 
+    </script>
+
+    <script type="text/javascript"> 
+        (function(d) { if (document.addEventListener) document.addEventListener('ltkAsyncListener', d); 
+        else {e = document.documentElement; e.ltkAsyncProperty = 0; e.attachEvent('onpropertychange', function (e) { 
+        if (e.propertyName == 'ltkAsyncProperty'){d();}});}})(function() {
+            _ltk.Signup.New("AccountCreate", "l-register_email", _ltk.Signup.TYPE.DEFAULT, "register-submit");
+	    _ltk.Signup.New("Checkout", "ShipEmail", _ltk.Signup.TYPE.DEFAULT, "checkout-submit");
+        }); 
+    </script>
+</mvt:if>
+ <script type="text/javascript">	
+        (function(d) { if (document.addEventListener) document.addEventListener('ltkAsyncListener', d);
+        else {e = document.documentElement; e.ltkAsyncProperty = 0; e.attachEvent('onpropertychange', function (e) {
+        if (e.propertyName == 'ltkAsyncProperty'){d();}});}})(function() {
+
+            /********** Begin Custom Code **********/
+	      _ltk.Recommender.AddField("Sku");
+	      _ltk.Recommender.AddField("Subcategory");
+              _ltk.Recommender.Render();
+
+            /********** End Custom Code **********/
+
+        });
+</script>
+<!-- End Listrak code -->
+
+
+
+
+<!-- Listrak Analytics – Javascript Framework -->
+<script type="text/javascript">
+	var biJsHost = (("https:" == document.location.protocol) ? "https://" : "http://");
+	(function (d, s, id, tid, vid) {
+	var js, ljs = d.getElementsByTagName(s)[0];
+	if (d.getElementById(id)) return; js = d.createElement(s); js.id = id;
+	js.src = biJsHost + "cdn.listrakbi.com/scripts/script.js?m=" + tid + "&v=" + vid;
+	ljs.parentNode.insertBefore(js, ljs);
+	})(document, 'script', 'ltkSDK', 'Dj8QloRmLPls', '1');
+</script>
+<!-- Listrak Analytics – Javascript Framework -->

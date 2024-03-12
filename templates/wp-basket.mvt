@@ -1,0 +1,4 @@
+<mvt:assign name="l.header" value="miva_output_header( 'Access-Control-Allow-Origin', 'https://blog.lafco.com' )" />
+<mvt:assign name="l.header" value="miva_output_header( 'Access-Control-Allow-Credentials', 'true' )" />
+<mvt:assign name="l.header" value="miva_output_header( 'Access-Control-Allow-Methods', 'POST, GET, OPTIONS, DELETE' )" />
+<mvt:item name="readytheme" param="contentsection( 'mini_basket' )" />

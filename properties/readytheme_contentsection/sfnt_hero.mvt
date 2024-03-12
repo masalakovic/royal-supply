@@ -1,0 +1,51 @@
+<mvt:item name="readytheme" param="Load_Image('storefront_hero_image', l.settings:storefront_hero_image)" />
+<mvt:item name="readytheme" param="Load_Image('storefront_small_hero', l.settings:storefront_small_hero)" />
+<mvt:item name="readytheme" param="Load_Image('storefront_medium_hero', l.settings:storefront_medium_hero)" />
+<mvt:if expr="l.settings:readytheme:storefront_hero_image:active">
+	<div class="o-layout ">
+		<div class="o-layout__item u-width-12">
+			<span class="x-hero">
+				<mvt:if expr="l.settings:readytheme:storefront_hero_image:link_type NE 'N'">
+					<mvt:if expr="l.settings:readytheme:storefront_hero_image:link_type EQ 'G'">
+						<mvt:do file="g.Module_Feature_TUI_DB" name="l.success" value="Page_Load_Code( l.settings:readytheme:storefront_hero_image:link_dest, l.settings:rt_page )" />
+						<mvt:do file="g.Module_Feature_URI_UT" name="l.settings:readytheme:storefront_hero_image:uri" value="Store_Page_URL(l.settings:rt_page, NULL)" />
+					<mvt:elseif expr="l.settings:readytheme:storefront_hero_image:link_type EQ 'C'">
+						<mvt:do file="g.Module_Library_DB" name="l.success" value="Category_Load_Code( l.settings:readytheme:storefront_hero_image:link_dest, l.settings:rt_category )" />
+						<mvt:do file="g.Module_Feature_URI_UT" name="l.settings:readytheme:storefront_hero_image:uri" value="Store_Category_URL(l.settings:rt_category, NULL)" />
+					<mvt:elseif expr="l.settings:readytheme:storefront_hero_image:link_type EQ 'P'">
+						<mvt:do file="g.Module_Library_DB" name="l.success" value="Product_Load_Code( l.settings:readytheme:storefront_hero_image:link_dest, l.settings:rt_product )" />
+						<mvt:do file="g.Module_Feature_URI_UT" name="l.settings:readytheme:storefront_hero_image:uri" value="Store_Product_URL(l.settings:rt_product, NULL)" />
+					<mvt:elseif expr="l.settings:readytheme:storefront_hero_image:link_type EQ 'U'">
+						<mvt:assign name="l.settings:readytheme:storefront_hero_image:uri" value="l.settings:readytheme:storefront_hero_image:link_dest" />
+					<mvt:else>
+						<mvt:assign name="l.settings:readytheme:storefront_hero_image:uri" value="NULL" />
+					</mvt:if>
+					<a href="&mvte:readytheme:storefront_hero_image:uri;" title="&mvte:readytheme:storefront_hero_image:image_alt;" target="&mvte:readytheme:storefront_hero_image:link_targ;">
+						<picture>
+							<mvt:if expr="l.settings:readytheme:storefront_small_hero:active">
+								<source media="(max-width: 480px)" srcset="&mvte:readytheme:storefront_small_hero:image;">
+							</mvt:if>
+							<mvt:if expr="l.settings:readytheme:storefront_medium_hero:active">
+								<source media="(max-width: 640px)" srcset="&mvte:readytheme:storefront_medium_hero:image;">
+							</mvt:if>
+							<source media="(min-width: 640px)" srcset="&mvte:readytheme:storefront_hero_image:image;">
+							<img src="&mvte:readytheme:storefront_hero_image:image;" alt="&mvte:readytheme:storefront_hero_image:image_alt;">
+						</picture>
+					</a>
+				<mvt:else>
+					<picture>
+						<mvt:if expr="l.settings:readytheme:storefront_small_hero:active">
+							<source media="(max-width: 480px)" srcset="&mvte:readytheme:storefront_small_hero:image;">
+						</mvt:if>
+						<mvt:if expr="l.settings:readytheme:storefront_medium_hero:active">
+							<source media="(max-width: 640px)" srcset="&mvte:readytheme:storefront_medium_hero:image;">
+						</mvt:if>
+						<source media="(min-width: 640px)" srcset="&mvte:readytheme:storefront_hero_image:image;">
+						<img src="&mvte:readytheme:storefront_hero_image:image;" alt="&mvte:readytheme:storefront_hero_image:image_alt;">
+					</picture>
+				</mvt:if>
+			</span>
+		</div>
+	</div>
+	<!-- end t-storefront-hero -->
+</mvt:if>

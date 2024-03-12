@@ -1,0 +1,26 @@
+<mvt:if expr="NOT ISNULL l.settings:readytheme:navigationitems">
+    <section class="t-storefront-featured-categories t-defer-object" data-defer>
+        <div class="t-storefront-featured-categories__container-top">
+            <h2 class="t-storefront-featured-categories__heading">Start Browsing</h2>
+            <a class="t-storefront-featured-categories__cta" href="/shop-all">Shop All</a>
+        </div>
+        <ul role="region" aria-live="polite" aria-label="Carousel" class="t-storefront-featured-category-list" data-hook="featured-categories">
+            <mvt:foreach iterator="navigationitem" array="readytheme:navigationitems">
+                <mvt:item name="customfields" param="Read_Category_Code(l.settings:navigationitem:link_dest, 'featured_category_image', l.settings:navigationitem:featured_category_image)" />
+                <li class="t-storefront-featured-category-list__item">
+                    <a class="t-storefront-featured-category-list__link" href="&mvte:navigationitem:url;" target="&mvte:navigationitem:link_targ;">
+                        <figure class="t-storefront-featured-category-list__figure">
+                            <picture>
+                                <img class="t-storefront-featured-category-list__image" data-lazy="&mvte:navigationitem:featured_category_image;" src="" alt="&mvte:navigationitem:name;" width="312" height="463">
+                            </picture>
+                            <figcaption>
+                                <h3 class="t-storefront-featured-category-list__name">&mvte:navigationitem:name;</h3>
+                            </figcaption>
+                        </figure>
+                    </a>
+                </li>
+            </mvt:foreach>
+        </ul>
+    </section>
+    <!-- end t-storefront-featured-categories -->
+</mvt:if>

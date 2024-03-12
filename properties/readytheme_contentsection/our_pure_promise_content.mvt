@@ -1,0 +1,15 @@
+<h3>OUR PURE PROMISE</h3>
+<p class="subtitle">NATURAL LUXURY WITH PURE PURPOSE™</p>
+<div class="box-img">
+
+<mvt:if expr="NOT ISNULL l.settings:product:customfield_values:customfields:promise_icon1 OR NOT ISNULL l.settings:product:customfield_values:customfields:promise_icon2 OR NOT ISNULL l.settings:product:customfield_values:customfields:promise_icon3 OR NOT ISNULL l.settings:product:customfield_values:customfields:promise_icon4">
+    <img src="&mvt:product:customfield_values:customfields:promise_icon1;" alt="cruelty free">
+    <img src="&mvt:product:customfield_values:customfields:promise_icon2;" alt="palm oil free">
+    <img src="&mvt:product:customfield_values:customfields:promise_icon3;" alt="paraben free">
+    <img src="&mvt:product:customfield_values:customfields:promise_icon4;" alt="vegan ingredients">
+</mvt:if>
+
+</div>
+<a class="learn-more" aria-label="LEARN MORE about OUR PURE PROMISE" href="/about-us.html">LEARN MORE</a>
+
+<img src="" alt="">

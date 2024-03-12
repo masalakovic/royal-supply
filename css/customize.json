@@ -1,0 +1,21 @@
+{
+    "code": "customize",
+    "type": "L",
+    "branchless_filepath": "b04/themes/colossus/ui/css/customize.css",
+    "is_global": true,
+    "active": false,
+    "attributes": [
+        {
+            "name": "type",
+            "value": "text/css"
+        },
+        {
+            "name": "media",
+            "value": "all"
+        },
+        {
+            "name": "rel",
+            "value": "stylesheet"
+        }
+    ]
+}

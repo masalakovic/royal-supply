@@ -1,0 +1,116 @@
+<mvt:do name="l.result" file="g.Module_Library_DB" value="Category_Load_Code( l.settings:category:code, l.settings:current_category )" />
+<mvt:do name="l.result" file="g.Module_Library_DB" value="Category_Load_ID( l.settings:current_category:parent_id, l.settings:parent_category )" />
+
+<mvt:item name="ry_toolbelt" param="category_children|'Fragrance_type'" />
+<mvt:if expr="l.settings:category_children">
+    <mvt:assign name="g.fragrance_types_str" value="''" />
+    <mvt:foreach iterator="subcats" array="category_children">
+        <mvt:assign name="g.fragrance_types_str" value="g.fragrance_types_str $ ', ' $ l.settings:subcats:code" />
+    </mvt:foreach>
+</mvt:if>
+
+
+<mvt:if expr="l.settings:parent_category:code EQ 'Fragrance_type' OR (NOT ISNULL l.settings:parent_category:code AND l.settings:parent_category:code CIN g.fragrance_types_str) ">
+    <mvt:comment><mvt:if expr="s.remote_addr EQ ''"></mvt:comment>
+        <mvt:item name="ry_toolbelt" param="category_children|g.Category_Code" />
+        <mvt:item name="ry_toolbelt" param="category_children|l.all_settings:category:code" />
+
+        <div class="item_content">
+            <button class="slick-prev slick-arrow" aria-label="Previous" type="button"></button>
+            <div class="category_children t-defer-object t-defer-object--loaded">
+                <mvt:if expr="l.settings:category_children LT 1">
+                    <mvt:item name="ry_toolbelt" param="category_siblings|g.category_code" />
+                    <mvt:item name="ry_toolbelt" param="category_siblings|l.all_settings:category:code" />
+                    <mvt:foreach iterator="cat" array="category_siblings">
+                        <mvt:if expr="g.category_code EQ l.settings:cat:code">
+                            <mvt:comment><mvt:assign name="g.parent_category" value="l.settings:parent_category:code" /></mvt:comment>
+                            <mvt:assign name="l.uri:store_id" value="g.Store:id" />
+                            <mvt:assign name="l.uri:screen" value="''" />
+                            <mvt:assign name="l.uri:page_id" value="0" />
+                            <mvt:assign name="l.uri:cat_id" value="l.settings:parent_category:id" />
+                            <mvt:assign name="l.uri:product_id" value="0" />
+                            <mvt:do file="g.Module_Feature_URI_DB" name="l.have_uri" value="URI_Load_Item_Canonical( l.uri, l.settings:canonical_uri )" />
+                            <a href="https://&mvt:global:domain:name;&mvt:canonical_uri:uri;" class="active">
+                        <mvt:else>
+                            <mvt:assign name="l.uri:store_id" value="g.Store:id" />
+                            <mvt:assign name="l.uri:screen" value="''" />
+                            <mvt:assign name="l.uri:page_id" value="0" />
+                            <mvt:assign name="l.uri:cat_id" value="l.settings:cat:id" />
+                            <mvt:assign name="l.uri:product_id" value="0" />
+                            <mvt:do file="g.Module_Feature_URI_DB" name="l.have_uri" value="URI_Load_Item_Canonical( l.uri, l.settings:canonical_uri )" />                    
+                            <a class="item" href="https://&mvt:global:domain:name;&mvt:canonical_uri:uri;">
+                        </mvt:if>
+                                <span class="u-font-tiny u-icon-cross"></span>
+                                <mvt:if expr="NOT ISNULL l.settings:cat:image_tree ">
+                                    <img src="&mvt:cat:image_tree;" border="0">
+                                <mvt:else>
+                                    <img src="graphics/00000001/img111.png" border="0" style="border: 1px solid #eeedee;">
+                                </mvt:if>
+                                <br>&mvte:cat:name;
+                            </a>
+                    </mvt:foreach>
+                <mvt:else>
+                    <mvt:foreach iterator="subcat" array="category_children">
+                        <mvt:assign name="l.uri:store_id" value="g.Store:id" />
+                        <mvt:assign name="l.uri:screen" value="''" />
+                        <mvt:assign name="l.uri:page_id" value="0" />
+                        <mvt:assign name="l.uri:cat_id" value="l.settings:subcat:id" />
+                        <mvt:assign name="l.uri:product_id" value="0" />
+                        <mvt:do file="g.Module_Feature_URI_DB" name="l.have_uri" value="URI_Load_Item_Canonical( l.uri, l.settings:canonical_uri )" />
+                        <a href="https://&mvt:global:domain:name;&mvt:canonical_uri:uri;">
+                            <span class="u-font-tiny u-icon-cross"></span>
+                            <mvt:if expr="NOT ISNULL l.settings:subcat:image_tree ">
+                                <img src="&mvt:subcat:image_tree;" border="0">
+                                <mvt:else>
+                                    <img src="graphics/00000001/img111.png" border="0" style="border: 1px solid #eeedee;">
+                                </mvt:if>
+                            <br>&mvte:subcat:name;
+                        </a>
+                    </mvt:foreach>
+                </mvt:if>
+            </div>
+            <button class="slick-next slick-arrow" aria-label="Next" type="button">Next</button>
+        </div>
+
+    <mvt:comment></mvt:if></mvt:comment>
+<mvt:else>
+    <mvt:item name="customfields" param="Read_Category_Code(g.Category_Code, 'secondary_title_image', l.settings:secondary_title_image)" />
+    <mvt:if expr="NOT ISNULL l.settings:category_title:image OR NOT ISNULL l.settings:secondary_title_image">
+        <mvt:if expr="NOT ISNULL l.settings:category_title:image AND NOT ISNULL l.settings:secondary_title_image">
+            <mvt:assign name="l.settings:category_title:image_grid" value="'u-grids-1 u-grids-2--l'"/>
+        </mvt:if>
+        <section class="o-layout &mvte:category_title:image_grid; t-category-title-images t-defer-object" data-defer>
+
+        <mvt:if expr="NOT ISNULL l.settings:category_title:image">
+            <mvt:comment>Image with text from the category footer.</mvt:comment>
+            <div class="o-layout__item">
+                <div class="x-hero primary">
+                    <img data-src="&mvte:category_title:image;" src="" alt="">
+		     <mvt:if expr="l.settings:category:code NE 'absolute'">
+                    <div class="x-hero-right">
+                        <mvt:item name="prod_ctgy_hdft" param="ctgy_footer" />
+                    </div>
+		     </mvt:if>
+                </div>
+            </div>
+        </mvt:if>
+
+<mvt:comment>
+        <mvt:if expr="NOT ISNULL l.settings:category_title:image">
+            <div class="o-layout__item">
+                <div class="x-hero primary">
+                    <img data-src="&mvte:category_title:image;" src="" alt="&mvte:category:name photo.">
+                </div>
+            </div>
+        </mvt:if>
+        <mvt:if expr="NOT ISNULL l.settings:secondary_title_image">
+            <div class="o-layout__item secondary">
+                <div class="x-hero">
+                    <img data-src="&mvte:secondary_title_image;" src="" alt="&mvte:category:name photo.">
+                </div>
+            </div>
+        </mvt:if>
+</mvt:comment>
+        </section>
+    </mvt:if>
+</mvt:if>

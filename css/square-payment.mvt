@@ -1,0 +1,14 @@
+<mvt:if expr="'square' CIN g.PaymentMethod">
+	.t-square-payment-form__fields {
+		background: var(--gray-100);
+		border-radius: calc(var(--default-border-radius) * 2);
+		padding: 1.25rem;
+		min-width: 250px; /* matches square's .sq-card-wrapper min-width */
+	}
+
+	@media (min-width: 48em) {
+		.t-square-payment-form__fields {
+			max-width: 350px;
+		}
+	}
+</mvt:if>

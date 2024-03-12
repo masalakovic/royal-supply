@@ -1,0 +1,70 @@
+<div class="sticky_add-to-bag">
+    <div class="product_info product-info">
+        <div class="image">
+            <img class="main_image" src="&mvt:product:customfield_values:productimagecustomfields:main;" alt="&mvte:product:name;" title="&mvte:product:name;" />
+        </div>
+        <div class="prod_name">
+            <h4>&mvt:product:customfield_values:customfields:product_scent;</h4>
+            &mvt:product:customfield_values:customfields:product_size;
+        </div>
+
+    </div>
+    <div class="button" bob="&mvt:page:code;">
+           <mvt:if expr="l.settings:product:base_price GT l.settings:product:price"> 
+                                                <div class="x-product-list__price"><s>&mvt:product:formatted_base_price;</s>&nbsp;</div>
+                                                <div class="x-product-list__price-red">&nbsp; &mvt:product:formatted_price;</div>
+                                            <mvt:else>
+                                                <div class="x-product-list__price">&mvt:product:formatted_price;</div>
+                                            </mvt:if>
+
+        <div class="qty-container">
+            <input type="hidden" name="Quantity" value="1" class="js-product-quantity">
+            <input type="hidden" name="Product_Code" value="&mvte:product:code;" class="js-product-code">
+        </div>
+        <mvt:if expr="l.settings:page:code EQ 'PROD_masters'">
+            <mvt:comment>
+                PROD_masters is the template vor master products with variants so this button is controlled by js on variant change
+            </mvt:comment>
+            <button class="btn btn--s btn--white add-to-cart js-add-to-cart" disabled>
+                <span>add to cart</span>
+            </button>
+        <mvt:elseif expr="l.settings:product_category:code CIN 'bluemercury_spa, john_derian, little_nell, neiman_marcus' OR l.settings:category:code CIN 'bluemercury_spa, john_derian, little_nell, neiman_marcus'">
+            <mvt:item name="customfields" param="Read_Category_Code( l.settings:category:code, 'collab', l.settings:collab )" />
+            <mvt:item name="customfields" param="Read_Category_Code( l.settings:category:code, 'shoppable', l.settings:shoppable )" />
+            
+            <mvt:if expr="ISNULL l.settings:shoppable">
+               
+                <mvt:if expr="l.settings:product:customfield_values:customfields:partners_store">
+                        <mvt:if expr="ISNULL l.settings:collab">
+                            <a class="btn btn--s btn--white" target="_blank" href="&mvt:product:customfield_values:customfields:partners_store;">FIND IT AT PARTNERS STORE</a>
+                        <mvt:else>
+                            <a class="btn btn--s btn--white" target="_blank" href="&mvt:product:customfield_values:customfields:partners_store;">FIND IT AT &mvt:collab;</a>
+                        </mvt:if>
+                     
+                 <mvt:elseif expr="l.settings:product:inv_level NE 'out'">
+                    <button class="btn btn--s btn--white add-to-cart js-add-to-cart">
+                        <span>add to cart</span>
+                    </button>
+                <mvt:else>
+                    <span class="out-of-stock-product">out of stock</span>
+                </mvt:if>
+             
+
+            <mvt:elseif expr="l.settings:product:inv_level NE 'out'">
+                                <button class="btn btn--s btn--white add-to-cart js-add-to-cart">
+                                    <span>add to cart</span>
+                                </button>
+                                <mvt:else>
+                                    <span class="out-of-stock-product">out of stock</span>
+            </mvt:if>
+        
+        <mvt:elseif expr="l.settings:product:inv_level NE 'out'">
+            <button class="btn btn--s btn--white add-to-cart js-add-to-cart">
+                <span>add to cart</span>
+            </button>
+        <mvt:else>
+            <span class="out-of-stock-product">out of stock</span>
+        </mvt:if>
+    </div>
+
+</div>

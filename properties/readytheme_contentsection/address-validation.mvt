@@ -1,0 +1,181 @@
+<mvt:if expr="ISNULL l.settings:customer:validated_ship_addresses AND
+              ISNULL l.settings:customer:validated_bill_addresses AND
+              ISNULL l.settings:addressfields:validated_addresses">
+	<!-- address-validation Not Loaded-->
+	<mvt:exit />
+</mvt:if>
+
+<!-- address-validation Loaded-->
+<div class="c-dialog" data-dialog="address-validation" aria-hidden="true">
+	<div class="c-dialog__overlay" tabindex="-1">
+		<div class="c-dialog__container" aria-labelledby="address-validation-title" aria-describedby="address-validation-description" aria-modal="true" role="alertdialog">
+			<header class="c-dialog__header">
+				<h2 id="address-validation-title" class="c-dialog__title c-heading-delta u-text-uppercase">
+					Address Verification<br>
+					<p id="address-validation-description" class="c-heading--subheading u-text-revert">
+						<strong class="u-font-large">Shipping Address</strong><br>
+						The shipping address you entered appears to be incorrect or incomplete. Please verify your address to ensure a timely delivery.
+					</p>
+				</h2>
+				<button class="c-dialog__close" aria-label="Close Dialog" data-dialog-close>x</button>
+			</header>
+
+			<mvt:assign name="g.hasInvalidAddress" value="0" />
+			<mvt:assign name="g.hasValidAddress" value="0" />
+			<div class="c-dialog__content">
+				<div class="o-layout u-grids-1">
+					<mvt:if expr="l.settings:page:code EQ 'CADA' OR l.settings:page:code EQ 'CADE'">
+						<mvt:assign name="l.settings:addressArray" value="l.settings:addressfields:validated_addresses"/>
+					<mvt:else>
+						<mvt:assign name="l.settings:addressArray" value="l.settings:customer:validated_ship_addresses"/>
+					</mvt:if>
+					<div class="o-layout__item">
+						<mvt:foreach array="addressArray" iterator="address">
+							<mvt:if expr="NOT l.settings:address:validated">
+								<mvt:assign name="g.hasInvalidAddress" value="1" />
+								<label class="c-form-checkbox">
+									<input class="c-form-checkbox__input" type="radio" name="ShipValidatedSelector" data-mm_address_addr1="&mvte:address:addr1;" data-mm_address_addr2="&mvte:address:addr2;" data-mm_address_city="&mvte:address:city;" data-mm_address_comp="&mvte:address:comp;" data-mm_address_country="&mvte:address:country;" data-mm_address_resdntl="&mvte:address:resdntl;" data-mm_address_state="&mvte:address:state;" data-mm_address_zip="&mvte:address:zip;">
+									<span class="c-form-checkbox__caption u-text-bold" style="white-space: nowrap;">Use&nbsp;<span class="u-hide-visually">Shipping&nbsp;Address&nbsp;</span>As&nbsp;Entered</span>
+								</label>
+								<p class="u-font-small">
+									<mvt:if expr="NOT ISNULL l.settings:address:comp">
+										&mvte:address:comp;<br>
+									</mvt:if>
+									<mvt:if expr="NOT ISNULL l.settings:address:addr1 OR NOT ISNULL l.settings:address:addr2 OR NOT ISNULL l.settings:address:city OR NOT ISNULL l.settings:address:state OR NOT ISNULL l.settings:address:zip OR NOT ISNULL l.settings:address:cntry OR NOT ISNULL l.settings:address:res">
+										&mvte:address:addr1;<br>
+										<mvt:if expr="NOT ISNULL l.settings:address:addr2">
+											&mvte:address:addr2;<br>
+										</mvt:if>
+										<mvt:if expr="(NOT ISNULL l.settings:address:city) AND (NOT ISNULL l.settings:address:state)">
+											&mvte:address:city;, &mvte:address:state; &mvte:address:zip; &mvte:address:country;
+										<mvt:else>
+											&mvte:address:city; &mvte:address:state; &mvte:address:zip; &mvte:address:country;
+										</mvt:if>
+										<mvt:if expr="l.settings:address:resdntl">
+											<br>Residential Address
+										</mvt:if>
+									</mvt:if>
+								</p>
+								<hr class="c-keyline c-keyline--small">
+							</mvt:if>
+						</mvt:foreach>
+					</div>
+					<div class="o-layout__item">
+						<mvt:assign name="l.settings:address_count" value="1" />
+						<mvt:foreach array="addressArray" iterator="address">
+							<mvt:if expr="l.settings:address:validated">
+								<mvt:assign name="g.hasValidAddress" value="1" />
+								<label class="c-form-checkbox">
+									<input class="c-form-checkbox__input" type="radio" name="ShipValidatedSelector" data-mm_address_addr1="&mvte:address:addr1;" data-mm_address_addr2="&mvte:address:addr2;" data-mm_address_city="&mvte:address:city;" data-mm_address_comp="&mvte:address:comp;" data-mm_address_country="&mvte:address:country;" data-mm_address_resdntl="&mvte:address:resdntl;" data-mm_address_state="&mvte:address:state;" data-mm_address_zip="&mvte:address:zip;" aria-describedby="address-&mvt:address_count;">
+									<span class="c-form-checkbox__caption u-text-bold">Verified&nbsp;<span class="u-hide-visually">Shipping&nbsp;</span>Address <span class="u-hide-visually">&mvt:address_count;</span></span>
+								</label>
+								<p id="address-&mvt:address_count;" class="u-font-small">
+									<mvt:if expr="NOT ISNULL l.settings:address:comp">
+										&mvte:address:comp;<br>
+									</mvt:if>
+									<mvt:if expr="NOT ISNULL l.settings:address:addr1 OR NOT ISNULL l.settings:address:addr2 OR NOT ISNULL l.settings:address:city OR NOT ISNULL l.settings:address:state OR NOT ISNULL l.settings:address:zip OR NOT ISNULL l.settings:address:cntry OR NOT ISNULL l.settings:address:res">
+										&mvte:address:addr1;<br>
+										<mvt:if expr="NOT ISNULL l.settings:address:addr2">
+											&mvte:address:addr2;<br>
+										</mvt:if>
+										<mvt:if expr="(NOT ISNULL l.settings:address:city) AND (NOT ISNULL l.settings:address:state)">
+											&mvte:address:city;, &mvte:address:state; &mvte:address:zip; &mvte:address:country;
+										<mvt:else>
+											&mvte:address:city; &mvte:address:state; &mvte:address:zip; &mvte:address:country;
+										</mvt:if>
+										<mvt:if expr="l.settings:address:resdntl">
+											<br>Residential Address
+										</mvt:if>
+									</mvt:if>
+								</p>
+								<hr class="c-keyline c-keyline--small">
+								<mvt:assign name="l.settings:address_count" value="l.settings:address_count + 1" />
+							</mvt:if>
+						</mvt:foreach>
+					</div>
+				</div>
+
+				<mvt:if expr="l.settings:page:code NE 'CADA' AND l.settings:page:code NE 'CADE'">
+					<mvt:if expr="g.billing_to_show NE 1">
+						<br>
+						<p class="u-font-tiny" data-billing-shown>
+							<strong class="u-font-medium">Billing Address</strong><br>
+							We were unable to verify the billing address you provided.
+						</p>
+						<div class="o-layout u-grids-1 u-grids-2--s">
+							<div class="o-layout__item">
+								<mvt:foreach array="customer:validated_bill_addresses" iterator="address">
+									<mvt:if expr="NOT l.settings:address:validated">
+										<label class="c-form-checkbox">
+											<input class="c-form-checkbox__input" type="radio" name="BillValidatedSelector" data-mm_address_addr1="&mvte:address:addr1;" data-mm_address_addr2="&mvte:address:addr2;" data-mm_address_city="&mvte:address:city;" data-mm_address_comp="&mvte:address:comp;" data-mm_address_country="&mvte:address:country;" data-mm_address_state="&mvte:address:state;" data-mm_address_zip="&mvte:address:zip;">
+											<span class="c-form-checkbox__caption u-text-bold">Use&nbsp;<span class="u-hide-visually">Billing Address&nbsp;</span>As Entered</span>
+										</label>
+										<p class="u-font-small">
+											<mvt:if expr="NOT ISNULL l.settings:address:comp">
+												&mvte:address:comp;<br>
+											</mvt:if>
+											<mvt:if expr="NOT ISNULL l.settings:address:addr1 OR NOT ISNULL l.settings:address:addr2 OR NOT ISNULL l.settings:address:city OR NOT ISNULL l.settings:address:state OR NOT ISNULL l.settings:address:zip OR NOT ISNULL l.settings:address:cntry">
+												&mvte:address:addr1;<br>
+												<mvt:if expr="NOT ISNULL l.settings:address:addr2">
+													&mvte:address:addr2;<br>
+												</mvt:if>
+												<mvt:if expr="(NOT ISNULL l.settings:address:city) AND (NOT ISNULL l.settings:address:state)">
+													&mvte:address:city;, &mvte:address:state; &mvte:address:zip; &mvte:address:country;
+												<mvt:else>
+													&mvte:address:city; &mvte:address:state; &mvte:address:zip; &mvte:address:country;
+												</mvt:if>
+											</mvt:if>
+										</p>
+										<hr class="c-keyline c-keyline--small">
+									</mvt:if>
+								</mvt:foreach>
+							</div>
+							<div class="o-layout__item">
+								<mvt:assign name="l.settings:bill_address_count" value="0" />
+								<mvt:foreach array="customer:validated_bill_addresses" iterator="address">
+									<mvt:if expr="l.settings:address:validated">
+										<label class="c-form-checkbox">
+											<input class="c-form-checkbox__input" type="radio" name="BillValidatedSelector" data-mm_address_addr1="&mvte:address:addr1;" data-mm_address_addr2="&mvte:address:addr2;" data-mm_address_city="&mvte:address:city;" data-mm_address_comp="&mvte:address:comp;" data-mm_address_country="&mvte:address:country;" data-mm_address_state="&mvte:address:state;" data-mm_address_zip="&mvte:address:zip;" aria-describedby="bill-address-&mvt:bill_address_count;">
+											<span class="c-form-checkbox__caption u-text-bold">Verified&nbsp;<span class="u-hide-visually">Billing&nbsp;</span>Address <span class="u-hide-visually">&mvt:address_count;</span></span>
+										</label>
+										<p id="bill-address-&mvt:bill_address_count;" class="u-font-small">
+											<mvt:if expr="NOT ISNULL l.settings:address:comp">
+												&mvte:address:comp;<br>
+											</mvt:if>
+											<mvt:if expr="NOT ISNULL l.settings:address:addr1 OR NOT ISNULL l.settings:address:addr2 OR NOT ISNULL l.settings:address:city OR NOT ISNULL l.settings:address:state OR NOT ISNULL l.settings:address:zip OR NOT ISNULL l.settings:address:cntry">
+												&mvte:address:addr1;<br>
+												<mvt:if expr="NOT ISNULL l.settings:address:addr2">
+													&mvte:address:addr2;<br>
+												</mvt:if>
+												<mvt:if expr="(NOT ISNULL l.settings:address:city) AND (NOT ISNULL l.settings:address:state)">
+													&mvte:address:city;, &mvte:address:state; &mvte:address:zip; &mvte:address:country;
+												<mvt:else>
+													&mvte:address:city; &mvte:address:state; &mvte:address:zip; &mvte:address:country;
+												</mvt:if>
+											</mvt:if>
+										</p>
+										<hr class="c-keyline c-keyline--small">
+										<mvt:assign name="l.settings:bill_address_count" value="l.settings:bill_address_count + 1" />
+									</mvt:if>
+								</mvt:foreach>
+							</div>
+						</div>
+					</mvt:if>
+				</mvt:if>
+				<br>
+				<div class="c-control-group o-layout--justify-end">
+					<button class="c-button c-button--hollow c-control-group__button u-color-primary" data-edit-address>Cancel</button>
+					<button id="dialog_update_address" class="c-button c-control-group__button u-bg-primary" data-update-address>Update Address</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	var hasInvalidAddress = &mvt:global:hasInvalidAddress;;
+	var hasValidAddress = &mvt:global:hasValidAddress;;
+</script>
+
+<mvt:assign name="g.t" value="s.time_t" />
+<script src="scripts/00000001/dialog.js?t=&mvt:global:t;"></script>
+<script src="scripts/00000001/RT_address_validation.js?t=&mvt:global:t;"></script>

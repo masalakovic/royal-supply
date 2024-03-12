@@ -1,0 +1,21 @@
+{
+    "code": "customize-gowsikan",
+    "type": "L",
+    "branchless_filepath": "css/00000001/b02/customize-gowsikan.css",
+    "is_global": true,
+    "active": false,
+    "attributes": [
+        {
+            "name": "type",
+            "value": "text/css"
+        },
+        {
+            "name": "media",
+            "value": "all"
+        },
+        {
+            "name": "rel",
+            "value": "stylesheet"
+        }
+    ]
+}

@@ -1,0 +1,9 @@
+<div class="row product-carousel">
+	
+	<div class="column whole  whats-popular-carousel">
+		<div id="js-whats-popular-carousel" class="my-slider">
+			<div><mvt:item name="readytheme" param="image( 'sfnt_hero2' )" /></div>
+			<div><mvt:item name="readytheme" param="image( 'sfnt_hero' )" /></div>
+		</div>
+	</div>
+</div>

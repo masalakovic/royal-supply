@@ -1,0 +1,208 @@
+<mvt:if expr="ISNULL g.phone_number">
+    {"error":"Invalid Phone Number"}
+    <mvt:exit /> 
+</mvt:if>
+
+<mvt:if expr="ISNULL g.subscribe_to">
+    {"error":"Invalid Subscription Destination"}
+    <mvt:exit /> 
+</mvt:if>
+
+
+<mvt:comment>
+    AUTHENTICATION
+</mvt:comment>
+    <mvt:assign name="g.auth_url" value="'https://auth.listrak.com/OAuth2/Token'" /> 
+
+    <mvt:assign
+      name="l.settings:headers"
+      value="'Content-Type: application/x-www-form-urlencoded' $ asciichar( 13 ) $ asciichar( 10 )"
+    />
+
+    <mvt:assign name="g.grant_type" value="'client_credentials'" />
+    <mvt:assign name="g.client_id" value="'qozxx4ywp21kqm9xssrx'" />
+    <mvt:assign name="g.client_secret" value="'mU39wnb5hArd1Bq95IGj32CJ1uR1CWnvzQyvUDv+4xo'" />
+
+
+    <mvt:comment><mvt:item name="ry_toolbelt" param="assign|g.json|Json_Stringify(g.fields)" />;</mvt:comment>
+
+    <mvt:comment> Send API request </mvt:comment>
+    <mvt:call
+      action="g.auth_url "
+      method="'POST'"
+      headers="l.settings:headers"
+      content-type="'application/x-www-form-urlencoded'"
+      fields="'grant_type,client_id,client_secret'"
+    >
+      
+      
+      <mvt:assign name="g.Json_String" value="g.Json_String $ s.callvalue" /> 
+    </mvt:call>
+
+    <mvt:comment> <mvt:eval expr="l.settings:json_data" /> </mvt:comment>
+    <mvt:comment> <mvt:eval expr="l.settings:response" /> </mvt:comment>
+
+      <mvt:comment>&mvt:global:json_string;</mvt:comment>
+
+      <mvt:assign name="l.settings:response" value="''" />
+      <mvt:item name="ry_toolbelt" param="Json_Parse|response|g.Json_String" />
+
+      <mvt:assign name="g.access_token" value="l.settings:response:access_token" />
+
+<mvt:comment></mvt:comment>
+
+
+<mvt:if expr="ISNULL g.access_token">
+    {"error":"Invalid Access Token"}
+    <mvt:exit /> 
+</mvt:if>
+
+<mvt:assign name="l.crlf" value="asciichar(13) $ asciichar(10)"/>
+<mvt:assign
+  name="l.settings:headers"
+  value="'Authorization: Bearer ' $ g.access_token $ l.crlf"
+/>
+
+
+<mvt:comment>   
+    Subscribe Contact to ads, list id 26  
+    m for marketing
+</mvt:comment>
+<mvt:if expr="g.subscribe_to EQ 'm'"> 
+
+
+    <mvt:comment>
+        Create contact 
+    </mvt:comment>
+
+        <mvt:assign name="g.request_body" value="'{\"phoneNumber\": \"' $ g.phone_number $ '\"}'" />
+        
+        <mvt:comment> Send API request </mvt:comment>
+        <mvt:comment>
+          phone_number is g.phone_number passed by js as url parameter 
+        </mvt:comment>
+        <mvt:assign name="g.Json_String" value="''" /> 
+        <mvt:call
+          action="'https://api.listrak.com/sms/v1/ShortCode/250/PhoneList/26/Contact'"
+          method="'RAW'"
+          content-type="'application/json'"
+          headers="l.settings:headers"
+          fields="'request_body'"
+        >
+          <mvt:assign name="g.Json_String" value="g.Json_String $ s.callvalue" /> 
+        </mvt:call>
+        <mvt:comment>&mvt:global:json_string; <br></mvt:comment>
+
+        <mvt:assign name="l.settings:response" value="''" />
+        <mvt:item name="ry_toolbelt" param="Json_Parse|response|g.Json_String" />
+
+        <mvt:if expr="l.settings:response:status EQ 400">
+          <mvt:comment> invalid phone number </mvt:comment>
+            &mvt:global:json_string;
+            <mvt:exit />
+        <mvt:else>
+            <mvt:comment>&mvt:global:json_string;</mvt:comment>
+        </mvt:if>
+
+    <mvt:comment></mvt:comment>
+
+    <mvt:assign
+      name="l.settings:headers"
+      value="'Authorization: Bearer ' $ g.access_token $ l.crlf"
+    />
+    <mvt:assign name="g.Json_String" value="''" /> 
+    <mvt:assign name="g.request_body" value="'{}'" />
+    <mvt:call
+      action="'https://api.listrak.com/sms/v1/ShortCode/250/Contact/' $ g.phone_number $ '/PhoneList/26'"
+      method="'RAW'"
+      content-type="'application/json'"
+      headers="l.settings:headers"
+      fields="'request_body'"
+    >
+      <mvt:assign name="g.Json_String" value="g.Json_String $ s.callvalue" /> 
+    </mvt:call>
+
+    <mvt:assign name="l.settings:response" value="''" />
+    <mvt:item name="ry_toolbelt" param="Json_Parse|response|g.Json_String" />
+
+    <mvt:if expr="l.settings:response:status EQ 400">
+      <mvt:comment> contact already exists </mvt:comment>
+        &mvt:global:json_string;
+        <mvt:exit />
+    <mvt:else>
+        &mvt:global:json_string;
+    </mvt:if>
+
+<mvt:comment>   
+    Subscribe Contact to order updates, list id 43
+    t for transactional
+</mvt:comment>
+<mvt:elseif expr="g.subscribe_to EQ 't'">
+
+    <mvt:comment>
+        Create contact 
+    </mvt:comment>
+
+
+        <mvt:assign name="g.request_body" value="'{\"phoneNumber\": \"' $ g.phone_number $ '\"}'" />
+        
+        <mvt:comment> Send API request </mvt:comment>
+        <mvt:comment>
+          phone_number is g.phone_number passed by js as url parameter 
+        </mvt:comment>
+        <mvt:assign name="g.Json_String" value="''" /> 
+        <mvt:call
+          action="'https://api.listrak.com/sms/v1/ShortCode/250/PhoneList/43/Contact'"
+          method="'RAW'"
+          content-type="'application/json'"
+          headers="l.settings:headers"
+          fields="'request_body'"
+        >
+          <mvt:assign name="g.Json_String" value="g.Json_String $ s.callvalue" /> 
+        </mvt:call>
+        <mvt:comment>&mvt:global:json_string; <br></mvt:comment>
+
+        <mvt:assign name="l.settings:response" value="''" />
+        <mvt:item name="ry_toolbelt" param="Json_Parse|response|g.Json_String" />
+
+        <mvt:if expr="l.settings:response:status EQ 400">
+          <mvt:comment> invalid phone number </mvt:comment>
+            &mvt:global:json_string;
+            <mvt:exit />
+        <mvt:else>
+            <mvt:comment>&mvt:global:json_string;</mvt:comment>
+        </mvt:if>
+
+    <mvt:comment></mvt:comment>
+
+    <mvt:assign
+      name="l.settings:headers"
+      value="'Authorization: Bearer ' $ g.access_token $ l.crlf"
+    />
+    <mvt:assign name="g.Json_String" value="''" /> 
+    <mvt:assign name="g.request_body" value="'{}'" />
+    <mvt:call
+      action="'https://api.listrak.com/sms/v1/ShortCode/250/Contact/' $ g.phone_number $ '/PhoneList/43'"
+      method="'RAW'"
+      content-type="'application/json'"
+      headers="l.settings:headers"
+      fields="'request_body'"
+    >
+      <mvt:assign name="g.Json_String" value="g.Json_String $ s.callvalue" /> 
+    </mvt:call>
+
+    <mvt:assign name="l.settings:response" value="''" />
+    <mvt:item name="ry_toolbelt" param="Json_Parse|response|g.Json_String" />
+
+    <mvt:if expr="l.settings:response:status EQ 400">
+      <mvt:comment> invalid phone number </mvt:comment>
+        &mvt:global:json_string;
+        <mvt:exit />
+    <mvt:else>
+        &mvt:global:json_string;
+    </mvt:if>
+
+
+
+</mvt:if>
+<mvt:comment></mvt:comment>

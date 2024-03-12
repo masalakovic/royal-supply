@@ -1,0 +1,173 @@
+<mvt:item name="amp" />
+<mvt:item name="html_profile" />
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="&mvt:global:basehref;">
+    <mvt:if expr="NOT ISNULL l.settings:category:page_title">
+        <title>&mvt:category:page_title;</title>
+    <mvt:elseif expr="NOT ISNULL l.settings:page:title">
+        <title>&mvt:page:title;</title>
+    <mvt:else>
+        <title>&mvt:store:name;: &mvt:category:name;</title>
+    </mvt:if>
+    <mvt:item name="head" param="css_list" />
+    <mvt:item name="head" param="head_tag" />
+
+
+    <style>
+    .rtrt-oils__inner {
+        background-color: #f9fafc;
+        line-height: 1.2;
+        max-width: 1010px;
+        margin: 0 auto 40px;
+        padding: 40px 0 56px;
+    }
+
+    .slick-slide {
+        margin: 10px;
+    }
+
+    .slick-slide img {
+        width: 100%;
+        border: 2px solid #fff;
+    }
+
+    .wrapper .slick-dots li button:before {
+        font-size: 20px;
+        color: white;
+    }
+    </style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
+
+</head>
+<body id="js-&mvte:page:code;" class="o-site-wrapper t-page-&mvt:global:pageClass;">
+    <mvt:item name="hdft" param="global_header" />
+
+    <mvt:item name="customfields" param="Read_Category_Code(l.settings:category:code, 'spctgy_cat_descr', l.settings:spctgy_cat_descr)" />
+    
+ 
+    <mvt:item name="hdft" param="header" />
+
+   
+	<mvt:comment>        
+	*
+	* Show subcategories  
+	*    
+	</mvt:comment>
+	<mvt:item name="content" />
+    
+    <div class="spctgy-wrapper">
+	<div class="spiced-text">
+        	<p>&mvte:spctgy_cat_descr;</p>
+    	</div>
+    </div>
+    <mvt:item name="category_listing" />
+    <mvt:item name="hdft" param="footer" />
+    <mvt:item name="readytheme" param="contentsection( 'spctgy_shop_the_collection_new' )" />
+    <mvt:item name="hdft" param="global_footer" />
+
+<mvt:comment>
+<script src="b15/themes/colossus/extensions/navigation/omega/omega-navigation.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+</mvt:comment>
+<script>
+$(document).ready(function() {
+      // WINDOW SIZE
+      let widthWindow = window.innerWidth;
+  
+      window.addEventListener("resize", function (event) {
+        widthWindow = window.innerWidth;
+        containerPosition();
+      });
+
+      let oilArr = document.querySelectorAll(".js-rtrt-oils-list-opener");
+      let indexOfActive;
+      let containerOfContent = document.querySelector(
+        ".rtrt-oils__content-holder"
+      );
+ 
+      $(".js-rtrt-oils-list-opener").on("click", function () {
+        // $(".js-rtrt-oils-list-opener").removeClass("active");
+        // $(this).addClass("active");
+  
+        let name = $(this).attr("data-name");
+  
+        $(".js-rtrt-oils-list-opener, .rtrt-oils__content").removeClass("active");
+        $(this).addClass("active");
+        $(".rtrt-oils__content[data-name=" + name + "]").addClass("active");
+  
+        containerPosition();
+      });
+  
+      function containerPosition() {
+        for (let i = 0; i < oilArr.length; i++) {
+          if (oilArr[i].classList.contains("active")) {
+            indexOfActive = i;
+          }
+  
+          if (widthWindow < 476) {
+            switch (indexOfActive) {
+              case 0:
+                containerOfContent.style.transform = "translateX(1%)";
+                break;
+              case 1:
+                containerOfContent.style.transform = "translateX(-97%)";
+                break;
+              case 2:
+                containerOfContent.style.transform = "translateX(-195%)";
+                break;
+  
+              default:
+                break;
+            }
+          } else if (widthWindow <= 769) {
+            switch (indexOfActive) {
+              case 0:
+                containerOfContent.style.transform = "translateX(13%)";
+                break;
+              case 1:
+                containerOfContent.style.transform = "translateX(-61%)";
+                break;
+              case 2:
+                containerOfContent.style.transform = "translateX(-134.5%)";
+                break;
+  
+              default:
+                break;
+            }
+          } else {
+            switch (indexOfActive) {
+              case 0:
+                containerOfContent.style.transform = "translateX(12%)";
+                break;
+              case 1:
+                containerOfContent.style.transform = "translateX(-64.5%)";
+                break;
+              case 2:
+                containerOfContent.style.transform = "translateX(-140.5%)";
+                break;
+  
+              default:
+                break;
+            }
+          }
+        }
+      }
+    
+
+ 
+
+
+});
+</script>
+
+
+</body>
+
+
+</html>

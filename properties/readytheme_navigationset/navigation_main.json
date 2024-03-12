@@ -1,0 +1,85 @@
+{
+    "items": [
+        {
+            "active": 1,
+            "disp_order": 57,
+            "id": 56,
+            "items": [
+                {
+                    "active": 1,
+                    "disp_order": 57,
+                    "id": 57,
+                    "link": "<a href=\"/#ift-pannel\" target=\"_self\">Instagram Shopping Tool</a>",
+                    "link_dest": "/#ift-pannel",
+                    "link_targ": "_self",
+                    "link_type": "U",
+                    "name": "Instagram Shopping Tool",
+                    "parent_id": 56,
+                    "set_id": 6,
+                    "url": "/#ift-pannel"
+                },
+                {
+                    "active": 1,
+                    "disp_order": 61,
+                    "id": 61,
+                    "link": "<a href=\"/#ocdc-pannel\" target=\"_self\">Product Personalization Online Tool</a>",
+                    "link_dest": "/#ocdc-pannel",
+                    "link_targ": "_self",
+                    "link_type": "U",
+                    "name": "Product Personalization Online Tool",
+                    "parent_id": 56,
+                    "set_id": 6,
+                    "url": "/#ocdc-pannel"
+                }
+            ],
+            "link": "Our products",
+            "link_dest": "IFT",
+            "link_targ": "_self",
+            "link_type": "N",
+            "name": "Our products",
+            "parent_id": 0,
+            "set_id": 6
+        },
+        {
+            "active": 0,
+            "disp_order": 71,
+            "id": 94,
+            "link": "<a href=\"https://demo.pcinet.com/mm5/merchant.mvc?Screen=PROD&Product_Code=pencils\" target=\"_self\">SHOP</a>",
+            "link_dest": "pencils",
+            "link_targ": "_self",
+            "link_type": "P",
+            "name": "SHOP",
+            "parent_id": 0,
+            "set_id": 6,
+            "url": "https://demo.pcinet.com/mm5/merchant.mvc?Screen=PROD&Product_Code=pencils"
+        },
+        {
+            "active": 1,
+            "disp_order": 94,
+            "id": 92,
+            "link": "<a href=\"https://demo.pcinet.com/about-us.html\" target=\"_self\">About Us</a>",
+            "link_dest": "ABUS",
+            "link_targ": "_self",
+            "link_type": "G",
+            "name": "About Us",
+            "parent_id": 0,
+            "set_id": 6,
+            "url": "https://demo.pcinet.com/about-us.html"
+        },
+        {
+            "active": 1,
+            "disp_order": 97,
+            "id": 70,
+            "link": "<a href=\"https://demo.pcinet.com/contact-us.html\" target=\"_self\">Contact Us</a>",
+            "link_dest": "CTUS",
+            "link_targ": "_self",
+            "link_type": "G",
+            "name": "Contact Us",
+            "parent_id": 0,
+            "set_id": 6,
+            "url": "https://demo.pcinet.com/contact-us.html"
+        }
+    ],
+    "layout": "S",
+    "name": "Navigation: Main"
+}

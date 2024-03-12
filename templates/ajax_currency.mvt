@@ -1,0 +1,28 @@
+<mvt:assign name="g.c" value="trim(g.c)" />
+<mvt:if expr="ISNULL g.c">
+	<mvt:exit />
+</mvt:if>
+
+<mvt:if expr="g.c EQ 'CAD'">
+	<mvt:do file="g.Module_Feature_PGR_UT" name="l.result" 
+		value="Basket_Assign_Persistent_PriceGroup( g.basket:basket_id, 'Canadian Currency' )" />
+<mvt:else>
+	<mvt:do file="g.Module_Feature_PGR_UT" name="l.result" 
+		value="Basket_Remove_Persistent_PriceGroup( g.basket:basket_id, 'Canadian Currency' )" />
+</mvt:if>
+<mvt:item name="ry_toolbelt" param="Assign|g.result|Cookie_Save('currency', g.c, 1)" />
+<mvt:comment> https://free.currencyconverterapi.com/ </mvt:comment>
+
+<mvt:assign name="g.currency_rate" value="trim(g.request_cookies:currency_rate)" />
+
+<mvt:if expr="ISNULL g.currency_rate">
+	<mvt:call action="'https://free.currconv.com/api/v7/convert?q=USD_CAD&compact=ultra&apiKey=3c70c05189c3cffe7d0d'" method="'GET'">
+		<mvt:assign name="l.cad_json" value="l.cad_json $ s.callvalue" />
+	</mvt:call>
+	<mvt:assign name="l.void" value="miva_json_decode(l.cad_json, g.currency_rate)" />
+	<mvt:if expr="g.currency_rate LE 0">
+		<mvt:assign name="g.currency_rate" value="1.3" />
+	</mvt:if>
+</mvt:if>
+<mvt:item name="ry_toolbelt" param="assign|g.result|Cookie_Save('currency_rate', g.currency_rate, 3/24)" />
+&mvt:global:c;

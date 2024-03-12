@@ -1,0 +1,175 @@
+
+	#requester-fields label{
+		float:left;
+		width:150px;
+		white-space:nowrap;
+		text-align:right;
+		padding:2px 5px 3px 0;
+		clear:both;
+	}
+	#requester-fields input.textfield,
+	.non-editable div.form_row div{
+		width:170px;
+		margin:0 0 4px 0;
+	}
+
+	#requester-fields select{
+		width:176px;
+		margin:0 0 4px 0;
+	}
+
+	#requester-fields .controls label{
+		float:none;
+	}
+
+	#requester-fields.editable .form_row{
+		margin:0 0 6px 0;
+		text-align:left;
+	}
+
+	#requester-fields.non-editable .form_row{
+		margin:0 0 4px 0; 
+		text-align:left;
+	}
+
+	#requester-fields.non-editable label{
+		margin:0 0 0 30px;
+		padding:0 4px 0 0;
+		font-weight:bold;
+		width:110px;
+		text-align:right;
+		float:left;
+		clear:both;
+		white-space:nowrap;
+	}
+
+	#requester-fields .form_row div{
+		float:left;
+	}
+
+	#requester-fields
+	{ 
+		margin:0 0 32px 0;
+	}
+
+	#requester-fields{
+		margin:16px 0;
+	}
+
+	#quote-contents,
+	#order-contents table{
+		width:100%;
+		border-left:1px solid #ffffff;
+		border-top:1px solid #ffffff;
+	}
+
+	#quote-contents table,
+	#quote-contents table{
+		border-collapse:collapse;
+	}
+
+	#quote-contents td,
+	#order-contents td{
+		background-color:#eeeeee;
+		border-bottom:1px solid #ffffff;
+		border-right:1px solid #ffffff;
+		vertical-align:top;
+		padding:6px;
+		font:normal 1em Arial, Helvetica, Verdana, sans-serif;
+	}
+
+	#quote-contents table tr.quote-heading td,
+	#quote-contents table tr.quote-heading td,
+	#quote-contents table tr.heading td{
+		background-color:#cccccc;
+		color:#333333;
+		font-weight:bold;
+		text-align:center;
+		font-size:1em;
+		white-space:nowrap;
+	}
+
+	#quote-contents .quote-qty-input{ width:34px; }
+
+	#quote-contents .item-image{
+		vertical-align:middle;
+	}
+
+	#quote-contents .item-remove{
+		width:8%;
+		vertical-align:middle;
+	}
+
+	#quote-contents .item-remove-link{
+		margin:auto;
+		margin-top:.5em;
+		vertical-align:middle;
+	}
+
+	#quote-contents table .quote-heading td.item-name{
+		text-align:left;
+	}
+
+	#quote-contents.editable .item-quantity{
+		width:13%;
+		text-align:center;
+		white-space:nowrap;
+	}
+
+	#quote-contents.non-editable .item-quantity{
+		width:6%;
+		text-align:center;
+	}
+
+	#quote-contents .item-options .item-name{ padding-left:16px; }
+
+	#quote-contents.non-editable .item-name{ width:59%; }
+
+	#quote-contents.editable .item-name{ width:66%; }
+	#quote-contents.editable .item-name div.item-name-div{ float:left; }
+	#quote-contents td.item-name{ text-align:left; }
+
+	#quote-contents .item-price{
+		width:10%;
+		text-align:right;
+		white-space:nowrap;
+	}
+
+	#quote-contents .item-total{
+		width:10%;
+		text-align:right;
+	}
+
+	#quote-contents .custom-field{
+		font-size:x-small;
+	}
+
+	#quote-contents .item-discount{
+		white-space:nowrap;
+		font-size:x-small;
+		font-style:italic;
+	}
+
+	#quote-contents .quote-charges .charge-description,
+	#quote-contents .quote-charges .formatted-charge{
+		font-style:italic;
+		text-align:right;
+		white-space:nowrap;
+	}
+
+	#quote-contents #quote-totals .formatted-total,
+	#quote-contents #quote-totals .total-prompt,
+	#quote-contents #quote-remaining .formatted-total,
+	#quote-contents #quote-remaining .total-prompt{
+		font-weight:bold;
+		text-align:right;
+	}
+
+	#quote-contents .quote-payments .charge-description,
+	#quote-contents .quote-payments .formatted-charge{
+		font-style:normal;
+		text-align:right;
+		white-space:nowrap;
+	}
+	
+	

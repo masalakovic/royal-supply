@@ -1,0 +1,12 @@
+{
+    "code": "mailchimp_tracker",
+    "type": "I",
+    "is_global": true,
+    "active": false,
+    "attributes": [
+        {
+            "name": "id",
+            "value": "mcjs"
+        }
+    ]
+}

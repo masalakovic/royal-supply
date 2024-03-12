@@ -1,0 +1,170 @@
+<div id="allure-slick" class="allure-testimonial-container">
+	<div class="allure-dk-container">
+		<div class="allure-cd-testimonials-wrapper allure-cd-container">
+			<ul class="allure-cd-testimonials">
+				<li>
+					<div class="allure-testimonial-content">
+						<div class="allure-cd-author">
+							<div class="icons-star">
+								<mvt:item name="readytheme" param="image( 'icon-star' )" />
+								<mvt:item name="readytheme" param="image( 'icon-star' )" />
+								<mvt:item name="readytheme" param="image( 'icon-star' )" />
+								<mvt:item name="readytheme" param="image( 'icon-star' )" />
+								<mvt:item name="readytheme" param="image( 'icon-star' )" />
+							</div>
+							<h2>Warm and rich yet light as a sea breeze.</h2>
+							<p class="allure-cd-author-info">- Barbara</p>
+						</div>
+				</li>
+				<li>
+					<div class="allure-testimonial-content">
+						<div class="allure-cd-author">
+							<div class="icons-star">
+								<mvt:item name="readytheme" param="image( 'icon-star' )" />
+								<mvt:item name="readytheme" param="image( 'icon-star' )" />
+								<mvt:item name="readytheme" param="image( 'icon-star' )" />
+								<mvt:item name="readytheme" param="image( 'icon-star' )" />
+								<mvt:item name="readytheme" param="image( 'icon-star' )" />
+							</div>
+							<h2>Clean, soft, and so long lasting!!</h2>
+							<p class="allure-cd-author-info">- Pamela</p>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="allure-testimonial-content">
+						<div class="allure-cd-author">
+							<div class="icons-star">
+								<mvt:item name="readytheme" param="image( 'icon-star' )" />
+								<mvt:item name="readytheme" param="image( 'icon-star' )" />
+								<mvt:item name="readytheme" param="image( 'icon-star' )" />
+								<mvt:item name="readytheme" param="image( 'icon-star' )" />
+								<mvt:item name="readytheme" param="image( 'icon-star' )" />
+							</div>
+						</div>
+						<h2>It brings me calm and serenity.</h2>
+						<p class="allure-cd-author-info">- Barry</p>
+					</div>
+				</li>
+				<li>
+					<div class="allure-testimonial-content">
+						<div class="allure-cd-author">
+							<div class="icons-star">
+								<mvt:item name="readytheme" param="image( 'icon-star' )" />
+								<mvt:item name="readytheme" param="image( 'icon-star' )" />
+								<mvt:item name="readytheme" param="image( 'icon-star' )" />
+								<mvt:item name="readytheme" param="image( 'icon-star' )" />
+								<mvt:item name="readytheme" param="image( 'icon-star' )" />
+							</div>
+						</div>
+						<h2>Makes me feel like I’m at the beach with a gentle breeze around me.</h2>
+						<p class="allure-cd-author-info">- Nyana</p>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<!-- cd-testimonials -->
+	</div>
+</div>
+
+
+<!-- 
+
+<div class="allure-testimonial-container">
+	<div class="allure-dk-container">
+		<div class="allure-cd-testimonials-wrapper allure-cd-container">
+			<ul class="allure-cd-testimonials">
+				<li>
+					<div class="allure-testimonial-content">
+						<div class="allure-cd-author">
+							<ul class="allure-cd-author-info">
+								<li>
+									<div class="icons-star">
+										<mvt:item name="readytheme" param="image( 'icon-star' )" />
+										<mvt:item name="readytheme" param="image( 'icon-star' )" />
+										<mvt:item name="readytheme" param="image( 'icon-star' )" />
+										<mvt:item name="readytheme" param="image( 'icon-star' )" />
+										<mvt:item name="readytheme" param="image( 'icon-star' )" />
+									</div>
+								</li>
+								<li>
+									<h2>Warm and rich yet light as a sea breeze.</h2>
+								</li>
+								<li>
+									<p class="allure-cd-author-info">- Barbara</p>
+								</li>
+							</ul>
+						</div>
+				</li>
+				<li>
+					<div class="allure-testimonial-content">
+						<div class="allure-cd-author">
+							<ul class="allure-cd-author-info">
+								<li>
+									<div class="icons-star">
+										<mvt:item name="readytheme" param="image( 'icon-star' )" />
+										<mvt:item name="readytheme" param="image( 'icon-star' )" />
+										<mvt:item name="readytheme" param="image( 'icon-star' )" />
+										<mvt:item name="readytheme" param="image( 'icon-star' )" />
+										<mvt:item name="readytheme" param="image( 'icon-star' )" />
+									</div>
+								</li>
+								<li>
+									<h2>Clean, soft, and so long lasting!!</h2>
+								</li>
+								<li>
+									<p class="allure-cd-author-info">- Pamela</p>
+								</li>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="allure-testimonial-content">
+						<div class="allure-cd-author">
+							<ul class="allure-cd-author-info">
+								<li>
+									<div class="icons-star">
+										<mvt:item name="readytheme" param="image( 'icon-star' )" />
+										<mvt:item name="readytheme" param="image( 'icon-star' )" />
+										<mvt:item name="readytheme" param="image( 'icon-star' )" />
+										<mvt:item name="readytheme" param="image( 'icon-star' )" />
+										<mvt:item name="readytheme" param="image( 'icon-star' )" />
+									</div>
+								</li>
+								<li>
+									<h2>It brings me calm and serenity.</h2>
+								</li>
+								<li>
+									<p class="allure-cd-author-info">- Barry</p>
+								</li>
+						</div>
+
+					</div>
+				</li>
+				<li>
+					<div class="allure-testimonial-content">
+						<div class="allure-cd-author">
+							<ul class="allure-cd-author-info">
+								<li>
+									<div class="icons-star">
+										<mvt:item name="readytheme" param="image( 'icon-star' )" />
+										<mvt:item name="readytheme" param="image( 'icon-star' )" />
+										<mvt:item name="readytheme" param="image( 'icon-star' )" />
+										<mvt:item name="readytheme" param="image( 'icon-star' )" />
+										<mvt:item name="readytheme" param="image( 'icon-star' )" />
+									</div>
+								</li>
+								<li>
+									<h2>Makes me feel like I’m at the beach with a gentle breeze around me.</h2>
+								</li>
+								<li>
+									<p class="allure-cd-author-info">- Nyana</p>
+								</li>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<!-- cd-testimonials -->
+	</div>
+</div>

@@ -1,0 +1,41 @@
+<script src="https://www.paypalobjects.com/api/checkout.js"></script>
+<div id="paypal-button"></div>
+
+<script>
+paypal.Button.render(
+{
+	<mvt:if expr="l.settings:PaypalExButton:production_mode">
+		env: 'production',
+	<mvt:else>
+		env: 'sandbox',
+	</mvt:if>
+
+	locale: '&mvtj:PaypalExButton:locale;',
+	style:
+	{
+		<mvt:if expr="l.settings:PaypalExButton:style:label NE 'credit'">
+			color: '&mvtj:PaypalExButton:style:color;',
+		</mvt:if>
+		shape: '&mvtj:PaypalExButton:style:shape;',
+		size: '&mvtj:PaypalExButton:style:size;',
+		label: '&mvtj:PaypalExButton:style:label;',
+		tagline: <mvt:if expr="l.settings:PaypalExButton:style:tagline">true<mvt:else>false</mvt:if>,
+		layout: '&mvtj:PaypalExButton:style:layout;',
+		fundingicons: <mvt:if expr="l.settings:PaypalExButton:style:fundingicons">true<mvt:else>false</mvt:if>
+	},
+
+	payment: function( data, actions )
+	{
+		return paypal.request.get( json_url + 'Store_Code=' + encodeURIComponent( '&mvtj:store:code;' ) + '&Session_Type=runtime&Function=Module&Module_Code=paypalpro&Module_Function=SetExpressCheckout&NextScreen=' + encodeURIComponent( '&mvtj:global:Screen;' ) + '&CancelScreen=' + encodeURIComponent( '&mvtj:global:Screen;' ) ).then( function( response )
+		{
+			if ( response.success )
+			{
+				return response.data;
+			}
+		} );
+	},
+	onAuthorize: function( data, actions ) { return actions.redirect(); },
+	onCancel: function( data, actions )	{ return actions.redirect(); }
+}, '#paypal-button' );
+</script>
+	

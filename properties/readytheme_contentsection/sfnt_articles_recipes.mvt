@@ -1,0 +1,17 @@
+<section class="sfnt-articles-recipes t-defer-object" data-defer>
+    <div class="container">
+        <div class="heading-line">
+            <div class="heading-line-in">
+                <h2 class="heading-line__title">Crowd Pleaser</h2>
+                <div class="heading-line__subtitle">best of both worlds</div>
+            </div>
+        </div>
+        <div class="o-layout o-layout--wide u-grids-3--m block-articles-recipes">
+            <div class="o-layout__item block-articles-recipes__item">
+                <div class="block-articles-recipes__img">
+                    <a href="/blog/trusted-by-the-worlds-top-chefs/"><mvt:item name="readytheme" param="image( 'sfnt_articles_recipes_1' )" /></a>
+                </div>
+                            <h3 class="block-articles-recipes__title"><i>NOBLE HANDCRAFTED SYRUP GIFT BOX<i></h3>
+                <p class="block-articles-recipes__text"><i>For yourself of that foodie in your life! This artisinal gift box containing both our <b>Bourbon</b> Barrel Matured & our <b>Vanilla Bean</b> & Egyptian Chamomile Blossoms Syrup create a perfectly balanced gift.<i></p>
+                 </div>
+</section>

@@ -1,0 +1,76 @@
+{
+    "items": [
+        {
+            "active": 1,
+            "id": "566d27a6b4646a8a80a220281b9ee6d7",
+            "link": "<a href=\"https://demo.pcinet.com/mm5/merchant.mvc?Screen=CTGY&Category_Code=gift-sets\" target=\"_self\">Gift Sets</a>",
+            "link_dest": "gift-sets",
+            "link_targ": "_self",
+            "link_type": "C",
+            "name": "Gift Sets",
+            "url": "https://demo.pcinet.com/mm5/merchant.mvc?Screen=CTGY&Category_Code=gift-sets"
+        },
+        {
+            "active": 1,
+            "id": "9d6cf7383bfabc7e8a5833cfa4117294",
+            "link": "<a href=\"https://demo.pcinet.com/mm5/merchant.mvc?Screen=CTGY&Category_Code=Fragranced_Candle\" target=\"_self\">Fragranced Candles</a>",
+            "link_dest": "Fragranced_Candle",
+            "link_targ": "_self",
+            "link_type": "C",
+            "name": "Fragranced Candles",
+            "url": "https://demo.pcinet.com/mm5/merchant.mvc?Screen=CTGY&Category_Code=Fragranced_Candle"
+        },
+        {
+            "active": 1,
+            "id": "06aa4c21fde26b5832907d19b4329568",
+            "link": "<a href=\"https://demo.pcinet.com/mm5/merchant.mvc?Screen=CTGY&Category_Code=Reed_Diffuser\" target=\"_self\">Reed Diffusers</a>",
+            "link_dest": "Reed_Diffuser",
+            "link_targ": "_self",
+            "link_type": "C",
+            "name": "Reed Diffusers",
+            "url": "https://demo.pcinet.com/mm5/merchant.mvc?Screen=CTGY&Category_Code=Reed_Diffuser"
+        },
+        {
+            "active": 1,
+            "id": "e83c8031013753b6189ea378ffbb7867",
+            "link": "<a href=\"https://demo.pcinet.com/mm5/merchant.mvc?Screen=CTGY&Category_Code=body_care\" target=\"_self\">Body Care</a>",
+            "link_dest": "body_care",
+            "link_targ": "_self",
+            "link_type": "C",
+            "name": "Body Care",
+            "url": "https://demo.pcinet.com/mm5/merchant.mvc?Screen=CTGY&Category_Code=body_care"
+        },
+        {
+            "active": 1,
+            "id": "c73a0d0d72ed5ef5919ec9a8d5d29e8a",
+            "link": "<a href=\"https://demo.pcinet.com/mm5/merchant.mvc?Screen=CTGY&Category_Code=Room_Mist\" target=\"_self\">Room Mist</a>",
+            "link_dest": "Room_Mist",
+            "link_targ": "_self",
+            "link_type": "C",
+            "name": "Room Mist",
+            "url": "https://demo.pcinet.com/mm5/merchant.mvc?Screen=CTGY&Category_Code=Room_Mist"
+        },
+        {
+            "active": 1,
+            "id": "102954a42027a0e3f382dc59c4968957",
+            "link": "<a href=\"https://demo.pcinet.com/mm5/merchant.mvc?Screen=CTGY&Category_Code=absolute\" target=\"_self\">Absolute</a>",
+            "link_dest": "absolute",
+            "link_targ": "_self",
+            "link_type": "C",
+            "name": "Absolute",
+            "url": "https://demo.pcinet.com/mm5/merchant.mvc?Screen=CTGY&Category_Code=absolute"
+        },
+        {
+            "active": 1,
+            "id": "46b922f53c202a9ef73cd6f8f086ff2d",
+            "link": "<a href=\"https://demo.pcinet.com/mm5/merchant.mvc?Screen=CTGY&Category_Code=new-arrivals\" target=\"_self\">New Arrivals</a>",
+            "link_dest": "new-arrivals",
+            "link_targ": "_self",
+            "link_type": "C",
+            "name": "New Arrivals",
+            "url": "https://demo.pcinet.com/mm5/merchant.mvc?Screen=CTGY&Category_Code=new-arrivals"
+        }
+    ],
+    "layout": "S",
+    "name": "Storefront: Featured Categories"
+}

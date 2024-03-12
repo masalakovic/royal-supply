@@ -1,0 +1,22 @@
+{
+    "code": "p-slick",
+    "type": "L",
+    "branchless_filepath": "b03/themes/colossus/plugins/slick/slick.css",
+    "is_global": false,
+    "active": false,
+    "attributes": [
+        {
+            "name": "type",
+            "value": "text/css"
+        },
+        {
+            "name": "media",
+            "value": "all"
+        },
+        {
+            "name": "rel",
+            "value": "stylesheet"
+        }
+    ],
+    "linked_pages": []
+}

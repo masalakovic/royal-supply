@@ -1,0 +1,26 @@
+<h1> Hello world <h1>
+
+<mvt:assign name="l.people[1]" value="'Rick'" />
+<mvt:assign name="l.people[2]" value="'Philp'" />
+<mvt:assign name="l.people[3]" value="'Nathan'" />
+<mvt:assign name="l.people[4]" value="'Russ'" />
+<mvt:assign name="l.people[5]" value="'Wayne'" />
+
+<mvt:assign name="l.settings:people" value="l.people" />
+
+<mvt:foreach iterator="person" array="people">
+  &mvt:person;<br>
+</mvt:foreach>
+
+<mvt:assign name="g.count" value="miva_array_elements(l.people)" />
+
+<p>
+  &mvte:global:count;
+</p>
+
+
+l.settings:people[1]:info:name;
+l.settings:people[1]:info:birthday;
+l.settings:people[1]:info:address;
+
+&mvt:people[1]:info:name;

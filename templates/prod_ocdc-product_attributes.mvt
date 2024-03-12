@@ -1,0 +1,97 @@
+<table>
+<mvt:foreach iterator="attribute" array="attributes">
+	<tr>
+		<td class="prompt">
+			<input type="hidden" name="Product_Attributes[ &mvt:attribute:index; ]:code" value="&mvte:attribute:code;" />
+			<mvt:if expr="l.settings:attribute:template_code NE 0">
+				<input type="hidden" name="Product_Attributes[ &mvt:attribute:index; ]:template_code" value="&mvte:attribute:template_code;" />
+			</mvt:if>
+			<mvt:if expr="l.settings:attribute:type NE 'checkbox'">
+				<mvt:if expr="l.settings:attribute:image">
+					<img src="&mvte:attribute:image;" alt="&mvte:attribute:raw_prompt;" />
+				<mvt:else>
+					<mvt:if expr="l.settings:attribute:required">
+						<span class="required">
+					<mvt:else>
+						<span>
+					</mvt:if>
+							&mvt:attribute:prompt;
+						</span>
+				</mvt:if>
+			<mvt:else>
+				&nbsp;
+			</mvt:if>
+		</td>
+		<td class="field">
+			<mvt:if expr="l.settings:attribute:type EQ 'text'">
+				<input type="text" name="Product_Attributes[&mvt:attribute:index;]:value" value="&mvte:attribute:value;" class="textfield" />
+			<mvt:elseif expr="l.settings:attribute:type EQ 'memo'">
+				<textarea name="Product_Attributes[&mvt:attribute:index;]:value">&mvte:attribute:value;</textarea>
+			<mvt:elseif expr="l.settings:attribute:type EQ 'radio'">
+				<mvt:foreach iterator="option" array="attribute:options">
+					<div>
+					<mvt:if expr="( ( g.Product_Attributes[l.settings:attribute:index]:value EQ 0 ) AND
+									( l.settings:option:id EQ l.settings:attribute:default_id ) )   OR
+									( g.Product_Attributes[l.settings:attribute:index]:value EQ l.settings:option:code )">
+						<input type="radio" name="Product_Attributes[&mvt:attribute:index;]:value" value="&mvte:option:code;" checked />
+					<mvt:else>
+						<input type="radio" name="Product_Attributes[&mvt:attribute:index;]:value" value="&mvte:option:code;" />
+					</mvt:if>
+					<mvt:if expr="l.settings:option:image">
+						<img src="&mvte:option:image;" alt="&mvte:option:prompt;" />
+					<mvt:else>
+						&mvte:option:prompt;
+					</mvt:if>
+					</div>
+				</mvt:foreach>
+			<mvt:elseif expr="( l.settings:attribute:type EQ 'select' ) OR ( l.settings:attribute:type EQ 'swatch-select' )">
+				<select name="Product_Attributes[&mvt:attribute:index;]:value">
+					<mvt:foreach iterator="option" array="attribute:options">
+						<mvt:if expr="( ( g.Product_Attributes[l.settings:attribute:index]:value EQ 0 ) AND ( l.settings:option:id EQ l.settings:attribute:default_id ) ) OR
+										( g.Product_Attributes[l.settings:attribute:index]:value EQ l.settings:option:code )">
+							<option value="&mvte:option:code;" selected>&mvte:option:prompt;</option>
+						<mvt:else>
+							<option value="&mvte:option:code;">&mvte:option:prompt;</option>
+						</mvt:if>
+					</mvt:foreach>
+				</select>
+			<mvt:elseif expr="l.settings:attribute:type EQ 'checkbox'">
+				<mvt:if expr="g.Product_Attributes[l.settings:attribute:index]:value">
+					<input type="checkbox" name="Product_Attributes[&mvt:attribute:index;]:value" value="Yes" checked />
+				<mvt:else>
+					<input type="checkbox" name="Product_Attributes[&mvt:attribute:index;]:value" />
+				</mvt:if>
+				<mvt:if expr="l.settings:attribute:image">
+					<img src="&mvte:attribute:image;" alt="&mvte:attribute:raw_prompt;" />
+				<mvt:else>
+					<mvt:if expr="l.settings:attribute:required">
+						<span class="required">
+					<mvt:else>
+						<span>
+					</mvt:if>
+							&mvt:attribute:prompt;
+						</span>
+				</mvt:if>				
+			</mvt:if>
+		</td>
+	</tr>
+</mvt:foreach>
+
+<mvt:if expr="l.settings:subscription:enabled AND l.settings:subscription:term_count">
+	<tr>
+		<td class="prompt">Subscribe:</td>
+		<td class="field">
+			<select name="Product_Subscription_Term_ID">
+				<mvt:if expr="NOT l.settings:subscription:mandatory">
+					<option value="0">No Subscription</option>
+				</mvt:if>
+
+				<mvt:foreach iterator="term" array="subscription:terms">
+					<option value="&mvte:term:id;">&mvte:term:descrip;</option>
+				</mvt:foreach>
+			</select>
+		</td>
+	</tr>
+</mvt:if>
+</table>
+<div class="clear"></div>

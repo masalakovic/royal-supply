@@ -1,0 +1,27 @@
+<mvt:assign name="l.settings:clean:product:name" value="glosub(l.settings:product:name, asciichar(39), '&#39;')" />
+<script>
+	var gallery = [],
+		thumbnailIndex = 0;
+
+	ImageMachine.prototype.ImageMachine_Generate_Thumbnail = function (thumbnail_image, main_image, closeup_image, type_code) {
+		var thumbnail,
+			img;
+	
+		thumbnail = document.createElement('div');
+		thumbnail.className = 'thumbnail-img-wrap';
+		thumbnail.setAttribute('data-index', thumbnailIndex++);
+		
+		if (typeof(thumbnail_image) == 'string' && thumbnail_image.length > 0) {
+			img = document.createElement('img');
+			img.src = thumbnail_image;
+			thumbnail.appendChild(img);
+		};
+		if (typeof(closeup_image) == 'string' && closeup_image.length > 0) {
+			gallery.push({
+				src: closeup_image,
+				title: '&mvt:clean:product:name;'
+			});
+		};
+		return thumbnail;
+	};
+</script>

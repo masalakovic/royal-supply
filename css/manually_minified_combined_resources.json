@@ -1,0 +1,16 @@
+{
+    "code": "manually_minified_combined_resources",
+    "type": "I",
+    "is_global": true,
+    "active": false,
+    "attributes": [
+        {
+            "name": "type",
+            "value": "text/css"
+        },
+        {
+            "name": "media",
+            "value": "all"
+        }
+    ]
+}

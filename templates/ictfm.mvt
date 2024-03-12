@@ -1,0 +1,106 @@
+<mvt:assign name="g.isTesting" value="0" /> <mvt:comment> Send to ray.yates@pcinet.com </mvt:comment>
+
+<mvt:assign name="g.website" value="trim(g.website)" />
+<mvt:assign name="l.arg" value="substring( s.arg2, 2, len(s.arg2) )" />
+<mvt:if expr="l.arg">
+    <mvt:assign name="l.count" value="miva_splitstring( crypto_base64_decode( l.arg ), '&', l.paramiters, 'trim' )" />
+    <mvt:assign name="l.vtime" value="glosub( l.paramiters[2],'v=','' )" />
+</mvt:if>
+<mvt:assign name="l.now" value="s.time_t" />
+<mvt:assign name="l.minutes" value="int( (l.now - l.vtime) / 60 )" />
+
+<mvt:assign name="g.qt" value="asciichar(34)" />
+<mvt:assign name="g.eol" value="asciichar(13) $ asciichar(10)" />
+<mvt:assign name="g.eol2" value="g.eol $ g.eol" />
+
+<mvt:assign name="l.ok" value="1" />
+<mvt:if expr="( ('ICTFM' CIN s.REQUEST_URI) OR ('influencer-contact-form' CIN s.REQUEST_URI) )">
+    <mvt:if expr="l.arg EQ g.website">
+        <mvt:if expr="l.paramiters[1] EQ 'human=1'">
+            <mvt:if expr="l.minutes GE 10">
+                <mvt:assign name="g.err" value="'Sorry, the page timed out; please try again.'" />
+                <mvt:assign name="l.ok" value="0" />
+            </mvt:if>
+        <mvt:else>
+            <mvt:assign name="l.ok" value="0" />
+        </mvt:if>
+    <mvt:else>
+        <mvt:assign name="l.ok" value="0" />
+    </mvt:if>
+<mvt:else>
+    <mvt:assign name="l.ok" value="0" />
+</mvt:if>
+
+<mvt:if expr="NOT l.ok">
+    <meta http-equiv="refresh" content="0;url=&mvte:urls:influencer:auto_sep;status=error&errcode=&mvt:global:err;" />
+    <mvt:exit>
+</mvt:if>
+
+<mvt:comment> ****** Set the lafco contact name and email here. ******* </mvt:comment>
+<mvt:comment> Change to alyssat@lafco.com later. </mvt:comment>
+<mvt:assign name="g.Lafco_contactName" value="'Alyasa Tomasetti'" />
+<mvt:assign name="g.Lafco_contactEmail" value="'alyssat@lafco.com'" />
+<mvt:comment> ********************************************************* </mvt:comment>
+
+<mvt:assign name="g.lafco_Contact" value="g.qt $ g.Lafco_contactName $ g.qt $ ' <' $ g.Lafco_contactEmail $ '>'" />
+
+<mvt:assign name="l.mail:to" value="g.lafco_Contact" />
+<mvt:assign name="l.mail:from" value="g.qt $ g.store:name $ g.qt $ ' <' $ trim(g.store:email) $ '>'" />
+<mvt:assign name="l.mail:reply" value="g.qt $ g.contactName $ g.qt $ ' <' $ trim(g.contactEmail) $ '>'" />
+<mvt:assign name="l.mail:cc" value="''" />
+<mvt:assign name="l.mail:bcc" value="''" />
+
+<mvt:if expr="g.isTesting">
+    <mvt:comment> for Debugging </mvt:comment>
+    <mvt:assign name="l.mail:to" value="g.qt $ 'Ray Yates'     $ g.qt $ ' <ray.yates@pcinet.com>'" />
+    <mvt:assign name="l.mail:cc" value="g.qt $ 'Andreas Toman' $ g.qt $ ' <andreas.toman@pcinet.com>'" />
+</mvt:if>
+
+<mvt:assign name="l.mail:subject" value="'[' $ g.store:name $ '] -- Influencer Submission'" />
+
+<mvt:comment> Mail message. </mvt:comment>
+<mvt:assign name="l.mail:message" value="
+'Message from: ' $ g.contactName $ g.eol $
+'Email Address: ' $ g.contactEmail $ g.eol2 $
+'Message: ' $ g.contactMessage $ g.eol2 $
+'Links: ' $ g.eol $
+'Instagram: ' $ g.instagramUrl $ g.eol $
+'Tik Tok: ' $ g.tiktokUrl $ g.eol $
+'Facebook: ' $ g.facebookUrl $ g.eol $
+'Youtube: ' $ g.youtubeUrl $ g.eol $
+'Blog: ' $ g.blogUrl $ g.eol2 $
+'Exchange Product? ' $ g.exchangeProduct $ g.eol $
+'Live in the US? ' $ g.liveUSA $ g.eol2" />
+
+<mvt:comment> Additional SMTP headers for Reply To and Return Path </mvt:comment>
+<mvt:assign name="l.mail:headers" value="l.mail:headers $ 'Reply-To:' $ l.mail:reply $ g.eol" />
+<mvt:assign name="l.mail:headers" value="l.mail:headers $ 'Return-Path:' $ l.mail:from $ g.eol" />
+<mvt:assign name="l.mail:headers" value="l.mail:headers $ 'MIME-Version: 1.0' $ g.eol" />
+<mvt:assign name="l.mail:headers" value="l.mail:headers $ 'Content-Type: text/plain; charset=utf-8' $ g.eol" />
+
+<mvt:comment> Send email to Lafco. </mvt:comment>
+<mvt:do file="g.Module_Library_Utilities" name="g.sent" value="v9_SendEmail(l.mail)" />
+<mvt:if expr="g.sent">
+    <meta http-equiv="refresh" content="0;url=&mvte:urls:influencer:auto_sep;status=submitted" />
+<mvt:else>
+    <meta http-equiv="refresh" content="0;url=&mvte:urls:influencer:auto_sep;status=error&errcode=&mvt:global:MvSMTP_Error;" />
+</mvt:if>
+
+<mvt:assign name="l.visitor_mail:from" value="g.qt $ g.store:name $ g.qt $ ' <' $ g.store:email $ '>'" />
+<mvt:assign name="l.visitor_mail:to" value="g.qt $ g.contactName $ g.qt $ ' <' $ g.contactEmail $ '>'" />
+<mvt:assign name="l.visitor_mail:subject" value="l.mail:subject" />
+
+<mvt:assign name="l.visitor_mail:message" value="
+'Dear ' $ g.contactName $ ',' $ g.eol $ g.eol $
+'Thank you for contacting ' $ g.store:name $ '. Your message has been received.' $ g.eol $ g.eol $
+'Your Message:' $ g.eol $ g.contactMessage" />
+
+<mvt:assign name="l.visitor_mail:headers" value="'Reply-To:' $ l.mail:to $ g.eol" />
+
+<mvt:comment> Send confermation email to contact. </mvt:comment>
+<mvt:do file="g.Module_Library_Utilities" name="g.visitor_sent" value="v9_SendEmail(l.visitor_mail)" />
+<mvt:if expr="g.sent">
+    <meta http-equiv="refresh" content="0;url=&mvte:urls:influencer:auto_sep;status=submitted" />
+<mvt:else>
+    <meta http-equiv="refresh" content="0;url=&mvte:urls:influencer:auto_sep;status=error&errcode=&mvt:global:MvSMTP_Error;" />
+</mvt:if>

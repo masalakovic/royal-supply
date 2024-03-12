@@ -1,0 +1,96 @@
+<section class="section-static section-static-banner-hero fragrance-page">
+	<mvt:item name="readytheme" param="image( 'fragrance-main-image' )" />
+	<p class="banner-title">fragrance.</p>
+</section>
+
+<section class="section-static section-static-promise">
+	<div class="container">
+		<div class="static-centered">
+			<h1>uniquely true to nature</h1>
+		</div>
+		<p>The use of absolutes in our fragrances allows us to deliver to you highly concentrated scent and to create an exquisite fragrance experience that is uniquely true to nature.</p>
+
+	</div>
+</section>
+
+<section class="absolute-collection card-info">
+	<div class="container category-wrapper">
+		<div class="u-grids-1 u-grids-2--s collection-category">
+			<div class="image-wrapper">
+				<mvt:item name="readytheme" param="image( 'fr-1' )" />
+			</div>
+			<div class="info-wrapper">
+				<h2>capturing absolutes</h2>
+				<p>The process of extracting our precious absolutes has its origins in the cold enfleurage method of early perfumery, developed in the south of France during the eighteenth century. In this traditional practice, freshly harvested flowers are absorbed within sheets of lard or tallow and then continuously replenished until the desired fragrance saturation is reached. </p>
+			</div>
+		</div>
+		<div class="u-grids-1 u-grids-2--s collection-category">
+			<div class="image-wrapper">
+				<mvt:item name="readytheme" param="image( 'fr-2' )" />
+			</div>
+			<div class="info-wrapper">
+				<p>Developed as an alternative to heated steam distillation, which can damage delicate flowers, cold enfleurage preserves the complex olfactory notes of the original botanical matter. Today, LAFCO has revived this approach, using a liquid solution to render the highly concentrated absolutes and create fragrances with striking fidelity to nature.</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<section class="section-static section-static-discover-more absolute-collection-content cards">
+	<div class="container">
+		<div class="o-layout u-grids-1 u-grids-2--s u-grids-3--l block-discover-more">
+			<div class="o-layout__item">
+				<a href="/clary-sage-signature-155oz-candle.html">
+					<mvt:item name="readytheme" param="image( 'fr-3-1' )" />
+					<span>CLARY SAGE</span>
+					<p>a cleansing green, spicy floral</p>
+				</a>
+			</div>
+			<div class="o-layout__item">
+				<a href="/rose-de-mai-signature-155oz-candle.html">
+					<mvt:item name="readytheme" param="image( 'fr-3-2' )" />
+					<span>ROSE DE MAI</span>
+					<p>a garden of romantic roses</p>
+				</a>
+			</div>
+			<div class="o-layout__item">
+				<a href="/orange-blossom-signature-155oz-candle.html">
+					<mvt:item name="readytheme" param="image( 'fr-3-3' )" />
+					<span>ORANGE BLOSSOM</span>
+					<p>an exotic white floral bloom</p>
+				</a>
+			</div>
+			<div class="o-layout__item">
+				<a href="/lavender-flower-signature-155oz-candle.html">
+					<mvt:item name="readytheme" param="image( 'fr-3-4' )" />
+					<span>LAVENDER FLOWER</span>
+					<p>the fields of Provence</p>
+				</a>
+			</div>
+			<div class="o-layout__item">
+				<a href="/balsam-black-pepper-signature-155oz-candle.html">
+					<mvt:item name="readytheme" param="image( 'fr-3-5' )" />
+					<span>BALSAM BLACK PEPPER</span>
+					<p>a woodland of evergreens</p>
+				</a>
+			</div>
+			<div class="o-layout__item">
+				<a href="/forest-oakmoss-signature-155oz-candle.html">
+					<mvt:item name="readytheme" param="image( 'fr-3-6' )" />
+					<span>FOREST OAKMOSS</span>
+					<p>the wet and earthy forest floor</p>
+				</a>
+			</div>
+		</div>
+	</div>
+
+</section>
+
+<section class="section-static block-background">
+    <div class="image-wrapper">
+		<div class="button_block black">
+			<a href="/absolute" class="next_block begin btn btn--s">SHOP THE COLLECTION</a>
+		</div>
+        <mvt:item name="readytheme" param="image( 'gl-back' )" />
+    </div>
+</section>

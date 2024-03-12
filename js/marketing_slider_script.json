@@ -1,0 +1,13 @@
+{
+    "code": "marketing_slider_script",
+    "type": "L",
+    "branchless_filepath": "scripts/00000001/b08/marketing_slider_script.js",
+    "is_global": true,
+    "active": false,
+    "attributes": [
+        {
+            "name": "type",
+            "value": "text/javascript"
+        }
+    ]
+}

@@ -1,0 +1,250 @@
+<mvt:assign name="l.settings:fragrance_descriptions[1]:name" value="'almond blossom'" />
+<mvt:assign name="l.settings:fragrance_descriptions[2]:name" value="'amber'" />
+<mvt:assign name="l.settings:fragrance_descriptions[3]:name" value="'apple wood'" />
+<mvt:assign name="l.settings:fragrance_descriptions[4]:name" value="'bamboo leaves'" />
+<mvt:assign name="l.settings:fragrance_descriptions[5]:name" value="'basil'" />
+<mvt:assign name="l.settings:fragrance_descriptions[6]:name" value="'bergamot'" />
+<mvt:assign name="l.settings:fragrance_descriptions[7]:name" value="'black currant'" />
+<mvt:assign name="l.settings:fragrance_descriptions[8]:name" value="'black pomegranate'" />
+<mvt:assign name="l.settings:fragrance_descriptions[9]:name" value="'black vanilla'" />
+<mvt:assign name="l.settings:fragrance_descriptions[10]:name" value="'camellia'" />
+<mvt:assign name="l.settings:fragrance_descriptions[11]:name" value="'catmint'" />
+<mvt:assign name="l.settings:fragrance_descriptions[12]:name" value="'celery'" />
+<mvt:assign name="l.settings:fragrance_descriptions[13]:name" value="'chamomile'" />
+<mvt:assign name="l.settings:fragrance_descriptions[14]:name" value="'cherry'" />
+<mvt:assign name="l.settings:fragrance_descriptions[15]:name" value="'cilantro'" />
+<mvt:assign name="l.settings:fragrance_descriptions[16]:name" value="'cognac'" />
+<mvt:assign name="l.settings:fragrance_descriptions[17]:name" value="'cucumber'" />
+<mvt:assign name="l.settings:fragrance_descriptions[18]:name" value="'cypress '" />
+<mvt:assign name="l.settings:fragrance_descriptions[19]:name" value="'damask rose'" />
+<mvt:assign name="l.settings:fragrance_descriptions[20]:name" value="'eucalyptus'" />
+<mvt:assign name="l.settings:fragrance_descriptions[21]:name" value="'fern'" />
+<mvt:assign name="l.settings:fragrance_descriptions[22]:name" value="'forest berries'" />
+<mvt:assign name="l.settings:fragrance_descriptions[23]:name" value="'frankincense'" />
+<mvt:assign name="l.settings:fragrance_descriptions[24]:name" value="'freesia'" />
+<mvt:assign name="l.settings:fragrance_descriptions[25]:name" value="'french lavender'" />
+<mvt:assign name="l.settings:fragrance_descriptions[26]:name" value="'French lilac'" />
+<mvt:assign name="l.settings:fragrance_descriptions[27]:name" value="'gardenia'" />
+<mvt:assign name="l.settings:fragrance_descriptions[28]:name" value="'geranium'" />
+<mvt:assign name="l.settings:fragrance_descriptions[29]:name" value="'ginger'" />
+<mvt:assign name="l.settings:fragrance_descriptions[30]:name" value="'golden amber'" />
+<mvt:assign name="l.settings:fragrance_descriptions[31]:name" value="'grapefruit'" />
+<mvt:assign name="l.settings:fragrance_descriptions[32]:name" value="'heliotrope'" />
+<mvt:assign name="l.settings:fragrance_descriptions[33]:name" value="'honey blossom'" />
+<mvt:assign name="l.settings:fragrance_descriptions[34]:name" value="'hyacinth'" />
+<mvt:assign name="l.settings:fragrance_descriptions[35]:name" value="'incense'" />
+<mvt:assign name="l.settings:fragrance_descriptions[36]:name" value="'jasmine'" />
+<mvt:assign name="l.settings:fragrance_descriptions[37]:name" value="'juniper'" />
+<mvt:assign name="l.settings:fragrance_descriptions[38]:name" value="'juniper sage'" />
+<mvt:assign name="l.settings:fragrance_descriptions[39]:name" value="'labdanum'" />
+<mvt:assign name="l.settings:fragrance_descriptions[40]:name" value="'lavender'" />
+<mvt:assign name="l.settings:fragrance_descriptions[41]:name" value="'leather'" />
+<mvt:assign name="l.settings:fragrance_descriptions[42]:name" value="'lemongrass'" />
+<mvt:assign name="l.settings:fragrance_descriptions[43]:name" value="'lime'" />
+<mvt:assign name="l.settings:fragrance_descriptions[44]:name" value="'lotus'" />
+<mvt:assign name="l.settings:fragrance_descriptions[45]:name" value="'magnolia'" />
+<mvt:assign name="l.settings:fragrance_descriptions[46]:name" value="'mandarin'" />
+<mvt:assign name="l.settings:fragrance_descriptions[47]:name" value="'marine'" />
+<mvt:assign name="l.settings:fragrance_descriptions[48]:name" value="'may rose'" />
+<mvt:assign name="l.settings:fragrance_descriptions[49]:name" value="'mint'" />
+<mvt:assign name="l.settings:fragrance_descriptions[50]:name" value="'muguet'" />
+<mvt:assign name="l.settings:fragrance_descriptions[51]:name" value="'musk'" />
+<mvt:assign name="l.settings:fragrance_descriptions[52]:name" value="'myrrh'" />
+<mvt:assign name="l.settings:fragrance_descriptions[53]:name" value="'oak wood'" />
+<mvt:assign name="l.settings:fragrance_descriptions[54]:name" value="'orange blossom'" />
+<mvt:assign name="l.settings:fragrance_descriptions[55]:name" value="'oud'" />
+<mvt:assign name="l.settings:fragrance_descriptions[56]:name" value="'patchouli'" />
+<mvt:assign name="l.settings:fragrance_descriptions[57]:name" value="'peony'" />
+<mvt:assign name="l.settings:fragrance_descriptions[58]:name" value="'pink pepper'" />
+<mvt:assign name="l.settings:fragrance_descriptions[59]:name" value="'purple basil'" />
+<mvt:assign name="l.settings:fragrance_descriptions[60]:name" value="'raspberry'" />
+<mvt:assign name="l.settings:fragrance_descriptions[61]:name" value="'rose water'" />
+<mvt:assign name="l.settings:fragrance_descriptions[62]:name" value="'rosemary'" />
+<mvt:assign name="l.settings:fragrance_descriptions[63]:name" value="'sage'" />
+<mvt:assign name="l.settings:fragrance_descriptions[64]:name" value="'sandalwood'" />
+<mvt:assign name="l.settings:fragrance_descriptions[65]:name" value="'sea foam'" />
+<mvt:assign name="l.settings:fragrance_descriptions[66]:name" value="'sea grass'" />
+<mvt:assign name="l.settings:fragrance_descriptions[67]:name" value="'seaweed'" />
+<mvt:assign name="l.settings:fragrance_descriptions[68]:name" value="'silver verbena'" />
+<mvt:assign name="l.settings:fragrance_descriptions[69]:name" value="'spike lavender'" />
+<mvt:assign name="l.settings:fragrance_descriptions[70]:name" value="'star anise'" />
+<mvt:assign name="l.settings:fragrance_descriptions[71]:name" value="'sweet basil'" />
+<mvt:assign name="l.settings:fragrance_descriptions[72]:name" value="'terracotta'" />
+<mvt:assign name="l.settings:fragrance_descriptions[73]:name" value="'thyme'" />
+<mvt:assign name="l.settings:fragrance_descriptions[74]:name" value="'vanilla'" />
+<mvt:assign name="l.settings:fragrance_descriptions[75]:name" value="'vetiver'" />
+<mvt:assign name="l.settings:fragrance_descriptions[76]:name" value="'violet'" />
+<mvt:assign name="l.settings:fragrance_descriptions[77]:name" value="'virginia cedar'" />
+<mvt:assign name="l.settings:fragrance_descriptions[78]:name" value="'walnut'" />
+<mvt:assign name="l.settings:fragrance_descriptions[79]:name" value="'water hyacinth'" />
+<mvt:assign name="l.settings:fragrance_descriptions[80]:name" value="'watermint'" />
+<mvt:assign name="l.settings:fragrance_descriptions[81]:name" value="'white jasmine'" />
+<mvt:assign name="l.settings:fragrance_descriptions[82]:name" value="'white woods'" />
+<mvt:assign name="l.settings:fragrance_descriptions[83]:name" value="'ylang ylang'" />
+<mvt:assign name="l.settings:fragrance_descriptions[84]:name" value="'yuzu'" />
+<mvt:assign name="l.settings:fragrance_descriptions[85]:name" value="'white birch'" />
+<mvt:assign name="l.settings:fragrance_descriptions[86]:name" value="'pine needles'" />
+<mvt:assign name="l.settings:fragrance_descriptions[87]:name" value="'cedar'" />
+<mvt:assign name="l.settings:fragrance_descriptions[88]:name" value="'aged bourbon'" />
+<mvt:assign name="l.settings:fragrance_descriptions[89]:name" value="'maple'" />
+<mvt:assign name="l.settings:fragrance_descriptions[90]:name" value="'vanilla bean'" />
+<mvt:assign name="l.settings:fragrance_descriptions[91]:name" value="'cinnamon'" />
+<mvt:assign name="l.settings:fragrance_descriptions[92]:name" value="'bitter orange'" />
+<mvt:assign name="l.settings:fragrance_descriptions[93]:name" value="'clove buds'" />
+<mvt:assign name="l.settings:fragrance_descriptions[94]:name" value="'redcurrant'" />
+<mvt:assign name="l.settings:fragrance_descriptions[95]:name" value="'mandarin nectar'" />
+<mvt:assign name="l.settings:fragrance_descriptions[96]:name" value="'matcha'" />
+<mvt:assign name="l.settings:fragrance_descriptions[97]:name" value="'clary sage'" />
+<mvt:assign name="l.settings:fragrance_descriptions[98]:name" value="'palo santo'" />
+<mvt:assign name="l.settings:fragrance_descriptions[99]:name" value="'coconut water'" />
+<mvt:assign name="l.settings:fragrance_descriptions[100]:name" value="'wild lily'" />
+<mvt:assign name="l.settings:fragrance_descriptions[101]:name" value="'mango wood'" />
+<mvt:assign name="l.settings:fragrance_descriptions[102]:name" value="'fig'" />
+<mvt:assign name="l.settings:fragrance_descriptions[103]:name" value="'peach'" />
+
+<mvt:assign name="l.settings:fragrance_descriptions[1]:description" value="'stabilizing and balancing'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[2]:description" value="'instills balance and patience'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[3]:description" value="'restorative and calming'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[4]:description" value="'detoxifying and restorative'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[5]:description" value="'stimulating and clarifying'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[6]:description" value="'crisp and refreshing'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[7]:description" value="'balancing and soothing'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[8]:description" value="'invigorating and regenerative'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[9]:description" value="'calming and relaxing'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[10]:description" value="'restorative and nourishing'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[11]:description" value="'calming and alleviates anxiety'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[12]:description" value="'calming and soothing'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[13]:description" value="'calming and soothing'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[14]:description" value="'relaxing and boosts mood'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[15]:description" value="'cleansing and detoxifying'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[16]:description" value="'energizing and boosts mood'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[17]:description" value="'refreshing and cooling'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[18]:description" value="'calming and uplifting'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[19]:description" value="'relaxing and alleviates anxiety'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[20]:description" value="'invigorating and soothing'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[21]:description" value="'energizing and stabilizing'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[22]:description" value="'detoxifying and refreshing'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[23]:description" value="'alleviates anxiety and depression'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[24]:description" value="'refreshing and enhances alertness'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[25]:description" value="'calming and alleviates anxiety'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[26]:description" value="'calming and alleviates anger'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[27]:description" value="'warming aphrodisiac'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[28]:description" value="'stabilizing and balancing'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[29]:description" value="'stimulating and warming'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[30]:description" value="'instills balance and patience'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[31]:description" value="'motivating and uplifting'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[32]:description" value="'calming and soothing'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[33]:description" value="'relaxing and boosts mood'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[34]:description" value="'relaxing and alleviates anxiety'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[35]:description" value="'alleviates anxiety and depression'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[36]:description" value="'boosts mood and energy levels'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[37]:description" value="'calming and grounding'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[38]:description" value="'stimulating and clarifying '"/>
+<mvt:assign name="l.settings:fragrance_descriptions[39]:description" value="'grounding and uplifting'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[40]:description" value="'calming and alleviates anxiety'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[41]:description" value="'grounding and calming'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[42]:description" value="'refreshing and balancing'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[43]:description" value="'invigorating and boosts mood'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[44]:description" value="'relaxing and boosts mood'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[45]:description" value="'soothing and balancing'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[46]:description" value="'alleviates anxiety and nausea'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[47]:description" value="'inspiring and calming'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[48]:description" value="'increases libido and alleviates anxiety'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[49]:description" value="'clarifying and soothing'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[50]:description" value="'uplifting and alleviates depression'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[51]:description" value="'balancing and inspiring'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[52]:description" value="'stimulating and balancing'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[53]:description" value="'promotes longevity and health'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[54]:description" value="'relaxing and boosts mood'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[55]:description" value="'meditative and aphrodisiac '"/>
+<mvt:assign name="l.settings:fragrance_descriptions[56]:description" value="'soothing peace inducing aphrodisiac '"/>
+<mvt:assign name="l.settings:fragrance_descriptions[57]:description" value="'calming and promotes romance'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[58]:description" value="'stimulating and enhances alertness'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[59]:description" value="'calming and refreshing'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[60]:description" value="'stabilzing and refreshing'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[61]:description" value="'uplifting and boosts mood'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[62]:description" value="'stimulating and enhances alertness'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[63]:description" value="'stimulating and clarifying '"/>
+<mvt:assign name="l.settings:fragrance_descriptions[64]:description" value="'Meditative and alleviates anxiety'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[65]:description" value="'grounding and invigorating'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[66]:description" value="'soothing and stimulating'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[67]:description" value="'stabilizing and evocative'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[68]:description" value="'refreshing and invigorating'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[69]:description" value="'calming and alleviates anxiety'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[70]:description" value="'calming and alleviates anxiety'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[71]:description" value="'energizing and uplifting'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[72]:description" value="'grounding and relaxing'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[73]:description" value="'stimulating and enhances alertness'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[74]:description" value="'calming and relaxing'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[75]:description" value="'calming and balancing'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[76]:description" value="'calming and alleviates anxiety'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[77]:description" value="'comforting enhances concentration'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[78]:description" value="'grounding and relaxing'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[79]:description" value="'relaxing and alleviates anxiety'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[80]:description" value="'invigorating and uplifting'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[81]:description" value="'boosts mood and energy levels'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[82]:description" value="'stimulating and soothing'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[83]:description" value="'soothing aphrodisiac'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[84]:description" value="'stabilizing and calming'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[85]:description" value="'stimulating and invigorating'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[86]:description" value="'mentally clarifying and grounding'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[87]:description" value="'calming and alleviates anxiety'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[88]:description" value="'balancing and regulating'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[89]:description" value="'comforting and warming'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[90]:description" value="'relaxing aphrodisiac'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[91]:description" value="'warm and spicy'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[92]:description" value="'zesty and bittersweet'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[93]:description" value="'spicy and rich'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[94]:description" value="'mood boosting and uplifting'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[95]:description" value="'calming and relieves anxiety'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[96]:description" value="'stimulating and enhances alertness'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[97]:description" value="'peace inducing and alleviates depression'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[98]:description" value="'meditative instills balance and grounding'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[99]:description" value="'refreshing and subtly sweet'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[100]:description" value="'fresh and dewy'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[101]:description" value="'slightly woody with exotic floral hints'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[102]:description" value="'earthy and lush'"/>
+<mvt:assign name="l.settings:fragrance_descriptions[103]:description" value="'juicy and vivid'"/>
+
+<h2>Ingredients Within the Fragrance</h2>
+<div class="x-product-ingredients-list">
+	<div class="o-layout u-grids-1 u-grids-3--s">
+		<div class="o-layout__item">
+			<div class="box-img">
+				<img src="&mvt:product:customfield_values:customfields:product_ingredient_1_img;" alt="">
+			</div>
+			<div class="box-name">&mvt:product:customfield_values:customfields:product_ingredient_1_name;</div>
+			<mvt:assign name="l.found" value="miva_array_search( l.settings:fragrance_descriptions, 1, l.fragrance, 'l.fragrance:name EQ \'' $ l.settings:product:customfield_values:customfields:product_ingredient_1_name $ '\'' )" />
+			<mvt:if expr="l.found">
+				<div class="box-desc">
+					<mvt:eval expr="l.fragrance:description" />
+				</div>
+			</mvt:if>
+
+		</div>
+		<div class="o-layout__item">
+			<div class="box-img">
+				<img src="&mvt:product:customfield_values:customfields:product_ingredient_2_img;" alt="">
+			</div>
+			<div class="box-name">&mvt:product:customfield_values:customfields:product_ingredient_2_name;</div>
+			<mvt:assign name="l.found" value="miva_array_search( l.settings:fragrance_descriptions, 1, l.fragrance, 'l.fragrance:name EQ \'' $ l.settings:product:customfield_values:customfields:product_ingredient_2_name $ '\'' )" />
+			<mvt:if expr="l.found">
+				<div class="box-desc">
+					<mvt:eval expr="l.fragrance:description" />
+				</div>
+			</mvt:if>
+		</div>
+		<div class="o-layout__item">
+			<div class="box-img">
+				<img src="&mvt:product:customfield_values:customfields:product_ingredient_3_img;" alt="">
+			</div>
+			<div class="box-name">&mvt:product:customfield_values:customfields:product_ingredient_3_name;</div>
+			<mvt:assign name="l.found" value="miva_array_search( l.settings:fragrance_descriptions, 1, l.fragrance, 'l.fragrance:name EQ \'' $ l.settings:product:customfield_values:customfields:product_ingredient_3_name $ '\'' )" />
+			<mvt:if expr="l.found">
+				<div class="box-desc">
+					<mvt:eval expr="l.fragrance:description" />
+				</div>
+			</mvt:if>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,11 @@
+{
+    "code": "REQUEST_CUSTOMER",
+    "enabled": 1,
+    "name": "Quote Requested: Customer",
+    "page_code": "QUOTEEMAIL_REQUEST_CUSTOMER",
+    "tfn_cc": "quote-email-REQUEST_CUSTOMER-cc.mvc",
+    "tfn_from": "quote-email-REQUEST_CUSTOMER-from.mvc",
+    "tfn_mime": "quote-email-REQUEST_CUSTOMER-mime.mvc",
+    "tfn_subj": "quote-email-REQUEST_CUSTOMER-subj.mvc",
+    "tfn_to": "quote-email-REQUEST_CUSTOMER-to.mvc"
+}

@@ -1,0 +1,84 @@
+<mvt:item name="html_profile" />
+<head>
+	<title>&mvt:store:name;: Checkout: Shipping Selection</title>
+	<base href="&mvt:global:basehref;" />
+	<mvt:item name="head" param="css_list" />
+	<mvt:item name="head" param="head_tag" />
+	<mvt:item name="amazonpay" />
+</head>
+<body class="OSEL one-column">
+<div id="site-container">
+	<div id="global-header"><mvt:item name="hdft" param="global_header" /></div>
+	<div id="navigation-bar"><mvt:item name="navbar" /></div>
+	<table id="content-container">
+		<tr>
+			<td id="left-navigation"><mvt:item name="category_tree" /></td>
+			<td id="main-content">
+				<div id="page-header"><mvt:item name="hdft" param="header" /></div>
+
+				<h1>Shipping Selection</h1>
+
+				<form method="post" action="&mvte:global:secure_sessionurl;">
+				<mvt:item name="tax" />
+
+				<mvt:item name="amazonpay_address" />
+
+				<div id="basket-contents" class="non-editable"><mvt:item name="basket" /></div>
+
+				<mvt:if expr="l.settings:messages:error_message_count">
+				<div class="error-message">
+				<mvt:foreach iterator="error" array="messages:error_messages">
+					&mvt:error;
+				</mvt:foreach>
+				</div>
+				</mvt:if>
+				<mvt:if expr="l.settings:messages:information_message_count">
+				<div class="information-message">
+				<mvt:foreach iterator="message" array="messages:information_messages">
+					&mvt:message;
+				</mvt:foreach>
+				</div>
+				</mvt:if>
+
+				<input type="hidden" name="Screen" value="AMAZONPAY_OPAY" />
+				<input type="hidden" name="Action" value="SHIP,PSHP,CTAX" />
+				<input type="hidden" name="Store_Code" value="&mvte:global:Store_Code;" />
+				<input type="hidden" name="PaymentMethod" value="amazonpay:" />
+				<div id="shipping-payment">
+					<div class="form_row">
+						<label for="ShippingMethod" class="bold">Ship Via:</label>
+						<select name="ShippingMethod" id="ShippingMethod">
+							<mvt:if expr="ISNULL l.settings:shippingmethods">
+								<mvt:if expr="ISNULL l.settings:fallbackshippingmethod">
+									<option value="">Unable to Calculate Shipping Costs</option>
+								<mvt:else>
+									<option value="">&mvt:fallbackshippingmethod:name; (&mvt:fallbackshippingmethod:formatted_price;)</option>
+								</mvt:if>
+							<mvt:else>
+								<mvt:foreach array="shippingmethods" iterator="method">
+									<mvt:if expr="NOT ISNULL l.settings:method:price">
+								<option value="&mvte:method:module;:&mvte:method:code;">&mvt:method:name; (&mvt:method:formatted_price;)</option>
+									<mvt:else>
+								<option value="&mvte:method:module;:&mvte:method:code;">&mvt:method:name;</option>
+									</mvt:if>
+								</mvt:foreach>
+							</mvt:if>
+						</select>
+					</div>
+					<mvt:if expr="ISNULL l.settings:shippingmethods">
+						<span class="bold">No valid shipping methods are available for your order.  You will be contacted regarding shipping when your order is processed.</span>
+					</mvt:if>
+				</div>
+				<div class="continue-button"><mvt:item name="buttons" param="Continue" /></div>
+				</form>
+
+				<div id="page-footer"><mvt:item name="hdft" param="footer" /></div>
+			</td>
+		</tr>
+	</table>
+	<div id="bottom-wrap"></div>
+	<div id="global-footer"><mvt:item name="hdft" param="global_footer" /></div>
+</div>
+</body>
+</html>
+	

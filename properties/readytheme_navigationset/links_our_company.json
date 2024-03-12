@@ -1,0 +1,24 @@
+{
+    "items": [
+        {
+            "active": 1,
+            "id": "b2b16e9a8582a59ec4501b4c8e8bb5c5",
+            "link": "<a href=\"https://demo.pcinet.com/privacy-policy.html\" target=\"_self\">Privacy Policy</a>",
+            "link_dest": "PRPO",
+            "link_targ": "_self",
+            "link_type": "G",
+            "name": "Privacy Policy",
+            "url": "https://demo.pcinet.com/privacy-policy.html"
+        },
+        {
+            "active": 1,
+            "id": "bcb9d799723d2677adae237fae4352b6",
+            "link": "Terms of Service",
+            "link_targ": "_self",
+            "link_type": "N",
+            "name": "Terms of Service"
+        }
+    ],
+    "layout": "S",
+    "name": "Global Footer Information"
+}

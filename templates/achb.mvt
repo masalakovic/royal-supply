@@ -1,0 +1,130 @@
+<mvt:if expr="g.basket:cust_id">
+	<mvt:assign name="g.it_is_retailer" value="1" />
+</mvt:if>
+<mvt:if expr="NOT g.it_is_retailer">
+        <mvt:item name="ry_toolbelt" param="screen|'SFNT'" />
+        <mvt:exit/>
+</mvt:if>
+
+<mvt:item name="html_profile" />
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<base href="&mvt:global:basehref;">
+	<mvt:if expr="NOT ISNULL l.settings:page:title">
+		<title>&mvt:page:title;</title>
+	<mvt:else>
+		<title>&mvt:store:name;: &mvt:page:name;</title>
+	</mvt:if>
+	<mvt:item name="head" param="css_list" />
+	<mvt:item name="head" param="head_tag" />
+</head>
+<body id="js-&mvte:page:code;" class="o-site-wrapper t-page-&mvt:global:pageClass;">
+	<mvt:item name="hdft" param="global_header" />
+
+	<section class="o-wrapper o-wrapper--flush">
+		<section class="o-layout">
+			<div class="o-layout__item">
+				<mvt:item name="hdft" param="header" />
+			</div>
+		</section>
+
+		<section class="o-layout">
+			<div class="o-layout__item">
+				<mvt:item name="readytheme" param="Load_Image('bg_account_hub', g.bg_account_hub)" />
+				<section class="section-account-hub" style="background-image: url('&mvt:global:bg_account_hub:image;');">
+					<div class="container">		
+						<mvt:if expr="g.Basket:cust_id AND g.Customer_Session_Verified">
+							<h1>Hello, &mvt:global:customer:ship_fname;</h1>
+							<a class="btn btn-logout" href="&mvte:urls:SFNT:secure_sep;Action=LOGO" title="Log Me Out">Logout</a>
+						</mvt:if>
+						<div class="o-layout u-grids-1 u-grids-2--s block-account-hub">
+							<div class="o-layout__item">
+								<a href="/wholesale">
+									<div class="box-img">
+										<mvt:item name="readytheme" param="image( 'img_account_hub_1' )" />
+									</div>
+									<h3 class="box-title">Place an Order</h3>
+								</a>
+							</div>
+							<div class="o-layout__item">
+								<a href="/customer-account.html">
+									<div class="box-img">
+										<mvt:item name="readytheme" param="image( 'img_account_hub_2' )" />
+									</div>
+									<h3 class="box-title">Account</h3>
+								</a>
+							</div>
+							<div class="o-layout__item">
+								<a href="/order-history-list.html">
+									<div class="box-img">
+										<mvt:item name="readytheme" param="image( 'img_account_hub_3' )" />
+									</div>
+									<h3 class="box-title">Order History</h3>
+								</a>
+							</div>
+							<div class="o-layout__item">
+								<a href="/media-library.html">
+									<div class="box-img">
+										<mvt:item name="readytheme" param="image( 'img_account_hub_4' )" />
+									</div>
+									<h3 class="box-title">Media Library</h3>
+								</a>
+							</div>
+							<div class="o-layout__item">
+								<a href="/rewards-account.html">
+									<div class="box-img">
+										<mvt:item name="readytheme" param="image( 'img_account_hub_5' )" />
+									</div>
+									<h3 class="box-title">Rewards</h3>
+								</a>
+							</div>
+							<div class="o-layout__item">
+								<a href="/new-launches.html">
+									<div class="box-img">
+										<mvt:item name="readytheme" param="image( 'img_account_hub_6' )" />
+									</div>
+									<h3 class="box-title">New Launches</h3>
+								</a>
+							</div>
+							<div class="o-layout__item">
+								<a href="/about-us.html">
+									<div class="box-img">
+										<mvt:item name="readytheme" param="image( 'img_account_hub_7' )" />
+									</div>
+									<h3 class="box-title">About Us</h3>
+								</a>
+							</div>
+							<div class="o-layout__item">
+								<a href="https://blog.lafco.com/" target="_blank">
+									<div class="box-img">
+										<mvt:item name="readytheme" param="image( 'img_account_hub_8' )" />
+									</div>
+									<h3 class="box-title">LAFCO Blog</h3>
+								</a>
+							</div>
+							<div class="o-layout__item">
+								<a href="/sales-consultant.html">
+									<div class="box-img">
+										<mvt:item name="readytheme" param="image( 'img_account_hub_9' )" />
+									</div>
+									<h3 class="box-title">Sales Consultant</h3>
+								</a>
+							</div>
+						</div>
+					</div>
+				</section>			
+			</div>
+		</section>
+		
+		<section class="o-layout">
+			<div class="o-layout__item">
+				<mvt:item name="hdft" param="footer" />
+			</div>
+		</section>
+	</section>
+	
+	<mvt:item name="hdft" param="global_footer" />
+</body>
+</html>

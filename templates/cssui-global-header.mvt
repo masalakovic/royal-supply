@@ -1,0 +1,101 @@
+<mvt:item name="readytheme" param="contentsection( 'mini_basket' )" />
+<header class="t-site-header u-bg-white" data-hook="site-header">
+	<mvt:item name="readytheme" param="contentsection( 'fasten_header' )" />
+	<mvt:item name="navbar" />
+	<section class="o-wrapper o-wrapper--flush">
+		<div class="o-layout o-layout--align-center o-layout--flush t-site-header__masthead">
+			<div class="o-layout__item o-layout--justify-between u-flex u-width-3 u-width-1--m &mvte:global:Session:shadows:checkout_hidden; menu-search-wrapper">
+				<button class="c-button c-button--flush c-button--full u-bg-white u-border-none u-color-black u-font-large u-icon-menu" data-hook="open-main-menu" aria-label="Open Menu"></button>
+				<button class="c-button c-button--flush c-button--full u-bg-white u-border-none u-color-black u-font-large u-icon-search" data-hook="open-header-search" aria-label="Open Search Form"></button>
+			</div>
+
+			<div class="o-layout__item u-width-6 u-width-10--m u-width-6--l u-width-7--xl u-text-center u-text-left--l t-site-header__logo">
+				<a href="&mvte:urls:SFNT:auto;" title="&mvte:global:store:name;">
+					<mvt:if expr="l.settings:readytheme:logo_type EQ 'text'">
+						<div class="t-site-header__store-name">&mvt:readytheme:logo_name;</div>
+						<small class="t-site-header__store-tagline">&mvt:readytheme:logo_tagline;</small>
+					<mvt:elseif expr="l.settings:readytheme:logo_type EQ 'image'">
+						<img src="&mvte:readytheme:logo_image;" alt="&mvte:readytheme:logo_alt;" loading="lazy" width="&mvte:readytheme:logo_image_width;" height="&mvte:readytheme:logo_image_height;">
+					</mvt:if>
+				</a>
+			</div>
+
+			<div class="o-layout__item u-width-3 u-width-1--m u-hidden--l u-text-right &mvte:global:Session:shadows:checkout_hidden;">
+				<a class="t-site-header__basket-link" data-hook="open-mini-basket" aria-label="Open Mini-Basket" href="&mvte:urls:BASK:auto;">
+					<mvt:if expr="l.settings:global_minibasket:basket_count GT 0">
+						<span class="u-icon-cart-full" aria-hidden="true"></span>
+					<mvt:else>
+						<span class="u-icon-cart-empty" aria-hidden="true"></span>
+					</mvt:if>
+					<span class="t-site-header__basket-link-quantity" data-hook="mini-basket-count">&mvte:global_minibasket:basket_count;</span>
+				</a>
+			</div>
+
+			<div class="o-layout__item u-width-12 u-width-3--l t-site-header__search &mvte:global:Session:shadows:checkout_hidden;" data-hook="site-header__search">
+				<form class="t-site-header__search-form" method="post" action="&mvte:urls:SRCH:rr;">
+					<fieldset>
+						<legend>Product Search</legend>
+						<div class="c-form-list">
+							<div class="c-form-list__item c-form-list__item--full c-control-group u-flex">
+								<span class="u-bg-white u-color-gray-50 u-icon-search t-site-header__search-icon" aria-hidden="true"></span>
+								<input class="c-form-input c-control-group__field u-bg-transparent u-border-none t-site-header__search-field" data-mm_searchfield="Yes" data-mm_searchfield_id="x-search-preview" type="search" name="Search" value="&mvte:global:Search;" placeholder="Search" autocomplete="off" required aria-label="Product Search">
+								<button class="c-button c-control-group__button u-bg-transparent u-color-gray-50 u-border-none u-icon-search t-site-header__search-button" type="submit" aria-label="Search"></button>
+							</div>
+						</div>
+					</fieldset>
+
+					<ul class="x-search-preview" data-mm_searchfield_menu="Yes" data-mm_searchfield_id="x-search-preview" role="listbox"></ul>
+				</form>
+			</div>
+
+			<div class="o-layout__item u-hidden u-flex--l u-width-3--l u-width-2--xl t-site-header__masthead-links &mvte:global:Session:shadows:checkout_hidden;">
+				<mvt:item name="customerlink" />
+				<mvt:item name="readytheme" param="contentsection( 'global_account' )" />
+				<a class="t-site-header__basket-link" data-hook="open-mini-basket" aria-label="Open Mini-Basket" href="&mvte:urls:BASK:auto;">
+					<mvt:if expr="l.settings:global_minibasket:basket_count GT 0">
+						<span class="u-icon-cart-full" aria-hidden="true"></span>
+					<mvt:else>
+						<span class="u-icon-cart-empty" aria-hidden="true"></span>
+					</mvt:if>
+					<span class="t-site-header__basket-link-quantity" data-hook="mini-basket-count">&mvte:global_minibasket:basket_count;</span>
+				</a>
+			</div>
+
+			<div class="o-layout__item u-width-6 u-width-8--l u-width-5--w u-hidden u-text-right t-site-header__secure &mvte:global:Session:shadows:checkout_shown;">
+				<span class="u-color-gray-600 u-text-medium u-text-uppercase"><span class="c-heading--subheading--x-small u-icon-secure" aria-hidden="true"></span> <span class="u-font-small">Secure Checkout</span></span>
+			</div>
+		</div>
+	</section>
+</header>
+<!-- end t-site-header -->
+
+<div class="o-wrapper o-wrapper--full o-wrapper--flush u-bg-white t-site-navigation &mvte:global:Session:shadows:checkout_hidden;">
+	<div class="vertical-nav">
+		<div class="o-layout o-layout--align-center o-layout--flush o-layout--justify-center t-site-navigation__wrap">
+			<mvt:item name="readytheme" param="navigationset( 'primary_navigation' )" />
+		</div>
+	</div>
+	<div class="horizontal-nav">
+		<div class="o-layout o-layout--align-center o-layout--flush o-layout--justify-center t-site-navigation__wrap">
+				<mvt:item name="readytheme" param="navigationset( 'horizontal_navigation' )" />
+		</div>
+	</div>
+</div>
+<!-- end t-site-navigation -->
+
+<mvt:if expr="(l.settings:page:code NE 'SFNT' AND l.settings:page:code NE 'ACLN' AND l.settings:page:code NE 'BASK' AND l.settings:page:code NE 'ORDL' AND l.settings:page:code NE 'OCST' AND l.settings:page:code NE 'OUS1' AND l.settings:page:code NE 'OUSM' AND l.settings:page:code NE 'UATM' AND l.settings:page:code NE 'UATR' AND l.settings:page:code NE 'OSEL' AND l.settings:page:code NE 'OPAY') AND (ISNULL g.Customer_Temporary_Password)">
+	<mvt:item name="breadcrumbs" />
+</mvt:if>
+
+<main class="o-wrapper t-main-content-element">
+	<mvt:if expr="g.Maintenance_Warning_Message">
+		<section class="o-layout">
+			<div class="o-layout__item">
+				<div class="x-messages x-messages--info">
+					<span class="u-icon-info"> </span>
+					&mvt:global:Maintenance_Warning_Message;
+				</div>
+			</div>
+		</section>
+		<!-- end g.Maintenance_Warning_Message -->
+	</mvt:if>

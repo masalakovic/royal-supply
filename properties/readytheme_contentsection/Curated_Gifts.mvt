@@ -1,0 +1,6 @@
+<div>
+	<h1> Curated Gifts </h1>
+	<mvt:item name="readytheme" param="image( 'Curated_Gifts' )" />
+	<p> Ready-to-ship, thoughtfully </p>
+	<p> designed, themed gift boxes </p>
+</div>

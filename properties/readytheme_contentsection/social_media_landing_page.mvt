@@ -1,0 +1,35 @@
+<mvt:item name="readytheme" param="Load_Image('social-media-landing-page', g.storefront_hero_section)" />
+<section class="storefront-hero-section newletter-sect" style="background-image: url('&mvt:global:storefront_hero_section:image;');">
+    <div class="container">
+        <div class="outer-box">
+<div class="inner-box">
+<a href="/shop-all" class="btn">Shop now</a>
+            <a href="https://blog.lafco.com/" class="btn">Blog</a>
+            <a href="/rewards" class="btn">Loyalty program</a>
+            <a href="https://blog.lafco.com/giveaway" class="btn">LAFCO Giveaway</a>
+           
+          
+
+            <div class="sub-heading">
+                <p>Join Our Newsletter and get 15% off.</p>
+            </div>
+            <div class="email-box">
+            <form method="post" action="https://enews.lafco.com/q/iKF83qSrASJ1z9W_Z0CAiaTBrKSFK_5gpk" accept-charset="UTF-8">
+              <input type="hidden" name="crvs" value="izp53CHmtGWPZsFiedaf9WUoLrDL1W8o_Rf_nFLvYir1LEcJCIgTwTW5dlChfeCu6wQhxu5lsjCoLn7R2cTb7Au-tDIl6txD8M1j44AwHp23Lspf375_dd3gL8dnhFMI"/>
+              
+                  <label>Email<span>*</span></label>
+                  <input type="text" name="email" size="40" maxlength="100" value=""/>
+                  <!-- These next 3 fields are for system use, please do not remove -->
+                  <input type="text" name="NameF" size="10" maxlength="10" value="" tabindex="-1" autocomplete="off" style="float: left !important; position:absolute !important; left:-9000px !important; top: -9000px !important;"/>
+                  <input type="text" name="NameL" size="10" maxlength="10" value="" tabindex="-1" autocomplete="off" style="float: left !important; position:absolute !important; left:-9000px !important; top: -9000px !important;"/>
+                  <input type="text" name="Comment" size="10" maxlength="10" value="" tabindex="-1" autocomplete="off" style="float: left !important; position:absolute !important; left:-9000px !important; top: -9000px !important;"/></td>
+                
+                  <input type="submit" id="submit" value="SUBSCRIBE"/>
+            </form>
+        
+            </div>
+
+</div>
+</div>
+    </div>
+</section>

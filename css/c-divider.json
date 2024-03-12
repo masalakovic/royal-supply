@@ -1,0 +1,21 @@
+{
+    "code": "c-divider",
+    "type": "L",
+    "branchless_filepath": "b03/themes/colossus/core/css/components/divider.css",
+    "is_global": true,
+    "active": false,
+    "attributes": [
+        {
+            "name": "type",
+            "value": "text/css"
+        },
+        {
+            "name": "media",
+            "value": "all"
+        },
+        {
+            "name": "rel",
+            "value": "stylesheet"
+        }
+    ]
+}

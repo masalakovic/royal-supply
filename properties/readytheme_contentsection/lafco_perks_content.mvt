@@ -1,0 +1,31 @@
+<h3>LAFCO Perks</h3>
+<div class="o-layout u-grids-2 u-grids-4--s">
+	<div class="o-layout__item">
+		<div class="box-img">
+			<img src="graphics/00000001/truck-shipping.png" title="Free Shipping" alt="">
+		</div>
+		<h4>Free Shipping</h4>
+		<p>On all orders<br> over $75+</p>
+	</div>
+	<div class="o-layout__item">
+		<div class="box-img">
+			<img src="graphics/00000001/gift.png" title="Free Gift" alt="">
+		</div>
+		<h4>Free Gift Wrap</h4>
+		<p>Available on<br> all orders</p>
+	</div>
+	<div class="o-layout__item">
+		<div class="box-img">
+			<img src="graphics/00000001/credit-card.png" title="Exclusive Rewards" alt="">
+		</div>
+		<h4>Exclusive Rewards</h4>
+		<p>For registered<br> LAFCO Rewards<br> Members</p>
+	</div>
+	<div class="o-layout__item">
+		<div class="box-img">
+			<img src="graphics/00000001/contact-call.png" title="Call Us" alt="">
+		</div>
+		<h4>Call Us</h4>
+		<p>Mon - Fri<br> 9 - 5:30 EST<br> 800.362.3677</p>
+	</div>
+</div>

@@ -1,0 +1,21 @@
+<mvt:if expr="l.settings:category_count GT 0">
+	<p class="c-heading-foxtrot">Categories</p>
+	<ul class="t-site-map-list">
+		<mvt:foreach iterator="category" array="categories">
+			<li>
+				<a href="&mvte:category:link;">&mvt:category:name;</a>
+			</li>
+		</mvt:foreach>
+	</ul>
+	<hr class="c-divider">
+</mvt:if>
+<mvt:if expr="l.settings:product_count GT 0">
+	<p class="c-heading-foxtrot">Products</p>
+	<ul class="t-site-map-list">
+		<mvt:foreach iterator="product" array="products">
+			<li>
+				<a href="&mvte:product:link;">&mvt:product:name;</a>
+			</li>
+		</mvt:foreach>
+	</ul>
+</mvt:if>

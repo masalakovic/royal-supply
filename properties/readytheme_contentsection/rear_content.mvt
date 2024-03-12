@@ -1,0 +1,66 @@
+<section class="section-static section-static-banner-hero">
+    <mvt:item name="readytheme" param="image( 'banner_hero_returns_refunds' )" />
+</section>
+
+<section class="section-static">
+    <div class="container">
+        <div class="o-layout block-static-info">
+            <div class="o-layout__item">
+                <div class="static-centered">
+                    <h1>Returns and Refunds</h1>
+                </div>
+                <br><br>
+                <div class="box-static-info">
+                    <h3>RETURNS:</h3>
+                    <p>LAFCO will exchange or provide a merchandise credit for unopened, unused merchandise or damaged or defective merchandise within 15 days of purchase, accompanied by a sales receipt.</p>
+                </div>
+                <div class="box-static-info">
+                    <p>STEP 1.</p>
+                    <p>Contact our customer service department at 800.362.3677. Customer service is available Monday through Friday from 9:00 AM to 5:30 PM EST or email us at weborder@lafco.com.</p>
+                    <p>You will receive a return authorization number (RA#) from a customer service specialist, which is needed for your exchange or merchandise credit. Please write this RA number on your enclosed packing slip/receipt and on the outside of the shipping box.</p>
+                </div>
+                <div class="box-static-info">
+                    <p>STEP 2.</p>
+                    <p>Return the product along with the original packing slip or receipt, RA# and a note with instructions on your preference for exchange or merchandise credit to the below address:</p>
+                </div>
+                <div class="box-static-info">
+                    <div class="static-centered">
+                        <p>LAFCO New York</p>
+                        <p>ATTN: Returns</p>
+                        <p>276 Greenpoint Avenue<br> building 9, floor 2<br> Brooklyn, NY 11222</p>
+                    </div>
+                </div>
+                <div class="box-static-info">
+                    <p>STEP 3.</p>
+                    <p>When sending your return, we suggest shipping with an insured carrier (UPS / FEDEX) or with a delivery confirmation request when using the United States Postal Service. LAFCO cannot issue an exchange or merchandise credit without confirmation of a delivery to our returns department.</p>
+                </div>
+                <br>
+                <div class="box-static-info">
+                    <h3>REFUNDS:</h3>
+                    <p>LAFCO reserves the right to issue a refund. Instructions pertaining to this refund will be communicated to the customer by a customer service specialist.</p>
+                </div>
+                <div class="box-static-info">
+                    <p>We are aware of non-authorized parties selling counterfeit LAFCO on Amazon®. Regarding this issue, we are alerting our valued customers, retailers, and distributors that LAFCO is actively working to resolve it.</p>
+                </div>
+                <div class="box-static-info">
+                    <p>Please note that LAFCO will not honor its 15-day money back guarantee for any products sold on Amazon® by non- authorized resellers. We recommend that you use caution in buying products from non-authorized resellers as some of these products may cause permanent damage to your safety and health.</p>
+                </div>
+            </div>
+        </div>
+        <div class="block-static-info-helpful">
+            <h3>Can’t Find What You Are Looking For?</h3>
+            <div class="o-layout u-grids-1 u-grids-2--s">
+                <div class="o-layout__item">
+                    <mvt:item name="readytheme" param="image( 'icon_call_us' )" />
+                    <h4>CALL US</h4>
+                    <p>(MONDAY THROUGH FRIDAY | <span class="u-inline-block">9:00 AM TO 5:30 PM EST.)</span> <strong>800.362.3677</strong></p>
+                </div>
+                <div class="o-layout__item">
+                    <mvt:item name="readytheme" param="image( 'icon_email_us' )" />
+                    <h4>EMAIL US</h4>
+                    <p>WE WILL REPLY AS SOON AS POSSIBLE <strong>INFO@LAFCO.COM</strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

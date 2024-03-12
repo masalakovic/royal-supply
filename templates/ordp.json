@@ -1,0 +1,38 @@
+{
+    "hdft": {
+        "footer": {
+            "template_filename": "ordp-footer.mvc",
+            "template_id": 444
+        },
+        "header": {
+            "template_filename": "ordp-header.mvc",
+            "template_id": 443
+        }
+    },
+    "order_customer": {
+        "template_filename": "ordp-order_customer.mvc",
+        "template_id": 445
+    },
+    "view_order": {
+        "advanced": 1,
+        "b_height": 100,
+        "b_width": 100,
+        "constrain": "B",
+        "fields_custom": [
+            {
+                "code": "main",
+                "module": "productimagecustomfields"
+            }
+        ],
+        "groups": 1,
+        "imagetypes": [
+            "main"
+        ],
+        "lineitemcoupons": 1,
+        "lineitemdiscounts": 1,
+        "lineitemprice": "base",
+        "payments": 1,
+        "template_filename": "ordp-view_order.mvc",
+        "template_id": 446
+    }
+}

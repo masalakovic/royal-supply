@@ -1,0 +1,73 @@
+
+<mvt:if expr="l.settings:PaypalDisblAdr:ExpressCheckoutToken">
+<script language="JavaScript">
+<!-- **********************
+
+for (var form_loop=0; form_loop<document.forms.length; form_loop++)
+{
+  for (var elems=0; elems<document.forms[form_loop].length;elems++)
+  {
+    if ((document.forms[form_loop].elements[elems].name == "ShipID")          ||
+	    (document.forms[form_loop].elements[elems].name == "ShipFirstName")   ||
+	    (document.forms[form_loop].elements[elems].name == "ShipLastName")    ||
+	    (document.forms[form_loop].elements[elems].name == "ShipEmail")       ||
+	    (document.forms[form_loop].elements[elems].name == "ShipCompany")     ||
+	    (document.forms[form_loop].elements[elems].name == "ShipAddress")     ||
+	    (document.forms[form_loop].elements[elems].name == "ShipAddress1")    ||
+	    (document.forms[form_loop].elements[elems].name == "ShipAddress2")    ||
+	    (document.forms[form_loop].elements[elems].name == "ShipCity")        ||
+	    (document.forms[form_loop].elements[elems].name == "ShipStateSelect") ||
+	    (document.forms[form_loop].elements[elems].name == "ShipState")       ||
+	    (document.forms[form_loop].elements[elems].name == "ShipZip")         ||
+	    (document.forms[form_loop].elements[elems].name == "ShipCountry")     ||
+	    (document.forms[form_loop].elements[elems].name == "BillID")          ||
+	    (document.forms[form_loop].elements[elems].name == "BillFirstName")   ||
+	    (document.forms[form_loop].elements[elems].name == "BillLastName")    ||
+	    (document.forms[form_loop].elements[elems].name == "BillEmail")       ||
+	    (document.forms[form_loop].elements[elems].name == "BillCompany")     ||
+	    (document.forms[form_loop].elements[elems].name == "BillAddress")     ||
+	    (document.forms[form_loop].elements[elems].name == "BillAddress1")    ||
+	    (document.forms[form_loop].elements[elems].name == "BillAddress2")    ||
+	    (document.forms[form_loop].elements[elems].name == "BillCity")        ||
+	    (document.forms[form_loop].elements[elems].name == "BillStateSelect") ||
+	    (document.forms[form_loop].elements[elems].name == "BillState")       ||
+	    (document.forms[form_loop].elements[elems].name == "BillZip")         ||
+	    (document.forms[form_loop].elements[elems].name == "BillCountry"))
+	{
+	  document.forms[form_loop].elements[elems].disabled = true;
+	}
+  }
+}
+
+//-->
+</script>
+
+<input type="hidden" name="ShipID" 			value="&mvte:global:ShipID;">
+<input type="hidden" name="ShipFirstName" 	value="&mvte:global:ShipFirstName;">
+<input type="hidden" name="ShipLastName"  	value="&mvte:global:ShipLastName;">
+<input type="hidden" name="ShipEmail" 		value="&mvte:global:ShipEmail;">
+<input type="hidden" name="ShipCompany" 	value="&mvte:global:ShipCompany;">
+<input type="hidden" name="ShipAddress" 	value="&mvte:global:ShipAddress;">
+<input type="hidden" name="ShipAddress1" 	value="&mvte:global:ShipAddress1;">
+<input type="hidden" name="ShipAddress2" 	value="&mvte:global:ShipAddress2;">
+<input type="hidden" name="ShipCity" 		value="&mvte:global:ShipCity;">
+<input type="hidden" name="ShipStateSelect" value="&mvte:global:ShipStateSelect;">
+<input type="hidden" name="ShipState" 		value="&mvte:global:ShipState;">
+<input type="hidden" name="ShipZip" 		value="&mvte:global:ShipZip;">
+<input type="hidden" name="ShipCountry" 	value="&mvte:global:ShipCountry;">
+<input type="hidden" name="BillID" 			value="&mvte:global:BillID;">
+<input type="hidden" name="BillFirstName" 	value="&mvte:global:BillFirstName;">
+<input type="hidden" name="BillLastName" 	value="&mvte:global:BillLastName;">
+<input type="hidden" name="BillEmail" 		value="&mvte:global:BillEmail;">
+<input type="hidden" name="BillCompany" 	value="&mvte:global:BillCompany;">
+<input type="hidden" name="BillAddress" 	value="&mvte:global:BillAddress;">
+<input type="hidden" name="BillAddress1" 	value="&mvte:global:BillAddress1;">
+<input type="hidden" name="BillAddress2" 	value="&mvte:global:BillAddress2;">
+<input type="hidden" name="BillCity" 		value="&mvte:global:BillCity;">
+<input type="hidden" name="BillStateSelect" value="&mvte:global:BillStateSelect;">
+<input type="hidden" name="BillState" 		value="&mvte:global:BillState;">
+<input type="hidden" name="BillZip" 		value="&mvte:global:BillZip;">
+<input type="hidden" name="BillCountry" 	value="&mvte:global:BillCountry;">
+
+</mvt:if>
+	

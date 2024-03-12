@@ -1,0 +1,14 @@
+{
+    "code": "custom-select",
+    "type": "L",
+    "branchless_filepath": "b03/themes/colossus/extensions/custom-elements/selects/custom-select.js",
+    "is_global": false,
+    "active": false,
+    "attributes": [
+        {
+            "name": "type",
+            "value": "text/javascript"
+        }
+    ],
+    "linked_pages": []
+}

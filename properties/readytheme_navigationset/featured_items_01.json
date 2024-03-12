@@ -1,0 +1,73 @@
+{
+    "items": [
+        {
+            "active": 1,
+            "disp_order": 1,
+            "id": 1,
+            "items": [
+                {
+                    "active": 1,
+                    "disp_order": 2,
+                    "id": 2,
+                    "link": "<a href=\"https://demo.pcinet.com/mm5/merchant.mvc?Screen=CTGY&Category_Code=silk\" target=\"_self\">Silk Ties</a>",
+                    "link_dest": "silk",
+                    "link_targ": "_self",
+                    "link_type": "C",
+                    "name": "Silk Ties",
+                    "parent_id": 1,
+                    "set_id": 1,
+                    "url": "https://demo.pcinet.com/mm5/merchant.mvc?Screen=CTGY&Category_Code=silk"
+                },
+                {
+                    "active": 1,
+                    "disp_order": 3,
+                    "id": 3,
+                    "link": "<a href=\"https://demo.pcinet.com/mm5/merchant.mvc?Screen=CTGY&Category_Code=pattern\" target=\"_self\">Pattern Ties</a>",
+                    "link_dest": "pattern",
+                    "link_targ": "_self",
+                    "link_type": "C",
+                    "name": "Pattern Ties",
+                    "parent_id": 1,
+                    "set_id": 1,
+                    "url": "https://demo.pcinet.com/mm5/merchant.mvc?Screen=CTGY&Category_Code=pattern"
+                },
+                {
+                    "active": 1,
+                    "disp_order": 4,
+                    "id": 4,
+                    "link": "<a href=\"https://demo.pcinet.com/mm5/merchant.mvc?Screen=CTGY&Category_Code=wool\" target=\"_self\">Wool Ties</a>",
+                    "link_dest": "wool",
+                    "link_targ": "_self",
+                    "link_type": "C",
+                    "name": "Wool Ties",
+                    "parent_id": 1,
+                    "set_id": 1,
+                    "url": "https://demo.pcinet.com/mm5/merchant.mvc?Screen=CTGY&Category_Code=wool"
+                },
+                {
+                    "active": 1,
+                    "disp_order": 5,
+                    "id": 5,
+                    "link": "<a href=\"https://demo.pcinet.com/sale.html\" target=\"_self\">On Sale Now</a>",
+                    "link_dest": "sale",
+                    "link_targ": "_self",
+                    "link_type": "C",
+                    "name": "On Sale Now",
+                    "parent_id": 1,
+                    "set_id": 1,
+                    "url": "https://demo.pcinet.com/sale.html"
+                }
+            ],
+            "link": "<a href=\"https://demo.pcinet.com/mm5/merchant.mvc?Screen=CTGY&Category_Code=ties\" target=\"_self\">Neckties</a>",
+            "link_dest": "ties",
+            "link_targ": "_self",
+            "link_type": "C",
+            "name": "Neckties",
+            "parent_id": 0,
+            "set_id": 1,
+            "url": "https://demo.pcinet.com/mm5/merchant.mvc?Screen=CTGY&Category_Code=ties"
+        }
+    ],
+    "layout": "H",
+    "name": "Storefront: Featured Neckties"
+}

@@ -1,0 +1,11 @@
+{
+    "code": "CUSTOMER",
+    "enabled": 1,
+    "name": "Send Quote: Customer",
+    "page_code": "QUOTEEMAIL_CUSTOMER",
+    "tfn_cc": "quote-email-CUSTOMER-cc.mvc",
+    "tfn_from": "quote-email-CUSTOMER-from.mvc",
+    "tfn_mime": "quote-email-CUSTOMER-mime.mvc",
+    "tfn_subj": "quote-email-CUSTOMER-subj.mvc",
+    "tfn_to": "quote-email-CUSTOMER-to.mvc"
+}

@@ -1,0 +1,175 @@
+<mvt:if expr="g.basket:cust_id NE 0 AND l.settings:basket:total GE 100 AND g.gift_certificates_in_basket NE miva_array_elements(l.settings:basket:groups)">
+
+        <mvt:comment>pw_email - &mvt:global:customer:pw_email; <br></mvt:comment>
+
+        <mvt:item name="ry_toolbelt" param="Json_Parse_Call|zinrelo_transactions|'https://www.lafco.com/mm5/zinrelo/api.php?user_email=' $ g.customer:pw_email|0" />
+        
+        <mvt:comment><mvt:item name="ry_toolbelt" param="eval|varlist('l', 'zinrelo_transactions', l.all_settings)" /></mvt:comment>
+        
+        <mvt:if expr="l.settings:zinrelo_transactions">
+            <mvt:item name="ry_toolbelt" param="assign|g.current_year|time_t_year(time_t, time_zone)" />
+            <mvt:assign name="g.customer:zinrelo_purchaseonly_points" value="0" />
+            <mvt:foreach iterator="transaction" array="zinrelo_transactions:data:transactions">
+                <mvt:if expr="l.settings:transaction:activity_name EQ 'Purchase on website' AND g.current_year CIN l.settings:transaction:approved_time">
+                    <mvt:assign name="g.customer:zinrelo_purchaseonly_points" value="g.customer:zinrelo_purchaseonly_points + l.settings:transaction:points" />
+                </mvt:if>
+            </mvt:foreach>                                
+
+            <mvt:if expr="g.customer:zinrelo_purchaseonly_points LE 249">
+                <mvt:item name="ry_toolbelt" param="pricegroup|Customer_Insert|g.result|'Zinrelo Tier 1'" />
+                <mvt:item name="ry_toolbelt" param="pricegroup|Customer_Delete|g.result|'Zinrelo Tier 2'" />
+                <mvt:item name="ry_toolbelt" param="pricegroup|Customer_Delete|g.result|'Zinrelo Tier 3'" />
+            <mvt:elseif expr="g.customer:zinrelo_purchaseonly_points LE 499">
+                <mvt:item name="ry_toolbelt" param="pricegroup|Customer_Delete|g.result|'Zinrelo Tier 1'" />
+                <mvt:item name="ry_toolbelt" param="pricegroup|Customer_Insert|g.result|'Zinrelo Tier 2'" />
+                <mvt:item name="ry_toolbelt" param="pricegroup|Customer_Delete|g.result|'Zinrelo Tier 3'" />
+            <mvt:elseif expr="g.customer:zinrelo_purchaseonly_points GT 499">
+                <mvt:item name="ry_toolbelt" param="pricegroup|Customer_Delete|g.result|'Zinrelo Tier 1'" />
+                <mvt:item name="ry_toolbelt" param="pricegroup|Customer_Delete|g.result|'Zinrelo Tier 2'" />
+                <mvt:item name="ry_toolbelt" param="pricegroup|Customer_Insert|g.result|'Zinrelo Tier 3'" />
+            </mvt:if>
+        </mvt:if>
+
+        <mvt:comment> 
+            Pull all price groups the customer is in 
+        </mvt:comment>
+        <mvt:item name="ry_toolbelt" param="pricegroup|Customer_Groups|g.count" />
+        <mvt:if expr="g.count GT 0">
+            <mvt:foreach iterator="price_group" array="cust_pricegroups">
+                <mvt:if expr="'Zinrelo Tier' CIN l.settings:price_group:name">
+                        <mvt:assign name="g.customer:zinrelo_tier_price_group_id" value="l.settings:price_group:id" />
+                        <mvt:if expr="l.settings:price_group:name EQ 'Zinrelo Tier 1'">
+                            <mvt:assign name="g.customer:allowed_zinrelo_tier_products" value="1" />
+                        <mvt:elseif expr="l.settings:price_group:name EQ 'Zinrelo Tier 2'">
+                            <mvt:assign name="g.customer:allowed_zinrelo_tier_products" value="2" />
+                        <mvt:elseif expr="l.settings:price_group:name EQ 'Zinrelo Tier 3'">
+                            <mvt:assign name="g.customer:allowed_zinrelo_tier_products" value="3" />
+                        </mvt:if>
+                    <mvt:foreachstop />
+                </mvt:if>   
+            </mvt:foreach>
+            <mvt:if expr="ISNULL g.customer:zinrelo_tier_price_group_id">
+                <script>console.error("This customer isn't assigned to any Zinrelo Tier price group.");</script>    
+            </mvt:if>
+            <mvt:comment><mvt:item name="ry_toolbelt" param="eval|varlist('l','cust_pricegroups', l.all_settings)"/></mvt:comment>
+        <mvt:else>
+            <script>console.error("This customer isn't assigned to any price group. Or he is just not logged in.");</script>
+        </mvt:if>
+        <mvt:comment>
+        g.customer:zinrelo_tier_price_group_id - &mvt:global:customer:zinrelo_tier_price_group_id; <br>
+        </mvt:comment>
+
+        <mvt:if expr="g.customer:zinrelo_tier_price_group_id">
+            <mvt:comment> 
+                Pull all discounted products of this price group 
+            </mvt:comment>
+            <mvt:item name="ry_toolbelt" param="assign|g.select_sql|'
+            SELECT * FROM s01_PriceGroupXProduct WHERE (pgrp_id = `' $ g.customer:zinrelo_tier_price_group_id $ '`)'" />
+            <mvt:item name="ry_toolbelt" param="query|g.select_sql|query_result" />
+            <mvt:comment><mvt:item name="ry_toolbelt" param="eval|varlist('l', 'query_result', l.all_settings)" /></mvt:comment>
+            <mvt:if expr="miva_array_elements(l.settings:query_result)">
+
+                <mvt:assign name="l.settings:zinrelo_tier_products" value="0" />
+                <mvt:foreach iterator="query_line" array="query_result">
+                    <mvt:do name="l.return" file="g.Module_Library_DB" value="Product_Load_ID( l.settings:query_line:product_id, l.settings:product )" />
+                    <mvt:assign name="l.ok" value="miva_array_insert( l.settings:zinrelo_tier_products, l.settings:product, -1 )" />
+                </mvt:foreach>
+                <mvt:comment>
+                <mvt:item name="ry_toolbelt" param="eval|varlist('l', 'zinrelo_tier_products', l.all_settings)" />
+                </mvt:comment>
+            <mvt:else>
+                <script>console.error("This Zinrelo Tier price group doesn't have any discounted products.");</script>
+            </mvt:if>
+        </mvt:if>
+
+
+
+
+        <mvt:comment>
+            Check how many discounted products are already added
+        </mvt:comment>
+        <mvt:assign name="g.customer:zinrelo_tier_products_added_to_cart" value="0"/>
+        <mvt:foreach iterator="tier_product" array="zinrelo_tier_products">
+            <mvt:assign name="g.found" value="miva_array_search( l.settings:basket:groups, 1, l.group, 'l.group:code EQ \'' $ l.settings:tier_product:code $ '\'' )" />
+            <mvt:if expr="g.found NE 0">
+                <mvt:assign name="l.settings:tier_product:already_added" value="1" />
+                <mvt:assign name="g.customer:zinrelo_tier_products_added_to_cart" value="g.customer:zinrelo_tier_products_added_to_cart + 1"/>
+            </mvt:if>
+        </mvt:foreach>
+
+        
+        <mvt:comment>
+        <mvt:item name="ry_toolbelt" param="eval|varlist('l', 'zinrelo_tier_products', l.all_settings)" />
+        g.customer:zinrelo_tier_products_added_to_cart - &mvt:global:customer:zinrelo_tier_products_added_to_cart; <br>
+        </mvt:comment>
+
+
+            <div class="row" id="zinrelo_tier_upsale">
+                <div class="col-md-12 text-center">
+                    <h4 style="font-weight: bold; font-size:22px;">CONGRATULATIONS!</h4>
+                    <p class="u-font-medium" style="line-height:1.5;">
+                        You qualify for a free sample.
+                        <mvt:if expr="g.customer:allowed_zinrelo_tier_products GT 1">
+                            <br>
+                            Please select <strong>&mvt:global:customer:allowed_zinrelo_tier_products;</strong> samples
+                        </mvt:if>
+                    </p>
+                </div>
+                <br>
+                <div class="slider_block">
+                <mvt:foreach iterator="product" array="zinrelo_tier_products">
+                    <div class="col-md-2 upsale-item" data-product-code="&mvt:product:code;">
+                        <div class="inner-container">
+                            <div class="image">
+                                <mvt:do name="l.image_count" file="g.Module_Library_DB" value="ProductImageDataList_Load_Product(l.settings:product:id, l.settings:product:imagedata)" />
+                                <mvt:if expr="NOT ISNULL l.settings:product:imagedata[1]">
+                                    <mvt:assign name="l.settings:product:src" value="l.settings:product:imagedata[1]:image:image" />
+                                <mvt:else>
+                                    <mvt:assign name="l.settings:product:src" value="g.theme_path $ '/images/img_no_thumb.jpg'" />
+                                </mvt:if>
+
+
+                                <mvt:assign name="l.uri:store_id" value="g.Store:id" />
+                                <mvt:assign name="l.uri:screen" value="''" />
+                                <mvt:assign name="l.uri:page_id" value="0" />
+                                <mvt:assign name="l.uri:cat_id" value="0" />
+                                <mvt:assign name="l.uri:product_id" value="l.settings:product:id" />
+                                <mvt:do file="g.Module_Feature_URI_DB" name="l.have_uri" value="URI_Load_Item_Canonical( l.uri, l.settings:product:canonical_uri )" />
+                                <mvt:if expr="l.have_uri">
+                                    <mvt:assign name="l.settings:product:link" value="l.settings:product:canonical_uri:canonical" />
+                                </mvt:if>
+
+                                <a href="#" style="pointer-events: none;">
+                                    <img src="&mvt:product:src;" alt="&mvte:product:name;">
+                                </a>
+                                
+                                <button href="&mvte:product:link;?quickview=true" type="button" data-product-link="&mvte:urls:PROD:auto_sep;Product_Code=&mvte:product:code;&amp;show=quickview" class="button js-quick-view quick-view">
+                                    <span>Quickview</span>
+                                </button>
+                                
+                            </div>
+                            <div class="details">
+                                <p class="fragrance">
+                                    <mvt:item name="customfields" param="Read_Product_Code( l.settings:product:code, 'PRODUCT_SCENT', l.settings:product:scent )" />
+                                    &mvt:product:scent;
+                                </p>
+                                <p class="fragrance">
+                                    &mvt:product:name;
+                                </p>
+                                <mvt:if expr="l.settings:product:already_added ">
+                                    <button class="add-to-cart added">Added</button>
+                                <mvt:elseif expr="g.customer:zinrelo_tier_products_added_to_cart GE g.customer:allowed_zinrelo_tier_products">
+                                    <button class="add-to-cart added" style="opacity:0.4;">Add</button>
+                                <mvt:else>
+                                    <button class="js-add-to-cart add-to-cart">Add</button>
+                                </mvt:if>
+                            </div>
+                        </div>
+                    </div> 
+                </mvt:foreach>  
+                </div>
+            </div>
+        <mvt:if expr="miva_array_elements(l.settings:zinrelo_tier_products) GT g.customer:zinrelo_tier_products_added_to_cart">
+        </mvt:if>
+        
+</mvt:if>

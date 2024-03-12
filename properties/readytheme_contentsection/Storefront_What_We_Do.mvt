@@ -1,0 +1,10 @@
+<section class="o-layout" style="margin: 50px 0 !important">
+	<div class="o-layout__item u-text-center" style="display: inline-grid; align-items: center; justify-content: center">
+		<div style="margin-bottom: 45px">
+			<h1 class="u-text-uppercase"> What we do </h1>	
+		</div>
+		<div style="max-width: 1320px !important">
+			<p> <span > Align with Fortuna experts at any phase of your project! From full-cycle design and project management to consulting and education, our team is uniquely capable of bringing visions to life. </span> </p>
+		</div>
+	</div>
+</section>

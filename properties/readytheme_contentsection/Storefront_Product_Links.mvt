@@ -1,0 +1,47 @@
+<section class="o-layout u-grids-1 u-grids-5--l x-product-list" style="padding: 0 15px !important">
+	<div class="o-layout__item x-product-list__item t-defer-object t-defer-object--loaded" data-defer="">
+		<figure class="x-product-list__figure">
+			<a class="" href="https://cssprod.riversagency.com/coffee.html" data-type="image" data-title="Shop" data-zoom="1">
+				<picture class="x-product-list__picture-double">
+					<img class="mgz-hover-main" src="https://cssprod.riversagency.com/media/pexels-sarah-122370_copy_5.jpg" alt="pexels-sarah-122370_copy_5" title="Shop" data-hover="https://cssprod.riversagency.com/media/HP_Banner_Product.png" width="240" height="240">
+				</picture>
+			</a>
+		</figure>
+	</div>
+	<div class="o-layout__item x-product-list__item t-defer-object t-defer-object--loaded" data-defer="">
+		<figure class="x-product-list__figure">
+			<a class="" href="https://cssprod.riversagency.com/coffee.html" data-type="image" data-title="Coffee" data-zoom="1">
+				<picture class="x-product-list__picture-double">
+					<img class="mgz-hover-main" src="https://cssprod.riversagency.com/media/cream.jpg" alt="cream" title="Coffee" data-hover="https://cssprod.riversagency.com/media/HP_Banner_Coffee.png" width="240" height="240">
+				</picture>
+			</a>
+		</figure>
+	</div>
+	<div class="o-layout__item x-product-list__item t-defer-object t-defer-object--loaded" data-defer="">
+		<figure class="x-product-list__figure">
+			<a class="" href="https://cssprod.riversagency.com/barista-tools/brewing-tools.html" data-type="image" data-title="Equipment" data-zoom="1">
+				<picture class="x-product-list__picture-double">
+					<img class="mgz-hover-main" src="https://cssprod.riversagency.com/media/green.jpg" alt="green" title="Equipment" data-hover="https://cssprod.riversagency.com/media/HP_Banner_Equipment.png" width="240" height="240">
+				</picture>
+			</a>
+		</figure>
+	</div>
+	<div class="o-layout__item x-product-list__item t-defer-object t-defer-object--loaded" data-defer="">
+		<figure class="x-product-list__figure">
+			<a class="" href="https://cssprod.riversagency.com/home" data-type="image" data-title="Design" data-zoom="1">
+				<picture class="x-product-list__picture-double">
+					<img class="mgz-hover-main" src="https://cssprod.riversagency.com/media/purple.jpg" alt="purple" title="Design" data-hover="https://cssprod.riversagency.com/media/HP_Banner_Design_1_.jpg" width="240" height="240">
+				</picture>
+			</a>
+		</figure>
+	</div>
+	<div class="o-layout__item x-product-list__item t-defer-object t-defer-object--loaded" data-defer="">
+		<figure class="x-product-list__figure">
+			<a class="" href="https://cssprod.riversagency.com/home" data-type="image" data-title="Education" data-zoom="1">
+				<picture class="x-product-list__picture-double">
+					<img class="mgz-hover-main" src="https://cssprod.riversagency.com/media/blue.jpg" alt="blue" title="Education" data-hover="https://cssprod.riversagency.com/media/HP_Banner_Education.png" width="240" height="240">
+				</picture>
+			</a>
+		</figure>
+	</div>
+</section>

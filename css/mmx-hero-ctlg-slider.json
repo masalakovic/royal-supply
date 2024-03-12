@@ -1,0 +1,22 @@
+{
+    "code": "mmx-hero-ctlg-slider",
+    "type": "L",
+    "branchless_filepath": "css/00000001/flex/mmx-hero-ctlg-slider/b26/themes/00000001/shadows/mmx/mmx-hero-ctlg-slider/styles.css",
+    "is_global": false,
+    "active": false,
+    "attributes": [
+        {
+            "name": "type",
+            "value": "text/css"
+        },
+        {
+            "name": "media",
+            "value": "all"
+        },
+        {
+            "name": "rel",
+            "value": "stylesheet"
+        }
+    ],
+    "linked_pages": []
+}

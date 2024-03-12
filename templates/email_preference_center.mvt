@@ -1,0 +1,378 @@
+<mvt:item name="html_profile" />
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="&mvt:global:basehref;">
+    <mvt:if expr="NOT ISNULL l.settings:page:title">
+        <title>&mvt:page:title;</title>
+    <mvt:else>
+        <title>&mvt:store:name;: &mvt:page:name;</title>
+    </mvt:if>
+    <mvt:item name="head" param="css_list" />
+    <mvt:item name="head" param="head_tag" />
+</head>
+<body class="&mvt:page:code;" id="JS_&mvt:page:code;">
+
+    <mvt:item name="hdft" param="global_header" />
+    
+    <div class="preference-center-banner">
+        <mvt:item name="readytheme" param="image( 'email_preference_center' )" />
+    </div>
+    <div class="o-wrapper preference-center-content">
+        <h1>Email<br> Preference Center</h1>
+        <mvt:if expr="ISNULL g.ltk_epc_email">
+            <form type="post" id="email-preference-form" >
+                <span>Required*</span>
+                <br><br>
+                <div class="row form-row">
+                    <input id="ltk_epc_email" name="ltk_epc_email" type="email" placeholder="Email Address*" required>
+                    <label for="" class="floating-label">Email Address*</label>
+                </div>  
+                <div class="row form-row">
+                    <div class="column-half">
+                        <input type="text" placeholder="First Name*" required id="ltk_epc_firstname" name="ltk_epc_firstname">
+                        <label for="" class="floating-label">First Name*</label>
+                    </div>
+                    <div class="column-half">
+                        <input type="text" placeholder="Last Name*" required id="ltk_epc_lastname" name="ltk_epc_lastname">
+                        <label for="" class="floating-label">Last Name*</label>
+                    </div>
+                </div>
+                <div class="row form-row" style="overflow: visible;">
+                    <div class="column-third">
+                        <select required id="ltk_epc_birthmonth" name="ltk_epc_birthmonth">
+                            <option selected disabled value="">Birth Month*</option>
+                            <option value="01">January</option>
+                            <option value="02">February</option>
+                            <option value="03">March</option>
+                            <option value="04">April</option>
+                            <option value="05">May</option>
+                            <option value="06">June</option>
+                            <option value="07">July</option>
+                            <option value="08">August</option>
+                            <option value="09">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
+                        </select>
+                        <label for="" class="floating-label" style="display: none;">Birth Month*</label>
+                    </div>
+                    <div class="column-third">
+                        <select required id="ltk_epc_birthday" name="ltk_epc_birthday">
+                            <option selected disabled value="">Birth Day*</option>
+                            <option value="01">1</option>
+                            <option value="02">2</option>
+                            <option value="03">3</option>
+                            <option value="04">4</option>
+                            <option value="05">5</option>
+                            <option value="06">6</option>
+                            <option value="07">7</option>
+                            <option value="08">8</option>
+                            <option value="09">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                            <option value="24">24</option>
+                            <option value="25">25</option>
+                            <option value="26">26</option>
+                            <option value="27">27</option>
+                            <option value="28">28</option>
+                            <option value="29">29</option>
+                            <option value="30">30</option>
+                            <option value="31">31</option>
+                        </select>
+                        <label for="" class="floating-label" style="display: none;">Birth Day*</label>
+                    </div>
+                    <div class="column-third">
+                        <select required id="ltk_epc_birthyear" name="ltk_epc_birthyear">
+                            <option selected disabled value="">Birth Year*</option>
+                            <option value="2007">2007</option>
+                            <option value="2006">2006</option>
+                            <option value="2005">2005</option>
+                            <option value="2004">2004</option>
+                            <option value="2003">2003</option>
+                            <option value="2002">2002</option>
+                            <option value="2001">2001</option>
+                            <option value="2000">2000</option>
+                            <option value="1999">1999</option>
+                            <option value="1998">1998</option>
+                            <option value="1997">1997</option>
+                            <option value="1996">1996</option>
+                            <option value="1995">1995</option>
+                            <option value="1994">1994</option>
+                            <option value="1993">1993</option>
+                            <option value="1992">1992</option>
+                            <option value="1991">1991</option>
+                            <option value="1990">1990</option>
+                            <option value="1989">1989</option>
+                            <option value="1988">1988</option>
+                            <option value="1987">1987</option>
+                            <option value="1986">1986</option>
+                            <option value="1985">1985</option>
+                            <option value="1984">1984</option>
+                            <option value="1983">1983</option>
+                            <option value="1982">1982</option>
+                            <option value="1981">1981</option>
+                            <option value="1980">1980</option>
+                            <option value="1979">1979</option>
+                            <option value="1978">1978</option>
+                            <option value="1977">1977</option>
+                            <option value="1976">1976</option>
+                            <option value="1975">1975</option>
+                            <option value="1974">1974</option>
+                            <option value="1973">1973</option>
+                            <option value="1972">1972</option>
+                            <option value="1971">1971</option>
+                            <option value="1970">1970</option>
+                            <option value="1969">1969</option>
+                            <option value="1968">1968</option>
+                            <option value="1967">1967</option>
+                            <option value="1966">1966</option>
+                            <option value="1965">1965</option>
+                            <option value="1964">1964</option>
+                            <option value="1963">1963</option>
+                            <option value="1962">1962</option>
+                            <option value="1961">1961</option>
+                            <option value="1960">1960</option>
+                            <option value="1959">1959</option>
+                            <option value="1958">1958</option>
+                            <option value="1957">1957</option>
+                            <option value="1956">1956</option>
+                            <option value="1955">1955</option>
+                            <option value="1954">1954</option>
+                            <option value="1953">1953</option>
+                            <option value="1952">1952</option>
+                            <option value="1951">1951</option>
+                            <option value="1950">1950</option>
+                            <option value="1949">1949</option>
+                            <option value="1948">1948</option>
+                            <option value="1947">1947</option>
+                            <option value="1946">1946</option>
+                            <option value="1945">1945</option>
+                            <option value="1944">1944</option>
+                            <option value="1943">1943</option>
+                            <option value="1942">1942</option>
+                            <option value="1941">1941</option>
+                            <option value="1940">1940</option>
+                            <option value="1939">1939</option>
+                            <option value="1938">1938</option>
+                            <option value="1937">1937</option>
+                            <option value="1936">1936</option>
+                            <option value="1935">1935</option>
+                            <option value="1934">1934</option>
+                            <option value="1933">1933</option>
+                            <option value="1932">1932</option>
+                            <option value="1931">1931</option>
+                            <option value="1930">1930</option>
+                            <option value="1929">1929</option>
+                            <option value="1928">1928</option>
+                            <option value="1927">1927</option>
+                            <option value="1926">1926</option>
+                            <option value="1925">1925</option>
+                            <option value="1924">1924</option>
+                            <option value="1923">1923</option>
+                            <option value="1922">1922</option>
+                            <option value="1921">1921</option>
+                            <option value="1920">1920</option>
+                        </select>
+                        <label for="" class="floating-label" style="display: none;">Birth Year*</label>
+                    </div>
+                </div>
+                <div class="row form-row" style="overflow: visible;">
+                    <select id="ltk_epc_gender" name="ltk_epc_gender" required>
+                        <option selected disabled value="">Gender*</option>
+                        <option value="female">Female</option>
+                        <option value="male">Male</option>
+                        <option value="unspecified">Unspecified</option>
+                    </select>
+                    <label for="" class="floating-label" style="display: none;">Gender*</label>
+                </div>
+                <h2>Who do you purchase LAFCO products for?*</h2>
+                <div class="row form-row" style="overflow: visible;">
+                    <select required id="ltk_epc_purchaseforwho" name="ltk_epc_purchaseforwho">
+                        <option selected disabled value="">Selet One</option>
+                        <option value="mysel">Myself</option>
+                        <option value="as a gift">As a Gift</option>
+                        <option value="both">Both</option>
+                    </select>
+                </div>
+                <h2>What type of scent do you prefer? (Select all that apply)*</h2>
+                <div class="row row-col form-row">
+                    <input type="text" class="validation-field" oninvalid="this.setCustomValidity('Please choose at least one scent.')" onchange="this.setCustomValidity('')" required="">
+                    <div class="col-xs-12 col-sm-6">
+                        <div>
+                            <label>
+                                <input class="c-form-checkbox__input" type="checkbox" id="ltk_epc_preferredscents_fresh"/>
+                                <span class="c-form-checkbox__caption">Fresh</span>
+                            </label>
+                        </div>
+                        <div>
+                            <label>
+                                <input class="c-form-checkbox__input" type="checkbox" id="ltk_epc_preferredscents_floral"/>
+                                <span class="c-form-checkbox__caption">Floral</span>
+                            </label>
+                        </div>
+                        <div>
+                            <label>
+                                <input class="c-form-checkbox__input" type="checkbox" id="ltk_epc_preferredscents_woody"/>
+                                <span class="c-form-checkbox__caption">Woody</span>
+                            </label>
+                        </div>
+                        <div>
+                            <label>
+                                <input class="c-form-checkbox__input" type="checkbox" id="ltk_epc_preferredscents_herbal"/>
+                                <span class="c-form-checkbox__caption">Herbal</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div>
+                            <label>
+                                <input class="c-form-checkbox__input" type="checkbox" id="ltk_epc_preferredscents_fruity"/>
+                                <span class="c-form-checkbox__caption">Fruity</span>
+                            </label>
+                        </div>
+                        <div>
+                            <label>
+                                <input class="c-form-checkbox__input" type="checkbox" id="ltk_epc_preferredscents_gourmand"/>
+                                <span class="c-form-checkbox__caption">Gourmand</span>
+                            </label>
+                        </div>
+                        <div>
+                            <label>
+                                <input class="c-form-checkbox__input" type="checkbox" id="ltk_epc_preferredscents_citrus"/>
+                                <span class="c-form-checkbox__caption">Citrus</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <h2>Who are your favorite product types? (Select all that apply)*</h2>
+                <div class="row row-col form-row">
+                    <input type="text" class="validation-field" oninvalid="this.setCustomValidity('Please choose at least one product type.')" onchange="this.setCustomValidity('')" required="">
+                    <div class="col-xs-12 col-sm-6">
+                        <div>
+                            <label>
+                                <input class="c-form-checkbox__input" type="checkbox" id="ltk_epc_favoriteproducttypes_candle"/>
+                                <span class="c-form-checkbox__caption">Fragrance Candle</span>
+                            </label>
+                        </div>
+                        <div>
+                            <label>
+                                <input class="c-form-checkbox__input" type="checkbox" id="ltk_epc_favoriteproducttypes_diffuser"/>
+                                <span class="c-form-checkbox__caption">Reed Diffuser</span>
+                            </label>
+                        </div>
+                        <div>
+                            <label>
+                                <input class="c-form-checkbox__input" type="checkbox" id="ltk_epc_favoriteproducttypes_mist"/>
+                                <span class="c-form-checkbox__caption">Room Mist</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div>
+                            <label>
+                                <input class="c-form-checkbox__input" type="checkbox" id="ltk_epc_favoriteproducttypes_barsoap"/>
+                                <span class="c-form-checkbox__caption">Bar Soap</span>
+                            </label>
+                        </div>
+                        <div>
+                            <label>
+                                <input class="c-form-checkbox__input" type="checkbox" id="ltk_epc_favoriteproducttypes_liquidsoap"/>
+                                <span class="c-form-checkbox__caption">Liquid Soap</span>
+                            </label>
+                        </div>   
+                        <div>
+                            <label>
+                                <input class="c-form-checkbox__input" type="checkbox" id="ltk_epc_favoriteproducttypes_handcream"/>
+                                <span class="c-form-checkbox__caption">Hand Cream</span>
+                            </label>
+                        </div> 
+                    </div>
+                </div>
+                <h2>How were you introduced to LAFCO?*</h2>
+                <div class="row form-row" style="overflow: visible;">
+                    <select id="ltk_epc_introducedhow" name="ltk_epc_introducedhow" required>
+                        <option selected disabled value="">Select One</option>
+                        <option value="friends/family">Friends/Family</option>
+                        <option value="social media">Social Media</option>
+                        <option value="in-store">In-Store</option>
+                        <option value="online publication">Online Publication</option>
+                        <option value="e-commerce">E-Commerce</option>
+                    </select>
+                </div>
+                <h2>Why is LAFCO your fragrance brand of choice? (Select all that apply)* </h2>
+                <div class="row row-col form-row">
+                    <input type="text" class="validation-field" oninvalid="this.setCustomValidity('Please choose at least one reason.')" onchange="this.setCustomValidity('')" required="">
+                    <div class="col-xs-12 col-sm-6">
+                        <div>
+                            <label>
+                                <input class="c-form-checkbox__input" id="ltk_epc_whylafco_natural" type="checkbox" />
+                                <span class="c-form-checkbox__caption">Natural</span>
+                            </label>
+                        </div>
+                        <div>
+                            <label>
+                                <input class="c-form-checkbox__input" id="ltk_epc_whylafco_value" type="checkbox" />
+                                <span class="c-form-checkbox__caption">Value</span>
+                            </label>
+                        </div>
+                        <div>
+                            <label>
+                                <input class="c-form-checkbox__input" id="ltk_epc_whylafco_qualityofproduct" type="checkbox" />
+                                <span class="c-form-checkbox__caption">Quality of Product</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div>
+                            <label>
+                                <input class="c-form-checkbox__input" id="ltk_epc_whylafco_qualityoffragrance" type="checkbox" />
+                                <span class="c-form-checkbox__caption">Quality of Fragrance</span>
+                            </label>
+                        </div>
+                        <div>
+                            <label>
+                                <input class="c-form-checkbox__input" id="ltk_epc_whylafco_craftmanship" type="checkbox" />
+                                <span class="c-form-checkbox__caption">Craftmanship</span>
+                            </label>
+                        </div>
+                        <div>
+                            <label>
+                                <input class="c-form-checkbox__input" id="ltk_epc_whylafco_other" type="checkbox" />
+                                <span class="c-form-checkbox__caption">Other</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn--white btn--s" id="ltk_epc_save" >Save</button>
+            </form>
+        <mvt:else>
+            <div class="center">
+                <br>
+                <h3>Thank you!</h3>
+                <br>
+                <p style="font-size: 16px; line-height: 1.6; padding: 0 15px;">You have successfully updated your&nbsp;preferences.<br><br>You may change your preferences and manage your subscription at any time<br> by entering your registered email address in the preference&nbsp;center.</p>
+                <br><br>
+                <a href="&mvte:urls:_self:auto;" style="border: 1px solid #444; padding: 10px 30px; border-radius: 2px; text-decoration: none; text-transform: uppercase; font-weight: bold;">Back to Preferences</a>
+                <br><br>
+            </div>
+        </mvt:if>
+    </div>
+
+    <mvt:item name="hdft" param="global_footer" />
+
+</body>
+</html>

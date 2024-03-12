@@ -1,0 +1,8 @@
+<mvt:item name="readytheme" param="Load_Image('storefront_lafco_blog', g.storefront_lafco_blog)" />
+<section class="storefront-lafco-blog t-defer-object" data-defer style="background-image: url('&mvt:global:storefront_lafco_blog:image;');">
+    <div class="container">
+        <h2>LAFCO Blog</h2>
+        <p>Have you ever wondered about the details that go into candle manufacturing and distrubution? Have you ever wondered what the difference is between soy and parafin wax? What about the purity of ingredients of the hand cream and liquid soap you’re using?</p>
+        <a class="btn btn--white btn--s" href="https://blog.lafco.com/" target="_blank">Read The Blog</a>
+    </div>
+</section>

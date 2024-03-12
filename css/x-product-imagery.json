@@ -1,0 +1,21 @@
+{
+    "code": "x-product-imagery",
+    "type": "L",
+    "branchless_filepath": "b03/themes/colossus/extensions/product-layout/imagery/product-imagery.css",
+    "is_global": true,
+    "active": false,
+    "attributes": [
+        {
+            "name": "type",
+            "value": "text/css"
+        },
+        {
+            "name": "media",
+            "value": "all"
+        },
+        {
+            "name": "rel",
+            "value": "stylesheet"
+        }
+    ]
+}

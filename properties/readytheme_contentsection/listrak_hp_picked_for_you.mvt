@@ -1,0 +1,27 @@
+<section class="t-storefront-featured-products t-defer-object" data-defer>
+<div data-ltk-merchandiseblock="e9077ba8-57dc-4968-b3c2-96bd4a170533" class="container">
+<div class="t-storefront-featured-products__container-top">
+<h2 class="t-storefront-featured-products__heading">Picked for You</h2>
+</div>
+<div class="x-product-list x-product-list--slicked t-storefront-featured-product-list" data-hook="featured-products">
+<script type="text/html">
+<div class="x-product-list__item">
+	<figure class="x-product-list__figure">
+		<picture class="x-product-list__picture">
+			<a class="x-product-list__picture-link" href="@Recommendation.LinkUrl">
+				<img class="x-product-list__image" data-lazy="https://www.lafco.com/@Recommendation.ImageUrl" src="" alt="@Recommendation.Title" width="150" height="150">
+			</a>
+		</picture>
+		<figcaption class="x-product-list__details">
+			<a class="x-product-list__details-link" href="@Recommendation.LinkUrl">
+				<div class="x-product-list__name">@Recommendation.Title</div>
+                               <div class="x-product-list__scent">@Recommendation.Subcategory</div>
+			</a>
+		</figcaption>
+               <a class="btn btn--s btn--white x-product-list__add-to-cart" href="#">Add To Cart</a>
+	</figure>
+</div>
+</script>
+</div>
+</div>
+</section>

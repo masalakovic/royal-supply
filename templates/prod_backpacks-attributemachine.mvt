@@ -1,0 +1,24 @@
+<script>
+AttributeMachine.prototype.Generate_Discount = function( discount )
+{
+	var discount_div;
+
+	discount_div			= document.createElement( 'div' );
+	discount_div.innerHTML	= discount.descrip + ': ' + discount.formatted_discount;
+
+	return discount_div;
+}
+
+AttributeMachine.prototype.Generate_Swatch = function( product_code, attribute, option )
+{
+	var swatch	= document.createElement( 'li' );
+	var span	= document.createElement( 'span' ); // to vertically center the swatch images
+	var img		= document.createElement( 'img' );
+	img.src		= option.image;
+
+	swatch.appendChild( span );
+	swatch.appendChild( img );
+
+	return swatch;
+}
+</script>

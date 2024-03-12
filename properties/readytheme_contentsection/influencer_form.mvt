@@ -1,0 +1,112 @@
+<noscript>
+	<p class="x-messages x-messages--error" data-hook="contact-us__warning">You must javascript enabled to use this form.</p>
+</noscript>
+<form class="x-contact-form" data-action="&mvte:urls:ICTFM:auto;" action="&mvte:urls:NTFD:auto;" method="post" accept-charset="UTF-8">
+	<fieldset>
+		<legend>Influencer &mvte:global:store:name; Form</legend>
+		<mvt:comment>
+			<!--
+			This field is a spam-bot honeypot, it should not have a value!
+			-->
+		</mvt:comment>
+		<input class="u-hide-visually" type="text" name="website" aria-hidden="true" autocomplete="url">
+		<ul class="c-form-list">
+
+			<mvt:if expr="g.status EQ 'submitted'">
+				<li class="c-form-list__item c-form-list__item--full x-messages x-messages--success">
+					Thank you for your inquiry. A &mvte:global:store:name; representative will contact you shortly.
+				</li>
+
+			<mvt:elseif expr="g.status EQ 'error'">
+				<li class="c-form-list__item c-form-list__item--full x-messages x-messages--error">
+					Error: &mvt:global:errcode;. Please contact us directly.
+				</li>
+			</mvt:if>
+
+			<li class="c-form-list__item c-form-list__item--full">
+				<label class="c-form-label is-required" for="contactName"></label>
+				<input id="contactName" class="c-form-input" type="text" name="contactName" value="&mvte:global:contactName;" placeholder="Full Name*" required>
+			</li>
+			<li class="c-form-list__item c-form-list__item--full">
+				<label class="c-form-label is-required" for="contactEmail"></label>
+				<input id="contactEmail" class="c-form-input" type="email" name="contactEmail" value="&mvte:global:contactEmail;" placeholder="Email*" required>
+			</li>
+			<li class="c-form-list__item c-form-list__item--full">
+				<label class="c-form-label is-required" for="instagramUrl"></label>
+				<input id="instagramUrl" class="c-form-input" type="url" name="instagramUrl" value="&mvte:global:instagramUrl;" placeholder="Instagram URL*">
+			</li>
+			<li class="c-form-list__item c-form-list__item--full">
+				<label class="c-form-label is-required" for="tiktokUrl"></label>
+				<input id="tiktokUrl" class="c-form-input" type="url" name="tiktokUrl" value="&mvte:global:tiktokUrl;" placeholder="Tik Tok URL">
+			</li>
+			<li class="c-form-list__item c-form-list__item--full">
+				<label class="c-form-label is-required" for="facebookUrl"></label>
+				<input id="facebookUrl" class="c-form-input" type="url" name="facebookUrl" value="&mvte:global:facebookUrl;" placeholder="Facebook URL">
+			</li>
+			<li class="c-form-list__item c-form-list__item--full">
+				<label class="c-form-label is-required" for="youtubeUrl"></label>
+				<input id="youtubeUrl" class="c-form-input" type="url" name="youtubeUrl" value="&mvte:global:youtubeUrl;" placeholder="Youtube URL">
+			</li>
+			<li class="c-form-list__item c-form-list__item--full">
+				<label class="c-form-label is-required" for="blogUrl"></label>
+				<input id="blogUrl" class="c-form-input" type="url" name="blogUrl" value="&mvte:global:blogUrl;" placeholder="Blog URL">
+			</li>
+
+			<li class="c-form-list__item c-form-list__item--full">
+				<label class="c-form-label is-required" for="contactMessage"></label>
+				<textarea id="contactMessage" class="c-form-input c-form-input--long" name="contactMessage" placeholder="What are you looking for in a collaboration?*" required>&mvte:global:contactMessage;</textarea>
+			</li>
+			<li class="c-form-list__item c-form-list__item--full">
+				<label class="c-form-label is-required" for="exchangeProduct" style="display: block">Are you open to receiving product in exchange for a story/reel/post?</label>
+				<div class="c-form-select">
+					<select id="exchangeProduct" class="c-form-select__dropdown" name="exchangeProduct" required>
+						<mvt:if expr="g.exchangeProduct EQ 'SelectOne'">
+							<option value="Select One" selected>Select One</option>
+						<mvt:else>
+							<option value="Select One" disabled selected hidden>Select One</option>
+						</mvt:if>
+						<mvt:if expr="g.exchangeProduct EQ 'Yes'">
+							<option value="Yes" selected>Yes</option>
+						<mvt:else>
+							<option value="Yes">Yes</option>
+						</mvt:if>
+						<mvt:if expr="g.exchangeProduct EQ 'No'">
+							<option value="No" selected>No</option>
+						<mvt:else>
+							<option value="No">No</option>
+						</mvt:if>
+					</select>
+				</div>
+			</li>
+			<li class="c-form-list__item c-form-list__item--full">
+				<label class="c-form-label is-required" for="liveUSA" style="display: block">Do you live in the USA?*</label>
+				<!-- <div class="c-form-select"> -->
+				<div class="c-form-select">
+					<select id="liveUSA" class="c-form-select__dropdown" name="liveUSA" required>
+						<mvt:if expr="g.liveUSA EQ 'SelectOne'">
+							<option value="Select One" selected>Select One</option>
+						<mvt:else>
+							<option value="Select One" disabled selected hidden>Select One</option>
+						</mvt:if>
+						<mvt:if expr="g.liveUSA EQ 'Yes'">
+							<option value="Yes" selected>Yes</option>
+						<mvt:else>
+							<option value="Yes">Yes</option>
+						</mvt:if>
+						<mvt:if expr="g.liveUSA EQ 'No'">
+							<option value="No" selected>No</option>
+						<mvt:else>
+							<option value="No">No</option>
+						</mvt:if>
+					</select>
+				</div>
+			</li>
+			<li class="c-form-list__item button-form-holder">
+				<input class="btn btn--white btn--s" data-hook="form__submit" type="submit" name="continue" disabled value="CONTINUE">
+				<!-- <button class="c-button c-button--full c-button--large c-button--secondary" data-hook="contact-form__submit" type="submit" name="submit" disabled>Submit</button> -->
+			</li>
+		</ul>
+	</fieldset>
+</form>
+<mvt:assign name="g.Validate" value="crypto_base64_encode( 'human=1&v=' $ s.time_t )" />
+<script>var validationToken = "&mvte:global:Validate;"</script>

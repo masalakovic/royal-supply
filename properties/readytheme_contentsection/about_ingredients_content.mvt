@@ -1,0 +1,79 @@
+<section class="section-static section-static-banner-hero">
+	<mvt:item name="readytheme" param="image( 'banner_hero_about_ingredients' )" />
+</section>
+
+<section class="section-static section-static-our-ingredients">
+	<div class="container">
+		<div class="static-centered">
+			<h1>Our Ingredients</h1>
+		</div>
+		<p>We only use pure ingredients to provide you with the highest quality experience. From our solid soy wax and essential oil fragrances, to the hypoallergenic and vegan body care, each ingredient is thoughtfully blended to deliver natural luxury with pure purpose straight to your hands.</p>
+	</div>
+</section>
+
+<section class="section-static section-static-gray section-static-soy-wax">
+	<div class="container">
+		<div class="o-layout u-grids-1 u-grids-2--s block-col-static block-soy-wax">
+			<div class="o-layout__item">
+				<mvt:item name="readytheme" param="image( 'img_our_ingredients_content_1' )" />
+			</div>
+			<div class="o-layout__item">
+				<h2>Soy Wax</h2>
+				<p>We use a soy wax because it is a renewable, biodegradable, non-toxic and carbon neutral resource. Our wax releases fragrance gradually due to the pure and slow burn characterized by solid soy wax. </p>
+				
+	
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="section-static section-static-fragrance">
+	<div class="container">
+		<div class="o-layout u-grids-1 u-grids-2--s block-col-static block-static-reverse block-fragrance">
+			<div class="o-layout__item">
+				<h2>Fragrance</h2>
+				<p>We use refined and pure essential oil based fragrances to deliver a natural and true scent. Our fragrance blends are free of dyes, propellants and other synthetic ingredients. The highly concentrated quality of our fragrances alone provide a long-lasting scent. </p>
+			</div>
+			<div class="o-layout__item">
+				<mvt:item name="readytheme" param="image( 'img_our_ingredients_content_2' )" />
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="section-static section-static-gray section-static-body-care">
+	<div class="container">
+		<div class="static-centered">
+			<h2>Body Care</h2>
+			<p>Our line of body care is crafted in Europe using natural, luxurious and pure ingredients. </p>
+		</div>
+		<div class="o-layout u-grids-1 u-grids-2--s block-col-static block-static-reverse block-bar-soap">
+			<div class="o-layout__item">
+				<h3>Bar Soap</h3>
+				<p>Our hydrating bar soaps are made from olive oil which is rich in omega fatty acids that are hydrating for your skin and can help combat conditions like eczema.</p>
+<p>Additionally, our bar soaps are superfatted with argan oil, a process that provides superior moisturizing and emollient qualities. They are artisanally dry aged for 4 weeks and are quadruple milled which makes them dense, long lasting and quick drying. The bar soap is hypoallergenic, free of palm oil, sulfates, parabens and other synthetic ingredients.</p>
+				
+			</div>
+			<div class="o-layout__item">
+				<mvt:item name="readytheme" param="image( 'img_our_ingredients_content_3' )" />
+			</div>
+		</div>
+		<div class="o-layout u-grids-1 u-grids-2--s block-col-static block-liquid-soap">
+			<div class="o-layout__item">
+				<mvt:item name="readytheme" param="image( 'img_our_ingredients_content_4' )" />
+			</div>
+			<div class="o-layout__item">
+				<h3>Liquid Soap</h3>
+				<p>Enriched with rice protein to improve all day moisture retention, our liquid soap regenerates, protects. Our soap’s natural olive oil and argan oil base delivers superior moisture and vital nutrients to the skin. It is hypoallergenic, free of sulfates, parabens or other synthetic ingredients.</p>
+				
+			</div>
+		</div>
+		<div class="o-layout u-grids-1 block-col-static block-hand-cream">
+			<div class="o-layout__item">
+				<mvt:item name="readytheme" param="image( 'img_our_ingredients_content_5' )" />
+				<h3>Hand Cream</h3>
+				<p>Cottonseed and jojoba oils found in our hand cream create a natural moisture barrier to protect the skin while wheat protein and olive oils are natural antioxidants and reparative. Our hand cream is hypoallergenic,  free of silicones, parabens, and other synthetic ingredients.</p>				
+			</div>
+		</div>
+	</div>
+</section>

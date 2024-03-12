@@ -1,0 +1,20 @@
+<section class="u-bg-white t-expanded-block t-spotlight t-defer-object" data-defer>
+	<div class="o-layout t-expanded-block__item t-spotlight__wrap">
+		<figure class="o-layout__item u-width-11 u-width-7--l t-spotlight__figure" data-hook="spotlight__figure">
+			<mvt:item name="readytheme" param="image( 'spotlight_image_one' )" />
+		</figure>
+		
+		<figure class="o-layout__item u-width-9 u-width-4--l t-spotlight__figure t-spotlight__figure--highlighted" data-hook="spotlight__figure">
+			<mvt:item name="readytheme" param="image( 'spotlight_image_two' )" />
+		</figure>
+		
+		<article class="u-text-bold u-text-center u-text-left--l t-spotlight__caption">
+			<p class="u-font-tiny u-text-bold u-text-italic">finding bliss in a cup of coffee</p>
+			<p>
+				Colossus has been serving customers since 1920, providing the best <a href="#">Coffee Beans</a>, <a href="#">Tea Leaves</a>, and <a href="#">Equipment</a>.
+			</p>
+		</article>
+	</div>
+</section>
+<br>
+<!-- end t-spotlight -->

@@ -1,0 +1,20 @@
+<mvt:item name="readytheme" param="Load_Image('storefront_discovery_trio', g.storefront_discovery_trio)" />
+<section class="storefront-discovery-trio t-defer-object" data-defer>
+    <div class="container">
+        <div class="o-layout u-grids-1 u-grids-2--m">
+            <div class="o-layout__item">
+                <h2>Not Ready to Commit?</h2>
+                <p>Try our <strong>Discovery Trio</strong> sample set.</p>
+                <p>Select three mini fragranced candles of your choice.</p>
+                <p>Earn $16 on your next full size purchase.</p>
+                <a class="btn btn--white btn--s" href="/discovery-trio.html">Build Your Own</a>
+            </div>
+            <div class="o-layout__item">
+                <div class="box-img">
+                    <mvt:comment><mvt:item name="readytheme" param="image( 'storefront_discovery_trio' )" /></mvt:comment>
+                    <img src="&mvt:global:storefront_discovery_trio:image;" alt="" width="&mvt:global:storefront_discovery_trio:image_wdth;" height="&mvt:global:storefront_discovery_trio:image_hght;">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

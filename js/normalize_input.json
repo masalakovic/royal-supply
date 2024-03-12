@@ -1,0 +1,13 @@
+{
+    "code": "normalize_input",
+    "type": "L",
+    "branchless_filepath": "scripts/00000001/b04/normalize _input.js",
+    "is_global": true,
+    "active": false,
+    "attributes": [
+        {
+            "name": "type",
+            "value": "text/javascript"
+        }
+    ]
+}

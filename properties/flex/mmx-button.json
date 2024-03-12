@@ -1,0 +1,22 @@
+{
+    "depends": {
+        "mmx-base": "10.08.03"
+    },
+    "initialization_template_disabled": 1,
+    "instance_template_disabled": 1,
+    "managed": 1,
+    "name": "MMX Button",
+    "resourcegroup_code": "mmx-button",
+    "scripts": [
+        {
+            "resource_code": "mmx-button"
+        }
+    ],
+    "styles": [
+        {
+            "resource_code": "mmx-button"
+        }
+    ],
+    "type": "library",
+    "version": "10.08.03"
+}

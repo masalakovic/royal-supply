@@ -1,0 +1,96 @@
+{
+    "items": [
+        {
+            "active": 1,
+            "id": "e226be0496168cb11a6a8a0a4d611687",
+            "link": "<a href=\"https://royalsupply.mivatest.com/about-us.html\" target=\"_self\">About Us</a>",
+            "link_dest": "ABUS",
+            "link_targ": "_self",
+            "link_type": "G",
+            "name": "About Us",
+            "url": "https://royalsupply.mivatest.com/about-us.html"
+        },
+        {
+            "active": 1,
+            "id": "1dc17d7dbaaec2d08a2086dc8deb0ba8",
+            "link": "<a href=\"https://royalsupply.mivatest.com/customer-account.html\" target=\"_self\">Account</a>",
+            "link_dest": "ACLN",
+            "link_targ": "_self",
+            "link_type": "G",
+            "name": "Account",
+            "url": "https://royalsupply.mivatest.com/customer-account.html"
+        },
+        {
+            "active": 1,
+            "id": "4bb9fb6038b7a26c0650f5edbd92ac33",
+            "link": "<a href=\"https://royalsupply.mivatest.com/contact-us.html\" target=\"_self\">Contact Us</a>",
+            "link_dest": "CTUS",
+            "link_targ": "_self",
+            "link_type": "G",
+            "name": "Contact Us",
+            "url": "https://royalsupply.mivatest.com/contact-us.html"
+        },
+        {
+            "active": 1,
+            "id": "60be1c167ab68368a01c31a73ec8b541",
+            "link": "<a href=\"https://royalsupply.mivatest.com/frequently-asked-questions.html\" target=\"_self\">FAQS</a>",
+            "link_dest": "FAQS",
+            "link_targ": "_self",
+            "link_type": "G",
+            "name": "FAQS",
+            "url": "https://royalsupply.mivatest.com/frequently-asked-questions.html"
+        },
+        {
+            "active": 1,
+            "id": "2725fb8933ae3d53de5b4a233726a329",
+            "link": "<a href=\"https://royalsupply.mivatest.com/order-history-list.html\" target=\"_self\">Order Status</a>",
+            "link_dest": "ORDH",
+            "link_targ": "_self",
+            "link_type": "G",
+            "name": "Order Status",
+            "url": "https://royalsupply.mivatest.com/order-history-list.html"
+        },
+        {
+            "active": 1,
+            "id": "4517758e74c8081ad4db271ee89f4db9",
+            "link": "<a href=\"https://royalsupply.mivatest.com/wish-lists.html\" target=\"_self\">Wish Lists</a>",
+            "link_dest": "WLST",
+            "link_targ": "_self",
+            "link_type": "G",
+            "name": "Wish Lists",
+            "url": "https://royalsupply.mivatest.com/wish-lists.html"
+        },
+        {
+            "active": 1,
+            "id": "5d75e96551e9988c26da1dfdaf1038cc",
+            "link": "<a href=\"https://royalsupply.mivatest.com/privacy-policy.html\" target=\"_self\">Privacy Policy</a>",
+            "link_dest": "PRPO",
+            "link_targ": "_self",
+            "link_type": "G",
+            "name": "Privacy Policy",
+            "url": "https://royalsupply.mivatest.com/privacy-policy.html"
+        },
+        {
+            "active": 1,
+            "id": "88dc1fe1646710bdcc542ed0a9755ff3",
+            "link": "<a href=\"https://royalsupply.mivatest.com/shipping-and-return-policy.html\" target=\"_self\">Shipping &amp;amp; Returns</a>",
+            "link_dest": "SARP",
+            "link_targ": "_self",
+            "link_type": "G",
+            "name": "Shipping &amp; Returns",
+            "url": "https://royalsupply.mivatest.com/shipping-and-return-policy.html"
+        },
+        {
+            "active": 1,
+            "id": "d500ae1b9fbc32fa0761989920b332d1",
+            "link": "<a href=\"https://royalsupply.mivatest.com/site-map.html\" target=\"_self\">Site Map</a>",
+            "link_dest": "SMAP",
+            "link_targ": "_self",
+            "link_type": "G",
+            "name": "Site Map",
+            "url": "https://royalsupply.mivatest.com/site-map.html"
+        }
+    ],
+    "layout": "S",
+    "name": "Global Footer Quick Links"
+}

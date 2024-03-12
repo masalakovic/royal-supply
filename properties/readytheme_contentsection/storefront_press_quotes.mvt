@@ -1,0 +1,41 @@
+<section class="storefront-press-quotes t-defer-object" data-defer role="region" aria-label="Carousel">
+	<div class="container">
+	    <blockquote class="storefront-press-quotes__quote">“The Best Nontoxic, Clean-Burning Candles.”</blockquote>
+	    <ul class="storefront-press-quotes__logos-box">
+            <li>
+                <button aria-selected="true">
+                    <img class="storefront-press-quotes__logo active" src="graphics/00000001/mindbodygreen-logo.png" alt="mindbodygreen" data-press-quote="The Best Nontoxic, Clean-Burning Candles." width="210" height="210" />
+                </button>
+            </li>
+            <li>
+                <button aria-selected="false">
+                    <img class="storefront-press-quotes__logo"        src="graphics/00000001/cosmopolitan-logo.png" alt="cosmopolitan" data-press-quote="Candles That'll Make Any Room Oh-So Warm and Cozy." width="210" height="210"/>
+                </button>
+            </li>
+	        <li>
+                <button aria-selected="false">
+                    <img class="storefront-press-quotes__logo"        src="graphics/00000001/hollywood-logo.png" alt="hollywood" data-press-quote="It's So Cozy and Lazy Luxe!" width="210" height="210"/>
+                </button>
+            </li>
+            <li>
+                <button aria-selected="false">
+                    <img class="storefront-press-quotes__logo"        src="graphics/00000001/business-insider-logo.png" alt="business-insider" data-press-quote="LAFCO Candles Smell Incredible" width="210" height="210"/>
+                </button>
+            </li>
+            <li>
+                <button aria-selected="false">
+                    <img class="storefront-press-quotes__logo"        src="graphics/00000001/dujour-logo.png" alt="dujour" data-press-quote="These Luxury Products Will Leave Your Hands Smelling Fresh and Clean." width="210" height="210"/>
+                </button>
+            </li>
+			<li>
+                <button aria-selected="false">
+                    <img class="storefront-press-quotes__logo"        src="graphics/00000001/popsugar-logo.png" alt="popsugar" data-press-quote="Thoughtful and Inventive" width="210" height="210"/>
+                </button>
+            </li>
+	    </ul>
+    	</div>
+	<div class="storefront-press-quotes__buttons" role="region" aria-label="carousel controls">
+		<button aria-label="Play" class="active play" style=""></button>
+		<button aria-label="Pause" class="pause"></button>	
+	</div>
+</section>

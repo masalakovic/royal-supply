@@ -1,0 +1,144 @@
+<mvt:if expr="l.settings:category_listing:products_on_page_count GT 1">
+	<section class="cmp-product-list__filtering">
+		<div class="cmp-product-list__sort-by">
+			<label class="font--uppercase" for="l-sort_by">Sort By:</label>
+			<select id="l-sort_by" class="bg--transparent font--uppercase h-nb" name="Sort_By" onchange="window.location.href='&mvtj:urls:_self:auto_sep;Per_Page=' + encodeURIComponent( '&mvtj:global:Per_Page;' ) + '&amp;Sort_By=' + encodeURIComponent( this.options[ this.selectedIndex ].value ) + '&amp;Search=' + encodeURIComponent( '&mvtj:global:Search;' );">
+				
+				<mvt:if expr="ISNULL g.Sort_By">
+					<option value="disp_order" selected>Default</option>
+				<mvt:else>
+					<option value="disp_order">Default</option>
+				</mvt:if>
+				<mvt:if expr="g.Sort_By EQ 'bestsellers'">
+					<option value="bestsellers" selected>Best Selling</option>
+				<mvt:else>
+					<option value="bestsellers">Best Selling</option>
+				</mvt:if>
+				<mvt:if expr="g.Sort_By EQ 'price_asc'">
+					<option value="price_asc" selected>Lowest Price</option>
+				<mvt:else>
+					<option value="price_asc">Lowest Price</option>
+				</mvt:if>
+				<mvt:if expr="g.Sort_By EQ 'price_desc'">
+					<option value="price_desc" selected>Highest Price</option>
+				<mvt:else>
+					<option value="price_desc">Highest Price</option>
+				</mvt:if>
+				<mvt:if expr="g.Sort_By EQ 'newest'">
+					<option value="newest" selected>Newest Items</option>
+				<mvt:else>
+					<option value="newest">Newest Items</option>
+				</mvt:if>
+			</select>
+		</div>
+		<div class="cmp-product-list__per-page">
+			<label class="font--uppercase" for="l-per_page">Items Per Page:</label>
+			<select id="l-per_page" class="bg--transparent font--uppercase h-nb" name="Sort_By" onchange="window.location.href='&mvtj:urls:_self:auto_sep;Per_Page=' + encodeURIComponent( this.options[ this.selectedIndex ].value ) + '&amp;Sort_By=' + encodeURIComponent( '&mvtj:global:Sort_By;' ) + '&amp;Search=' + encodeURIComponent( '&mvtj:global:Search;' );">
+				<mvt:if expr="g.Per_Page EQ 12">
+					<option value="12" selected>12</option>
+				<mvt:else>
+					<option value="12">12</option>
+				</mvt:if>
+				<mvt:if expr="g.Per_Page EQ 24">
+					<option value="24" selected>24</option>
+				<mvt:else>
+					<option value="24">24</option>
+				</mvt:if>
+				<mvt:if expr="g.Per_Page EQ 48">
+					<option value="48" selected>48</option>
+				<mvt:else>
+					<option value="48">48</option>
+				</mvt:if>
+				<mvt:if expr="g.Per_Page EQ -1">
+					<option value="-1" selected>All</option>
+				<mvt:else>
+					<option value="-1">All</option>
+				</mvt:if>
+			</select>
+		</div>
+	</section>
+	<!-- end .cmp-product-list__filtering -->
+</mvt:if>
+
+<section class="cmp-product-list">
+	<mvt:foreach iterator="product" array="category_listing:products">
+		<div class="cmp-product-list__item" data-scroll="lazyImage">
+			<figure class="h-nm">
+				<figcaption class="cmp-product-list__name h-align-right font--uppercase">
+					<a data-mm-linktype="product-list-link" href="&mvte:product:link;" title="&mvte:product:name;">
+						&mvt:product:name;<br>
+						<span class="cmp-product-list__price">
+							<mvt:if expr="l.settings:product:base_price GT l.settings:product:price">
+								<s class="font--italic"><mvt:eval expr="gettoken(l.settings:product:formatted_base_price, asciichar(46), 1)"/><sup><mvt:eval expr="gettoken(l.settings:product:formatted_base_price, asciichar(46), 2)"/></sup></s>
+							</mvt:if>
+							<strong><mvt:eval expr="gettoken(l.settings:product:formatted_price, asciichar(46), 1)"/><sup><mvt:eval expr="gettoken(l.settings:product:formatted_price, asciichar(46), 2)"/></sup></strong>
+						</span>
+					</a>
+				</figcaption>
+				<div class="cmp-product-list__image h-align-center">
+					<a data-mm-linktype="product-list-link" href="&mvte:product:link;" title="&mvte:product:name;">
+						<img id="js-main-image-&mvte:product:id;" data-src="&mvte:product:imagetypes:main;" src="graphics/en-US/cssui/blank.gif" alt="&mvte:product:name;" title="&mvte:product:name;">
+					</a>
+					<mvt:item name="category_listing_imagemachine" param="body:product:id" />
+				</div>
+				<footer class="cmp-product-list__cta">
+					<div id="js-swatches-&mvte:product:id;" class="cmp-product-list__swatches" data-hook="cmp-product-list__swatches"></div>
+					<button class="button button--hollow h-np icon--eye-closed" data-hook="open-product-quick-view" data-target="&mvte:urls:PROD:auto_sep;Product_Code=&mvte:product:code;&amp;quickView=1" title="Open Quick View"></button>
+				</footer>
+				<form class="h-all-hidden" method="post" action="&mvte:urls:BASK:auto;">
+					<input type="hidden" name="Action" value="ADPR">
+					<input type="hidden" name="Quantity" value="1">
+					<input type="hidden" name="Product_Code" value="&mvte:product:code;">
+					<mvt:item name="product_attributes" param="product:id" />
+				</form>
+				<mvt:item name="attributemachine" param="body:product:id" />
+			</figure>
+		</div>
+	</mvt:foreach>
+</section>
+<!-- end .cmp-product-list -->
+
+<mvt:if expr="l.settings:category_listing:page_links:last_page GT 1">
+	<section class="cmp-product-list__pagination">
+		<nav>
+			<mvt:if expr="l.settings:category_listing:page_links:current_page NE 1">
+				<a class="button cmp-product-list__next-previous" href="&mvte:urls:_self:auto_sep;&mvte:category_listing:page_links:prev_link_params;">
+					<span class="icon--arrow-left-long"></span>
+					<span></span>
+				</a>
+			<mvt:else>
+				<span class="button cmp-product-list__next-previous">
+					<span class="icon--arrow-left-long"></span>
+					<span></span>
+				</span>
+			</mvt:if>
+			<ul>
+				<mvt:if expr="NOT l.settings:category_listing:page_links:contains_first">
+					<li><a href="&mvte:urls:_self:auto_sep;&mvte:category_listing:page_links:first_link_params;">1&hellip;</a></li>
+				</mvt:if>
+				<mvt:foreach iterator="pages" array="category_listing:page_links:pages">
+					<mvt:if expr="l.settings:category_listing:page_links:current_page EQ l.settings:pages:page_num">
+						<li><span class="color--primary">&mvte:pages:page_num;</span></li>
+					<mvt:else>
+						<li><a href="&mvte:urls:_self:auto_sep;&mvte:pages:link_params;">&mvte:pages:page_num;</a></li>
+					</mvt:if>
+				</mvt:foreach>
+				<mvt:if expr="NOT l.settings:category_listing:page_links:contains_last">
+					<li><a href="&mvte:urls:_self:auto_sep;&mvte:category_listing:page_links:last_link_params;">&hellip;&mvte:category_listing:page_links:last_page;</a></li>
+				</mvt:if>
+			</ul>
+			<mvt:if expr="l.settings:category_listing:page_links:current_page NE l.settings:category_listing:page_links:last_page">
+				<a class="button cmp-product-list__next-previous cmp-product-list__next-previous--next" href="&mvte:urls:_self:auto_sep;&mvte:category_listing:page_links:next_link_params;">
+					<span></span>
+					<span class="icon--arrow-right-long"></span>
+				</a>
+			<mvt:else>
+				<span class="button cmp-product-list__next-previous cmp-product-list__next-previous--next">
+					<span></span>
+					<span class="icon--arrow-right-long"></span>
+				</span>
+			</mvt:if>
+		</nav>
+	</section>
+	<!-- end .cmp-product-list__pagination -->
+</mvt:if>

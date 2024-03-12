@@ -1,0 +1,85 @@
+<section class="section-static section-static-banner-hero">
+    <mvt:item name="readytheme" param="image( 'banner_hero_shipping_times_costs' )" />
+</section>
+
+<section class="section-static">
+    <div class="container">
+        <div class="o-layout block-static-info">
+            <div class="o-layout__item">
+                <div class="static-centered">
+                    <h1>Shipping <div class="u-inline-block">Times and Costs</div></h1>
+                </div>
+                <br><br>
+                <div class="box-static-info">
+                    <h3>SHIPPING:</h3>
+
+                    <br><br><p>Orders are processed Monday through Friday. Orders generally take 24 to 48 business hours to complete but may take up to 5 days around holidays with high order volume. Orders placed after 8 AM EST will be processed on the next business day.</p>
+                </div>
+                <div class="box-static-info">
+                    <p>LAFCO is unable to ship to post office boxes (PO Boxes)</p>
+                </div>
+                <div class="box-static-info">
+                    <p>US DOT Regulations require that our home fragrance mist products are shipped via Standard UPS Ground delivery. If your order contains any home fragrance mist products, you will not be able to choose our 3-Day Select, 2-Day Air or Next Day Air shipping options. These items must be shipping via Standard UPS Ground.</p>
+                </div>
+                <div class="box-static-info">
+                    <p>Home fragrance mist products can only be shipping within the lower 48 states and cannot be shipping to Alaska and Hawaii.</p>
+                </div>
+<br>
+<div class="box-static-info">
+                    <p>Orders $500+ require a signature at time of delviery.</p>
+                </div>
+                <br>
+                <div class="box-static-info">
+                    <h3>SHIPMENT METHODS AND COSTS:</h3>
+                    <p>All LAFCO orders are shipped using UPS.</p>
+                </div>
+                <div class="box-static-info">
+                    <p>The following options are available:</p>
+                    <div class="box-static-indent">
+                        <p>UPS Ground</p>
+                        <p>3-Day Select</p>
+                        <p>2-Day Air</p>
+                        <p>Next Day Air (Saturday and Sunday delivery are not available)</p>
+                    </div>
+                </div>
+                <div class="box-static-info">
+                    <p>Flat rate shipping:</p>
+                    <div class="box-static-indent">
+                        <div class="box-static-info">
+                            <p>$10 flat rate UPS ground shipping for orders $0.00 to $74.99</p>
+                        </div>
+                
+                        <div class="box-static-info">
+                            <p>FREE UPS ground shipping on all orders over $75*</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="box-static-info">
+                    <p>*Free ground shipping promotions exclude Alaska and Hawaii and ship via UPS ground unless otherwise specified. Please allow between 7 and 10 days for delivery. Please contact our customer service team at 800.362.3677 for orders shipping to Puerto Rico.</p>
+                </div>
+                <div class="box-static-info">
+                    <p>Currently, we only ship internationally to Canada. If you would like to have an order shipped to Canada, please call a LAFCO customer service specialist at 800.362.3677 who will be happy to help take your order and provide shipping quotes over the telephone. Shipping times and charges will vary depending on location, time of year and package weight.</p>
+                    <p>All international packages may be subject to customs, duties, or other fees calculated by that country. The customer is responsible for paying any and all local importer duties or other fees.</p>
+                </div>
+                <div class="box-static-info">
+                    <p>For orders shipping to APO/Military addresses, LAFCO will ship via USPS. For these orders, please call a LAFCO customer service specialist at 800.362.3677 who will be able to arrange this option.</p>
+                </div>
+            </div>
+        </div>
+        <div class="block-static-info-helpful">
+            <h3>Can’t Find What You Are Looking For?</h3>
+            <div class="o-layout u-grids-1 u-grids-2--s">
+                <div class="o-layout__item">
+                    <mvt:item name="readytheme" param="image( 'icon_call_us' )" />
+                    <h4>CALL US</h4>
+                    <p>(MONDAY THROUGH FRIDAY | <span class="u-inline-block">9:00 AM TO 5:30 PM EST.)</span> <strong>800.362.3677</strong></p>
+                </div>
+                <div class="o-layout__item">
+                    <mvt:item name="readytheme" param="image( 'icon_email_us' )" />
+                    <h4>EMAIL US</h4>
+                    <p>WE WILL REPLY AS SOON AS POSSIBLE <strong>INFO@LAFCO.COM</strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

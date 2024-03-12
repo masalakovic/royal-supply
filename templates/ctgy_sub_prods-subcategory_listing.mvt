@@ -1,0 +1,61 @@
+<mvt:assign name="l.settings:product:imagetypes:main" value="''" />
+<mvt:foreach iterator="sub_category" array="subcats">
+	<section class="cmp-product-list" data-filter="&mvte:sub_category:code;" data-scroll="lazyImage">
+		<figure class="cmp-product-list__item cmp-product-list__header bg--silver" data-hook="&mvte:sub_category:code;">
+			<mvt:item name="customfields" param="Read_Category_ID(l.settings:sub_category:id, 'subcategory_display_image', l.settings:subcategory_display_image)" />
+			<mvt:if expr="l.settings:subcategory_display_image">
+				<img data-src="&mvt:subcategory_display_image;" src="graphics/en-US/cssui/blank.gif">
+			</mvt:if>
+			<figcaption class="cmp-product-list__title color--blue secondary-font">
+				<a href="&mvte:sub_category:link;">
+					&mvte:sub_category:name;
+					<small class="primary-font">View All <span class="icon--arrow-right"></span></small>
+				</a>
+			</figcaption>
+		</figure>
+		<mvt:comment>// Load the first 7 products from the subcategory.</mvt:comment>
+		<mvt:do name="l.result" file="g.Module_Library_DB" value="Category_Load_Code(l.settings:sub_category:code, l.settings:current_category)" />
+		<mvt:do name="l.result" file="g.Module_Library_DB" value="Runtime_ProductList_Load_Offset_Category(l.settings:current_category:id, g.Offset, 7, g.NextOffset, l.settings:products)" />
+		<mvt:comment>
+			// Pass array of products into function. price and formatted_price get replaced in products structure with the predicted discounted price.
+			// This will only work on product level discounts.
+		</mvt:comment>
+		<mvt:assign name="g.product_count" value="miva_array_elements(l.settings:products)" />
+		<mvt:do name="l.success" file="g.module_feature_tui_ut" value="CommonComponentFields_Initialize_Product_Discounts_Runtime(l.settings:products, g.product_count)" />
+		<mvt:foreach iterator="product" array="products">
+			<mvt:do file="g.Module_Feature_URI_UT" name="l.settings:product:link" value="Store_Product_URL(l.settings:product, NULL)" />
+			<div class="cmp-product-list__item">
+				<figure class="h-nm">
+					<figcaption class="cmp-product-list__name h-align-right font--uppercase">
+						<a data-mm-linktype="product-list-link" href="&mvte:product:link;" title="&mvte:product:name;">
+							&mvt:product:name;<br>
+							<span class="cmp-product-list__price">
+								<mvt:if expr="l.settings:product:base_price GT l.settings:product:price">
+									<s class="font--italic"><mvt:eval expr="gettoken(l.settings:product:formatted_base_price, asciichar(46), 1)"/><sup><mvt:eval expr="gettoken(l.settings:product:formatted_base_price, asciichar(46), 2)"/></sup></s>
+								</mvt:if>
+								<strong><mvt:eval expr="gettoken(l.settings:product:formatted_price, asciichar(46), 1)"/><sup><mvt:eval expr="gettoken(l.settings:product:formatted_price, asciichar(46), 2)"/></sup></strong>
+							</span>
+						</a>
+					</figcaption>
+					<div class="cmp-product-list__image h-align-center">
+						<a data-mm-linktype="product-list-link" href="&mvte:product:link;" title="&mvte:product:name;">
+							<img id="js-main-image-&mvte:product:id;" data-src="&mvte:product:imagetypes:main;" src="graphics/en-US/cssui/blank.gif" alt="&mvte:product:name;" title="&mvte:product:name;" width="&mvt:category_listing:b_width;" height="&mvt:category_listing:b_height;">
+						</a>
+						<mvt:item name="category_listing_imagemachine" param="body:product:id" />
+					</div>
+					<footer class="cmp-product-list__cta">
+						<div id="js-swatches-&mvte:product:id;" class="cmp-product-list__swatches" data-hook="cmp-product-list__swatches"></div>
+						<button class="button button--hollow h-np icon--eye-closed" data-hook="open-product-quick-view" data-target="&mvte:urls:PROD:auto_sep;Product_Code=&mvte:product:code;&amp;quickView=1" title="Open Quick View"></button>
+					</footer>
+					<form class="h-all-hidden" method="post" action="&mvte:urls:BASK:auto;">
+						<input type="hidden" name="Action" value="ADPR">
+						<input type="hidden" name="Quantity" value="1">
+						<input type="hidden" name="Product_Code" value="&mvte:product:code;">
+						<mvt:item name="product_attributes" param="product:id" />
+					</form>
+					<mvt:item name="attributemachine" param="body:product:id" />
+				</figure>
+			</div>
+		</mvt:foreach>
+	</section>
+</mvt:foreach>

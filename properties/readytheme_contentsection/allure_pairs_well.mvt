@@ -1,0 +1,49 @@
+<section class="allure-pairs">
+    <div >
+        <h3 style="text-align: center;">
+            Pairs Well With...
+           
+        </h3>
+        <p>
+            Meant to be enjoyed together, these fragrances <br> layer for an individualized experience
+        </p>
+
+        <div class="pairs">
+		<a href="https://www.lafco.com/fragrances/fresh/marine">
+			<div class="pairs__item">
+				<mvt:item name="readytheme" param="image( 'allure_pairs_1' )" />
+				<h4>Marine</h4>
+				<p>Bring out beachy, aquatic notes</p>
+			</div>
+		</a>
+
+		<a href="https://www.lafco.com/fragrances/woody/feu-de-bois">
+			<div class="pairs__item">
+				<mvt:item name="readytheme" param="image( 'allure_pairs_2' )" />
+				<h4>Feu de Bois</h4>
+				<p>Enhance warm, earthy notes</p>
+			</div>
+		</a>
+	</div>
+
+	<div class="pairs">
+		<a href="https://www.lafco.com/chamomile-lavender.html">
+			<div class="pairs__item">
+				<mvt:item name="readytheme" param="image( 'allure_pairs_3' )" />				
+				<h4>Chamomile Lavender</h4>
+				<p>Inspire tranquility</p>
+			</div>
+		</a>
+
+		<a href="https://www.lafco.com/white-grapefruit.html">
+			<div class="pairs__item">
+				<mvt:item name="readytheme" param="image( 'allure_pairs_4' )" />				
+				<h4>White Grapefruit</h4>
+				<p>Complement citrus notes</p>
+			</div>
+		</a>
+	</div>
+
+     
+    </div>
+</section>

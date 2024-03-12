@@ -1,0 +1,37 @@
+<mvt:item name="readytheme" param="Load_Image('img_rewards_3', g.img_rewards_3)" />
+<mvt:item name="readytheme" param="Load_Image('img_rewards_8', g.img_rewards_8)" />
+<mvt:item name="readytheme" param="Load_Image('img_rewards_6', g.img_rewards_6)" />
+<mvt:item name="readytheme" param="Load_Image('lafco_rewards_logo', g.lafco_rewards_logo)" />
+<section class="storefront-lafco-rewards t-defer-object" data-defer>
+    <div class="container">
+        <h2 class="box-logo">
+	    <span class="sr-only">lafco rewards</span>
+            <img src="&mvt:global:lafco_rewards_logo:image;" alt="" width="&mvt:global:lafco_rewards_logo:image_wdth;" height="&mvt:global:lafco_rewards_logo:image_wdth;">
+        </h2>
+        <div class="subtitle">
+            <p>Join our LAFCO Rewards and earn points for daily luxuries.</p>
+        </div>
+        <ul class="o-layout u-grids-3 block-icons">
+            <li class="o-layout__item">
+                <div class="box-img">
+                    <img src="&mvt:global:img_rewards_3:image;" alt="" width="&mvt:global:img_rewards_3:image_wdth;" height="&mvt:global:img_rewards_3:image_wdth;">
+                </div>
+                <div class="box-rew">Shop</div>
+            </li>
+            <li class="o-layout__item">
+                <div class="box-img">
+                    <img src="&mvt:global:img_rewards_8:image;" alt="" width="&mvt:global:img_rewards_8:image_wdth;" height="&mvt:global:img_rewards_8:image_wdth;">
+                </div>
+                <div class="box-rew">Earn</div>
+            </li>
+            <li class="o-layout__item">
+                <div class="box-img">
+                    <img src="&mvt:global:img_rewards_6:image;" alt="" width="&mvt:global:img_rewards_6:image_wdth;" height="&mvt:global:img_rewards_6:image_wdth;">
+                </div>
+                <div class="box-rew">Redeem</div>
+            </li>
+        </ul>
+        <p>Earn your first 250 points by creating a LAFCO account.</p>
+        <a class="btn btn--white btn--s" aria-label="Learn More about lafco rewards" href="/rewards">Learn More</a>
+    </div>
+</section>

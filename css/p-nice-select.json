@@ -1,0 +1,21 @@
+{
+    "code": "p-nice-select",
+    "type": "L",
+    "branchless_filepath": "b04/themes/colossus/plugins/nice-select/nice-select.css",
+    "is_global": true,
+    "active": false,
+    "attributes": [
+        {
+            "name": "type",
+            "value": "text/css"
+        },
+        {
+            "name": "media",
+            "value": "all"
+        },
+        {
+            "name": "rel",
+            "value": "stylesheet"
+        }
+    ]
+}

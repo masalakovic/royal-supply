@@ -1,0 +1,76 @@
+<mvt:comment>
+
+    To be added, missing text and link
+
+    four_wick
+    https://www.lafco.com/4-wick.html
+
+    foundfrag
+    https://www.lafco.com/foundational-fragrances.html
+
+
+
+    paradiso 
+    https://www.lafco.com/paradiso-fig.html
+
+
+    ablafco
+    https://www.lafco.com/about-lafco.html
+</mvt:comment>
+
+
+
+<mvt:assign name="l.settings:pages[1]:code" value="'our_products'" />
+<mvt:assign name="l.settings:pages[1]:title" value="'Our Products'" />
+<mvt:assign name="l.settings:pages[1]:description" value="'Our products embody our belief that quality, craftsmanship, and conscience are essential ingredients of luxury.'" />
+<mvt:assign name="l.settings:pages[1]:image" value="'our-products'" />
+<mvt:assign name="l.settings:pages[1]:link" value="'/our-products.html'" />
+
+<mvt:assign name="l.settings:pages[2]:code" value="'our_philosophy'" />
+<mvt:assign name="l.settings:pages[2]:title" value="'Our Philosophy'" />
+<mvt:assign name="l.settings:pages[2]:description" value="'We make fragranced products with a purpose: to elevate everyday moments into luxurious sensory experiences'" />
+<mvt:assign name="l.settings:pages[2]:image" value="'our-philosophy'" />
+<mvt:assign name="l.settings:pages[2]:link" value="'/our-philosophy.html'" />
+
+
+<mvt:assign name="l.settings:pages[3]:code" value="'tmln'" />
+<mvt:assign name="l.settings:pages[3]:title" value="'Our Story'" />
+<mvt:assign name="l.settings:pages[3]:description" value="'Discover the journey of self-discovery,
+formative experiences, and enduring
+relationships that helped create the
+brand you know and love'" />
+<mvt:assign name="l.settings:pages[3]:image" value="'our-story'" />
+<mvt:assign name="l.settings:pages[3]:link" value="'/timeline.html'" />
+
+<mvt:assign name="l.settings:pages[4]:code" value="'founder'" />
+<mvt:assign name="l.settings:pages[4]:title" value="'Our Founder'" />
+<mvt:assign name="l.settings:pages[4]:description" value="'Jon Bresler is the founder of LAFCO
+and the nose behind our fragrances
+inspired by his decades of travel and
+training in the art of perfumery'" />
+<mvt:assign name="l.settings:pages[4]:image" value="'our-founder'" />
+<mvt:assign name="l.settings:pages[4]:link" value="'/our-founder.html'" />
+
+<section class="section-static section-static-explore-more">
+	<div class="container">
+		<div style="margin-top: 50px;" class="static-centered">
+			<h2>Explore More</h2>
+		</div>
+		<div class="o-layout u-grids-1 u-grids-2--s">
+            <mvt:foreach iterator="this_page" array="pages">
+                <div class="o-layout__item explore-more-container">
+                    <mvt:assign name="g.imag" value="l.settings:this_page:image" />
+                    <mvt:item name="readytheme" param="Load_Image(g.imag,g.rt_image)" />
+                    <mvt:if expr="g.rt_image GT 0">
+                            <img src="&mvt:global:rt_image:image;" alt/>
+                    </mvt:if>
+                    <div class="explore-more-text-block">
+                        <h3 id="explore-more-header-&mvt:this_page:code;">&mvt:this_page:title;</h3>
+                        <p>&mvt:this_page:description;</p>
+                        <a id="explore-more-link-&mvt:this_page:code;" aria-labelledby="explore-more-header-&mvt:this_page:code; explore-more-link-&mvt:this_page:code;" href="//&mvta:global:domain:name;&mvte:this_page:link;">LEARN MORE</a>
+                    </div>
+                </div>
+            </mvt:foreach>
+		</div>
+	</div>
+</section>

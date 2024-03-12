@@ -1,0 +1,23 @@
+<h2>Picked for you</h2>
+<div class="x-product-pick-list" data-ltk-merchandiseblock="02fbc98e-5167-497b-bc45-a4f3b4a6d61c">
+	<ul class="o-layout u-grids-1 u-grids-3--s">
+  <script type="text/html">
+		<li class="o-layout__item">
+			<div class="box-img">
+				<a id="p-@Recommendation.Sku" class="x-product-pick-list__picture-link" href="@Recommendation.LinkUrl"><img src="https://www.lafco.com/@Recommendation.ImageUrl" alt="@Recommendation.Title"></a>
+			</div>
+			<div class="box-desc">@Recommendation.Subcategory</div>
+			<div class="box-name">@Recommendation.Title</div>
+			<div class="box-price">@Recommendation.Price</div>
+            <br />
+            <form method="post" action="https://www.lafco.com/">
+                <input type="hidden" name="Screen" value="BASK">
+                <input type="hidden" name="Action" value="ADPR">
+                <input type="hidden" name="Quantity" value="1">
+                <input type="hidden" name="Product_Code" value="@Recommendation.Sku">
+                <input id="add-@Recommendation.Sku" aria-labelledby="p-@Recommendation.Sku add-@Recommendation.Sku" type="submit" value="Add To Cart" class="btn btn--white btn--s">
+            </form>
+		</li>
+  </script>
+	</ul>
+</div>

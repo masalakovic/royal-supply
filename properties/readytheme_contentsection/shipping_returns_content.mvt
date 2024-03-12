@@ -1,0 +1,48 @@
+<section class="section-static section-static-banner-hero">
+	<mvt:item name="readytheme" param="image( 'banner_hero_shipping_returns' )" />
+</section>
+
+<section class="section-static section-static-border">
+	<div class="container">
+		<div class="o-layout u-grids-1 u-grids-2--s block-static-info">
+			<div class="o-layout__item">
+				<div class="box-static-info">
+					<h3>SHIPPING:</h3>
+					<p>LAFCO New York utilizes UPS Ground as their preferred carrier. Orders $500+ require a signature at time of delivery</p>
+					<p>Please contact your local sales rep or LAFCO customer service if you would like to ship using your own UPS account or freight service.</p>
+				</div>
+				<div class="box-static-info">
+					<h3>RETURNS:</h3>
+					<p>No unauthorized product returns are accepted.</p>
+					<p>Prior approval from LAFCO management is mandatory for any returns.</p>
+				</div>
+			</div>
+			<div class="o-layout__item">
+				<div class="box-static-info">
+					<h3>DAMAGES & RETURNS:</h3>
+					<p>All damages or mis-shipments must be reported within (5) business days of receipt.</p>
+					<p>No unauthorized product returns are accepted.</p>
+					<p>Prior approval from LAFCO management mandatory for any returns.</p>
+					<p>Any approved product must be in original packaging and sell-able condition with no store tags on product.</p>
+					<p>Wholesaler is responsible for the return shipment costs.</p>
+					<p>A 20% restocking fee applies.</p>
+				</div>
+			</div>
+		</div>
+		<div class="block-static-info-helpful">
+			<h3>Can’t Find What You Are Looking For?</h3>
+			<div class="o-layout u-grids-1 u-grids-2--s">
+				<div class="o-layout__item">
+					<mvt:item name="readytheme" param="image( 'icon_call_us' )" />
+					<h4>CALL US</h4>
+					<p>(MONDAY THROUGH FRIDAY | <span class="u-inline-block">9:00 AM TO 5:30 PM EST.)</span> <strong>800.362.3677</strong></p>
+				</div>
+				<div class="o-layout__item">
+					<mvt:item name="readytheme" param="image( 'icon_email_us' )" />
+					<h4>EMAIL US</h4>
+					<p>WE WILL REPLY AS SOON AS POSSIBLE <strong>INFO@LAFCO.COM</strong></p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

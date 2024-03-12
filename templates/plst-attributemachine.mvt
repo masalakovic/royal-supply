@@ -1,0 +1,23 @@
+<script>
+	AttributeMachine.prototype.Generate_Discount = function (discount) {
+		var discount_div;
+
+		discount_div = document.createElement('div');
+		discount_div.innerHTML = discount.descrip + ': ' + discount.formatted_discount;
+
+		return discount_div;
+	};
+
+	AttributeMachine.prototype.Generate_Swatch = function (product_code, attribute, option) {
+		var swatch = document.createElement('li'),
+			img = document.createElement('img');
+
+		img.setAttribute('class', 'is--loaded');
+		img.src = option.image;
+		img.setAttribute('alt', option.prompt);
+		img.setAttribute('title', option.prompt);
+		swatch.setAttribute('data-code', option.code);
+		swatch.appendChild(img);
+		return swatch;
+	};
+</script>

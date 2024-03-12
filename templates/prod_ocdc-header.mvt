@@ -1,0 +1,37 @@
+<style>
+	
+	@-moz-document url-prefix() { 
+		
+		#ocdc-modal-close::after {
+    			content: '✕';
+  		        position: absolute;
+    			right: -5%;
+    			font-size: 30px;
+    			transition: all .5s;
+    			cursor: pointer;
+    			margin-top: 10px;
+    			top: 32%;
+}
+		#ocdc-modal .add-to-basket {
+    position: fixed;
+    bottom: -100px;
+    background: #fff;
+    color: #6D156A;
+    border-color: #6D156A;
+    font-weight: 700;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    box-shadow: 0 0 15px #999;
+    border-radius: 0;
+    top: 10%;
+    left: 1%;
+    font-size: 12px;
+    z-index: 100%;
+
+}
+
+
+	}
+
+
+</style>

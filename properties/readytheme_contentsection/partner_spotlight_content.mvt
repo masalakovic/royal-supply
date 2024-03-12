@@ -1,0 +1,16 @@
+<section class="our-partners">
+    <div class="partner-spotlight-column">
+        <div class="o-layout o-layout--align-center o-layout--column-reverse o-layout--row--l">
+            <div class="o-layout__item u-width-12 u-width-6--l">
+                <div class="section-heading">
+                    <h2>Partner spotlight</h2>
+                </div>
+                <p><em>Business Name is examplarary because of X and they do this and then that and in 2020 they were the highest selling boutique in all of North of America.</em></p>
+                <p>Each month we highlight a different LAFCO Partner. For a chanced to be featured on our partner spotlight, email lafconews@lafco.com and tell us about your business.</p>
+            </div>
+            <div class="o-layout__item u-width-12 u-width-6--l">
+                <mvt:item name="readytheme" param="image( 'img_partner_spotlight' )" />
+            </div>
+        </div>
+    </div>
+</section>

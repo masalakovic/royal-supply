@@ -1,0 +1,22 @@
+<section class="product-advantages">
+	<div class="o-layout u-grids-3--m">
+		<div class="o-layout__item product-advantages__item">
+			<div class="product-advantages__icon">
+                <mvt:item name="readytheme" param="image( 'icon_advantages_free_shipping' )" />
+            </div>
+            <div class="product-advantages__text"><p>Free shipping for orders over $300 USD</p></div>
+		</div>
+		<div class="o-layout__item product-advantages__item">
+			<div class="product-advantages__icon">
+                <mvt:item name="readytheme" param="image( 'icon_advantages_highest_quality' )" />
+            </div>
+            <div class="product-advantages__text">The highest quality of unique and sustainable wild foods</div>
+		</div>
+		<div class="o-layout__item product-advantages__item">
+			<div class="product-advantages__icon">
+                <mvt:item name="readytheme" param="image( 'icon_advantages_trust' )" />
+            </div>
+            <div class="product-advantages__text">Trusted by the world’s top chefs</div>
+		</div>
+	</div>
+</section>

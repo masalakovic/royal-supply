@@ -1,0 +1,12 @@
+<div class="box-row">
+    <div class="box-col box-col-text">
+        <h2>House &amp; Home</h2>
+        <p>not to be taken literally but to inspire our imagination, aspirations, dreams, or reality. We want this candle to evoke the mood and feeling of being in the</p>
+        <h3 class="box-placement">
+            &mvt:global:extcat:value:room_name;
+        </h3>
+    </div>
+    <div class="box-col box-col-img">
+        <img src="&mvt:global:extcat:value:room_image;" alt="House & Home photo.">   
+    </div>
+</div>

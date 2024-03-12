@@ -1,0 +1,51 @@
+<section class="section-static section-static-banner-hero">
+	<mvt:item name="readytheme" param="image( 'banner_hero_about_us' )" />
+</section>
+
+<section class="section-static section-static-promise">
+	<div class="container">
+		<div class="static-centered">
+			<h1>OUR<span>PURE</span><br>PROMISE</h1>
+		</div>
+<p>All of our products are designed with our pure promise in mind. We strive to deliver a high-quality, natural, sustainable, and guilt-free experience. From environmental concerns to our very own health, we understand the value in premium quality goods and experiences. We embody those values by using ethically sourced ingredients, sustainable manufacturing processes and environmentally friendly practices. We hope our products evoke a soothing, invigorating, meditative and inspiring sensory response.</p>
+
+	</div>
+</section>
+
+<section class="section-static section-static-discover-more">
+	<div class="container">
+		<div class="static-centered">
+			<h2>Discover More</h2>
+		</div>
+		<div class="o-layout u-grids-1 u-grids-2--s block-discover-more">
+			<div class="o-layout__item">
+				<a href="https://&mvta:global:domain:name;/our-ingredients.html">
+					<mvt:item name="readytheme" param="image( 'img_our_ingredients' )" />
+					<h3>Our Ingredients</h3>
+				</a>
+			</div>
+			<div class="o-layout__item">
+				<a href="https://&mvta:global:domain:name;/our-process.html">
+					<mvt:item name="readytheme" param="image( 'img_our_process' )" />
+					<h3>Our Process</h3>
+				</a>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="section-static section-static-gray section-static-our-founder">
+	<div class="container">
+		<div class="o-layout u-grids-1 u-grids-2--s block-our-founder">
+			<div class="o-layout__item">
+				<mvt:item name="readytheme" param="image( 'img_jon_bresler' )" />
+			</div>
+			<div class="o-layout__item">
+				<h2>Our Founder</h2>
+				<h3>Jon Bresler</h3>
+				<p>Jon Bresler founded LAFCO after becoming accustomed to the aromatherapy traditions in Europe after living in Switzerland. He launched LAFCO by introducing and distributing European skincare and artistic perfumery brands, including Santa Maria Novella, Claus Porto, Korres Natural Skin Care, Lorenzo Villoresi and Eau d’Italie perfumes into the United States. Years later, he established LAFCO as its own brand inspired by the tradition and experience of a European apothecary.</p>
+				<p>With roots in botanical skin care and niche perfumery, and because the mission is to create products that look, smell, feel good and are good for you, the brand centers around exceptional fragrance, thoughtful craftsmanship, ethical practices and the finest pure materials. </p>
+			</div>
+		</div>
+	</div>
+</section>

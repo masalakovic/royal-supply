@@ -1,0 +1,11 @@
+{
+    "code": "EXPIRED",
+    "enabled": 1,
+    "name": "Quote Expired: Customer",
+    "page_code": "QUOTEEMAIL_EXPIRED",
+    "tfn_cc": "quote-email-EXPIRED-cc.mvc",
+    "tfn_from": "quote-email-EXPIRED-from.mvc",
+    "tfn_mime": "quote-email-EXPIRED-mime.mvc",
+    "tfn_subj": "quote-email-EXPIRED-subj.mvc",
+    "tfn_to": "quote-email-EXPIRED-to.mvc"
+}

@@ -1,0 +1,113 @@
+<mvt:comment>
+| theme_path variable is set in the Global HEAD tag.
+| These settings are loaded in the global footer and used
+| to determin which files get included in the Framework export.
+| theme_path: themes/levels
+</mvt:comment>
+
+<script>
+var theme_path = "&mvtj:global:theme_path;";
+var default_country = "&mvtj:global:store:country;";
+</script>
+
+
+
+	<mvt:comment>
+		These link the font/css files in the Framework Export.
+
+		Change Log
+		<link href="themes/levels/change-log.md" />
+
+		CSS
+		<link href="themes/levels/css/all.php" />
+		<link href="themes/levels/css/normalize.css" />
+		<link href="themes/levels/css/base.css" />
+		<link href="themes/levels/css/scaffolding.css" />
+		<link href="themes/levels/css/typography.css" />
+		<link href="themes/levels/css/buttons.css" />
+		<link href="themes/levels/css/fonts.css" />
+		<link href="themes/levels/css/forms.css" />
+		<link href="themes/levels/css/tables.css" />
+		<link href="themes/levels/css/colors.css" />
+		<link href="themes/levels/css/slider.css" />
+		<link href="themes/levels/css/tabs.css" />
+		<link href="themes/levels/css/floating-placeholder.css" />
+		<link href="themes/levels/css/magnific-popup.css" />
+		<link href="themes/levels/css/helpers.css" />
+		<link href="themes/levels/css/structure.css" />
+		<link href="themes/levels/css/pages.css" />
+		<link href="themes/levels/css/print.css" />
+		<link href="themes/levels/css/theme.css" />
+
+		Fonts
+		<link href="themes/levels/fonts/ElegantIcons.eot" />
+		<link href="themes/levels/fonts/ElegantIcons.eot" />
+		<link href="themes/levels/fonts/ElegantIcons.svg" />
+		<link href="themes/levels/fonts/ElegantIcons.ttf" />
+		<link href="themes/levels/fonts/ElegantIcons.woff" />
+		<link href="themes/levels/fonts/Levels.eot" />
+		<link href="themes/levels/fonts/Levels.eot" />
+		<link href="themes/levels/fonts/Levels.svg" />
+		<link href="themes/levels/fonts/Levels.ttf" />
+		<link href="themes/levels/fonts/Levels.woff" />
+		<link href="themes/levels/fonts/montserrat-bold-webfont.eot" />
+		<link href="themes/levels/fonts/montserrat-bold-webfont.eot" />
+		<link href="themes/levels/fonts/montserrat-bold-webfont.svg" />
+		<link href="themes/levels/fonts/montserrat-bold-webfont.ttf" />
+		<link href="themes/levels/fonts/montserrat-bold-webfont.woff" />
+		<link href="themes/levels/fonts/montserrat-bold-webfont.woff2" />
+		<link href="themes/levels/fonts/montserrat-light-webfont.eot" />
+		<link href="themes/levels/fonts/montserrat-light-webfont.eot" />
+		<link href="themes/levels/fonts/montserrat-light-webfont.svg" />
+		<link href="themes/levels/fonts/montserrat-light-webfont.ttf" />
+		<link href="themes/levels/fonts/montserrat-light-webfont.woff" />
+		<link href="themes/levels/fonts/montserrat-light-webfont.woff2" />
+		<link href="themes/levels/fonts/montserrat-regular-webfont.eot" />
+		<link href="themes/levels/fonts/montserrat-regular-webfont.eot" />
+		<link href="themes/levels/fonts/montserrat-regular-webfont.svg" />
+		<link href="themes/levels/fonts/montserrat-regular-webfont.ttf" />
+		<link href="themes/levels/fonts/montserrat-regular-webfont.woff" />
+		<link href="themes/levels/fonts/montserrat-regular-webfont.woff2" />
+		<link href="themes/levels/fonts/Suivant.eot" />
+		<link href="themes/levels/fonts/Suivant.eot" />
+		<link href="themes/levels/fonts/Suivant.svg" />
+		<link href="themes/levels/fonts/Suivant.ttf" />
+		<link href="themes/levels/fonts/Suivant.woff" />
+
+
+		JS
+		<link href="themes/levels/js/modernizr.js" />
+		<link href="themes/levels/js/respond.min.js" />
+		<link href="themes/levels/js/vendor.ie.min.js" />
+		<link href="themes/levels/js/vendor.min.js" />
+		<link href="themes/levels/js/plugins.js" />
+		<link href="themes/levels/js/scripts.js" />
+		<link href="themes/levels/js/rem.min.js" />
+		<link href="themes/levels/js/jquery.menu-aim.js" />
+		<link href="themes/levels/js/jquery.slick.min.js" />
+
+		Images
+		<link href="themes/levels/images/icons/logo_amex.png" />
+		<link href="themes/levels/images/icons/logo_check.png" />
+		<link href="themes/levels/images/icons/logo_cvv.png" />
+		<link href="themes/levels/images/icons/logo_discover.png" />
+		<link href="themes/levels/images/icons/logo_mastercard.png" />
+		<link href="themes/levels/images/icons/logo_paypal.png" />
+		<link href="themes/levels/images/icons/logo_visa.png" />
+		<link href="themes/levels/images/img_ajax_processing.gif" />
+		<link href="themes/levels/images/img_email_empty.gif" />
+		<link href="themes/levels/images/img_email_facebook.png" />
+		<link href="themes/levels/images/img_email_instagram.png" />
+		<link href="themes/levels/images/img_email_pinterest.png" />
+		<link href="themes/levels/images/img_email_twitter.png" />
+		<link href="themes/levels/images/img_no_thumb.jpg" />
+		<link href="themes/levels/images/img_slider_loader.gif" />
+		<link href="themes/levels/images/img_slider_loader.gif" />
+		<link href="themes/levels/images/img_transparent.gif" />
+		<link href="themes/levels/images/img_transparent.gif" />
+
+		PHP
+		<link href="themes/levels/forms/clearCookie.php" />
+		<link href="themes/levels/forms/contactForm.php" />
+		<link href="themes/levels/forms/token.php" />
+	</mvt:comment>

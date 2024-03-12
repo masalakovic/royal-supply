@@ -1,0 +1,106 @@
+<mvt:if expr="g.get EQ 'autocomplete' AND g.Search">
+
+	<mvt:comment><!-- Autocomplete Category & Product Search --></mvt:comment>
+
+		<mvt:comment><!-- Search for Categories --></mvt:comment>
+
+			<mvt:assign name="g.Fields" value="'code,name'" />
+			<mvt:assign name="g.Offset" value="0" />
+			<mvt:assign name="g.Max" value="5" />
+			<mvt:do file="g.Module_Library_DB" name="l.return" value="CategoryList_Load_Offset(g.Offset, g.Search, g.Fields, g.Max, g.NextOffset, l.settings:categories)" />
+
+			<mvt:foreach iterator="category" array="categories">
+
+				<mvt:comment><!-- Skip Categories that are restricted by Availability Groups --></mvt:comment>
+				<mvt:do file="g.Module_Library_DB" name="l.return" value="Runtime_Category_Load_ID(l.settings:category:id, l.runtime_category)" />
+				<mvt:if expr="NOT l.runtime_category:id">
+					<mvt:foreachcontinue/>
+				</mvt:if>
+
+				<mvt:comment><!-- Skip in-active Categories --></mvt:comment>
+				<mvt:if expr="NOT l.settings:category:active">
+					<mvt:foreachcontinue/>
+				</mvt:if>
+
+				<mvt:comment><!-- Lookup Category Canonical URI --></mvt:comment>
+					<mvt:assign name="l.uri:store_id" value="g.Store:id" />
+					<mvt:assign name="l.uri:screen" value="''" />
+					<mvt:assign name="l.uri:page_id" value="0" />
+					<mvt:assign name="l.uri:cat_id" value="l.settings:category:id" />
+					<mvt:assign name="l.uri:product_id" value="0" />
+					<mvt:do file="g.Module_Feature_URI_DB" name="l.settings:category:has_uri" value="URI_Load_Item_Canonical( l.uri, l.settings:category:uri )" />
+					<mvt:if expr="l.settings:category:has_uri">
+						<mvt:assign name="l.settings:category:link" value="l.settings:category:uri:uri" />
+					<mvt:else>
+						<mvt:assign name="l.settings:category:link" value="g.domain:mm_url $ 'Screen=CTGY&Category_Code=' $ l.settings:category:code" />
+					</mvt:if>
+
+				<mvt:comment><!-- Push Prepared Category Data to Output Array --></mvt:comment>
+					<mvt:assign name="l.index" value="miva_array_insert( l.settings:ac:categories, l.settings:category, -1 )" />
+
+			</mvt:foreach>
+
+		<mvt:comment><!-- Search for Products --></mvt:comment>
+
+			<mvt:assign name="g.Offset" value="0" />
+			<mvt:assign name="g.Max" value="5" />
+			<mvt:assign name="g.Sort" value="'name_asc'" />
+			<mvt:do file="g.Module_Library_DB" name="l.return" value="Runtime_ProductList_Load_Offset_Search_Sort(g.Search, g.Offset, g.Max, g.Sort, g.NextOffset, l.settings:products)" />
+
+			<mvt:foreach iterator="product" array="products">
+
+				<mvt:comment><!-- Skip Active Products --></mvt:comment>
+					<mvt:if expr="NOT l.settings:product:active">
+						<mvt:foreachcontinue/>
+					</mvt:if>
+
+				<mvt:comment><!-- Lookup Product Canonical URI --></mvt:comment>
+					<mvt:assign name="l.uri:store_id" value="g.Store:id" />
+					<mvt:assign name="l.uri:screen" value="''" />
+					<mvt:assign name="l.uri:page_id" value="0" />
+					<mvt:assign name="l.uri:cat_id" value="0" />
+					<mvt:assign name="l.uri:product_id" value="l.settings:product:id" />
+					<mvt:do file="g.Module_Feature_URI_DB" name="l.settings:product:has_uri" value="URI_Load_Item_Canonical( l.uri, l.settings:product:uri )" />
+					<mvt:if expr="l.settings:product:has_uri">
+						<mvt:assign name="l.settings:product:link" value="l.settings:product:uri:uri" />
+					<mvt:else>
+						<mvt:assign name="l.settings:product:link" value="g.domain:mm_url $ 'Screen=PROD&Product_Code=' $ l.settings:product:code" />
+					</mvt:if>
+
+				<mvt:comment><!-- Push Prepared Product Data to Output Array --></mvt:comment>
+					<mvt:assign name="l.index" value="miva_array_insert( l.settings:ac:products, l.settings:product, -1 )" />
+
+			</mvt:foreach>
+
+		<mvt:comment><!-- Output Results --></mvt:comment>
+
+			<mvt:if expr="tolower(g.Format) EQ 'json'">
+				<mvt:assign name="l.result" value="miva_output_header( 'Content-Type', 'application/json' )" />
+				<mvt:do file="g.Module_JSON" name="l.output" value="JSON_Output(l.settings:ac)" />
+				<mvt:eval expr="l.output"/>
+			<mvt:else>
+				<mvt:if expr="l.settings:ac:categories">
+					<h3 class="nm">Categories</h3>
+					<ul class="no-list">
+						<mvt:foreach iterator="category" array="ac:categories">
+							<li><a href="&mvt:category:link;">&mvt:category:name;</a></li>
+						</mvt:foreach>
+					</ul>
+				</mvt:if>
+				<mvt:if expr="l.settings:ac:categories AND l.settings:ac:products">
+					<hr>
+				</mvt:if>
+				<mvt:if expr="l.settings:ac:products">
+					<h3 class="nm">Products</h3>
+					<ul class="no-list">
+						<mvt:foreach iterator="product" array="ac:products">
+							<li><a href="&mvt:product:link;">&mvt:product:name;</a></li>
+						</mvt:foreach>
+					</ul>
+				</mvt:if>
+				<mvt:if expr="l.settings:ac:categories OR l.settings:ac:products">
+					<hr>
+				</mvt:if>
+				<a href="&mvte:urls:SRCH:auto;?Search=&mvte:global:Search;"><b>Search Store for "&mvte:global:Search;"</b></a>
+			</mvt:if>
+</mvt:if>

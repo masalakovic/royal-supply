@@ -1,0 +1,23 @@
+<div class="row">
+	<div class="column x-large-np">
+		<div class="column whole newsletter-wrapper">
+			<div class="row">
+				<div class="column whole large-two-fifths large-half large-align-left align-center">
+					<h2 class="newsletter-title">Join Our Newsletter</h2>
+					<p>Receive the latest news on new promotions, exclusive offers, and new arrivals.</p>
+				</div>
+				<div class="column whole large-three-fifths">
+					<span class="breaker"></span>
+					<form>
+						<div class="input-group newsletter-group">
+							<span data-icon="&#xe010;"></span>
+							<input type="email" class="newsletter-input input input-large" placeholder="Enter your email address&hellip;">
+							<button class="button bg-green white newsletter-button button-large nb">Join</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<span class="breaker"></span>

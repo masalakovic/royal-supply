@@ -1,0 +1,48 @@
+{
+    "basket": {
+        "advanced": 0,
+        "applycoupons": 0,
+        "b_height": 75,
+        "b_width": 75,
+        "button_wish": 1,
+        "constrain": "B",
+        "discounts": 1,
+        "groups": 1,
+        "handling": 0,
+        "lineitemcoupons": 0,
+        "lineitemdiscounts": 1,
+        "lineitemprice": "base",
+        "redeemgiftcerts": 0,
+        "salestax": 0,
+        "shipping": 0,
+        "splitpayments": 0,
+        "template_filename": "test123-basket.mvc"
+    },
+    "card-image": {
+        "template_filename": "test123-card-image.mvc"
+    },
+    "hdft": {
+        "footer": {
+            "template_filename": "test123-footer.mvc"
+        },
+        "header": {
+            "template_filename": "test123-header.mvc"
+        }
+    },
+    "seo_settings": {
+        "cat_lit": "category",
+        "cat_lit_choice": "category",
+        "plit_in_bc": 0,
+        "prod_lit": "product",
+        "prod_lit_choice": "product",
+        "sc_always": 0,
+        "sf_active": 0,
+        "sl_active": 0,
+        "sm_active": 1,
+        "suffix": "html",
+        "suffix_choice": "html",
+        "surlprefix": "https://demo.pcinet.com/",
+        "url_delim": "/",
+        "urlprefix": "https://demo.pcinet.com/"
+    }
+}

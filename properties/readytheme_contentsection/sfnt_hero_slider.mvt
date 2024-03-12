@@ -1,0 +1,72 @@
+<mvt:comment> <mvt:if expr="l.settings:clientdimensions:detected">
+    <mvt:if expr="l.settings:clientdimensions:width GT 767"> </mvt:comment>
+        <mvt:item name="readytheme" param="Load_Image('hero_slider_1', g.hero_slider_1)" />
+        <mvt:item name="readytheme" param="Load_Image('hero_slider_2', g.hero_slider_2)" />
+        <mvt:item name="readytheme" param="Load_Image('hero_slider_3', g.hero_slider_3)" />
+        <mvt:item name="readytheme" param="Load_Image('hero_slider_4', g.hero_slider_4)" />
+        <mvt:item name="readytheme" param="Load_Image('hero_slider_5', g.hero_slider_5)" />
+        <mvt:item name="readytheme" param="Load_Image('hero_banner_mobile', g.hero_banner_mobile)" />
+        <section class="sfnt-hero-slider-wrap t-defer-object" data-defer>
+            <div class="sfnt-hero-slider" data-hook="sfnt-hero-slider">
+                <div class="sfnt-hero-slider__item">
+                    <div class="sfnt-hero-slider__item-in">
+                        <mvt:if expr="l.settings:clientdimensions:detected">
+                            <mvt:if expr="l.settings:clientdimensions:width GT 767">
+                                <div class="slider-info-product" style="background-image: url('&mvt:global:hero_slider_1:image;');">
+                            <mvt:else>
+                                <div class="slider-info-product" style="background-image: url('&mvt:global:hero_banner_mobile:image;');">
+                            </mvt:if>
+                        </mvt:if>
+                            <h1 class="slider-info-product__title">Wild Mushrooms</h1>
+                            <p class="slider-info-product__text">Straight from the forest to your table</p>
+                                                      <a class="slider-info-product__btn btn btn--arrow" href="/mushrooms.html">Shop Now</a>
+                            <div class="slider-info-product__sale">
+                                <mvt:item name="readytheme" param="image( 'hero_slider_sale_70' )" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sfnt-hero-slider__item">
+                    <div class="sfnt-hero-slider__item-in">
+                        <div class="slider-info-category slider-info--small slider-info--left" style="background-image: url('&mvt:global:hero_slider_5:image;');">
+                            <h3 class="slider-info-category__title">Wild</br>Char</br>Caviar</h3>
+                            <a class="slider-info-slider-info-category__link link-arrow" href="/seafood.html">Shop Now</a>
+                        </div>
+                        <div class="slider-info-category slider-info--big slider-info--left" style="background-image: url('&mvt:global:hero_slider_3:image;');">
+                            <h3 class="slider-info-category__title">Boutique<br>Vinegars, Oils<br>& More</h3>
+                            <a class="slider-info-slider-info-category__link-arrow" href="/pantry.html">Shop Now</a>
+                        </div>
+                        <div class="slider-info-category slider-info--big" style="background-image: url('&mvt:global:hero_slider_4:image;');">
+                            <h3 class="slider-info-category__title">Specialty<br> Produce</h3>
+                            <a class="slider-info-slider-info-category__link link-arrow" href="/specialty-produce.html">Shop Now</a>
+                        </div>
+                         <div class="slider-info-category slider-info--small slider-info--left" style="background-image: url('&mvt:global:hero_slider_2:image;');">
+                            <h3 class="slider-info-category__title">Fresh<br>Truffles<br>&<br>Truffle<br>Products</h3>
+                            <a class="slider-info-slider-info-category__link link-arrow" href="/truffles.html">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slick-slider-control">
+                <div id="hero-slider-arrow-prev" class="slick-slider-arrow slick-slider-arrow-prev">
+                    <span class="icon-arrow icon-arrow-left"></span>
+                </div>
+                <div class="slick-slider-control-in">
+                    <div id="hero-slider-counter-current" class="slick-slider-counter slick-slider-counter-current"></div>
+                    <div id="hero-slider-progress" class="slick-slider-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+                        <span id="hero-slider-progress-in" class="slick-slider-progress-in sr-only"></span>
+                    </div>
+                    <div id="hero-slider-counter-last" class="slick-slider-counter slick-slider-counter-last"></div>
+                </div>
+                <div id="hero-slider-arrow-next" class="slick-slider-arrow slick-slider-arrow-next">
+                    <span class="icon-arrow icon-arrow-right"></span>
+                </div>
+            </div>
+        </section>
+    <mvt:comment><mvt:else>
+        <section class="sfnt-hero-banner t-defer-object" data-defer>
+            <mvt:item name="readytheme" param="Load_Image('hero_banner_mobile', g.hero_banner_mobile)" />
+            <mvt:item name="readytheme" param="image( 'hero_banner_mobile' )" />
+        </section>
+    </mvt:if>
+</mvt:if> </mvt:comment>

@@ -1,0 +1,46 @@
+<div class="row">
+	<div class="column medium-half">
+		<p><strong>We're Here To Help</strong><br />Your satisfaction is important to us! Use the form to email us your questions about products, online orders, store experiences and more.</p>
+		<p><strong>Order Questions:</strong><br />If you need help or have any other questions concerning your orders, please call customer support at: <a href="tel:+1<mvt:eval expr="glosub(g.store:phone, '.', '')" />">&mvt:global:store:phone;</a>.</p>
+		<address itemscope itemtype="https://schema.org/LocalBusiness">
+			<strong itemprop="name">&mvt:global:store:company;</strong><br>
+			&mvt:global:store:address;<br>
+			&mvt:global:store:city;, &mvt:global:store:state; &mvt:global:store:zip; &mvt:global:store:country;<br>
+			Customer Service: <span itemprop="telephone"><a href="tel:+1<mvt:eval expr="glosub(g.store:phone, '.', '')" />">&mvt:global:store:phone;</a></span>
+		</address>
+	</div>
+	<div class="column medium-half">
+		<noscript>
+			<p class="message message--error" data-hook="contact-us__warning">You must javascript enabled to use this form.</p>
+		</noscript>
+		<form class="contact-us__form" data-hook="contact-us__form" method="post" action="&mvte:global:theme_path;/forms/contactForm.php">
+			<div class="cmp-product-purchase__processing bg--white" data-hook="cmp-product-purchase__processing">
+				<span class="cmp-processing-indicator color--green"></span>
+			</div>
+			<div data-hook="cmp-product-purchase__message"></div>
+			<fieldset>
+				<legend>
+					<small>All fields are required.</small>
+				</legend>
+				<div class="form-row">
+					<label for="l-contact-us__form__name">Your Name:</label>
+					<input id="l-contact-us__form__name" class="input--medium" type="text" name="contactName" value="" required>
+				</div>
+				<div class="form-row">
+					<label for="l-contact-us__form__email">Your Email Address:</label>
+					<input id="l-contact-us__form__email" class="input--medium" type="email" name="contactEmail" value="" required>
+				</div>
+				<div class="form-row">
+					<label for="l-contact-us__form__comment">Comments or Questions:</label>
+					<textarea id="l-contact-us__form__comment" name="contactComment" required></textarea>
+				</div>
+				<div class="form-row h-align-right">
+					<input class="button button--medium cta-primary font--uppercase" data-hook="submit-form" type="submit" value="Send" title="Send Us Your Information">
+				</div>
+			</fieldset>
+			<input type="hidden" name="storeName" value="&mvte:global:store:name;" />
+			<mvt:assign name="g.storeEmailB64" value="crypto_base64_encode(g.store:email)" />
+			<input type="hidden" name="storeEmail" value="&mvte:global:storeEmailB64;" />
+		</form>
+	</div>
+</div>

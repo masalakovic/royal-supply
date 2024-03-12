@@ -1,0 +1,36 @@
+<mvt:assign name="g.weekday" value="time_t_dayofweek( s.time_t, timezone() )" />
+Today is &mvte:global:weekday; <br>
+
+<mvt:if expr="(g.weekday EQ 1) OR (g.weekday EQ 7)">
+	Weekend: skiped. 
+	<mvt:exit />
+</mvt:if>
+
+Not Skipped.
+<mvt:exit />
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<base href="https://www.lafco.com/mm5/">
+
+<link type="text/css" media="all" rel="stylesheet" href="css/00000001/b19/vertical_carousel_light.css" ></link>
+
+<style>
+body { margin: 0; padding: 0; }
+</style>
+
+<script src="b19/themes/colossus/core/js/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
+
+</head>
+<body>
+
+<mvt:item name="readytheme" param="contentsection( 'header_rotating_script' )" />
+
+<script type="text/javascript" src="scripts/00000001/b19/vertical_carousel_light.js"></script>
+</body>
+</html>

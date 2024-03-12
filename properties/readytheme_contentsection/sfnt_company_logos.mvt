@@ -1,0 +1,20 @@
+<section class="sfnt-company-logos t-defer-object" data-defer>
+    <div class="sfnt-company-logos__img">
+        <mvt:item name="readytheme" param="image( 'company_logo_bon_appetit' )" />
+    </div>
+    <div class="sfnt-company-logos__img">
+        <mvt:item name="readytheme" param="image( 'company_logo_details_magazine' )" />
+    </div>
+    <div class="sfnt-company-logos__img">
+        <mvt:item name="readytheme" param="image( 'company_logo_food_and_wine' )" />
+    </div>
+    <div class="sfnt-company-logos__img">
+        <mvt:item name="readytheme" param="image( 'company_logo_los_angeles_times' )" />
+    </div>
+    <div class="sfnt-company-logos__img">
+        <mvt:item name="readytheme" param="image( 'company_logo_martha_stewart_living' )" />
+    </div>
+    <div class="sfnt-company-logos__img">
+        <mvt:item name="readytheme" param="image( 'company_logo_saveur' )" />
+    </div>
+</section>

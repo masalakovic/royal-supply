@@ -1,0 +1,38 @@
+<section class="t-storefront-featured-products t-defer-object" data-defer>
+  <div data-ltk-merchandiseblock="e9077ba8-57dc-4968-b3c2-96bd4a170533" class="container">
+    <div class="t-storefront-featured-products__container-top">
+      <h2 class="t-storefront-wick-products__heading">
+	<mvt:if expr="miva_array_elements(l.settings:readytheme:products) GT 1">
+		 Shop Featured Products
+	<mvt:else>
+ 		 Shop Featured Product
+	</mvt:if>
+</h2>
+    </div>
+    <div class="x-product-list x-product-list--slicked t-storefront-featured-product-list"
+      data-hook="paradico_products">
+      <mvt:foreach iterator="product" array="readytheme:products">
+        <div class="x-product-list__item">
+          <figure class="x-product-list__figure">
+            <picture class="x-product-list__picture">
+              <a class="x-product-list__picture-link" href="&mvte:product:link;">
+                <img class="x-product-list__image" data-lazy="&mvte:product:imagetypes:main;" src="&mvte:product:imagetypes:main;"
+                  alt="&mvte:product:name;" width="250" height="250">
+              </a>
+            </picture>
+            <figcaption class="x-product-list__details">
+              <a class="x-product-list__details-link" href="&mvt:product:link;">
+                <mvt:item name="customfields" param="Read_Product_Code(l.settings:product:code, 'Listrak-Sub-Category', l.settings:product:Sub_Category )" />
+                <mvt:item name="customfields" param="Read_Product_Code(l.settings:product:code, 'product_scent', l.settings:product:product_scent )" />
+                <div class="x-product-list__name">&mvt:product:Sub_Category;</div>
+                <div class="x-product-list__scent">&mvt:product:product_scent;</div>
+                <div class="" >&mvt:product:formatted_price;</div>
+              </a>
+            </figcaption>
+            
+          </figure>
+        </div>
+      </mvt:foreach>
+    </div>
+  </div>
+</section>

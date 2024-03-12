@@ -1,0 +1,162 @@
+<mvt:assign name="g.tab"        value="asciichar(9)" />
+<mvt:assign name="g.newline"    value="asciichar(10)" />
+<mvt:assign name="g.pipe"       value="asciichar(124)" />
+<mvt:assign name="g.comma"      value="asciichar(44)" />
+<mvt:assign name="g.quote"      value="asciichar(34)" />
+<mvt:assign name="g.period"     value="asciichar(46)" />
+<mvt:assign name="g.delimiter"  value="asciichar(44)" />
+<mvt:assign name="g.eol"        value="asciichar(13)" />
+
+<mvt:comment>*********************************</mvt:comment>
+<mvt:comment>* set fields with static values *</mvt:comment>
+<mvt:comment>*********************************</mvt:comment>
+
+<mvt:assign name="g.line_count" 	value="0" />
+<mvt:assign name="g.ItemType" 		value="'1'" />
+<mvt:assign name="g.InvoicePrefix" 	value="'B'" />
+<mvt:assign name="g.ARDivisionNo" 	value="'94'" />
+<mvt:assign name="g.CustomerNo" 	value="'9995'" /> <!- for B2C only -->
+<mvt:assign name="g.TAXCLASS" 		value="'TX'" />
+<mvt:assign name="g.SHIPVia" 		value="'UPS'" />
+<mvt:assign name="g.Warehouse" 		value="'0'" />
+<mvt:assign name="g.BatchNo" 		value="'1'" />
+<mvt:assign name="g.Warehouse" 		value="'0'" />
+<mvt:assign name="g.taxschedule" 	value="''" />
+<mvt:assign name="g.taxschedrate" 	value="''" />
+<mvt:assign name="g.freighttax" 	value="'0'" />
+<mvt:assign name="g.filename" value="'b2c_mas_import.csv'" />
+<mvt:assign name="g.filepath" value="'/feeds/'" />
+<mvt:assign name="g.headerrow" value="'ItemType' $ g.delimiter $
+					'InvoiceNumber' $ g.delimiter $
+					'ARDivisionNo' $ g.delimiter $
+					'CustomerNo' $ g.delimiter $
+					'ShipToName' $ g.delimiter $
+					'ShipToAddress1' $ g.delimiter $
+					'ShipToAddress2' $ g.delimiter $
+					'ShipToZip' $ g.delimiter $
+					'ShipToCity' $ g.delimiter $
+					'ShipToState' $ g.delimiter $
+					'EmailAddress' $ g.delimiter $
+					'ItemCode' $ g.delimiter $
+					'QuantityShipped' $ g.delimiter $
+					'TAXCLASS' $ g.delimiter $
+					'BillToName' $ g.delimiter $
+					'BillToAddress1' $ g.delimiter $
+					'BillToAddress2' $ g.delimiter $
+					'BillToZip' $ g.delimiter $
+					'BillToCity' $ g.delimiter $
+					'BillToState' $ g.delimiter $
+					'SHIPVia' $ g.delimiter $
+					'FreightAmt' $ g.delimiter $
+					'OrderDate' $ g.delimiter $
+					'Warehouse' $ g.delimiter $
+					'ADD_DATA_TAX_Sched' $ g.delimiter $
+					'BatchNo' $ g.delimiter $
+					'DELCOL_ShipToCity' $ g.delimiter $
+					'DELCO_ShipToState' $ g.delimiter $
+					'DELCOL_ORDER_TAX' $ g.delimiter $
+					'DELCOL_ORDER_TOTL' $ g.delimiter $
+					'TaxSchedRate' $ g.delimiter $
+					'DELCOL_TaxRate' $ g.eol"/>
+
+
+<mvt:comment>*************************************************************</mvt:comment>
+<mvt:comment>* Delete file if it exists, create new file with header row *</mvt:comment>
+<mvt:comment>*************************************************************</mvt:comment>
+
+<mvt:assign name="g.file_exists" value="sexists(g.filepath $ g.filename)" />
+<mvt:if expr="g.file_exists EQ 1">
+	<mvt:assign name="g.file_deleted" value="sdelete(g.filepath $ g.filename)" />
+	<mvt:if expr="g.file_deleted EQ 1">
+		<mvt:assign name="g.file_created" value="file_create(g.filepath $ g.filename,'script', g.headerrow)" />
+	</mvt:if>
+<mvt:else>
+	<mvt:assign name="g.file_created" value="file_create(g.filepath $ g.filename,'script', g.headerrow)" />
+</mvt:if>
+
+<mvt:do file="g.Module_Library_Utilities" name="l.success" value="QuickSortArray( l.settings:admin_order:orders, ':orderdate', 1 )" />
+
+
+<mvt:comment>**********************************</mvt:comment>
+<mvt:comment>* loop thru batch and add values *</mvt:comment>
+<mvt:comment>**********************************</mvt:comment>
+
+<mvt:foreach iterator="order" array="admin_order:orders">
+	<mvt:if expr="l.settings:order:cust_id GT 0">
+		<mvt:comment> Get custom field data and append to orders. </mvt:comment>
+		<mvt:item name="customfields" param="
+			Read_Customer_ID(
+				l.settings:order:cust_id,
+				'ARDivisionNo,CUSTOMER_MAS_NUMBER,FREIGHTTAX,FREIGHTTAX,SALESTAX,TAXEXEMPTNO,TAXSCHEDRATE,TAXSCHEDULE',
+				l.settings:order:CCF
+			)
+		" />
+	</mvt:if>
+<mvt:if expr="l.settings:order:CCF:CUSTOMER_MAS_NUMBER">
+	<mvt:comment>skip B2B orders when customer mas number exist</mvt:comment>
+	<mvt:assign name="g.line_count" value="g.line_count + 1" />
+<mvt:else>
+<mvt:foreach iterator="item" array="order:groups">
+	<mvt:comment>Determine product tax and shipping</mvt:comment>
+	<mvt:foreach iterator="charge" array="order:charges">
+		<mvt:if expr="l.settings:charge:type EQ 'TAX'">
+			<mvt:assign name="l.settings:order:tax" value="l.settings:charge:amount"/>
+		</mvt:if>
+		<mvt:if expr="l.settings:charge:type EQ 'SHIPPING'">
+			<mvt:assign name="l.settings:order:shipping" value="l.settings:charge:amount"/>
+		</mvt:if>
+	</mvt:foreach>
+	<mvt:comment>assign tax code if exist</mvt:comment>
+	<mvt:if expr="NOT ISNULL l.settings:order:customfield_order_values:customfields:TAXAPPLIED">
+		<mvt:assign name="g.taxschedule" value="l.settings:order:customfield_order_values:customfields:TAXAPPLIED" />
+	</mvt:if>
+
+	<mvt:assign name="g.file_row" value="g.ItemType $ g.delimiter $
+					g.InvoicePrefix $ l.settings:order:id $ g.delimiter $
+					g.ARDivisionNo $ g.delimiter $
+					g.CustomerNo $ g.delimiter $
+					l.settings:order:ship_fname $ ' ' $ l.settings:order:ship_lname $ g.delimiter $
+					g.quote $ l.settings:order:ship_addr $ g.quote $ g.delimiter $
+					g.delimiter $
+					l.settings:order:ship_zip $ g.delimiter $
+					l.settings:order:ship_city $ g.delimiter $
+					l.settings:order:ship_state $ g.delimiter $
+					l.settings:order:ship_email $ g.delimiter $
+					l.settings:item:code $ g.delimiter $
+					l.settings:item:quantity $ g.delimiter $
+					g.TAXCLASS $ g.delimiter $
+					l.settings:order:bill_fname $ ' ' $ l.settings:order:bill_lname $ g.delimiter $
+					g.quote $ l.settings:order:bill_addr $ g.quote $ g.delimiter $
+					g.delimiter $
+					l.settings:order:bill_zip $ g.delimiter $
+					l.settings:order:bill_city $ g.delimiter $
+					l.settings:order:bill_state $ g.delimiter $
+					g.SHIPVia $ g.delimiter $
+					l.settings:order:shipping $ g.delimiter $
+					l.settings:order:date $ g.delimiter $
+					g.Warehouse $ g.delimiter $
+					g.taxschedule $ g.delimiter $
+					g.BatchNo $ g.delimiter $
+					l.settings:order:ship_city $ g.delimiter $
+					l.settings:order:ship_state $ g.delimiter $
+					l.settings:order:tax $ g.delimiter $
+					l.settings:order:total $ g.delimiter $
+					g.taxschedrate $ g.delimiter $
+					g.freighttax $ g.eol"/>
+	<mvt:assign name="g.write_line" value="file_append( g.filepath $ g.filename, 'script', g.file_row )" />
+</mvt:foreach>
+</mvt:if>
+</mvt:foreach>
+
+<mvt:comment>*************************</mvt:comment>
+<mvt:comment>* provide download link *</mvt:comment>
+<mvt:comment>*************************</mvt:comment>
+
+Download B2C MAS Import File (contains only B2C orders!):<br><br>
+<a href="http://&mvte:global:domain:name;&mvte:global:filepath;&mvt:global:filename;" target="_blank">http://&mvte:global:domain:name;&mvte:global:filepath;&mvt:global:filename;</a>
+<br><br>
+<mvt:if expr="g.line_count">
+Batch contains <strong>&mvt:global:lin_count;</strong> B2B orders. Please run B2B MAS Report to download. 
+<mvt:else>
+Batch doesn't contain B2B orders. No need to run B2B MAS Report.
+</mvt:if>

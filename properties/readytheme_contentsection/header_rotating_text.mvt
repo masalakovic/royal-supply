@@ -1,0 +1,10 @@
+<mvt:if expr="l.settings:promo_1">
+Free shipping on all orders!* Use Code: FREESHIPPING Offers > | https://www.lafco.com/offers.html
+<mvt:comment>Free 3.3oz Chamomile Lavender Hand Sanitizer on orders $250+ Code: PURIFY  Offers > | https://www.lafco.com/offers.html</mvt:comment>
+</mvt:if>
+
+<mvt:if expr="l.settings:promo_2">
+<mvt:comment>Free 6.5oz Chamomile Lavender Candle on orders $145+ Use Code: CLASSIC Offers > | https://www.lafco.com/offers.html</mvt:comment>
+Free shipping on orders $75+ Offers > | https://www.lafco.com/offers.html
+Free Soap on orders $75+ Code: SOAP Offers > | https://www.lafco.com/offers.html
+</mvt:if>

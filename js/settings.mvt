@@ -1,0 +1,25 @@
+theme_path = '&mvt:global:theme_path;/';
+
+(mivaJS => {
+	mivaJS.ReadyTheme = theme_path.split('/').reverse()[1];
+	mivaJS.ReadyThemeVersion = '10.08.02';
+	mivaJS.Store_Code = '&mvtj:global:store:code;';
+	mivaJS.Product_Code = '&mvtj:product:code;';
+	mivaJS.Category_Code = '&mvtj:category:code;';
+	mivaJS.Customer_Login = '&mvtj:global:customer:login;';
+	mivaJS.Page = '&mvtj:page:code;';
+	mivaJS.Screen = '&mvtj:global:screen;';
+
+	/**
+	 * These are options you can use to control some JavaScript function on your site.
+	 */
+	mivaJS.miniBasket = {
+		closeOnBackground: true,
+		closeOnEsc: true,
+		use: true
+	}
+	mivaJS.showPassword = {
+		useIcon: true
+	}
+
+})(window.mivaJS || (window.mivaJS = {}));

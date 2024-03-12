@@ -1,0 +1,51 @@
+<mvt:item name="html_profile" />
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<base href="&mvte:global:basehref;" />
+	<mvt:if expr="NOT ISNULL l.settings:page:title">
+		<title>&mvt:page:title;</title>
+	<mvt:else>
+		<title>&mvt:store:name;</title>
+	</mvt:if>
+	<mvt:item name="head" param="css_list" />
+	<mvt:item name="head" param="head_tag" />
+
+	<!-- slick slider CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" defer></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.1/jquery.flexslider.min.js" defer></script>
+
+</head>
+<body id="js-&mvte:page:code;" class="o-site-wrapper t-page-&mvte:global:pageClass; t-sfnt-wrapper">
+	<mvt:item name="hdft" param="global_header" />
+	<section class="o-layout">
+		<div class="o-layout__item">
+			<mvt:item name="hdft" param="header" />
+		</div>
+	</section>
+
+	<mvt:comment> <section class="o-layout">
+		<div class="o-layout__item">
+			<mvt:item name="readytheme" param="contentsection( 'paypalcp_configuration' )" />
+			<mvt:item name="sequence" />
+		</div>
+	</section> </mvt:comment>
+
+   <!-- HOT DEALS -->
+	 <mvt:item name="readytheme" param="productlisting( 'hot-deals-product-listing' )" />
+
+   <!-- ON SALE -->
+	 <mvt:item name="readytheme" param="productlisting( 'on-sale-product-listing' )" />
+
+   <!-- OUR BRANDS -->
+	 <mvt:item name="readytheme" param="navigationset( 'our-brands' )" />
+
+	<section class="o-layout">
+		<div class="o-layout__item">
+			<mvt:item name="hdft" param="footer" />
+		</div>
+	</section>
+	<mvt:item name="hdft" param="global_footer" />
+</body>
+</html>

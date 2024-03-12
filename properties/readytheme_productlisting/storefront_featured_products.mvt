@@ -1,0 +1,49 @@
+<section class="t-storefront-featured-products t-defer-object" data-defer>
+    <div class="container">
+        <mvt:do name="l.result" file="g.Module_Library_DB" value="Category_Load_Code(l.settings:readytheme:productlisting:prod_cat, l.settings:product_list_category)" />
+        <mvt:assign name="l.uri:store_id" value="g.Store:id" />
+        <mvt:assign name="l.uri:screen" value="''" />
+        <mvt:assign name="l.uri:page_id" value="0" />
+        <mvt:assign name="l.uri:cat_id" value="l.settings:product_list_category:id" />
+        <mvt:assign name="l.uri:product_id" value="0" />
+        <mvt:do file="g.Module_Feature_URI_DB" name="l.have_uri" value="URI_Load_Item_Canonical(l.uri, l.settings:canonical_uri)" />
+        <mvt:comment>
+            The above code will load the category code used to pull the category name and then load the cannonical URI.
+        </mvt:comment>
+        <div class="t-storefront-featured-products__container-top">
+            <h2 class="t-storefront-featured-products__heading">Picked for You!</h2>
+            <a class="t-storefront-featured-products__cta" href="/shop-all">View All</a>
+        </div>
+        <div class="x-product-list x-product-list--slicked t-storefront-featured-product-list" data-hook="featured-products">
+            <mvt:foreach iterator="product" array="readytheme:products">
+                <div class="x-product-list__item">
+                    <figure class="x-product-list__figure">
+                        <mvt:if expr="NOT ISNULL l.settings:product:imagetypes:hover">
+                            <picture class="x-product-list__picture-double">
+                        <mvt:else>
+                            <picture class="x-product-list__picture">
+                        </mvt:if>
+                            <a class="x-product-list__picture-link" href="&mvte:product:link;">
+                                <img class="x-product-list__image" data-lazy="&mvte:product:imagetypes:main;" src="" alt="&mvte:product:name;" width="150" height="150">
+                                <mvt:if expr="NOT ISNULL l.settings:product:imagetypes:hover">
+                                    <img class="x-product-list__image-hover" data-lazy="&mvte:product:imagetypes:hover;" src="" alt="&mvte:product:name;" width="150" height="150">
+                                </mvt:if>
+                            </a>
+                            <mvt:comment><a class="btn btn--s btn--white x-product-list__add-to-cart" href="#">Add To Cart</a></mvt:comment>
+                        </picture>
+                        <figcaption class="x-product-list__details">
+                            <a class="x-product-list__details-link" href="&mvte:product:link;">
+                                <div class="x-product-list__name">&mvt:product:customfield_values:customfields:product_size;</div>
+                                <mvt:comment><div class="x-product-list__type">&mvt:product:customfield_values:customfields:product_type;</div></mvt:comment>
+                                <mvt:if expr="NOT ISNULL l.settings:product:customfield_values:customfields:product_scent">
+                                    <div class="x-product-list__scent">&mvt:product:customfield_values:customfields:product_scent;</div>
+                                </mvt:if>
+                            </a>
+                        </figcaption>
+                    </figure>
+                </div>
+            </mvt:foreach>
+        </div>
+    </div>
+</section>
+<!-- end t-storefront-featured-products -->

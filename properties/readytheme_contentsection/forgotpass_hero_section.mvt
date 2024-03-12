@@ -1,0 +1,29 @@
+<mvt:item name="readytheme" param="Load_Image('storefront_hero_section', g.storefront_hero_section)" />
+<section class="storefront-hero-section newletter-sect" style="background-image: url('&mvt:global:storefront_hero_section:image;');">
+    <div class="container">
+        <div class="outer-box">
+<div class="inner-box">
+<div class="sub-heading">
+<p>Enter the email address associated with your account.<br>If you no longer use the email address associated with your account, please contact customer support.</p>
+</div>
+<div class="email-box">
+<form class="o-layout o-layout--justify-center" method="post" action="&mvte:urls:_self:secure;" autocomplete="off">
+    <fieldset class="o-layout__item u-width-12">
+        <input type="hidden" name="Action" value="EMPW" />
+        <ul class="c-form-list">
+            <li class="c-form-list__item c-form-list__item--full">
+                    <input id="l-Customer_LoginEmail" class="field" type="email" name="Customer_LoginEmail" placeholder="Email*" value="&mvte:global:Customer_LoginEmail;" autocomplete="email" required>
+            </li>
+            <li class="c-form-list__item c-form-list__item--full">
+                <input type="submit" value="CONTINUE" title="Click Here to Log In and Change Your Password">
+            </li>
+            
+        </ul>
+    </fieldset>
+</form>
+</div>
+
+</div>
+</div>
+    </div>
+</section>

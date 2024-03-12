@@ -1,0 +1,58 @@
+<section class="o-wrapper o-wrapper--full t-global-search" itemscope itemtype="http://schema.org/WebSite">
+    <meta itemprop="url" content="//&mvt:global:domain:name;/"/>
+    <form class="t-global-search__form" method="post" action="&mvte:urls:SRCH:rr;" itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction">
+        <button class="close_section" data-hook="close-search" type="button"><span class="sr-only">close</span><span class="u-font-tiny u-icon-cross"></span></button>
+        <fieldset class="block-static-info-helpful">
+            <legend>Product Search</legend>
+            <ul class="c-form-list">
+                <li class="c-form-list__item c-form-list__item--full c-control-group u-flex max-width">
+                    <meta itemprop="target" content="&mvte:urls:SRCH:auto;?q={Search}"/>
+                    <nav id="js-navigation-bar" class="navigation-bar navigation_main">
+                        <ul>
+                            <li class="level-1 mobile-search" data-name="Search">                                    
+                                <ul class="zzz-close" id="main-search">
+                                    <div id="main-search-inner-wrap">
+                                        <form action="https://www.lafco.com/mm5/merchant.mvc?Screen=SRCH" method="post" target="_blank">
+                                            <div class="form_search">
+                                                <div style="display: flex; flex:1" class="center_block">
+                                                    <div class="loader2"></div>
+						                            <label class="sr-only" for="global-search">search</label>
+                                                    <input type="search" id="global-search" name="Search" value="" data-hook="global-search" placeholder="What are you looking for?" class="search-input" autocomplete="off">
+                                                    <button disabled type="reset" class="reset u-icon-cross"></button>
+                                                </div>
+                                                
+                                                <button disabled id="main-search-submit-button" class="submit-button btn btn--white btn--s">View more results (<span class="count"></span>)</button>
+                                                <div id="main-search-error-message" data-message="Sorry, no results matching your request"></div>
+                                            </div>
+                                        </form>
+                                        <div id="main-search-results">
+                                            <ul dir="rtl">
+                                                <li style="display:none;">
+                                                    <a href="">
+                                                        <div class="image">
+                                                            <img src="" alt="search">
+                                                        </div>
+                                                        <div class="details">
+                                                            <p class="fragrance"></p>
+                                                            <p class="type"></p>
+                                                            <p class="price"></p>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <mvt:comment><button class="submit-button btn btn--white btn--s" onclick="$('#main-search-submit-button').click()">View more results</button></mvt:comment>
+                                        </div>
+                                        <button id="main-search-submit-button" class="submit-button btn btn--white btn--s">View more results (<span class="count"></span>)</button>
+                                        <mvt:item name="readytheme" param="productlisting( 'trending_now' )" />
+                                    </div>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </li>
+            </ul>
+            
+        </fieldset>
+    </form>
+    
+</section>

@@ -1,0 +1,22 @@
+<div class="o-wrapper o-wrapper--flush">
+	<div class="allure-hero"
+		style="background-image: url('graphics/00000001/1/1.jpg'); background-size: cover; background-repeat: no-repeat;min-height: 575px;  align-items: center; display: flex;">
+		<div id="allure-form-container" class="allure__figure allure-container">
+			<strong class="title-form">ALLURE EXCLUSIVE</strong>
+			<div id="subscribe" class="t-newsletter-form">
+				<h2>Order Online &<br>Receive 20% off</h2>
+				<form method="post" action="https://enews.lafco.com/q/j5afmsoqejfrbQPQ9S_epIEVqFjaKQRZgX"
+					accept-charset="UTF-8">
+					<input type="hidden" name="crvs"
+						value="8coaIoy4s2Sg2u9Yb5m9Acj_u6CdBt5PmwoOeLgKmyFF5j7xMxQiWcOjeUwRuZS5iACJ0cSeJjvdQX2cfjtKrkb-vJGcdgAlr-_Xufu77oJPj3InnpUBZyCpdCRpgIiH" />
+					<table cellspacing="0" cellpadding="2" class="t-newsletter-form c-control-group">
+						<tr style="outline: none;">
+							<td><input type="text" name="email" value="" placeholder="Enter your email" class="c-form-input c-form-input--large c-control-group__field" /></td>
+							<td><input type="submit" id="submit" value="Sign Up" class="o-layout--no-shrink c-button c-button--large c-control-group__button" /></td>
+						</tr>
+					</table>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

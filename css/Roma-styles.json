@@ -1,0 +1,21 @@
+{
+    "code": "Roma-styles",
+    "type": "L",
+    "branchless_filepath": "css/00000001/styles.css",
+    "is_global": true,
+    "active": false,
+    "attributes": [
+        {
+            "name": "type",
+            "value": "text/css"
+        },
+        {
+            "name": "media",
+            "value": "all"
+        },
+        {
+            "name": "rel",
+            "value": "stylesheet"
+        }
+    ]
+}

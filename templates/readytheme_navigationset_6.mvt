@@ -1,0 +1,73 @@
+<mvt:if expr="l.settings:navigation_version EQ 'mobile'">
+	<li class="level-1 bg-gray white mobile-navigation-gray">
+		<span class="parent">More...</span>
+		<ul>
+			<mvt:foreach iterator="navigationitem" array="readytheme:navigationitems">
+				<li class="level-1">
+					<mvt:if expr="NOT ISNULL l.settings:navigationitem:items">
+						<span class="parent">&mvt:navigationitem:link;</span>
+						<ul>
+							<mvt:foreach iterator="navigationitem_level2" array="navigationitem:items">
+								<li class="level-2">
+									<mvt:if expr="NOT ISNULL l.settings:navigationitem_level2:items">
+										<span class="parent">&mvt:navigationitem_level2:link;</span>
+										<ul>
+											<mvt:foreach iterator="navigationitem_level3" array="navigationitem_level2:items">
+												<li class="level-3"><span>&mvt:navigationitem_level3:link;</span></li>
+											</mvt:foreach>
+										</ul>
+										<span data-name="&mvt:navigationitem_level2:name;" data-rt-icon="d" class="next"></span>
+									<mvt:else>
+										<span>&mvt:navigationitem_level2:link;</span>
+									</mvt:if>
+								</li>
+							</mvt:foreach>
+						</ul>
+						<span data-name="&mvt:navigationitem:name;" data-rt-icon="d" class="next"></span>
+					<mvt:else>
+						<span>&mvt:navigationitem:link;</span>
+					</mvt:if>
+				</li>
+			</mvt:foreach>
+		</ul>
+		<span data-name="More..." data-rt-icon="d" class="next"></span>
+	</li>
+<mvt:exit />
+</mvt:if>
+
+<nav id="js-navigation-bar" class="navigation-bar &mvte:readytheme:code; large-show hide">
+	<div class="wrap az-menu large-show hide">
+		<div class="row nav-group-1">
+			<div class="column nav-item-1 nav-item-1--right align-center x-large-nlp">
+				<ul id="js-navigation-set" class="navigation-set &mvte:readytheme:layout;">
+					<mvt:foreach iterator="navigationitem" array="readytheme:navigationitems">
+						<li class="level-1">
+							<span>&mvt:navigationitem:link;</span>
+							<mvt:if expr="NOT ISNULL l.settings:navigationitem:items">
+								<ul>
+									<mvt:foreach iterator="navigationitem_level2" array="navigationitem:items">
+										<li class="level-2">
+											<span>&mvt:navigationitem_level2:link;</span>
+											<mvt:if expr="NOT ISNULL l.settings:navigationitem_level2:items">
+												<ul>
+													<mvt:foreach iterator="navigationitem_level3" array="navigationitem_level2:items">
+														<li class="level-3"><span>&mvt:navigationitem_level3:link;</span></li>
+													</mvt:foreach>
+												</ul>
+											</mvt:if>
+										</li>
+									</mvt:foreach>
+								</ul>
+							</mvt:if>
+						</li>
+					</mvt:foreach>
+				</ul>
+
+
+			</div>
+		</div>
+<p class="tagline">E-Commerce, Web Design, Custom Solutions.</p>
+<mvt:item name="readytheme" param="image( 'sfnt_medal' )" />
+	</div>
+
+</nav>

@@ -1,0 +1,24 @@
+<mvt:item name="readytheme" param="Load_Image('sfnt_video_section', g.sfnt_video_section)" />
+<section class="sfnt-video-section t-defer-object" data-defer style="background-image: url('&mvt:global:sfnt_video_section:image;');">
+    <div class="container">
+        <div class="heading-line-ver">
+            <h2 class="heading-line-ver__title">Articles and recipes</h2>
+        </div>
+        <div class="block-constrain">
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text</p>            
+        </div>
+        <div class="sfnt-video-block">
+            <div class="sfnt-video-block__img">
+                <mvt:item name="readytheme" param="image( 'sfnt_video_img' )" />
+            </div>
+            <a data-mini-modal data-mini-modal-type="inline" class="sfnt-video-block__link" href="#sfnt-video-closeup"></a>
+            <div id="sfnt-video-closeup" class="sfnt-video-closeup u-hide-visually">
+                <div class="video-wrap">
+                    <div class="video-responsive">
+                        <iframe width="862" height="519" src="https://www.youtube.com/embed/BAZBYFS6sJY" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

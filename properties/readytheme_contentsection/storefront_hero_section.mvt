@@ -1,0 +1,119 @@
+<mvt:if expr="l.settings:promo_1">
+<mvt:item name="readytheme" param="Load_Image('storefront_hero_section', l.settings:storefront_hero_section)" />
+<mvt:item name="readytheme" param="Load_Image('storefront_hero_section_mobile', l.settings:storefront_hero_section_mobile)" />
+<section style="position: relative;" class="storefront-hero-section newletter-sect">
+    <a href="/chamomile-lavender-candle.html?q=HH5c">
+        <picture>
+            <source media="(min-width: 540px)" srcset="&mvte:readytheme:storefront_hero_section:image;">
+            <img src="&mvte:readytheme:storefront_hero_section_mobile:image;" alt="&mvte:readytheme:storefront_hero_section:image_alt;">
+        </picture>
+    </a>
+</section>
+</mvt:if>
+
+<style>
+    .desktop {
+        display: block;
+    }
+    .mobile {
+        display: none;
+    }
+    .text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 4vw;
+        left: 5.2vw;
+    }
+    .top {
+        text-align: center;
+        font-size: 3.57vw;
+        line-height: 3.9vw;
+        width: 32vw;
+        color: white;
+    }
+    .middle {
+        text-align: center;
+        font-size: 6.9vw;
+        line-height: 8vw;
+        font-family: 'Bodoni72';
+        margin-top: 1.5vw;
+        color: white;
+    }
+    .bottom {
+        text-align: center;
+        font-size: 2.832vw;
+        line-height: 2.832vw;
+        margin-top: 3vw;
+        color: #545454;
+    }
+   
+    @media (min-width: 1200px) {
+        .text {
+            top: 47px;
+            left: 62px;
+        }
+        .top {
+            font-size: 42.8px;
+            line-height: 47px;
+            width: 370px;
+        }
+        .middle {
+            line-height: 97px;
+            font-size: 82px;
+            margin-top: 18px;
+        }
+        .bottom {
+            font-size: 34px;
+            margin-top: 30px;
+        }
+    }
+    @media (max-width: 540px) {
+        .desktop {
+            display: none;
+        }
+        .mobile {
+            display: block;
+        }
+        .text {
+            top: 10.2vw;
+            left: 15.5vw;
+        }
+        .top {
+            font-size: 5.65vw;
+            line-height: 6.2vw;
+            width: 62vw;
+        }
+        .middle {
+            font-size: 10.9vw;
+            line-height: 10.9vw;
+            margin-top: 4.7vw;
+        }
+        .bottom {
+            font-size: 4.55vw;
+            line-height: 4.55vw;
+            margin-top: 5vw;
+        }
+    }
+</style>
+
+<mvt:if expr="l.settings:promo_2">
+<mvt:item name="readytheme" param="Load_Image('storefront_hero_section_2', l.settings:storefront_hero_section)" />
+<mvt:item name="readytheme" param="Load_Image('storefront_hero_section_mobile_2', l.settings:storefront_hero_section_mobile)" />
+<section class="storefront-hero-section newletter-sect">
+    <a href="/chamomile-lavender-candle.html?q=HH5c">
+        <picture>
+            <source media="(min-width: 540px)" srcset="&mvte:readytheme:storefront_hero_section:image;">
+            <img src="&mvte:readytheme:storefront_hero_section_mobile:image;" alt="&mvte:readytheme:storefront_hero_section:image_alt;">
+        </picture>
+        <mvt:comment> <div class="text">
+            <span class="top desktop">The ultimate statement of LAFCO with our</span>
+            <span class="top mobile">The ultimate statement of LAFCO with our NEW luxe</span>
+            <span class="middle desktop">New Luxe <br> 4-Wick Candle</span>
+            <span class="middle mobile">4-Wick Candle</span>
+            <span class="bottom">Available in our most popular fragrances</span>
+        </div> </mvt:comment>
+    </a>
+</section>
+</mvt:if>

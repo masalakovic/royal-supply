@@ -1,0 +1,52 @@
+<section class="section-static section-static-banner-hero fragrance-page">
+	<mvt:item name="readytheme" param="image( 'heritage-main-image' )" />
+	<p class="banner-title">heritage.</p>
+</section>
+
+<section class="section-static section-static-promise">
+	<div class="container">
+		<div class="static-centered">
+			<h1>a modern collection inspired by the past</h1>
+		</div>
+		<p>To create this definitive LAFCO collection, founder Jon Bresler collaborated with the family-run Glassworks Harrachov, the oldest glassblowing studio in Bohemia.</p>
+	</div>
+</section>
+
+<section class="absolute-collection card-info">
+	<div class="container category-wrapper">
+		<div class="u-grids-1 u-grids-2--s collection-category">
+			<div class="image-wrapper">
+				<mvt:item name="readytheme" param="image( 'hr-1' )" />
+			</div>
+			<div class="info-wrapper">
+				<h2>sustaining a glassmaking legacy</h2>
+				<p>Since founding LAFCO in 1992, Jon Bresler has sought out and partnered with studios and factories that exemplify the traditional practices and rich history of their craft. </p>
+			</div>
+		</div>
+		<div class="u-grids-1 u-grids-2--s collection-category">
+			<div class="image-wrapper">
+				<mvt:item name="readytheme" param="image( 'hr-2' )" />
+			</div>
+			<div class="info-wrapper">
+				<p>Established in 1712, Glassworks Harrachov continues a Bohemian glassmaking tradition dating back to the thirteenth century. Awarded numerous gold medals at World’s Fairs throughout the nineteenth and early twentieth centuries, the factory endured world wars and multiple changes in ownership until it was purchased in 1993 by Frantisek Novosad, a trained glassblower.</p>
+			</div>
+		</div>
+        <div class="u-grids-1 u-grids-2--s collection-category">
+			<div class="image-wrapper">
+				<mvt:item name="readytheme" param="image( 'hr-3' )" />
+			</div>
+			<div class="info-wrapper">
+				<p>Under the stewardship of the Novosad family, Glassworks Harrachov remains one of the last traditional producers of luxury glassware and decorative glass in Europe.</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="section-static block-background">
+    <div class="image-wrapper">
+		<div class="button_block black">
+			<a href="/absolute" class="next_block begin btn btn--s">SHOP THE COLLECTION</a>
+		</div>
+        <mvt:item name="readytheme" param="image( 'hr-back' )" />
+    </div>
+</section>

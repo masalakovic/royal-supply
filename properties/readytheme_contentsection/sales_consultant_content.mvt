@@ -1,0 +1,13 @@
+<section class="section-sales-consultant">
+	<h1>Hello, &mvt:global:customer:ship_fname;</h1>
+	<div class="block-sales-consultant">
+		<h2>Your Sales Consultant:</h2>
+		<div class="block-sales-consultant-in">
+			<p>First Name Last Name</p>
+			<p>Group Name: TBD</p>
+			<p>Region: TBD</p>
+			<p>E-mail: TBD@TBD.com</p>
+			<p>Phone: 000.000.0000</p>
+		</div>
+	</div>
+</section>

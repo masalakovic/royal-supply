@@ -1,0 +1,25 @@
+<mvt:item name="html_profile" />
+<head>
+	<mvt:if expr="NOT ISNULL l.settings:page:title">
+		<title>&mvt:page:title;</title>
+	<mvt:else>
+		<title>&mvt:store:name;: &mvt:page:name;</title>
+	</mvt:if>
+	<mvt:item name="head" param="head_tag" />
+</head>
+<body id="js-&mvte:page:code;" class="<mvt:eval expr="tolower(l.settings:page:code)" />">
+	<mvt:item name="hdft" param="global_header" />	
+	<div class="row hdft-header">
+		<mvt:item name="hdft" param="header" />
+	</div>
+	<div class="row bg-white bottom-shadow main-content-row content-item">
+		<div class="column whole">
+			<mvt:item name="readytheme" param="contentsection( 'about-us-content' )" />
+		</div>
+	</div>
+	<div class="row hdft-footer">
+		<mvt:item name="hdft" param="footer" />
+	</div>
+	<mvt:item name="hdft" param="global_footer" />	
+</body>
+</html>

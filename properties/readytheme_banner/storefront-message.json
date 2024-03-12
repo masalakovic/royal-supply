@@ -1,0 +1,8 @@
+{
+    "active": 0,
+    "descrip": "Storefront Promo Message",
+    "link_dest": "SARP",
+    "link_targ": "_self",
+    "link_type": "G",
+    "message": "<span class=\"levels-icon-truck sky\"></span> Free Shipping on All Orders Over $100"
+}

@@ -1,0 +1,59 @@
+<div class="row address-summary">
+	<div class="column offset-one-twelfth five-sixths">
+		<div class="address-section">
+			<h4 class="address-heading">Ship to</h4>
+			&mvte:global:Basket:ship_fname; &mvte:global:Basket:ship_lname;<br />
+			<mvt:if expr="g.Basket:ship_comp">
+				&mvte:global:Basket:ship_comp;<br />
+			</mvt:if>
+			&mvte:global:Basket:ship_addr1; <mvt:if expr="g.Basket:ship_addr2">&mvte:global:Basket:ship_addr2;</mvt:if><br>
+			&mvte:global:Basket:ship_city;, &mvte:global:Basket:ship_state; &mvte:global:Basket:ship_zip; <mvt:if expr="g.Basket:ship-cntry NE 'US'">&mvte:global:Basket:ship_cntry;</mvt:if>
+			<mvt:comment>
+				<!--
+					<mvt:if expr="g.Basket:ship_email">
+						Email: &mvte:global:Basket:ship_email;<br />
+					</mvt:if>
+					<mvt:if expr="g.Basket:ship_phone">
+						Phone: &mvte:global:Basket:ship_phone;<br />
+					</mvt:if>
+					<mvt:if expr="g.Basket:ship_fax">
+						Fax: &mvte:global:Basket:ship_fax;<br />
+					</mvt:if>
+				-->
+			</mvt:comment>
+			<a href="&mvte:urls:OCST:auto;" class="address-edit">(Edit)</a>
+		</div>
+		<div class="address-section">
+			<h4 class="address-heading">Bill to</h4>
+			&mvte:global:Basket:bill_fname; &mvte:global:Basket:bill_lname;<br />
+			<mvt:if expr="g.Basket:bill_comp">
+				&mvte:global:Basket:bill_comp;<br />
+			</mvt:if>
+			&mvte:global:Basket:bill_addr1; <mvt:if expr="g.Basket:bill_addr2">&mvte:global:Basket:bill_addr2;</mvt:if><br>
+			&mvte:global:Basket:bill_city;, &mvte:global:Basket:bill_state; &mvte:global:Basket:bill_zip; <mvt:if expr="g.Basket:bill-cntry NE 'US'">&mvte:global:Basket:bill_cntry;</mvt:if>
+			<mvt:comment>
+				<!--
+					<mvt:if expr="g.Basket:bill_email">
+						Email: &mvte:global:Basket:bill_email;<br />
+					</mvt:if>
+					<mvt:if expr="g.Basket:bill_phone">
+						Phone: &mvte:global:Basket:bill_phone;<br />
+					</mvt:if>
+					<mvt:if expr="g.Basket:bill_fax">
+						Fax: &mvte:global:Basket:bill_fax;<br />
+					</mvt:if>
+				-->
+			</mvt:comment>
+			<a href="&mvte:urls:OCST:auto;" class="address-edit">(Edit)</a>
+		</div>
+		<mvt:if expr="l.settings:page:code EQ 'OPAY' AND g.order_instructions">
+			<div class="address-section">
+				<h4 class="address-heading">Order Instructions</h4>
+				<p>
+					&mvte:global:order_instructions;<br>
+					<a href="&mvte:urls:OSEL:auto;" class="address-edit">(Edit)</a>
+				</p>
+			</div>
+		</mvt:if>
+	</div>
+</div>

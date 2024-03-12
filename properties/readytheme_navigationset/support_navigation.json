@@ -1,0 +1,36 @@
+{
+    "items": [
+        {
+            "active": 1,
+            "id": "c391a3db4a2e32b70f25151bc501eef7",
+            "link": "<a href=\"https://royalsupply.mivatest.com/about-us.html\" target=\"_self\">About Us</a>",
+            "link_dest": "ABUS",
+            "link_targ": "_self",
+            "link_type": "G",
+            "name": "About Us",
+            "url": "https://royalsupply.mivatest.com/about-us.html"
+        },
+        {
+            "active": 1,
+            "id": "53a7f82ccf2fd2713309366d889a6354",
+            "link": "<a href=\"https://royalsupply.mivatest.com/contact-us.html\" target=\"_self\">Contact Us</a>",
+            "link_dest": "CTUS",
+            "link_targ": "_self",
+            "link_type": "G",
+            "name": "Contact Us",
+            "url": "https://royalsupply.mivatest.com/contact-us.html"
+        },
+        {
+            "active": 1,
+            "id": "9f4631886c94747a6179b8c8a56a426e",
+            "link": "<a href=\"https://royalsupply.mivatest.com/frequently-asked-questions.html\" target=\"_self\">Frequent Questions</a>",
+            "link_dest": "FAQS",
+            "link_targ": "_self",
+            "link_type": "G",
+            "name": "Frequent Questions",
+            "url": "https://royalsupply.mivatest.com/frequently-asked-questions.html"
+        }
+    ],
+    "layout": "S",
+    "name": "Support Pages Navigation"
+}

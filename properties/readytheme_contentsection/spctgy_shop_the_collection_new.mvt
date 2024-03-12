@@ -1,0 +1,6 @@
+<mvt:item name="customfields" param="Read_Category_Code(l.settings:category:code, 'shop_the_collection_link', l.settings:shop_the_collection_link)" />
+<div class="rtrt-hero" style="background-image: url('graphics/00000001/1/bg-shop-the-collection.png'); background-size: cover; background-repeat: no-repeat; height: 532px; width: 100%;">
+    <div class="spctgy-shop-collection">
+        <a href="&mvte:shop_the_collection_link;" class="btn btn--white btn--s">SHOP THE COLLECTION</a>
+    </div>
+</div>

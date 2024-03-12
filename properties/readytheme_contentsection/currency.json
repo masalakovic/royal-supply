@@ -1,0 +1,7 @@
+{
+    "active": 0,
+    "css_id": "currency_wrapper",
+    "descrip": "Toggle between USD and CAD currency",
+    "name": "Currency Toggle USD CAD",
+    "wrap_div": 1
+}

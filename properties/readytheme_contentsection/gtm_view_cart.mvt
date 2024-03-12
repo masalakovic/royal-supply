@@ -1,0 +1,20 @@
+<mvt:comment> GA4 View Cart </mvt:comment>
+        window.dataLayer.push({
+            'event': 'view_cart',
+            'basket': {
+                'items': [
+                <mvt:foreach iterator="item" array="global_minibasket:groups">
+		    <mvt:do file="g.Module_Library_DB" name="l.success" value="CategoryList_Load_Offset_Product_Assigned(l.settings:item:product:id, 0, '1', 'active', 20, l.null, l.settings:item:categories)" />
+		    <mvt:assign name="l.settings:item:category" value="tolower(slugify(l.settings:item:categories[1]:name))" />
+                    <mvt:if expr="POS1 GT 1">,</mvt:if>
+                    {
+                        'item_name': '&mvtj:item:name;',
+                        'item_id': '&mvtj:item:code;',
+                        'price': '&mvtj:item:price;',
+                        'quantity': '&mvtj:item:quantity;',
+			'item_category': '&mvtj:item:category;'
+                    }
+                </mvt:foreach>
+                ]
+            }
+        });

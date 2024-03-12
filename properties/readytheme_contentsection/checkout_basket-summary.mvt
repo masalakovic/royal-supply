@@ -1,0 +1,108 @@
+<div class="row basket basket-summary">
+	<div class="column offset-one-twelfth five-sixths">
+		<div class="row">
+			<div class="column whole fields-heading align-center">Order Summary</div>
+			<div class="column whole">
+				<mvt:foreach iterator="group" array="basket:groups">
+					<div class="row basket-product-row">
+						<div class="column np one-eighth align-center">
+							<a href="&mvt:group:link;" title="&mvt:group:name;">
+								<mvt:if expr="l.settings:group:imagetypes:main">
+									<img src="&mvte:group:imagetypes:main;" alt="&mvt:group:name;">
+								<mvt:else>
+									&nbsp;
+								</mvt:if>
+							</a>
+						</div>
+						<div class="column half nrp">
+							<div class="basket-product-name">
+								<a href="&mvt:group:link;" title="&mvt:group:name;">&mvt:group:name;</a>
+								<mvt:if expr="l.settings:group:upsold">
+									<span class="basket-product-offer">&nbsp;(Special Offer)</span>
+								</mvt:if>
+							</div>
+							<div class="basket-product-details">
+								<div class="basket-product-option">Code: &mvte:group:code;</div>
+								<div class="basket-product-option">Quantity: &mvte:group:quantity;</div>
+								<mvt:foreach iterator="option" array="group:options">
+									<mvt:if expr="l.settings:option:option_id">
+										<div class="basket-product-option">&mvt:option:attr_prompt;: &mvt:option:opt_prompt;</div>
+									<mvt:elseif expr="NOT ISNULL l.settings:option:data">
+										<div class="basket-product-option">&mvt:option:attr_prompt;: &mvt:option:data;</div>
+									<mvt:elseif expr="NOT ISNULL l.settings:option:data_long">
+										<div class="basket-product-option">&mvt:option:attr_prompt;: &mvt:option:data_long;</div>
+									<mvt:else>
+										<div class="basket-product-option">&mvt:option:attr_prompt;</div>
+									</mvt:if>
+								</mvt:foreach>
+								<mvt:if expr="l.settings:group:subterm_id">
+									<div class="basket-product-option">Subscription: &mvte:group:productsubscriptionterm:descrip;</div>
+								</mvt:if>
+								<mvt:foreach iterator="discount" array="group:discounts">
+									<mvt:if expr="l.settings:discount:display">
+										<div class="basket-product-option">&mvt:discount:descrip;: &mvt:discount:formatted_discount;</div>
+									</mvt:if>
+								</mvt:foreach>
+								<mvt:foreach iterator="discount" array="option:discounts">
+									<mvt:if expr="l.settings:discount:display">
+										<div class="basket-product-option">&mvt:discount:descrip;: &mvt:discount:formatted_discount;</div>
+									</mvt:if>
+								</mvt:foreach>
+							</div>
+						</div>
+						<div class="column three-eighths align-right nlp">
+							<div class="basket-product-subtotal">
+								<mvt:if expr="l.settings:group:subtotal_base_price NE l.settings:group:subtotal">
+									<s>&mvt:group:formatted_subtotal_base_price;</s><br>
+								</mvt:if>
+								&mvt:group:formatted_subtotal;
+							</div>
+						</div>
+					</div>
+				</mvt:foreach>
+			</div>
+			<div class="breaker"></div>
+			<div class="column whole">
+				<div class="charges">
+					<mvt:foreach iterator="coupon" array="basket:coupons">
+						<div class="row basket-charge-row">
+							<div class="column whole basket-charge-descrip">
+								<mvt:if expr="NOT ISNULL l.settings:coupon:descrip">
+									Coupon - &mvt:coupon:code;: &mvt:coupon:descrip;
+								<mvt:else>
+									Coupon - &mvt:coupon:code;
+								</mvt:if>
+							</div>
+						</div>
+					</mvt:foreach>
+					<mvt:foreach iterator="charge" array="basket:charges">
+						<div class="row basket-charge-row">
+							<div class="column two-thirds basket-charge-descrip">
+								&mvt:charge:descrip;
+							</div>
+							<div class="column one-third nlp basket-charge-amount">
+								&mvt:charge:formatted_disp_amt;
+							</div>
+						</div>
+					</mvt:foreach>
+					<div class="row basket-total-row">
+						<div class="basket-total-label column half">Total</div>
+						<div class="basket-total-amount column half">&mvt:basket:formatted_total;</div>
+					</div>
+					<mvt:foreach iterator="split" array="splitpayment:splits">
+						<div class="row basket-charge-row">
+							<div class="column two-thirds basket-charge-descrip">Pending Payment: &mvt:split:desc;</div>
+							<div class="column one-third nlp basket-charge-amount">&mvt:split:formatted_amount_negative;</div>
+						</div>
+					</mvt:foreach>
+					<mvt:if expr="( NOT ISNULL l.settings:splitpayment:remaining ) AND ( l.settings:splitpayment:remaining NE l.settings:basket:total )">
+						<div class="row basket-charge-row">
+							<div class="column two-thirds basket-charge-descrip">Total Remaining:</div>
+							<div class="column one-third nlp basket-charge-amount">&mvt:splitpayment:formatted_remaining;</div>
+						</div>
+					</mvt:if>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

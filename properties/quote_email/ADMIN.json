@@ -1,0 +1,11 @@
+{
+    "code": "ADMIN",
+    "enabled": 1,
+    "name": "Quote Requested: Merchant",
+    "page_code": "QUOTEEMAIL_ADMIN",
+    "tfn_cc": "quote-email-ADMIN-cc.mvc",
+    "tfn_from": "quote-email-ADMIN-from.mvc",
+    "tfn_mime": "quote-email-ADMIN-mime.mvc",
+    "tfn_subj": "quote-email-ADMIN-subj.mvc",
+    "tfn_to": "quote-email-ADMIN-to.mvc"
+}

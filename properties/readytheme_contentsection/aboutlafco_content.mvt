@@ -1,0 +1,71 @@
+<section class="section-static section-static-banner-hero">
+    <mvt:item name="readytheme" param="Load_Image('ablafco_header',g.header_1)" />
+    <mvt:if expr="g.header_1 GT 0">
+            <img src="&mvt:global:header_1:image;" alt/>
+    </mvt:if>
+</section>
+
+<section class="section-static-title">
+	<div class="container">
+		<div class="static-centered">
+			<h1>Luxury Articles and Fragrance Company</h1>
+		</div>
+        <p>LAFCO New York is a modern fragrance company dedicated to elevating everyday moments into powerful sensory journeys.</p>
+	</div>
+</section>
+
+<section class="section-static-luxury-articles">
+	<div class="container">
+		<div class="o-layout u-grids-1 u-grids-2--s o-layout--align-center">
+			<div class="o-layout__item luxury-item-image">
+                <mvt:item name="readytheme" param="Load_Image('about-lafco-jon',g.rt_image)" />
+                <mvt:if expr="g.rt_image GT 0">
+                        <img src="&mvt:global:rt_image:image;" alt/>
+                </mvt:if>
+			</div>
+			<div class="o-layout__item luxury-articles-text-block luxury-jon-text">
+                <p>LAFCO (for Luxury Articles
+                and Fragrance Company) is
+                inspired by our founder and
+                nose, Jon&nbsp;Bresler,  and his
+                passion for the European
+                tradition of botanical based fragrances &nbsp;and&nbsp; formulations.</p>
+                <p>Established in 1992 as a
+                purveyor of renowned perfume
+                and beauty brands, we now
+                produce our own line of finely
+                crafted home fragrance and
+                personal care products.</p>
+			</div>
+		</div>
+        <div style="margin-top: 20px;" class="o-layout u-grids-1 u-grids-2--s o-layout--align-center">
+			<div class="o-layout__item luxury-articles-text-block luxury-landmark-text">
+                <p>From our landmark House &
+                Home collection of blown
+                glass candles to our uniquely
+                formulated bar soaps, each
+                LAFCO product combines
+                evocative fragrance with artful
+                design to create a complete
+                ambiance and mood.</p>
+			</div>
+            <div class="o-layout__item luxury-item-image">
+                <mvt:item name="readytheme" param="Load_Image('about-lafco-3',g.rt_image)" />
+                <mvt:if expr="g.rt_image GT 0">
+                        <img src="&mvt:global:rt_image:image;" alt/>
+                </mvt:if>
+			</div>
+		</div>
+        <div class="o-layout u-grids-1 block-our-founder">
+			<div style="text-align: justify; margin-top: 20px" class="o-layout__item">
+                <p>As an independent company, we deeply consider every element of the
+                products we create—the quality and sustainability of our materials, the artistry
+                and craftsmanship of our process and the values and practices of our partners.</p>
+			</div>
+           
+		</div>
+	</div>
+</section>
+
+
+<mvt:item name="readytheme" param="contentsection( 'about_us_pages_explore_more_section' )" />

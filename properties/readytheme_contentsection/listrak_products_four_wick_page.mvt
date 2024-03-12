@@ -1,0 +1,37 @@
+<section class="t-storefront-featured-products t-defer-object" data-defer>
+  <div data-ltk-merchandiseblock="e9077ba8-57dc-4968-b3c2-96bd4a170533" class="container">
+    <div class="t-storefront-featured-products__container-top">
+      <h2 class="t-storefront-wick-products__heading">Shop Featured Product</h2>
+    </div>
+    <div class="x-product-list x-product-list--slicked t-storefront-featured-product-list"
+      data-hook="wick-products">
+      <script type="text/html">
+        <div class="x-product-list__item">
+          <figure class="x-product-list__figure">
+            <picture class="x-product-list__picture">
+              <a class="x-product-list__picture-link" href="@Recommendation.LinkUrl">
+                <img class="x-product-list__image" data-lazy="https://www.lafco.com/@Recommendation.ImageUrl" src=""
+                  alt="@Recommendation.Title" width="250" height="250">
+              </a>
+            </picture>
+            <figcaption class="x-product-list__details">
+              <a class="x-product-list__details-link" href="@Recommendation.LinkUrl">
+                <div class="x-product-list__name">@Recommendation.Subcategory</div>
+                <div class="x-product-list__scent">@Recommendation.Title</div>
+                <div class="box-price">@Recommendation.Price</div>
+              </a>
+            </figcaption>
+            <br />
+            <form method="post" action="https://www.lafco.com/">
+              <input type="hidden" name="Screen" value="BASK">
+              <input type="hidden" name="Action" value="ADPR">
+              <input type="hidden" name="Quantity" value="1">
+              <input type="hidden" name="Product_Code" value="@Recommendation.Sku">
+              <input type="submit" value="Add To Cart" class="btn btn--white btn--s">
+            </form>
+          </figure>
+        </div>
+      </script>
+    </div>
+  </div>
+</section>

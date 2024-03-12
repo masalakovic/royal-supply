@@ -1,0 +1,94 @@
+<mvt:item name="ry_toolbelt" param="assign|g.user|'report'" />
+<mvt:item name="ry_toolbelt" param="assign|g.pass|'b@tch'" />
+<mvt:item name="ry_toolbelt" param="assign|g.error_message|" />
+
+<mvt:item name="ry_toolbelt" param="assign|g.username |'report'" />
+<mvt:item name="ry_toolbelt" param="assign|g.password|'b@tch'" />
+
+<mvt:if expr=" g.username AND g.password">
+     <mvt:if expr=" (g.username EQ g.user) AND (g.password EQ g.pass) ">
+        <mvt:item name="ry_toolbelt" param="assign|l.all_settings:isValidLogin|1" />
+
+        <mvt:item name="ry_toolbelt" param="assign|g.Valid_id|isdigit(g.batch_id) AND (g.batch_id GT 0) AND (g.batch_id LT 100000000)" />
+        <mvt:if expr="NOT g.Valid_id">
+            <mvt:item name="ry_toolbelt" param="assign|g.show|1" />
+            <mvt:item name="ry_toolbelt" param="assign|g.error_message|'Select a batch.'" />
+        <mvt:else>
+
+<mvt:comment> ******************************* </mvt:comment>
+
+<mvt:item name="ry_toolbelt" param="assign|g.filename|'/mm5/5.00/modules/Lafco_Orders.tab' " />
+<mvt:item name="ry_toolbelt" param="assign|g.ok|sdelete(g.filename)" />
+
+<mvt:item name="ry_toolbelt" param="screen|'batch2_export_main'|g.capture" />
+<mvt:item name="ry_toolbelt" param="assign|g.ok|file_create(g.filename, 'script', g.capture)" />
+
+Right click to save <a href="&mvt:global:filename;">Lafco_Orders</a><br><br>
+<mvt:item name="ry_toolbelt" param="#assign|g.trash|miva_output_header('Content-Disposition', 'attachment; filename=' $ g.filename )" />
+
+<mvt:comment> &mvt:global:capture; </mvt:comment>
+<mvt:comment> ******************************* </mvt:comment>
+
+        </mvt:if>
+    <mvt:else>
+        <mvt:item name="ry_toolbelt" param="assign|g.error_message|'Invalid username or password.'" />
+        <mvt:item name="ry_toolbelt" param="assign|g.show|1" />
+    </mvt:if>
+<mvt:else>
+    <mvt:item name="ry_toolbelt" param="assign|g.show|1" />
+</mvt:if>
+
+
+<mvt:if expr="g.show">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "https://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>&mvt:global:name;</title>
+<style type="text/css">
+body { line-height: 26px; font-family: arial, helvetica, sans-serif; font-size: 0.9em; }
+b { display: block; float: left; width: 90px; }
+h1 { font-size: 16px; }
+.clear {clear: both }
+</style>
+</head>
+
+<mvt:item name="ry_toolbelt" param="assign|g.sql|'
+SELECT *
+FROM s01_Batches
+WHERE 1
+ORDER BY batchdate DESC
+LIMIT 0, 20
+'" />
+<mvt:item name="ry_toolbelt" param="query|g.sql|batches" />
+
+<body>
+    <h1>&mvt:global:name;</h1>
+    <mvt:if expr="g.error_message">
+        <font color="red">&mvt:global:error_message;</font><br class="clear">
+    </mvt:if>
+    <form method="POST" action="&mvte:global:secure_sessionurl;">
+        <input type="hidden" name="Screen" value="&mvt:global:Screen;">
+        <input type="hidden" name="Store_Code" value="&mvt:global:store:code;">
+        <input type="hidden" name="name" value="&mvt:global:name;">
+
+        <mvt:if expr="l.settings:isValidLogin">
+            <input type="hidden" name="username" value="&mvte:global:username;">
+            <input type="hidden" name="password" value="&mvte:global:password;">
+        <mvt:else>
+            <b>User Name: </b><input type="text" name="username" size="20" value="&mvte:global:username;"><br class="clear">
+            <b>Password: </b><input type="password" name="password" size="20" value="&mvte:global:password;"><br class="clear">
+        </mvt:if>
+
+        <b>Batch Date: </b><select name="batch_id" size="11">
+        <mvt:foreach iterator="batch" array="batches">
+            <mvt:item name="ry_toolbelt" param="datetime_format|g.bdate|l.all_settings:batch:batchdate|'mm/dd/yyyy h:mm ampm'" />
+            <option value="&mvt:batch:id;" />&mvt:global:bdate;</option>
+        </mvt:foreach>
+        </select><br class="clear">
+
+        <b>&nbsp;</b><input type="submit" value="Submit" name="B1"><br class="clear">
+    </form>
+
+</body>
+</html>
+</mvt:if>

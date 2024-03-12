@@ -1,0 +1,434 @@
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TDM6WTJ');</script>
+
+<!-- Google Tag Manager - Data Layer -->
+<script>
+	<mvt:comment><!-- Page Type Assignment --></mvt:comment>
+	<mvt:if expr="l.settings:page:code EQ 'SFNT'">
+		<mvt:assign name="l.settings:dataLayer:pageType" value="'home'" />
+	<mvt:elseif expr="l.settings:page:code EQ 'SRCH' OR l.settings:page:code EQ 'search'">
+		<mvt:assign name="l.settings:dataLayer:pageType" value="'searchresults'" />
+	<mvt:elseif expr="l.settings:page:code EQ 'CTGY'">
+		<mvt:assign name="l.settings:dataLayer:pageType" value="'category'" />
+	<mvt:elseif expr="l.settings:page:code EQ 'PROD'">
+		<mvt:assign name="l.settings:dataLayer:pageType" value="'product'" />
+	<mvt:elseif expr="l.settings:page:code CIN 'BASK,ORDL,OCST,OUS1,OUSM,OSEL,OPAY'">
+		<mvt:assign name="l.settings:dataLayer:pageType" value="'cart'" />
+	<mvt:elseif expr="l.settings:page:code EQ 'INVC'">
+		<mvt:assign name="l.settings:dataLayer:pageType" value="'purchase'" />
+	<mvt:else>
+		<mvt:assign name="l.settings:dataLayer:pageType" value="'other'" />
+	</mvt:if>
+
+	<mvt:comment><!-- Checkout Step Assignment --></mvt:comment>
+	<mvt:if expr="l.settings:page:code EQ 'BASK'">
+		<mvt:assign name="l.settings:datalayer:checkout_step" value="1" />
+	<mvt:elseif expr="l.settings:page:code EQ 'ORDL'">
+	<mvt:elseif expr="l.settings:page:code EQ 'OCST'">
+		<mvt:assign name="l.settings:datalayer:checkout_step" value="2" />
+	<mvt:elseif expr="g.Screen EQ 'OUSL'">
+		<mvt:assign name="l.settings:datalayer:checkout_step" value="3" />
+	<mvt:elseif expr="l.settings:page:code EQ 'OSEL'">
+		<mvt:assign name="l.settings:datalayer:checkout_step" value="4" />
+	<mvt:elseif expr="l.settings:page:code EQ 'OPAY'">
+		<mvt:assign name="l.settings:datalayer:checkout_step" value="5" />
+	</mvt:if>
+
+	<mvt:comment><!-- User Email Assignment --></mvt:comment>
+	<mvt:if expr="g.customer:bill_email">
+		<mvt:assign name="l.settings:datalayer:userEmail" value="g.customer:bill_email" />
+	<mvt:elseif expr="g.basket:bill_email">
+		<mvt:assign name="l.settings:datalayer:userEmail" value="g.basket:bill_email" />
+	<mvt:else>
+		<mvt:assign name="l.settings:datalayer:userEmail" value="''" />
+	</mvt:if>
+
+    	window.dataLayer = window.dataLayer || [];  
+
+	<mvt:comment><!-- Basic DataLayer Push --></mvt:comment>
+	window.dataLayer.push({
+	<mvt:if expr="l.settings:page:code EQ 'INVC'">
+        	<mvt:comment> Set this url \/ to whatever your seo friendly link is in Miva  </mvt:comment>
+        	'requestUri': '\/INVC.html',
+	<mvt:else>
+		'requestUri': '<mvt:eval expr="encodejavascriptstring( s.request_uri )" />',
+	</mvt:if>
+		'canonicalUri': '<mvt:eval expr="encodejavascriptstring( s.request_uri )" />',
+	<mvt:if expr="l.settings:page:code EQ 'SRCH' OR l.settings:page:code EQ 'search'">
+		'searchTerm': '&mvtj:global:Search;',
+	</mvt:if>
+	'refererUri': '<mvt:eval expr="encodejavascriptstring( s.http_referer )" />',
+	'pageCode': '&mvtj:page:code;',
+	'pageType': '&mvtj:datalayer:pageType;',
+	'pageName': '&mvtj:page:name;',
+<mvt:if expr="g.customer_session_verified EQ '1' AND NOT ISNULL g.customer:id">
+	'userId': '&mvtj:global:basket:cust_id;',
+	'userEmail': '&mvtj:datalayer:userEmail;',
+</mvt:if>
+	'basketId': '&mvtj:global:basket:basket_id;',
+	'categoryCode': '&mvtj:category:code;',
+	'categoryName': '&mvtj:category:name;',
+<mvt:if expr="'PROD' CIN l.settings:page:code">
+	'productCode': '&mvtj:product:code;',
+	'productName': '&mvtj:product:name;',
+</mvt:if>
+	'checkoutStep': '&mvtj:datalayer:checkout_step'
+});
+
+	<mvt:if expr="( g.action EQ 'LOGN' ) AND ( g.customer_session_verified EQ '1' AND NOT ISNULL g.customer:id )">
+    		<mvt:comment> successfully logged in </mvt:comment>
+		window.dataLayer.push({
+  			'event' : 'login',
+  			'userId' : '&mvtj:global:basket:cust_id;',
+			'loggedIn' : 'yes',
+			'method' : 'account'
+		})
+	</mvt:if>
+
+	<mvt:if expr="l.settings:page:code CIN 'PROD|PROD2|PROD_masters'">
+		window.dataLayer.push({
+			'event': 'view_item',
+			'ecommerce': {
+				'items': [{
+					'item_name': '&mvtj:product:name;',
+					'item_id': '&mvtj:product:code;',
+					'price': '&mvtj:product:price;',
+					'quantity': '1',
+					'currency': 'USD',
+				<mvt:if expr="NOT ISNULL l.settings:product:sku">
+					'sku': '&mvtj:product:sku;',
+				</mvt:if>
+				<mvt:if expr="NOT ISNULL l.settings:product:canonical_category:code">
+        				<mvt:do name="l.result" file="g.Module_Library_DB" value="Category_Load_Code( l.settings:product:canonical_category:code, l.settings:product_category )" />
+					'item_category': '&mvtj:product_category:name;'
+				<mvt:else>
+					'item_category': '&mvtj:category:name;'
+				</mvt:if>
+				}]
+			}
+		});
+	</mvt:if>
+
+	<mvt:if expr="'CTGY' CIN l.settings:page:code OR l.settings:page:code EQ 'SRCH' OR l.settings:page:code EQ 'PLST'">
+		window.dataLayer.push({
+		  'event': 'view_item_list',
+                 'pinterest_items': [
+                 <mvt:foreach iterator="item" array="category_listing:products">
+		    <mvt:do file="g.Module_Library_DB" name="l.success" value="CategoryList_Load_Offset_Product_Assigned(l.settings:item:product:id, 0, '1', 'active', 20, l.null, l.settings:item:categories)" />
+		    <mvt:assign name="l.settings:item:category" value="tolower(slugify(l.settings:item:categories[1]:name))" />
+                    <mvt:if expr="POS1 GT 1">,</mvt:if>
+                    {
+                        'product_name': '&mvtj:item:name;',
+                        'product_id': '&mvtj:item:code;',
+                        'product_price': '&mvtj:item:price;',
+			 'product_quantity': '1'                    }
+                 </mvt:foreach>
+                 ],
+		  'ecommerce': {
+			'items': [
+		<mvt:assign name="l.settings:position" value="0" />
+
+		<mvt:if expr="('CTGY' CIN l.settings:page:code) AND (l.settings:category_listing:products_on_page_count GT 0)">
+
+		<mvt:foreach iterator="item" array="category_listing:products">
+			<mvt:assign name="l.settings:position" value="l.settings:position + 1" />
+                    	<mvt:if expr="POS1 GT 1">,</mvt:if>
+			{
+                        'item_name': '&mvtj:item:name;',
+                        'item_id': '&mvtj:item:code;',
+                        'price': '&mvtj:item:price;',
+			'item_category': '&mvtj:category:name;',
+			'item_list_name': 'Category List',
+			'index': '&mvtj:position;',
+			'currency': 'USD'
+                    	}
+                </mvt:foreach>
+
+		<mvt:elseif expr="(l.settings:page:code EQ 'SRCH') AND (l.settings:search_results:products_on_page_count GT 0)">
+
+		<mvt:foreach iterator="item" array="search_results:products">
+		    	<mvt:do file="g.Module_Library_DB" name="l.success" value="CategoryList_Load_Offset_Product_Assigned(l.settings:item:id, 0, '1', 'active', 20, l.null, l.settings:item:categories)" />
+		    	<mvt:assign name="l.settings:item:category" value="tolower(slugify(l.settings:item:categories[1]:name))" />
+			<mvt:assign name="l.settings:position" value="l.settings:position + 1" />
+                    	<mvt:if expr="POS1 GT 1">,</mvt:if>
+			{
+                        'item_name': '&mvtj:item:name;',
+                        'item_id': '&mvtj:item:code;',
+                        'price': '&mvtj:item:price;',
+			'item_category': '&mvtj:item:category;',
+			'item_list_name': 'Search Results',
+			'index': '&mvtj:position;',
+			'currency': 'USD'
+                    	}
+                </mvt:foreach>
+
+		<mvt:elseif expr="('PLST' CIN l.settings:page:code) AND (l.settings:all_products:products_on_page_count GT 0)">
+
+		<mvt:foreach iterator="item" array="all_products:products">
+		    	<mvt:do file="g.Module_Library_DB" name="l.success" value="CategoryList_Load_Offset_Product_Assigned(l.settings:item:id, 0, '1', 'active', 20, l.null, l.settings:item:categories)" />
+		    	<mvt:assign name="l.settings:item:category" value="tolower(slugify(l.settings:item:categories[1]:name))" />
+			<mvt:assign name="l.settings:position" value="l.settings:position + 1" />
+                    	<mvt:if expr="POS1 GT 1">,</mvt:if>
+			{
+                        'item_name': '&mvtj:item:name;',
+                        'item_id': '&mvtj:item:code;',
+                        'price': '&mvtj:item:price;',
+			'item_category': '&mvtj:item:category;',
+			'item_list_name': 'All Products List',
+			'index': '&mvtj:position;',
+			'currency': 'USD'
+                    	}
+                </mvt:foreach>
+
+		</mvt:if>
+                     ]
+		}
+		});
+    </mvt:if>
+
+    <mvt:if expr="l.settings:page:code EQ 'BASK' AND NOT(l.settings:basket:empty)">
+
+ 	<mvt:comment>Facebook: content_ids</mvt:comment>
+        <mvt:if expr="miva_array_elements(l.settings:basket:items) GT 1">
+            <mvt:assign name="l.settings:content_ids" value="'['" />
+        </mvt:if>
+        <mvt:foreach iterator="item" array="basket:groups">
+            <mvt:if expr="POS1 GT 1">
+                <mvt:assign name="l.settings:content_ids" value="l.settings:content_ids $ ',' $ asciichar(39) $ encodejavascriptstring( l.settings:item:code ) $ asciichar(39)" />
+            <mvt:else>
+                <mvt:assign name="l.settings:content_ids" value="l.settings:content_ids $ asciichar(39) $ encodejavascriptstring( l.settings:item:code ) $ asciichar(39)" />
+            </mvt:if>
+        </mvt:foreach>
+        <mvt:if expr="miva_array_elements(l.settings:basket:items) GT 1">
+            <mvt:assign name="l.settings:content_ids" value="l.settings:content_ids $ ']'" />
+        </mvt:if>
+
+	<mvt:comment>GA4 tracking - view_cart</mvt:comment>
+        window.dataLayer.push({
+            'event': 'view_cart',
+            'basket': {
+                'items': [
+                <mvt:foreach iterator="item" array="global_minibasket:groups">
+		    <mvt:do file="g.Module_Library_DB" name="l.success" value="CategoryList_Load_Offset_Product_Assigned(l.settings:item:product:id, 0, '1', 'active', 20, l.null, l.settings:item:categories)" />
+		    <mvt:assign name="l.settings:item:category" value="tolower(slugify(l.settings:item:categories[1]:name))" />
+                    <mvt:if expr="POS1 GT 1">,</mvt:if>
+                    {
+                        'item_name': '&mvtj:item:name;',
+                        'item_id': '&mvtj:item:code;',
+                        'price': '&mvtj:item:price;',
+                        'quantity': '&mvtj:item:quantity;',
+			'item_category': '&mvtj:item:category;',
+			'currency': 'USD'
+                    }
+                </mvt:foreach>
+                ]
+            },
+            'content_ids': '&mvtj:content_ids;',
+	    'basket_total': '&mvtj:global_minibasket:total;'
+        });
+
+    </mvt:if>
+
+    <mvt:if expr="l.settings:page:code EQ 'OCST'">
+
+        <mvt:comment> GA4 Begin Checkout </mvt:comment>
+        window.dataLayer.push({
+            'event': 'begin_checkout',
+            'ecommerce': {
+                'items': [
+                <mvt:foreach iterator="item" array="global_minibasket:groups">
+		    <mvt:do file="g.Module_Library_DB" name="l.success" value="CategoryList_Load_Offset_Product_Assigned(l.settings:item:product:id, 0, '1', 'active', 20, l.null, l.settings:item:categories)" />
+		    <mvt:assign name="l.settings:item:category" value="tolower(slugify(l.settings:item:categories[1]:name))" />
+                    <mvt:if expr="POS1 GT 1">,</mvt:if>
+                    {
+                        'item_name': '&mvtj:item:name;',
+                        'item_id': '&mvtj:item:code;',
+                        'price': '&mvtj:item:price;',
+                        'quantity': '&mvtj:item:quantity;',
+			'item_category': '&mvtj:item:category;',
+			'currency': 'USD'
+                    }
+                </mvt:foreach>
+                ]
+            }
+        });
+
+    </mvt:if>
+
+    <mvt:if expr="l.settings:page:code EQ 'OPAY'">
+
+        <mvt:comment> GA4 Shipping and payment info </mvt:comment>
+        window.dataLayer.push({
+            'event': 'add_shipping_info',
+            'ecommerce': {
+            <mvt:foreach iterator="charge" array="basket:charges">
+                <mvt:if expr="l.settings:charge:type EQ 'SHIPPING'">
+                'shipping_tier': '&mvtj:charge:descrip;',
+                </mvt:if>
+            </mvt:foreach>
+                'items': [
+                <mvt:foreach iterator="item" array="global_minibasket:items">
+		    <mvt:do file="g.Module_Library_DB" name="l.success" value="CategoryList_Load_Offset_Product_Assigned(l.settings:item:product:id, 0, '1', 'active', 20, l.null, l.settings:item:categories)" />
+		    <mvt:assign name="l.settings:item:category" value="tolower(slugify(l.settings:item:categories[1]:name))" />
+                    <mvt:if expr="POS1 GT 1">,</mvt:if>
+                    {
+                        'item_name': '&mvtj:item:name;',
+                        'item_id': '&mvtj:item:code;',
+                        'price': '&mvtj:item:price;',
+                        'quantity': '&mvtj:item:quantity;',
+			'item_category': '&mvtj:item:category;',
+			'currency': 'USD'
+                    }
+                </mvt:foreach>
+                ]
+            }
+        });
+
+        window.dataLayer.push({
+            'event': 'add_payment_info',
+            'ecommerce': {
+                'payment_type': '&mvt:payment:desc;',
+                'items': [
+                <mvt:foreach iterator="item" array="global_minibasket:items">
+		    <mvt:do file="g.Module_Library_DB" name="l.success" value="CategoryList_Load_Offset_Product_Assigned(l.settings:item:product:id, 0, '1', 'active', 20, l.null, l.settings:item:categories)" />
+		    <mvt:assign name="l.settings:item:category" value="tolower(slugify(l.settings:item:categories[1]:name))" />
+                    <mvt:if expr="POS1 GT 1">,</mvt:if>
+                    {
+                        'item_name': '&mvtj:item:name;',
+                        'item_id': '&mvtj:item:code;',
+                        'price': '&mvtj:item:price;',
+                        'quantity': '&mvtj:item:quantity;',
+			'item_category': '&mvtj:item:category;',
+			'currency': 'USD'
+                    }
+                </mvt:foreach>
+                ]
+            }
+        });
+
+    </mvt:if>
+
+    <mvt:if expr="l.settings:page:code EQ 'INVC'">
+    
+        <mvt:assign name="l.settings:userPhone" value="g.order:bill_phone" />
+        <mvt:assign name="l.settings:userName" value="g.order:bill_fname $ ' ' $ g.order:bill_lname" />
+
+        <mvt:foreach iterator="charge" array="order:charges">
+            <mvt:if expr="l.settings:charge:type EQ 'TAX'">
+                <mvt:assign name="l.settings:gtm:tax" value="l.settings:charge:disp_amt" />
+            <mvt:elseif expr="l.settings:charge:type EQ 'SHIPPING'">
+                <mvt:assign name="l.settings:gtm:shipping" value="l.settings:charge:disp_amt" />
+            </mvt:if>
+        </mvt:foreach>
+
+ 	<mvt:comment>Facebook: content_ids</mvt:comment>
+        <mvt:if expr="miva_array_elements(l.settings:basket:items) GT 1">
+            <mvt:assign name="l.settings:content_ids" value="'['" />
+        </mvt:if>
+        <mvt:foreach iterator="item" array="order:groups">
+            <mvt:if expr="POS1 GT 1">
+                <mvt:assign name="l.settings:content_ids" value="l.settings:content_ids $ ',' $ asciichar(39) $ encodejavascriptstring( l.settings:item:code ) $ asciichar(39)" />
+            <mvt:else>
+                <mvt:assign name="l.settings:content_ids" value="l.settings:content_ids $ asciichar(39) $ encodejavascriptstring( l.settings:item:code ) $ asciichar(39)" />
+            </mvt:if>
+        </mvt:foreach>
+        <mvt:if expr="miva_array_elements(l.settings:basket:items) GT 1">
+            <mvt:assign name="l.settings:content_ids" value="l.settings:content_ids $ ']'" />
+        </mvt:if>
+
+        <mvt:comment> GA4 Purchase </mvt:comment>
+        window.dataLayer.push({
+            'event': 'purchase',
+            'ecommerce': {
+                'transaction_id': '&mvtj:order:id;',
+                'affiliation': '&mvtj:global:store:name;',
+                'value': '&mvtj:order:total;',
+                'tax': '&mvtj:gtm:tax;',
+                'shipping': '&mvtj:gtm:shipping;',
+                'currency': 'USD',
+                'items': [
+                <mvt:foreach iterator="item" array="order:groups">
+		    <mvt:do file="g.Module_Library_DB" name="l.success" value="CategoryList_Load_Offset_Product_Assigned(l.settings:item:product:id, 0, '1', 'active', 20, l.null, l.settings:item:categories)" />
+		    <mvt:assign name="l.settings:item:category" value="tolower(slugify(l.settings:item:categories[1]:name))" />
+                    <mvt:if expr="POS1 GT 1">,</mvt:if>
+                    {
+                        'item_name': '&mvtj:item:name;',
+                        'item_id': '&mvtj:item:code;',
+                        'price': '&mvtj:item:price;',
+			'quantity': '&mvtj:item:quantity;',
+			'item_category': '&mvtj:item:category;',
+			'currency': 'USD'
+                    }
+                </mvt:foreach>
+                ],
+                'pinterest_items': [
+                <mvt:foreach iterator="item" array="order:groups">
+		    <mvt:do file="g.Module_Library_DB" name="l.success" value="CategoryList_Load_Offset_Product_Assigned(l.settings:item:product:id, 0, '1', 'active', 20, l.null, l.settings:item:categories)" />
+		    <mvt:assign name="l.settings:item:category" value="tolower(slugify(l.settings:item:categories[1]:name))" />
+                    <mvt:if expr="POS1 GT 1">,</mvt:if>
+                    {
+                        'product_name': '&mvtj:item:name;',
+                        'product_id': '&mvtj:item:code;',
+                        'product_price': '&mvtj:item:price;',
+			 'product_quantity': '&mvtj:item:quantity;'                    }
+                </mvt:foreach>
+                ],
+            	'content_ids': '&mvtj:content_ids;',
+		'userPhone': '&mvtj:userPhone;',
+		'userName': '&mvtj:userName;'
+	<mvt:if expr="miva_array_elements(l.settings:order:coupons) GT 0">
+		,'coupon': '<mvt:foreach iterator="coupon" array="order:coupons"><mvt:if expr="POS1 GT 1">|</mvt:if>&mvtj:coupon:code;</mvt:foreach>'
+	</mvt:if>
+            }
+        });
+    </mvt:if>
+	
+    <mvt:comment> GA4 - Remove From Cart </mvt:comment>
+	<mvt:if expr="(g.Action EQ 'RGRP') OR (g.Action EQ 'QTYG' AND g.Quantity EQ 0)">
+
+		<mvt:assign name="l.settings:removed:code" value="g.Restore_Code" />
+		<mvt:do file="g.Module_Library_DB" name="l.return" value="Product_Load_Code( l.settings:removed:code, l.settings:removed_prod )" />
+		<mvt:do file="g.Module_Library_DB" name="l.success" value="CategoryList_Load_Offset_Product_Assigned(l.settings:removed_prod:id, 0, '1', 'active', 20, l.null, l.settings:removed:categories)" />
+		<mvt:assign name="l.settings:removed_prod:category" value="tolower(slugify(l.settings:removed:categories[1]:name))" />
+        		window.dataLayer.push({
+			event: 'remove_from_cart',
+			ecommerce: {
+				items: [{
+				  'item_name': '&mvtj:global:Restore_Name;',
+				  'item_id': '&mvtj:global:Restore_Code;',
+				  'price': '&mvtj:removed_prod:price;',
+				  'quantity': '&mvtj:global:Restore_Qty;',
+				  'item_category': '&mvtj:removed_prod:category;',
+				  'currency': 'USD'
+				}]
+			}
+        	});
+	</mvt:if>
+
+
+    <mvt:comment> GA4 - Add To Cart (for non Ajax calls)</mvt:comment>
+	<mvt:if expr="(g.Action EQ 'ADPR') OR (g.Action EQ 'QTYG' AND g.Quantity GT 0)">
+		<mvt:do file="g.Module_Library_DB" name="l.success" value="Product_Load_Code( g.Restore_Code, l.settings:added:prod )" />
+		<mvt:do file="g.Module_Library_DB" name="l.success" value="CategoryList_Load_Offset_Product_Assigned(l.settings:added:prod:id, 0, '1', 'active', 20, l.null, l.settings:added:categories)" />
+		<mvt:assign name="l.settings:added:prod:category" value="tolower(slugify(l.settings:added:categories[1]:name))" />
+        	window.dataLayer.push({
+			event: 'add_to_cart',
+			addToCart: {
+				items: [{
+				  'item_name': '&mvtj:added:prod:name;',
+				  'item_id': '&mvtj:added:prod:code;',
+				  'price': '&mvtj:added:prod:price;',
+				  'quantity': '&mvtj:global:Quantity;',
+				  'item_category': '&mvtj:added:prod:category;',
+				  'currency': 'USD'
+				}]
+			}
+        	});
+	</mvt:if>
+
+   
+</script>

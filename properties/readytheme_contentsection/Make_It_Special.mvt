@@ -1,0 +1,16 @@
+<div class="o-layout make_it_special"> 
+	<div class="o-layout__item u-width-6">	
+		<div> </div>
+	</div>
+	<div class="o-layout__item u-width-6">	
+		<div class="gift_certificate_text"> 
+			<h1> Make It Special <h1>
+			<br>
+			<p> Gift wrap is available on all </p>
+			<p> orders and free when spending </p>
+			<p> $75+. Includes your personalized </p>
+			<p> message in an embossed box </p>
+                        <p> tied with LAFCO ribbon. </p>
+		</div>
+	</div>
+</div>

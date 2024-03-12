@@ -1,0 +1,10 @@
+{
+    "hdft": {
+        "footer": {
+            "template_filename": "glass-page-footer.mvc"
+        },
+        "header": {
+            "template_filename": "glass-page-header.mvc"
+        }
+    }
+}

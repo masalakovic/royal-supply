@@ -1,0 +1,14 @@
+<div class="o-wrapper--flush allure_scent">
+	<h3 style="margin-bottom:40px;">The Scent Experience
+	</h3>
+	<mvt:item name="readytheme" param="image( 'allure_scrent' )" />
+	<p style="margin-top:40px;">
+		Learn more about fragrance notes
+	</p>
+	<a class="btn allure-btn-read-more btn--s" href="https://blog.lafco.com/fragrance-notes/">Read more</a>
+
+</div>
+
+<div class="o-wrapper">
+	<h3 style="text-align: center; margin-top: 25px;">Also in this Scent</h3>
+</div>

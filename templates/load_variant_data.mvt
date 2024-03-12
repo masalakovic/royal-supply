@@ -1,0 +1,34 @@
+<mvt:if expr="NOT ISNULL g.product_code AND NOT ISNULL g.variant_id">
+  
+    <mvt:do file="g.Module_Library_DB" name="l.success" value="Product_Load_Code(g.product_code, l.product)" />
+
+<mvt:do file="g.Module_Library_DB" name="l.success" value="ProductList_Load_Variant(l.product:id, g.variant_id, l.productvariants)" />
+  
+ <mvt:comment>Load Variant Product To Get Description</mvt:comment>  
+<mvt:do file="g.Module_Library_DB" name="l.success" value="Product_Load_Code(l.productvariants[1]:code, l.product)" />
+<mvt:assign name="l.productvariants[1]:descrip" value="l.product:descrip" />
+
+<mvt:assign name="l.settings:variant" value="l.productvariants[1]" />
+	
+			{
+
+			  "sku": "&mvtj:variant:sku;",
+			  "code": "&mvtj:variant:code;",
+			  "name": "&mvtj:variant:name;",
+		          "price": "&mvtj:variant:price;",
+			  "weight": "&mvtj:variant:weight;",
+        		  "description": "&mvtj:variant:descrip;",
+
+			   <mvt:item name="customfields" param="Read_Product_Code(l.settings:variant:code,'')" />
+				            
+				<mvt:assign name="g.custom_field_count" value="miva_array_elements( l.settings:customfields )" />
+				<mvt:foreach iterator="custom_field" array="customfields">
+							
+					"&mvte:custom_field:code;": "&mvtj:custom_field:value;" <mvt:if expr="pos1 LT g.custom_field_count">,</mvt:if>
+							     	
+							 
+				</mvt:foreach>	
+                       }
+
+	
+</mvt:if>

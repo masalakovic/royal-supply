@@ -1,0 +1,211 @@
+<mvt:comment> Load the orders in this batch </mvt:comment>
+
+<mvt:item name="ry_toolbelt" param="assign|g.t|asciichar(9)" />
+<mvt:item name="ry_toolbelt" param="assign|g.cr|asciichar(13) $ asciichar(10)" />
+
+<mvt:item name="ry_toolbelt" param="#assign|g.t|' : '" />
+<mvt:item name="ry_toolbelt" param="#assign|g.cr|'<br>'" />
+
+<mvt:item name="ry_toolbelt" param="assign|g.sql|'
+    SELECT orders.*
+    FROM s01_Orders orders
+    WHERE (orders.batch_id = ' $ g.batch_id $ ')
+    ORDER BY orders.id ASC
+    '" />
+
+<mvt:item name="ry_toolbelt" param="query|g.sql|orders" />
+
+<mvt:comment>
+<mvt:item name="ry_toolbelt" param="eval|varlist('l', 'orders', l.all_settings)" />
+<mvt:exit />
+</mvt:comment>
+
+<mvt:if expr="l.settings:orders">
+
+    <mvt:item name="ry_toolbelt" param="datetime_format|g.currentdate|NOW|'yyyy-mm-dd'" />
+
+    <mvt:foreach iterator="order" array="orders">
+        <mvt:item name="ry_toolbelt" param="datetime_format|g.order_date|l.all_settings:order:orderdate|'mm/dd/yy'" />
+        <mvt:item name="ry_toolbelt" param="datetime_format|g.order_time|l.all_settings:order:orderdate|'hh:mm:ss'" />
+
+
+		<mvt:comment>
+			6/22/2018 Load s01_OrderDiscountTotals Append/export fields .name and .total
+		</mvt:comment>
+        <mvt:item name="ry_toolbelt" param="assign|g.sql|'
+            SELECT *
+				FROM s01_OrderDiscountTotals
+				WHERE order_id=' $ l.all_settings:order:id
+		" />
+        <mvt:item name="ry_toolbelt" param="query|g.sql|DiscountTotals" />
+
+
+        <mvt:comment> get order charges. Pivit as a flat file. </mvt:comment>
+        <mvt:item name="ry_toolbelt" param="assign|g.sql|'
+            SELECT chg.order_id,
+                MAX(if(chg.type=`SHIPPING`, chg.descrip, ` `)) AS shipping,
+                MAX(if(chg.type=`SHIPPING`, chg.amount, ` `)) AS ship_amount,
+                MAX(if(chg.type=`TAX`, chg.descrip, ` `)) AS tax,
+                MAX(if(chg.type=`TAX`, chg.amount, ` `)) AS tax_amount
+            FROM s01_OrderCharges chg
+            WHERE chg.order_id = ' $ l.all_settings:order:id $ '
+            GROUP BY chg.order_id
+            '" />
+        <mvt:item name="ry_toolbelt" param="query|g.sql|charges" />
+
+		<mvt:comment>
+			10/15/2016 	Load payment module codes that were used to test for customercredit.
+			12/16/2016 	Changed string customercredit to amount
+			4/30/1018	Added test for paypal
+		</mvt:comment>
+		<mvt:item name="ry_toolbelt" param="assign|g.sql|'
+			SELECT *
+			FROM s01_OrderPayments pay
+			LEFT JOIN Modules modl ON pay.pay_id = modl.id
+			WHERE pay.order_id = ' $ l.all_settings:order:id" />
+		<mvt:item name="ry_toolbelt" param="query|g.sql|pay_modules" />
+
+		<mvt:assign name="g.customercredit_text" value="''" />
+		<mvt:foreach iterator="module" array="pay_modules">
+			<mvt:if expr="l.settings:module:code EQ 'customercredit'">
+				<mvt:assign name="g.customercredit_text" value="l.settings:module:amount" />
+			</mvt:if>
+
+			<mvt:if expr="'paypal' CIN l.settings:module:code">
+				<mvt:assign name="g.isPaypal" value="'P'" />
+			<mvt:else>
+				<mvt:assign name="g.isPaypal" value="''" />
+			</mvt:if>
+		</mvt:foreach>
+
+        <mvt:comment> Get order items and order options. </mvt:comment>
+
+        <mvt:item name="ry_toolbelt" param="assign|l.all_settings:items" />
+        <mvt:item name="ry_toolbelt" param="assign|g.sql|'
+            SELECT items.*
+            FROM s01_OrderItems items
+            WHERE items.order_id = ' $ l.all_settings:order:id $ '
+            ORDER BY items.code ASC
+            '" />
+        <mvt:item name="ry_toolbelt" param="query|g.sql|items" />
+
+<mvt:comment> 5/18/2018 RY Order weight used to change shipping to "Shipping: Free UPS SurePost" if under 1lb. </mvt:comment>
+<mvt:comment> 6/22/2018 See calculation removed. See below </mvt:comment>
+<mvt:comment>
+        <mvt:item name="ry_toolbelt" param="assign|g.order_weight|0" />
+        <mvt:foreach iterator="item" array="items">
+			<mvt:item name="ry_toolbelt" param="assign|g.order_weight|g.order_weight + l.all_settings:item:weight" />
+        </mvt:foreach>
+</mvt:comment>
+
+        <mvt:foreach iterator="item" array="items">
+            <mvt:comment>
+            %orderid%       %processed%     %orderdate%     %ordertime%
+
+            %ship_fname%    %ship_lname%    %ship_email%    %ship_comp%     %ship_phone%    %ship_fax%
+            %ship_addr%     %ship_city%     %ship_state%    %ship_zip%      %ship_cntry%
+
+            %bill_fname%    %bill_lname%    %bill_email%    %bill_comp%     %bill_phone%    %bill_phone%    %bill_fax%
+            %bill_addr%     %bill_city%     %bill_state%    %bill_zip%      %bill_cntry%
+
+            %prodcode%      %prodname%      %produpsold%    %prodprice%     %prodquantity%
+            %attrcode%      %optcode%       %attrprice%
+
+            %totaltax%      %totalshipping% %ordertotal%    %prodweight%    %ordershipping%
+
+            gift_box
+            Gift box item(s):  HH13,HH28 Gift Message: Love You Xenia
+
+            </mvt:comment>
+
+
+
+            <mvt:item name="ry_toolbelt" param="assign|g.gift_data|" />
+            <mvt:item name="ry_toolbelt" param="assign|g.prod_list|" />
+            <mvt:item name="ry_toolbelt" param="assign|g.msg|" />
+            <mvt:item name="ry_toolbelt" param="assign|g.gift_message|" />
+            <mvt:item name="ry_toolbelt" param="assign|g.prod_attr_list|" />
+
+            <mvt:item name="ry_toolbelt" param="assign|l.all_settings:options|" />
+			<mvt:item name="ry_toolbelt" param="assign|g.sql|'
+				SELECT *
+				FROM s01_OrderOptions
+				WHERE line_id = ' $ l.all_settings:item:line_id
+			" />
+			<mvt:item name="ry_toolbelt" param="query|g.sql|options" />
+			<mvt:item name="ry_toolbelt" param="assign|g.msg|" />
+
+			<mvt:comment> Change: RY 12/10/2015 so that message can be assigned to product name if attribute code = gift </mvt:comment>
+
+			<mvt:foreach iterator="option" array="options">
+				<mvt:if expr="('gift_box' IN l.settings:item:code) OR (l.settings:item:code EQ 'giftmessage')">
+
+					<mvt:item name="ry_toolbelt" param="assign|g.msg|l.all_settings:option:data $ l.all_settings:option:data_long" />
+					<mvt:item name="ry_toolbelt" param="assign|g.msg|glosub(g.msg,g.cr,'~')" />
+					<mvt:item name="ry_toolbelt" param="assign|gift_product_name|''" />
+
+					<mvt:if expr="l.settings:option:attr_code EQ 'Gift_Message'">
+						<mvt:item name="ry_toolbelt" param="assign|g.gift_message|' Gift Message: ' $ g.msg" />
+
+					<mvt:elseif expr="l.settings:option:attr_code EQ 'Prod_Codes'">
+						<mvt:item name="ry_toolbelt" param="assign|g.prod_list|'Gift box item(s): ' $ l.all_settings:option:data $ l.all_settings:option:data_long $ '~'" />
+						<mvt:item name="ry_toolbelt" param="assign|g.prod_list|glosub(g.prod_list,',~','')" />
+						<mvt:item name="ry_toolbelt" param="assign|g.prod_list|glosub(g.prod_list,'~','')" />
+
+					<mvt:elseif expr="l.settings:option:attr_code EQ 'Message_Text'">
+						<mvt:item name="ry_toolbelt" param="assign|g.gift_message|' Gift Message: ' $ g.msg" />
+
+					</mvt:if>
+
+				<mvt:elseif expr="l.settings:option:attr_code EQ 'gift'">
+					<mvt:comment> Change: RY 12/10/2015 so that message can be assigned to product name if attribute code = gift </mvt:comment>
+					<mvt:item name="ry_toolbelt" param="assign|l.all_settings:item:name|l.all_settings:item:name $ ' (Custom Gift)'" />
+
+				<mvt:else>
+					<mvt:comment> Change RY 5/18/2018
+						Custom TINBOX product uses attributes to select 3 products
+						I'm appending the attr_code to the gift_data field seperated by pipes.
+					</mvt:comment>
+
+					<mvt:if expr="ISNULL g.prod_attr_list">
+						<mvt:item name="ry_toolbelt" param="assign|g.prod_attr_list|l.all_settings:option:attr_code" />
+					<mvt:else>
+						<mvt:item name="ry_toolbelt" param="assign|g.prod_attr_list|g.prod_attr_list $ asciichar(124) $ l.all_settings:option:attr_code" />
+					</mvt:if>
+
+				</mvt:if>
+			</mvt:foreach>
+
+			<mvt:comment> Change RY 5/18/2018  g.prod_attr_list will normally be empty </mvt:comment>
+			<mvt:item name="ry_toolbelt" param="assign|g.gift_data|g.prod_attr_list $ g.prod_list $ g.gift_message" />
+			<mvt:item name="ry_toolbelt" param="assign|g.prod_list|" />
+			<mvt:item name="ry_toolbelt" param="assign|g.prod_attr_list|" />
+
+            <mvt:item name="ry_toolbelt" param="assign|g.gift_data|trim(g.gift_data)" />
+
+			<mvt:comment>
+				5/18/2018 "Shipping: Free UPS SurePost" if g.order_weight is <_ 1 lb.
+				6/22/2018  Removed. Andreas added shipping rule.
+			</mvt:comment>
+<mvt:comment>
+			<mvt:if expr="(l.settings:order:ship_cntry EQ 'US') AND (g.order_weight LE 1)">
+				<mvt:item name="ry_toolbelt" param="assign|l.all_settings:charges[1]:shipping|'Shipping: Free UPS SurePost'" />
+			</mvt:if>
+ </mvt:comment>
+
+			<mvt:comment>
+				RY 3/26/2018	Get the customer_ip.
+				Add to the end of the output string
+				&mvt:global:t;&mvt:customfields:customer_ip;
+			</mvt:comment>
+			<mvt:item name="customfields" param="Read_Order( l.settings:order:id, 'customer_ip', l.settings:customfields )" />
+
+&mvt:order:id;&mvt:global:t;N&mvt:global:t;&mvt:global:order_date;&mvt:global:t;&mvt:global:order_time;&mvt:global:t;&mvt:order:ship_fname;&mvt:global:t;&mvt:order:ship_lname;&mvt:global:t;&mvt:order:ship_email;&mvt:global:t;&mvt:order:ship_comp;&mvt:global:t;&mvt:order:ship_phone;&mvt:global:t;&mvt:order:ship_fax;&mvt:global:t;&mvt:order:ship_addr; &mvt:order:ship_addr2;&mvt:global:t;&mvt:order:ship_city;&mvt:global:t;&mvt:order:ship_state;&mvt:global:t;&mvt:order:ship_zip;&mvt:global:t;&mvt:order:ship_cntry;&mvt:global:t;&mvt:order:bill_fname;&mvt:global:t;&mvt:order:bill_lname;&mvt:global:t;&mvt:order:bill_email;&mvt:global:t;&mvt:order:bill_comp;&mvt:global:t;&mvt:order:bill_phone;&mvt:global:t;&mvt:order:bill_phone;&mvt:global:t;&mvt:order:bill_fax;&mvt:global:t;&mvt:order:bill_addr; &mvt:order:bill_addr2;&mvt:global:t;&mvt:order:bill_city;&mvt:global:t;&mvt:order:bill_state;&mvt:global:t;&mvt:order:bill_zip;&mvt:global:t;&mvt:order:bill_cntry;&mvt:global:t;&mvt:item:code;&mvt:global:t;&mvt:item:name;&mvt:global:t;&mvt:item:upsold;&mvt:global:t;&mvt:item:price;&mvt:global:t;&mvt:item:quantity;&mvt:global:t;&mvt:item:attr_code;&mvt:global:t;&mvt:item:opt_code;&mvt:global:t;&mvt:item:opt_price;&mvt:global:t;&mvt:charges[1]:tax_amount;&mvt:global:t;&mvt:charges[1]:ship_amount;&mvt:global:t;&mvt:order:total;&mvt:global:t;&mvt:item:weight;&mvt:global:t;&mvt:charges[1]:shipping;&mvt:global:t;&mvt:global:gift_data;&mvt:global:t;&mvt:global:customercredit_text;&mvt:global:t;&mvt:customfields:customer_ip;&mvt:global:t;&mvt:global:isPaypal;&mvt:global:t;&mvt:DiscountTotals[1]:name;&mvt:global:t;&mvt:DiscountTotals[1]:total;&mvt:global:cr;
+
+        </mvt:foreach>
+    </mvt:foreach>
+
+<mvt:else>
+    <mvt:item name="ry_toolbelt" param="assign|g.error_message|'No Orders in this batch.'" />
+    <mvt:item name="ry_toolbelt" param="assign|g.show|1" />
+</mvt:if>

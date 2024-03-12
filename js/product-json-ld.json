@@ -1,0 +1,13 @@
+{
+    "code": "product-json-ld",
+    "type": "I",
+    "is_global": false,
+    "active": false,
+    "attributes": [
+        {
+            "name": "type",
+            "value": "application/ld+json"
+        }
+    ],
+    "linked_pages": []
+}

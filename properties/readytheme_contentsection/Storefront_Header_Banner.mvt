@@ -1,0 +1,21 @@
+<section class="t-expanded-block main-banner" data-width="1920">
+	<div class="o-layout customize-hero header_background">
+		<div class="o-layout__item u-width-6-void hero-text-block" style="padding-left: 160px !important; padding-top: 110px !important">
+			<div class="txt" style=" padding: 35px 0 0 0; max-width: 540px !important; left: 10% !important">
+				<div style="background-color: #fff; opacity: 0.81; z-index: -1; ">
+					<div style="padding: 30px">
+						<div style="padding: 0px 15px; margin-bottom: 15px">
+							<h1> Ultimate Espresso </h1> 
+						</div>
+						<div style="padding: 0px 15px; margin-bottom: 15px">
+							<h3><span style="color: black;">	Give your coffee program a boost with one of Kees van der Westen’s four unique, highly customizable espresso machines. Enjoy immense power, top-of-the-line user experience, and unmatched design. </span></h3>
+						</div>
+					</div>
+				</div>						
+			</div>
+			<div style="padding-top: 30px">
+				<a class="btn btn--white btn--s u-color-white t-storefront-featured-product-description__cta" href="/discover-now.html" style="background-color: #d7282f; padding: 15px 30px; letter-spacing: 3.75px; font-size: 18px; line-height: 24px">Shop Now</a>
+			</div>
+		</div>
+	</div> <!-- end t-storefront-hero -->
+</section>

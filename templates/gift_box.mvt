@@ -1,0 +1,275 @@
+<mvt:item name="html_profile" />
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <mvt:if expr="NOT ISNULL l.settings:page:title">
+        <title>&mvt:page:title;</title>
+        <mvt:else>
+            <title>&mvt:store:name;: Gift box</title>
+    </mvt:if>
+
+    <base href="&mvt:global:basehref;" />
+    <link rel="canonical" href="&mvte:urls:_self:auto;" />
+    <mvt:item name="head" param="css_list" />
+    <mvt:item name="head" param="head_tag" />
+<mvt:comment> <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> </mvt:comment>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" integrity="sha256-PZLhE6wwMbg4AB3d35ZdBF9HD/dI/y4RazA3iRDurss=" crossorigin="anonymous">
+<link type="text/css" media="all" rel="stylesheet" href="themes/colossus/ui/css/gift-builder.css"></link>
+    
+</head>
+<body class="&mvt:page:code;" id="js-CTGY">
+
+<mvt:item name="hdft" param="global_header" />
+<div data-hook="mini-basket"></div>
+
+<main class="o-wrapper o-wrapper--flush u-bg-white">
+
+    <div class="header-top-block">
+
+        <mvt:item name="readytheme" param="image( 'gift-box' )" />
+
+    </div>
+    
+
+        <div class="category-content" style="max-width: 100%">
+            <div class="category-control">
+                <mvt:comment> FRAGRANCE/PRODUCT TYPES </mvt:comment>
+                <mvt:if expr="g.category_code EQ 'Fragrance_Finder'">
+
+                    <mvt:else>
+                        <mvt:item name="customfields" param="Read_Category_Code( l.settings:category:code, 'hide_filter_and_complimentary_section', l.settings:hide_filter_and_complimentary_section )" />
+                        <mvt:if expr="ISNULL l.settings:hide_filter_and_complimentary_section">
+                            <mvt:comment> Determine the parent category and load appropriate children categories </mvt:comment>
+                            <mvt:assign name="g.parent_category" value="l.settings:breadcrumbs:links[1]" />
+                            <mvt:if expr="g.parent_category:code EQ 'Fragrance_type'">
+                                <mvt:item name="ry_toolbelt" param="category_children|g.parent_category:code" />
+                                <mvt:assign name="g.filter_title" value="'Fragrance Types'"/>
+                                <mvt:elseif expr="g.parent_category:code EQ 'Product_Types'">
+                                    <mvt:item name="ry_toolbelt" param="category_children|g.parent_category:code" />
+                                    <mvt:assign name="g.filter_title" value="'Product Types'"/>
+                            </mvt:if>
+
+
+
+                        </mvt:if>
+                        <mvt:comment> FRAGRANCE/PRODUCT TYPES end </mvt:comment>
+                </mvt:if>
+
+
+                <div class="block-control-in">
+
+                            <mvt:comment> SORTING </mvt:comment>
+                            <mvt:if expr="l.settings:category_listing:products_on_page_count GT 1">
+                                <div class="block-sorting sorting">
+                                    <form method="post" action="&mvte:urls:_self:auto;">
+                                        <input type="hidden" name="Store_Code" value="&mvte:global:Store_Code;" />
+                                        <input type="hidden" name="Search" value="&mvte:global:Search;" />
+                                        <input type="hidden" name="Per_Page" value="&mvte:global:Per_Page;" />
+
+                                        <mvt:foreach iterator="facet" array="facets:facets">
+                                            <mvt:foreach iterator="facet_value" array="facet:values">
+                                                <mvt:if expr="l.settings:facet_value:selected">
+                                                    <input type="hidden" name="&mvte:facet:code;" value="&mvte:facet_value:value;" />
+                                                </mvt:if>
+                                            </mvt:foreach>
+                                        </mvt:foreach>
+
+                                        <select style="display: none;" name="Sort_By" onchange="this.form.submit();">
+                                            <mvt:if expr="ISNULL g.Sort_By">
+                                                <option data-display="Sort By" value="disp_order" selected="selected">No Sort</option>
+                                                <mvt:else>
+                                                    <option data-display="Sort By" value="disp_order">No Sort</option>
+                                            </mvt:if>
+
+                                            <mvt:if expr="g.Sort_By EQ 'bestsellers'">
+                                                <option data-display="Sort By" value="bestsellers" selected="selected">Best Seller</option>
+                                                <mvt:else>
+                                                    <option data-display="Sort By" value="bestsellers">Best Seller</option>
+                                            </mvt:if>
+
+                                            <mvt:comment>
+                                                <mvt:if expr="g.Sort_By EQ ''">
+                                                    <option data-display="Sort By" value="" selected="selected">Top Rated</option>
+                                                    <mvt:else>
+                                                        <option data-display="Sort By" value="">Top Rated</option>
+                                                </mvt:if>
+                                            </mvt:comment>
+
+                                            <mvt:if expr="g.Sort_By EQ 'price_asc'">
+                                                <option data-display="Sort By" value="price_asc" selected="selected">Price: Low to High</option>
+                                                <mvt:else>
+                                                    <option data-display="Sort By" value="price_asc">Price: Low to High</option>
+                                            </mvt:if>
+
+                                            <mvt:if expr="g.Sort_By EQ 'price_desc'">
+                                                <option data-display="Sort By" value="price_desc" selected="selected">Price: High to Low</option>
+                                                <mvt:else>
+                                                    <option data-display="Sort By" value="price_desc">Price: High to Low</option>
+                                            </mvt:if>
+
+                                            <mvt:if expr="g.Sort_By EQ 'newest'">
+                                                <option data-display="Sort By" value="newest" selected="selected">New Product</option>
+                                                <mvt:else>
+                                                    <option data-display="Sort By" value="newest">New Product</option>
+                                            </mvt:if>
+                                        </select>
+
+                                        <mvt:comment>
+                                            <li class="block-links">
+                                                <a id="sorting-clear" href="#">Clear All</a>
+                                                <a id="sorting-apply" href="#">Apply Filters</a>
+                                            </li>
+                                        </mvt:comment>
+                                    </form>
+                                </div>
+                            </mvt:if>
+                            <mvt:comment> SORTING end </mvt:comment>
+
+
+
+                    <mvt:comment> FILTERS </mvt:comment>
+                    <mvt:if expr="g.category_code EQ 'Fragrance_Finder'">
+                        <div class="info_bloc u-text-center">
+                            <h3>Product Matcher</h3>
+                            <p>Deciding what product will work well with your skin can be hard!
+                                Let us help you uncover the perfect product for your unique skin type no matter the concern - whether it's anti-aging, dark spots, or anything in-between, we have something for everyone.</p>
+                        </div>
+                        <mvt:item name="facets" />
+                        <mvt:else>
+                            <mvt:item name="facets" />
+                    </mvt:if>
+
+                    <mvt:comment> FILTERS end </mvt:comment>
+                </div>
+            </div>
+        </div>
+
+        <div id="gift-builder-bg">
+            <div id="gift-builder-content">
+                <div class="dtrio-grid">
+                    <div class="dtrio-grid-left">
+                        <div class="js-fade-in" style="background-color: #fbf9f9;opacity: 1; padding: 40px 40px 40px 40px;position:relative;">
+                            <h3>Your Gift Box</h3>
+<div class="right_corner_img" style="display:none;">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 125" style="enable-background:new 0 0 100 100;" xml:space="preserve" created-by="kiddo from the Noun Project"><path d="M32,41v18c0,9.9,8.1,18,18,18c9.9,0,18-8.1,18-18V41c0-9.9-8.1-18-18-18C40.1,23,32,31.1,32,41z M50,27c7.7,0,14,6.3,14,14  v18c0,7.7-6.3,14-14,14s-14-6.3-14-14V41C36,33.3,42.3,27,50,27z"/><path d="M50,44c1.1,0,2-0.9,2-2v-6c0-1.1-0.9-2-2-2s-2,0.9-2,2v6C48,43.1,48.9,44,50,44z"/><path d="M48.6,92.4C49,92.8,49.5,93,50,93s1-0.2,1.4-0.6l5-5c0.8-0.8,0.8-2,0-2.8s-2-0.8-2.8,0L50,88.2l-3.6-3.6  c-0.8-0.8-2-0.8-2.8,0c-0.8,0.8-0.8,2,0,2.8L48.6,92.4z"/><path d="M48.6,7.6l-5,5c-0.8,0.8-0.8,2,0,2.8C44,15.8,44.5,16,45,16s1-0.2,1.4-0.6l3.6-3.6l3.6,3.6C54,15.8,54.5,16,55,16  s1-0.2,1.4-0.6c0.8-0.8,0.8-2,0-2.8l-5-5C50.6,6.8,49.4,6.8,48.6,7.6z"/></svg>
+</div>
+                            <ul id="gift-box-items">
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="dtrio-grid-right">
+                        <mvt:item name="category_listing" />
+                        <mvt:assign name="g.CatListingOffset" value="0" />
+                        <mvt:assign name="g.Offset" value="0" />
+                         <mvt:item name="readytheme" param="productlisting( 'giftbox_temp' )" />
+
+                    </div>
+                </div>
+                <div class="dtrio-grid-footer o-wrapper">
+                    <div class="row cart-details">
+                        <div class="u-text-center"><h3>Your Gift Box</h3></div>
+                        <div class="t-account-border-section__content">
+                            <section class="o-layout t-basket" data-hook="basket" data-item-count="1" data-subtotal="$16.00">
+                                <div class="o-layout__item u-width-12">
+                                    <table class="c-table-responsive t-basket__product-summary">
+                                        <thead class="c-table-responsive_thead">
+                                        <tr class="c-table-responsive__row">
+                                            <th class="c-table-responsive__cell" scope="col">Item</th>
+                                            <th class="c-table-responsive__cell" scope="col">Quantity</th>
+                                            <th class="c-table-responsive__cell" scope="col">Price</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr class="c-table-responsive__row">
+                                            <td class="c-table-responsive__cell" data-label="">
+						<picture></picture>
+                                                <figure class="x-product-list__figure">
+                                                        <div class="x-product-list__details-link">
+                                                            <div class="x-product-list__col">
+                                                                <div class="x-product-list__scent">GIFT PACKAGING</div>
+                                                            </div>
+                                                        </div>
+                                                </figure>
+                                            </td>
+                                            <td class="c-table-responsive__cell c-table-responsive__cell--flex" data-label="Quantity">
+                                                1
+                                            </td>
+                                            <td class="c-table-responsive__cell c-table-responsive__cell--flex" data-label="Price">
+                                            <span class="u-inline-block u-flex remove_button">
+                                            <span class="u-block" id="js-gift-packaging-price">$5.00</span>
+                                            
+                                            </span>
+                                            </td>
+                                        </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="o-layout__item u-width-12">
+                                    <div class="giftprompt ">
+
+                                        <form class="row buttons"  action="&mvte:urls:BASK:auto;">
+                                            <mvt:item name="ry_toolbelt" param="Product_Load|g.found|'gift_box'|myproduct" />
+                                            <input type="hidden" name='Product_Code' id="giftbox-product-code" value="gift_box"/>
+                                            <mvt:item name="product_attributes" param="myproduct:id" />
+                                            <textarea id="giftbox-message" onkeyup="normalize_input(this)" data-attribute-code="gift_message" rows="3" cols="39" maxlength="256" placeholder="Add Gift Message Here"></textarea>
+                                            <input type="hidden" id="giftbox-wrapping" data-attribute-code="gift_wrapping" value="1"/>
+                                            <label class="gift_receipt_block">
+                                                <input type="checkbox" id="giftbox-include-receipt" name="gift_receipt">
+                                                <span class="gift_receipt"></span>
+                                                Include Gift Receipt
+                                            </label>
+
+
+                                            <h3 class="total_basket u-text-center" style="margin-bottom: 40px;">Gift Box Total: <span id="giftbox-total">$0.00</span></h3>
+
+                                                <button id="add-to-cart" style="    margin: 0 auto;float: none;" class="button with-hover float-right" disabled><span>Add to cart</span></button>
+                                        </form>
+                                    </div>
+                                </div>
+
+                                <p class="note_text o-layout__item u-width-12">
+                                    <strong>*</strong> PLEASE NOTE:<br>
+If you're shipping multiple gift boxes to one location you'll only need to create one order,<br>
+ but to ship gift boxes to multiple locations you'll need to create separate orders for each shipment.
+                                </p>
+                            </section>
+                        </div>
+                    </div>
+
+
+
+
+                    <mvt:comment>
+                        <mvt:if expr="s.Remote_Addr IN '188.163.83.66,46.201.97.218 '">
+                            <mvt:item name="ry_toolbelt" param="eval|varlist('l', '', l.all_settings)" />
+                            <mvt:item name="ry_toolbelt" param="eval|varlist('g', '', l.all_settings)" />
+                            <mvt:item name="ry_toolbelt" param="eval|varlist('s', '', l.all_settings)" />
+                        </mvt:if>
+                    </mvt:comment>
+                    <div id="confirm-reset-popup-overlay"></div>
+                    <div id="confirm-reset-popup">
+                        <div id="confirm-reset-popup-close">×</div>
+                        Are you sure you want to reset or do you want to add the current trio to the cart first?
+                        <div class="buttons">
+                            <button id="confirm-reset" class="button with-hover"><span>Reset</span></button>
+                            <button id="add-to-cart-first" class="button with-hover"><span>Add to cart</span></button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+</main>
+        <mvt:item name="hdft" param="global_footer" />
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js" integrity="sha256-P93G0oq6PBPWTP1IR8Mz/0jHHUpaWL0aBJTKauisG7Q=" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="themes/colossus/ui/js/gift-builder.js">
+            </script>
+
+
+</body>
+</html>

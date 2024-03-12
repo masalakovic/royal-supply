@@ -1,0 +1,19 @@
+<span style="display: block;">
+<mvt:if expr="NOT ISNULL l.settings:category">
+	<mvt:if expr="l.settings:max_quan EQ 0">
+		Products belonging to the &mvte:category; category's total quantity have a minimum of &mvte:min_quan;. Please adjust before continuing.
+	<mvt:elseif expr="l.settings:min_quan EQ 0">
+		Products belonging to the &mvte:category; category's total quantity have a maximum of &mvte:max_quan;. Please adjust before continuing.
+	<mvt:else>
+		Products belonging to the &mvte:category; category's total quantity have a minimum and maximum of &mvte:min_quan; and &mvte:max_quan;. Please adjust before continuing.
+	</mvt:if>
+<mvt:elseif expr="NOT ISNULL l.settings:product">
+	<mvt:if expr="l.settings:max_quan EQ 0">
+		&mvte:product; has a minimum quantity of &mvte:min_quan;. Please adjust before continuing.
+	<mvt:elseif expr="l.settings:min_quan EQ 0">
+		&mvte:product; has a maximum quantity of &mvte:max_quan;. Please adjust before continuing.
+	<mvt:else>
+		&mvte:product; has a minimum and maximum quantity of &mvte:min_quan; and &mvte:max_quan;. Please adjust before continuing.
+	</mvt:if>
+</mvt:if>
+</span>

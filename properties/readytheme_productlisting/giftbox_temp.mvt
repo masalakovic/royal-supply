@@ -1,0 +1,3 @@
+<script>
+    window.giftbox_allProducts = <mvt:do file="g.Module_JSON" name="l.success" value="JSON_Output(l.settings:readytheme:products)" />
+</script>

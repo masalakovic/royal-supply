@@ -1,0 +1,32 @@
+<mvt:comment>
+| The following links are used to determine which files get included in the framework export.
+</mvt:comment>
+
+<mvt:comment>
+	Images
+	<link href="themes/colossus/core/images/img_cvv.png">
+	<link href="themes/colossus/core/images/logo_amex.png">
+	<link href="themes/colossus/core/images/logo_check.png">
+	<link href="themes/colossus/core/images/logo_discover.png">
+	<link href="themes/colossus/core/images/logo_mastercard.png">
+	<link href="themes/colossus/core/images/logo_paypal.png">
+	<link href="themes/colossus/core/images/logo_ppal_invc.png">
+	<link href="themes/colossus/core/images/logo_ppal_opay.png">
+	<link href="themes/colossus/core/images/logo_ppal_osel.png">
+	<link href="themes/colossus/core/images/logo_visa.png">
+
+	
+	Top Categories Custom Field Images
+	<link href="graphics/00000001/coffee.jpg">
+	<link href="graphics/00000001/tea.jpg">
+	<link href="graphics/00000001/equipment.jpg">
+	<link href="graphics/00000001/drinkware.jpg">
+	
+	
+	404 Page
+	<link href="404.html">
+	
+	
+	Robots
+	<link href="robots.txt">
+</mvt:comment>

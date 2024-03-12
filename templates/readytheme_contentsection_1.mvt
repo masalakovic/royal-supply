@@ -1,0 +1,32 @@
+<mvt:item name="readytheme" param="Load_Image('promo_image', g.promo_image)" />
+<mvt:if expr="g.promo_image:link_type NE 'N'">
+	<mvt:if expr="g.promo_image:link_type EQ 'G'">
+		<mvt:do file="g.Module_Feature_TUI_DB" name="l.success" value="Page_Load_Code( g.promo_image:link_dest, l.settings:rt_g )" />
+		<mvt:do file="g.Module_Feature_URI_UT" name="g.promo_image:uri" value="Store_Page_URL(l.settings:rt_g, NULL)" />
+	<mvt:elseif expr="g.promo_image:link_type EQ 'C'">
+		<mvt:do file="g.Module_Library_DB" name="l.success" value="Category_Load_Code( g.promo_image:link_dest, l.settings:rt_c )" />
+		<mvt:do file="g.Module_Feature_URI_UT" name="g.promo_image:uri" value="Store_Category_URL(l.settings:rt_c, NULL)" />
+	<mvt:elseif expr="g.promo_image:link_type EQ 'P'">
+		<mvt:do file="g.Module_Library_DB" name="l.success" value="Product_Load_Code( g.promo_image:link_dest, l.settings:rt_p )" />
+		<mvt:do file="g.Module_Feature_URI_UT" name="g.promo_image:uri" value="Store_Product_URL(l.settings:rt_p, NULL)" />
+	<mvt:elseif expr="g.promo_image:link_type EQ 'U'">
+		<mvt:assign name="g.promo_image:uri" value="g.promo_image:link_dest" />
+	<mvt:else>
+		<mvt:assign name="g.promo_image:uri" value="NULL" />
+	</mvt:if>
+<mvt:else>
+	<mvt:assign name="g.promo_image:uri" value="NULL" />
+</mvt:if>
+<section class="cmp-promo-block" data-scroll="lazyImage">
+	<figure class="h-nm h-align-center">
+		<figcaption>
+			<header class="h3 font--uppercase secondary-font">Committed to Style</header>
+			<p>Luxe was founded in the East Village, where style is premium and everything is designed to showcase quality.</p>
+			<mvt:if expr="NOT ISNULL g.promo_image:uri">
+				<a class="button button--large cta-secondary cta--transparent font--semibold font--uppercase" href="&mvt:global:promo_image:uri;" target="&mvt:global:promo_image:link_targ;">Shop By Trend</a>
+			</mvt:if>
+		</figcaption>
+		<img data-src="&mvt:global:promo_image:image;" src="graphics/en-US/cssui/blank.gif" alt="&mvt:global:promo_image:image_alt;" title="&mvt:global:promo_image:image_alt;" width="1658" height="664">
+	</figure>
+</section>
+<!-- end .cmp-promo-block -->

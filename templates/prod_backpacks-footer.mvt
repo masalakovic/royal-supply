@@ -1,0 +1,82 @@
+<script>
+
+    // this code snippet is got from the bundle
+    $('#designed-thumbnails').on('click', '.designed-thumbnail .remove', function() {
+        $(this).parents('.designed-thumbnail').first().remove();
+    });
+
+    // this code snippet is got from the bundle
+    $('#js-add-to-cart').off().submit(function(e) {
+            e.preventDefault();
+
+            if(!$('#designed-thumbnails').children()[0]) {
+                // if there is no designed img
+                this.submit();
+                return;
+            }
+
+            let img_url =  $('#designed-thumbnails').children().first().find('img').first().attr('src');
+            $.ajax({
+              type: "POST",
+              url: 'https://demo.pcinet.com/mm5/custom-designer/upload/script.php',
+              data: { 
+                designed_image : img_url
+              },
+                success: (data, textStatus) => {
+                        console.log(textStatus);
+                    if (textStatus == 'success') {
+                        // to get the element from inside the iframe
+                        console.log('something wrong', data);
+                        $('#designed_image').val('//demo.pcinet.com/mm5/custom-designer/upload/' + data);
+                        this.submit();
+                    }
+                    else {
+                        this.submit();
+                    }
+                }
+            });
+    });
+
+    // send data to the frame
+    // window.parent.window.postMessage("hello from parent", '*'); 
+
+
+    // listen to the data from the frame
+    window.addEventListener('message', function(event) { 
+
+        console.log("Message from frame!", event.data);
+
+        // the structure of the data sent between frames is similar to redux actions 
+        // root -
+        //      - type 
+        //      - payload
+        if (event.data.type == "saveThumb") {
+            var img = event.data.payload;
+
+            $('#designed-thumbnails').html(`
+                <div class="designed-thumbnail">
+                    <div class='remove'>&#10005;</div>
+                    <a href='${img}' title='Open full size' target="_blank">
+                        <img src="${img}" alt=''/>
+                    </a>
+                </div>
+            `);
+        }
+
+    });
+
+</script>
+
+<mvt:comment>Open Modal Window</mvt:comment>
+
+<script>
+$('#ocdc-button').on('click',function(){
+  $('#ocdc-modal, #ocdc-modal-fade').addClass('opened');
+  $('#js-navigation-bar').addClass('modal-opened');
+});
+$('#ocdc-modal-close').on('click',function(){
+  $('#ocdc-modal, #ocdc-modal-fade').removeClass('opened');
+});
+
+</script>
+

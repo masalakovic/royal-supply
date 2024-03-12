@@ -1,0 +1,5 @@
+<!-- YotPo JavaScript library -->
+	<script defer type="text/javascript">
+		(function e(){var e=document.createElement("script");e.type="text/javascript",e.async=true,e.src="//staticw2.yotpo.com/t1C5E5YEFlh64uhpoHFetSLFp7iTlG1KjK89roBP/widget.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)})();
+	</script>
+	<script defer type="text/javascript"> (function e(){var e=document.createElement("script");e.type="text/javascript",e.async=!0, e.src="//staticw2.yotpo.com/t1C5E5YEFlh64uhpoHFetSLFp7iTlG1KjK89roBP/widget.js";var t=document.getElementsByTagName("script")[0]; t.parentNode.insertBefore(e,t)})(); </script>

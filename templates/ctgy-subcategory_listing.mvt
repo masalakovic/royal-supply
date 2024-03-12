@@ -1,0 +1,40 @@
+<mvt:foreach array="cattree_categories" iterator="cattree_category">
+	<mvt:if expr="l.settings:cattree_category:parent_id EQ l.settings:category:id">
+		<mvt:assign name="l.null" value="miva_array_insert(l.settings:subcats, l.settings:cattree_category, -1)" />
+	</mvt:if>
+</mvt:foreach>
+
+<mvt:assign name="l.settings:subcat_count" value="miva_array_elements(l.settings:subcats)" />
+<mvt:if expr="l.settings:subcats GT 0">
+	<div class="row bg-white main-content-row sub-category-layout">
+		<mvt:foreach iterator="sub_category" array="subcats">
+			<mvt:comment><!-- Load First Product From Sub Category & It's resized Main image --></mvt:comment>
+				<mvt:if expr="ISNULL l.settings:sub_category:image AND ISNULL l.settings:category:cf:category_hide_sub_category_images">
+					<mvt:do file="g.Module_Library_DB" name="l.result" value="Runtime_ProductList_Load_Offset_Category( l.settings:sub_category:id, 1, 1, l.settings:sub_category:sub_products:next_offset, l.settings:sub_category:sub_products:list )" />
+					<mvt:assign name="l.settings:sub_category:product" value="l.settings:sub_category:sub_products:list[1]" />
+					<mvt:do file="g.Module_Library_DB" name="l.settings:sub_category:product:image_count" value="ProductImageDataList_Load_Product(l.settings:sub_category:product:id, l.settings:sub_category:product:images)" />
+					<mvt:foreach iterator="image" array="sub_category:product:images">
+						<mvt:if expr="l.settings:image:imagetype:code EQ 'main'">
+							<mvt:assign name="l.settings:sub_category:product:main_image" value="l.settings:image" />
+							<mvt:foreachstop/>
+						</mvt:if>
+					</mvt:foreach>
+					<mvt:if expr="l.settings:sub_category:product:main_image:image:id">
+						<mvt:do file="g.Module_Library_DB" name="l.result" value="GeneratedImage_FindOrInsert_Image_Dimensions( l.settings:sub_category:product:main_image:image, '300', '200', l.settings:sub_category:product:main_image:generated )" />
+					</mvt:if>
+					<mvt:if expr="l.settings:sub_category:product:main_image:generated:id">
+						<mvt:assign name="l.settings:sub_category:image" value="l.settings:sub_category:product:main_image:generated:image" />
+					</mvt:if>
+				</mvt:if>
+
+			<div class="column half medium-one-third sub-category uppercase">
+				<a href="&mvt:sub_category:link;" title="&mvt:sub_category:name;">
+					<mvt:if expr="l.settings:sub_category:image AND ISNULL l.settings:category:cf:category_hide_sub_category_images">
+						<img src="&mvt:sub_category:image;" alt="&mvt:sub_category:name;" title="&mvt:sub_category:name;" />
+					</mvt:if>
+					&mvt:sub_category:name;
+				</a>
+			</div>
+		</mvt:foreach>
+	</div><!-- end sub-category listings -->
+</mvt:if>

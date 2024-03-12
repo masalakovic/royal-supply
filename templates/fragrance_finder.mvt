@@ -1,0 +1,263 @@
+<mvt:item name="html_profile" />
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="&mvt:global:basehref;">
+    <mvt:if expr="NOT ISNULL l.settings:category:page_title">
+        <title>&mvt:category:page_title;</title>
+    <mvt:elseif expr="NOT ISNULL l.settings:page:title">
+        <title>&mvt:page:title;</title>
+    <mvt:else>
+        <title>&mvt:store:name;: &mvt:category:name;</title>
+    </mvt:if>
+    <mvt:item name="head" param="css_list" />
+    <mvt:item name="head" param="head_tag" />
+</head>
+<body id="js_fragrance_finder" class="o-site-wrapper t-page-&mvt:global:pageClass;">
+    <mvt:item name="hdft" param="global_header" />
+
+<div id="fragrance_family_category" class="readytheme-contentsection">
+    <section class="o-layout t-category-title-images t-defer-object t-defer-object--loaded" data-defer="">
+        <div class="o-layout__item">
+            <div class="x-hero">
+                <img data-src="graphics/00000001/candle-category.jpg" src="graphics/00000001/candle-category.jpg" alt="Fragranced Candle" class="t-lazy-load-image">
+            </div>
+        </div>
+    </section>
+</div>
+<section class="o-wrapper t-wrapper fragrance">
+    <ul class="process_bar">
+        <li class="active" style="display: none"></li>
+        <li style="display: none"></li>
+        <li class="q1"></li>
+        <li class="q2"></li>
+        <li class="q3"></li>
+        <li class="q4"></li>
+    </ul>
+    <div class="category-content">
+        <div class="switch_block active">
+            <h2>Find Your Perfect Fragrance!</h2>
+            <p>
+                We want your experience with us to be<br> tailored to you, so
+                we created this fragrance<br> map to help discover your perfect scent.
+            </p>
+        </div>
+
+        <div id="q1" class="switch_block">
+            <h2>Which fragrance type do you prefer?</h2>
+            <p><strong>Choose one.</strong></p>
+
+            <ul class="fragrance_list long_image">
+                <li class="active"> <span class="u-font-tiny u-icon-cross uncheck"></span>
+                    <a href="javascript:void(0)">
+                        <img src="graphics/00000001/citrus_1.png" border="0" alt="citrus">
+                        <p>Citrus</p>
+                    </a>
+                </li>
+                <li class="active"> <span class="u-font-tiny u-icon-cross uncheck"></span>
+                    <a href="javascript:void(0)">
+                        <img src="graphics/00000001/woody_1.png" border="0" alt="woody">
+                        <p>Woody</p>
+                    </a>
+                </li>
+                <li class="active"> <span class="u-font-tiny u-icon-cross uncheck"></span>
+                    <a href="javascript:void(0)">
+                        <img src="graphics/00000001/herbal_1.png" border="0" alt="herbal">
+                        <p>Herbal</p>
+                    </a>
+                </li>
+                <li class="active"> <span class="u-font-tiny u-icon-cross uncheck"></span>
+                    <a href="javascript:void(0)">
+                        <img src="graphics/00000001/Gourmand_1.png" border="0" alt="gourmand">
+                        <p>Gourmand</p>
+                    </a>
+                </li>
+                <li class="active"> <span class="u-font-tiny u-icon-cross uncheck"></span>
+                    <a href="javascript:void(0)">
+                        <img src="graphics/00000001/fresh_1.png" border="0" alt="fresh">
+                        <p>Fresh</p>
+                    </a>
+                </li>
+                <li class="active"> <span class="u-font-tiny u-icon-cross uncheck"></span>
+                    <a href="javascript:void(0)">
+                        <img src="graphics/00000001/fruity_1.png" border="0" alt="fruity">
+                        <p>Fruity</p>
+                    </a>
+                </li>
+                <li class="active"> <span class="u-font-tiny u-icon-cross uncheck"></span>
+                    <a href="javascript:void(0)">
+                        <img src="graphics/00000001/floral_1.png" border="0" alt="floral">
+                        <p>Floral</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div id="q2" class="switch_block">
+            <h2>Which adjective best describes the ambience and mood you wish to create?</h2>
+            <p>Choose one.</p>
+
+            <ul class="fragrance_list">
+                <li class="active"> <span class="u-font-tiny u-icon-cross uncheck"></span>
+                    <a href="javascript:void(0)">
+                        <img src="graphics/00000001/Asset_earthy.png" border="0" alt="earthy">
+                        <p>Earthy and Incensy</p>
+                    </a>
+                </li>
+                <li class="active"> <span class="u-font-tiny u-icon-cross uncheck"></span>
+                    <a href="javascript:void(0)">
+                        <img src="graphics/00000001/Asset_Invigorating .png" border="0" alt="invigorating">
+                        <p>Invigorating and Revitalizing</p>
+                    </a>
+                </li>
+                <li class="active"> <span class="u-font-tiny u-icon-cross uncheck"></span>
+                    <a href="javascript:void(0)">
+                        <img src="graphics/00000001/Asset_romantic.png" border="0" alt="romantic">
+                        <p>Romantic and Dreamy</p>
+                    </a>
+                </li>
+                <li class="active"> <span class="u-font-tiny u-icon-cross uncheck"></span>
+                    <a href="javascript:void(0)">
+                        <img src="graphics/00000001/Asset_refreshing.png" border="0" alt="refreshing">
+                        <p>Refreshing and Restorative</p>
+                    </a>
+                </li>
+                <li class="active"> <span class="u-font-tiny u-icon-cross uncheck"></span>
+                    <a href="javascript:void(0)">
+                        <img src="graphics/00000001/Asset_relaxing.png" border="0" alt="relaxing">
+                        <p>Relaxing and Calming</p>
+                    </a>
+                </li>
+                <li class="active"> <span class="u-font-tiny u-icon-cross uncheck"></span>
+                    <a href="javascript:void(0)">
+                        <img src="graphics/00000001/Asset_tranquil.png" border="0" alt="tranquil">
+                        <p>Tranquil and Peaceful</p>
+                    </a>
+                </li>
+                <li class="active"> <span class="u-font-tiny u-icon-cross uncheck"></span>
+                    <a href="javascript:void(0)">
+                        <img src="graphics/00000001/Asset_warm.png" border="0" alt="warm">
+                        <p>Warm and Balmy</p>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+
+        <div id="q3" class="switch_block">
+            <h2>How would your friends describe you?</h2>
+            <p>Choose one.</p>
+
+            <ul class="fragrance_list">
+                <li class="active"> <span class="u-font-tiny u-icon-cross uncheck"></span>
+                    <a href="javascript:void(0)">
+                        <img src="graphics/00000001/Asset_adventurous.png" border="0" alt="adventurous">
+                        <p>Adventurous and Creative</p>
+                    </a>
+                </li>
+                <li class="active"> <span class="u-font-tiny u-icon-cross uncheck"></span>
+                    <a href="javascript:void(0)">
+                        <img src="graphics/00000001/Asset_sensual.png" border="0" alt="sensual">
+                        <p>Sensual and Earthy</p>
+                    </a>
+                </li>
+                <li class="active"> <span class="u-font-tiny u-icon-cross uncheck"></span>
+                    <a href="javascript:void(0)">
+                        <img src="graphics/00000001/Asset_upbeat.png" border="0" alt="upbeat">
+                        <p>Upbeat and Energetic</p>
+                    </a>
+                </li>
+                <li class="active"> <span class="u-font-tiny u-icon-cross uncheck"></span>
+                    <a href="javascript:void(0)">
+                        <img src="graphics/00000001/Asset_fashion.png" border="0" alt="fashion">
+                        <p>Fashion Forward and Bold</p>
+                    </a>
+                </li>
+                <li class="active"> <span class="u-font-tiny u-icon-cross uncheck"></span>
+                    <a href="javascript:void(0)">
+                        <img src="graphics/00000001/Asset_romantic2.png" border="0" alt="romantic">
+                        <p>Romantic and Sentimental</p>
+                    </a>
+                </li>
+                <li class="active"> <span class="u-font-tiny u-icon-cross uncheck"></span>
+                    <a href="javascript:void(0)">
+                        <img src="graphics/00000001/Asset_classic.png" border="0" alt="classic">
+                        <p>Classic and Sophisticated</p>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+
+        <div id="q4" class="switch_block">
+            <h2>If you could escape anywhere, where would it be?</h2>
+            <p>Choose one.</p>
+
+            <ul class="fragrance_list">
+                <li class="active"> <span class="u-font-tiny u-icon-cross uncheck"></span>
+                    <a href="javascript:void(0)">
+                        <img src="graphics/00000001/Asset_country.png" border="0" alt="country cottage">
+                        <p>Country Cottage</p>
+                    </a>
+                </li>
+                <li class="active"> <span class="u-font-tiny u-icon-cross uncheck"></span>
+                    <a href="javascript:void(0)">
+                        <img src="graphics/00000001/Asset_flower.png" border="0" alt="flower garden">
+                        <p>Flower Garden Tour</p>
+                    </a>
+                </li>
+                <li class="active"> <span class="u-font-tiny u-icon-cross uncheck"></span>
+                    <a href="javascript:void(0)">
+                        <img src="graphics/00000001/Asset_island.png" border="0" alt="island">
+                        <p>Island Getaway</p>
+                    </a>
+                </li>
+                <li class="active"> <span class="u-font-tiny u-icon-cross uncheck"></span>
+                    <a href="javascript:void(0)">
+                        <img src="graphics/00000001/Asset_spa.png" border="0" alt="spa">
+                        <p>Spa Retreat</p>
+                    </a>
+                </li>
+                <li class="active"> <span class="u-font-tiny u-icon-cross uncheck"></span>
+                    <a href="javascript:void(0)">
+                        <img src="graphics/00000001/Asset_foreign.png" border="0" alt="Foreign Capitol City">
+                        <p>Foreign Capitol City</p>
+                    </a>
+                </li>
+                <li class="active"> <span class="u-font-tiny u-icon-cross uncheck"></span>
+                    <a href="javascript:void(0)">
+                        <img src="graphics/00000001/Asset_mountain.png" border="0" alt="Mountain Hiking">
+                        <p>Mountain Hiking</p>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+
+        <div class="switch_block last">
+            
+        </div>
+
+    </div>
+
+    <div class="button_block">
+        <a href="#" class="back" style="display:none;"><span></span></a>
+        <a href="javascript:void(0)" class="next_block begin btn btn--white btn--s">BEGIN</a>
+    </div>
+
+
+        <h2 id="list-title" style="text-align: center; font-size:40px; display:none;margin-bottom:40px;margin-top:100px;">Suggested For You</h2>
+              <mvt:item name="category_listing" />
+
+<br><br><br><br><br>
+                            <mvt:item name="readytheme" param="banner( 'yotpo-pictures-widget' )" />
+
+</section>
+
+
+
+
+    <mvt:item name="hdft" param="global_footer" />
+</body>
+</html>

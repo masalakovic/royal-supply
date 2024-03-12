@@ -1,0 +1,52 @@
+<section class="section-static section-static-banner-hero">
+	<mvt:item name="readytheme" param="image( 'banner_hero_about_process' )" />
+</section>
+
+<section class="section-static section-static-our-process">
+	<div class="container">
+		<div class="static-centered">
+			<h1>Our Process</h1>
+		</div>
+		<p>Each step of our process is carefully crafted. Each fragrance has a story and a place or setting that inspired it. These stories form the intricacies of our products.</p>
+	</div>
+</section>
+
+<section class="section-static section-static-hand-blown-glass">
+	<div class="container">
+		<div class="o-layout u-grids-1 u-grids-2--s block-col-static block-static-reverse block-hand-blown-glass">
+			<div class="o-layout__item">
+				<h2>Hand-blown glass</h2>
+				<p>Our vessels are hand-blown in some of the most prestigious glass blowing factories around the world. Each distinctive piece is created by painstakingly layering and fusing colored pigments and crystals in the glassblowing technique.</p>
+			</div>
+			<div class="o-layout__item">
+				<mvt:item name="readytheme" param="image( 'img_our_process_content_1' )" />
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="section-static section-static-fragrance-blends">
+	<div class="container">
+		<div class="o-layout u-grids-1 u-grids-2--s block-col-static block-fragrance-blends">
+			<div class="o-layout__item">
+				<mvt:item name="readytheme" param="image( 'img_our_process_content_2' )" />
+			</div>
+			<div class="o-layout__item">
+				<h2>Fragrance Blends</h2>
+				<p>All of our perfumes are composed by our founder and “nose,” Jon Bresler and are constructed according to the classic olfactory pyramid structure of stacking notes. Layering fragrances creates unique scents that have the ability to take you on a fragrance adventure.</p>
+				<p>Each note of our perfumes correspond to specific scents that evolve individually over time, and this natural evolution is orchestrated to create movement and provoke the imagination and memory of places we’ve been or aspire to go to. </p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="section-static section-static-lafco-concept">
+	<div class="container">
+		<div class="o-layout u-grids-1 block-col-static block-lafco-concept">
+			<div class="o-layout__item">
+				<h2>LAFCO Concept</h2>
+				<p>We design our products with the intention of creating a complete ambiance around mood, scent, and color. Each fragrance is developed with these details in mind while also associating them with a place or setting. For example, our ‘Master Bedroom’ Chamomile Lavender candle is calming in scent, and the vessel color is a warm, neutral beige that we associate with a bedroom.</p>			
+			</div>
+		</div>
+	</div>
+</section>

@@ -1,0 +1,200 @@
+<mvt:item name="readytheme" param="Load_Image('banner_rewards_account', g.banner_rewards_account)" />
+<section class="banner-rewards banner-rewards-account" style="background-image: url('&mvt:global:banner_rewards_account:image;');">
+    <div class="container">
+        <h1 class="box-name">&mvt:global:customer:ship_fname;’s Rewards</h1>
+        <div class="o-layout u-grids-2 block-status">
+            <div class="o-layout__item">
+                <h3 class="box-status u-text-uppercase">
+                    <span class="box-status-title">STATUS</span> SILVER
+                </h3>
+            </div>
+            <div class="o-layout__item">
+                <h3 class="box-status">
+                    <span class="box-status-title">POINTS</span> 2,210
+                </h3>
+            </div>
+        </div>
+        <p>Enjoy your SILVER status <span class="u-inline-block">through Month, Day Year</span></p>
+    </div>
+</section>
+
+<section class="status-rewards">
+    <div class="box-logo">
+        <mvt:item name="readytheme" param="image( 'lafco_rewards_logo' )" />
+    </div>
+    <div class="container">
+        <div class="o-layout u-grids-1 u-grids-2--s block-status">
+            <div class="o-layout__item">
+                <h4>Your 2020 Dollars Spent</h4>
+                <div class="box-img">
+                    <mvt:item name="readytheme" param="image( 'img_rewards_7' )" />
+                </div>
+                <p>$3,000.00</p>
+            </div>
+            <div class="o-layout__item">
+                <h4>Because of Your <span class="u-text-uppercase">SILVER</span> Status</h4>
+                <div class="box-img">
+                    <mvt:item name="readytheme" param="image( 'img_rewards_8' )" />
+                </div>
+                <p>You earn 1 point for every $1 spent</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="yourself-rewards">
+    <div class="container">
+        <div class="yourself-rewards__heading-wrap">
+            <h2 class="yourself-rewards__heading">Reward Yourself</h2>
+            <a class="yourself-rewards__view-all" href="#">View All</a>
+        </div>
+        <p class="subtitle-small">You qualify for LAFCO Rewards. Make your selection below.</p>
+        <div class="yourself-rewards-slider" data-hook="yourself-rewards-slider">
+            <div class="yourself-rewards-slider__item">
+                <div class="box-img">
+                    <mvt:item name="readytheme" param="image( 'img_yourself_rewards_1' )" />
+                </div>
+                <h4>300 points</h4>
+                <a class="btn btn--white btn--s" href="#">ADD TO CART</a>
+            </div>
+            <div class="yourself-rewards-slider__item">
+                <div class="box-img">
+                    <mvt:item name="readytheme" param="image( 'img_yourself_rewards_2' )" />
+                </div>
+                <h4>350 points</h4>
+                <a class="btn btn--white btn--s" href="#">ADD TO CART</a>
+            </div>
+            <div class="yourself-rewards-slider__item">
+                <div class="box-img">
+                    <mvt:item name="readytheme" param="image( 'img_yourself_rewards_3' )" />
+                </div>
+                <h4>500 points</h4>
+                <a class="btn btn--white btn--s" href="#">ADD TO CART</a>
+            </div>
+            <div class="yourself-rewards-slider__item">
+                <div class="box-img">
+                    <mvt:item name="readytheme" param="image( 'img_yourself_rewards_1' )" />
+                </div>
+                <h4>300 points</h4>
+                <a class="btn btn--white btn--s" href="#">ADD TO CART</a>
+            </div>
+            <div class="yourself-rewards-slider__item">
+                <div class="box-img">
+                    <mvt:item name="readytheme" param="image( 'img_yourself_rewards_2' )" />
+                </div>
+                <h4>350 points</h4>
+                <a class="btn btn--white btn--s" href="#">ADD TO CART</a>
+            </div>
+            <div class="yourself-rewards-slider__item">
+                <div class="box-img">
+                    <mvt:item name="readytheme" param="image( 'img_yourself_rewards_3' )" />
+                </div>
+                <h4>500 points</h4>
+                <a class="btn btn--white btn--s" href="#">ADD TO CART</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="benefits-rewards">
+    <div class="container">
+        <h2>LAFCO Rewards Benefits</h2>
+        <p class="subtitle-small">Take advantage of LAFCO Rewards. Earn 10 points per $1 spent.</p>
+        <div class="table-benefits">
+            <table cellspacing="0" cellpadding="0">
+                <thead>
+                    <tr>
+                        <th>Benefits</th>
+                        <th class="u-bg-yellow">Silver</th>
+                        <th class="u-bg-blue">Gold</th>
+                        <th class="u-bg-gray">Platinum</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Qualifying Points</td>
+                        <td>0 points</td>
+                        <td>2,500 points</td>
+                        <td>5,000 points</td>
+                    </tr>
+                    <tr>
+                        <td>Points per $ Spent</td>
+                        <td>1 x</td>
+                        <td>1.25 x</td>
+                        <td>1.5 x</td>
+                    </tr>
+                    <tr>
+                        <td>Samples per Order</td>
+                        <td>1 Mystery Sample</td>
+                        <td>2 Choice Samples</td>
+                        <td>3 Choice Samples</td>
+                    </tr>
+                    <tr>
+                        <td>Birthday Gift</td>
+                        <td><span class="icon-star icon-star--yellow"></span></td>
+                        <td><span class="icon-star icon-star--blue"></span></td>
+                        <td><span class="icon-star icon-star--gray"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Tier Celebration Gift</td>
+                        <td></td>
+                        <td><span class="icon-star icon-star--blue"></span></td>
+                        <td><span class="icon-star icon-star--gray"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Unlock New Rewards</td>
+                        <td></span></td>
+                        <td><span class="icon-star icon-star--blue"></span></td>
+                        <td><span class="icon-star icon-star--gray"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Early Access to Products</td>
+                        <td></span></td>
+                        <td></td>
+                        <td><span class="icon-star icon-star--gray"></span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<section class="additional-rewards">
+    <div class="container">
+        <h2>Additional Ways to Earn Points</h2>
+        <p class="subtitle-small">....and reach a higher rewards tier.</p>
+        <div class="o-layout u-grids-1 u-grids-3--s block-additional">
+            <div class="o-layout__item">
+                <div class="box-img">
+                    <mvt:item name="readytheme" param="image( 'img_rewards_15' )" />
+                </div>
+                <h4>Refer a Friend</h4>
+                <p>500 points</p>
+            </div>
+            <div class="o-layout__item">
+                <div class="box-img">
+                    <mvt:item name="readytheme" param="image( 'img_rewards_16' )" />
+                </div>
+                <h4>Leave a Product Review</h4>
+                <p>100 points</p>
+            </div>
+            <div class="o-layout__item">
+                <div class="box-img">
+                    <mvt:item name="readytheme" param="image( 'img_rewards_17' )" />
+                </div>
+                <h4>Share on Social</h4>
+                <p>Twitter 50 points<br> Facebook 50 points<br> Pinterest 50 points</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="rewards-faqs" class="faq-rewards">
+    <div class="container">
+        <h2>LAFCO Rewards FAQs</h2>
+        <p class="subtitle-small">Take advantage of LAFCO Rewards. Earn 10 points per $1 spent.</p>
+        <div class="faqs">
+            <mvt:item name="readytheme" param="contentsection( 'rewards_page_faq' )" />
+        </div>
+    </div>
+</section>

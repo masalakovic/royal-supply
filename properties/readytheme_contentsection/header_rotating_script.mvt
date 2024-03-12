@@ -1,0 +1,113 @@
+<mvt:comment>
+	Read lines of text from header_rotating_text.
+	Note: Each line must be pure text (Do not copy from MsWord)
+	Strip Line feeds so each line is terminated with a return characters only
+	then Convert to the array l.settings:v_messages
+</mvt:comment>
+
+<mvt:capture variable="l.text_input">
+	<mvt:item name="readytheme" param="contentsection( 'header_rotating_text' )" />
+</mvt:capture>
+
+<mvt:assign name="l.lf" value="asciichar(10)" />
+<mvt:assign name="l.cr" value="asciichar(13)" />
+<mvt:assign name="l.text_input" value="glosub( l.text_input, l.lf, l.cr )" />
+<mvt:assign name="l.text_input" value="glosub( l.text_input, l.cr $ l.cr, l.cr )" />
+<mvt:assign name="g.void" value="miva_splitstring( l.text_input, asciichar(13), l.settings:v_messages, 'trim' )" />
+
+<mvt:assign name="g.slide_id" value="'v-scroller'" />
+<mvt:assign name="g.slide_class" value="'v-scrollup'" />
+
+<div class="v-slider-frame" data="testing">
+	<ul id="&mvte:global:slide_id;" >
+		<mvt:assign name="g.item_count" value="0" />
+
+		<mvt:foreach iterator="string" array="v_messages">
+			<mvt:assign name="l.settings:rotating" value="''" />
+			<mvt:assign name="l.settings:rotating:text" value="trim(gettoken( l.settings:string, '|', 1 ))" />
+			<mvt:if expr="l.settings:rotating:text EQ ''">
+				<mvt:foreachcontinue />
+			</mvt:if>
+			<mvt:assign name="l.settings:rotating:link" value="trim(gettoken( l.settings:string, '|', 2 ))" />
+
+			<mvt:assign name="g.item_count" value="g.item_count + 1" />
+			<mvt:if expr="g.item_count EQ 1">
+				<mvt:capture variable="l.first">
+					<li class="&mvte:global:slide_class;">
+						<mvt:if expr="l.settings:rotating:link">
+							<a href="&mvt:rotating:link;">
+								&mvt:rotating:text;
+							</a>
+						<mvt:else>
+							&mvt:rotating:text;
+						</mvt:if>
+					</li>
+				</mvt:capture>
+			</mvt:if>
+
+			<li class="&mvte:global:slide_class;">
+				<mvt:if expr="l.settings:rotating:link">
+					<a href="&mvt:rotating:link;">
+						&mvt:rotating:text;
+					</a>
+				<mvt:else>
+					&mvt:rotating:text;
+				</mvt:if>
+				<mvt:comment><span class="u-font-tiny u-icon-chevron-right"></span></mvt:comment>
+			</li>
+		</mvt:foreach>
+		<mvt:assign name="g.item_count" value="g.item_count + 1" />
+		<mvt:eval expr="l.first" />
+	</ul>
+</div>
+
+
+<mvt:miva output="on" compresswhitespace="off" />
+<style>
+.v-slider-frame {
+	height: 3.5rem;
+	overflow: hidden;
+}
+
+#v-scroller {
+	background-color: #000;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	animation: scrollUp 6s linear infinite normal;
+}
+
+.v-scrollup {
+	color: #FFF;
+	font-size: 18px;
+	font-weight: 500;
+	line-height: 3.5rem;
+	margin: 0;
+	list-style: none;
+}
+
+.v-scrollup a {
+	color: #FFF;
+	text-decoration: none;
+}
+
+.v-scrollup a:hover {
+	text-decoration: underline;
+}
+
+<mvt:miva output="on" compresswhitespace="on" />
+
+<mvt:assign name="g.scroll_amount" value="rnd( ( g.item_count - 1 ) / g.item_count, 3) * -100" />
+@keyframes scrollUp {
+	from {
+		transform: translateY(0%);
+	}
+	to {
+		transform: translateY(&mvte:global:scroll_amount;%);
+	}
+}
+</style>
+
+
+<mvt:assign name="l.settings:rotating" value="''" />
+<mvt:assign name="l.settings:v_messages" value="''" />

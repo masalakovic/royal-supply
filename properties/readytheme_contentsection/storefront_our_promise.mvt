@@ -1,0 +1,14 @@
+<section class="storefront-our-promise t-defer-object" data-defer>
+    <div class="container">
+        <h2>OUR<span>PURE</span><br>PROMISE</h2>
+        <div class="subtitle">
+            <p>Our Pure Promise is about fragrance, thoughtful craftsmanship and pure ingredients.</p>
+            <p>It’s about what’s in it for you.</p>
+        </div>
+        <h3>Quality</h3>
+        <p>We craft our products using highly concentrated essential oils, high quality wax, and ethically sourced pure ingredients.</p>
+        <h3>Artistry</h3>
+        <p>We work closely with expert glass-blowing artists to create the vessels that hold our thoughtfully blended fragranced products.</p>
+        <a class="btn btn--white btn--s" href="/about-us.html">Our Story</a>
+    </div>
+</section>

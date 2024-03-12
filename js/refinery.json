@@ -1,0 +1,13 @@
+{
+    "code": "refinery",
+    "type": "L",
+    "branchless_filepath": "b03/themes/colossus/extensions/facets/refinery/refinery.js",
+    "is_global": true,
+    "active": false,
+    "attributes": [
+        {
+            "name": "type",
+            "value": "text/javascript"
+        }
+    ]
+}

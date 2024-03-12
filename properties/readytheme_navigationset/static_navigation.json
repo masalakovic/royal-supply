@@ -1,0 +1,57 @@
+{
+    "descrip": "This is the side navigation for all static content pages.",
+    "items": [
+        {
+            "active": 1,
+            "id": "bcf21c2cc3d0886b4bfaa5afd5fbec56",
+            "link": "<a href=\"https://royalsupply.mivatest.com/about-us.html\" target=\"_self\">About Us</a>",
+            "link_dest": "ABUS",
+            "link_targ": "_self",
+            "link_type": "G",
+            "name": "About Us",
+            "url": "https://royalsupply.mivatest.com/about-us.html"
+        },
+        {
+            "active": 1,
+            "id": "854f344f18f75280959245ece8a53635",
+            "link": "<a href=\"https://royalsupply.mivatest.com/contact-us.html\" target=\"_self\">Contact Us</a>",
+            "link_dest": "CTUS",
+            "link_targ": "_self",
+            "link_type": "G",
+            "name": "Contact Us",
+            "url": "https://royalsupply.mivatest.com/contact-us.html"
+        },
+        {
+            "active": 1,
+            "id": "4079b7c62188dd47875aa3014af60f4f",
+            "link": "<a href=\"https://royalsupply.mivatest.com/frequently-asked-questions.html\" target=\"_self\">Frequently Asked Questions</a>",
+            "link_dest": "FAQS",
+            "link_targ": "_self",
+            "link_type": "G",
+            "name": "Frequently Asked Questions",
+            "url": "https://royalsupply.mivatest.com/frequently-asked-questions.html"
+        },
+        {
+            "active": 1,
+            "id": "7ebc6fb40bee4103c62b156a25587d07",
+            "link": "<a href=\"https://royalsupply.mivatest.com/privacy-policy.html\" target=\"_self\">Privacy Policy</a>",
+            "link_dest": "PRPO",
+            "link_targ": "_self",
+            "link_type": "G",
+            "name": "Privacy Policy",
+            "url": "https://royalsupply.mivatest.com/privacy-policy.html"
+        },
+        {
+            "active": 1,
+            "id": "7579002e1b216d2993241467d34c113b",
+            "link": "<a href=\"https://royalsupply.mivatest.com/shipping-and-return-policy.html\" target=\"_self\">Shipping &amp; Return Policy</a>",
+            "link_dest": "SARP",
+            "link_targ": "_self",
+            "link_type": "G",
+            "name": "Shipping & Return Policy",
+            "url": "https://royalsupply.mivatest.com/shipping-and-return-policy.html"
+        }
+    ],
+    "layout": "S",
+    "name": "Static Page Navigation"
+}

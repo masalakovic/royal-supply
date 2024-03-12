@@ -1,0 +1,73 @@
+<mvt:item name="html_profile" />
+<head>
+    <mvt:if expr="NOT ISNULL l.settings:product:page_title">
+        <title>&mvt:product:page_title;</title>
+    <mvt:elseif expr="NOT ISNULL l.settings:page:title">
+        <title>&mvt:page:title;</title>
+    <mvt:else>
+        <title>&mvt:product:name;: &mvt:store:name;</title>
+    </mvt:if>
+    <mvt:item name="head" param="head_tag" />
+    <mvt:item name="attributemachine" param="head" />
+    <mvt:item name="product_display_imagemachine" param="head" />
+<script
+  src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+  crossorigin="anonymous"></script>
+</head>
+<body id="js-&mvte:page:code;" class="<mvt:eval expr="tolower(l.settings:page:code)" /> single-column &mvte:product:code;">
+    <mvt:item name="hdft" param="global_header" />  
+    <div class="row hdft-header">
+        <mvt:item name="hdft" param="header" />
+    </div>
+    <div class="row prod-ctgy-hdft-header">
+        <mvt:item name="prod_ctgy_hdft" param="prod_header" />
+    </div>
+
+    <mvt:item name="product_display" />
+
+
+    <mvt:item name="hdft" param="global_footer" />  
+
+
+    <mvt:item name="hdft" param="footer" />
+<script>
+            $('form#js-purchase-product').off();
+            $('input.add-to-cart').off().click(function(e) {
+                e.preventDefault()
+
+                if(!$("#designed-thumbnails").children()[0]) {
+                    // if there is no designed img
+                    $('form#js-purchase-product').submit()
+                    return
+                }
+
+                let thumb = $('#designed-thumbnails').children().first().find('img').first()
+
+                let img_url = thumb.attr('src');
+
+                $.ajax({
+                    method: 'POST',
+                    url: '//demo.pcinet.com/mm5/custom-designer-backpacks/upload/script.php',
+                    data: {
+                        image : img_url
+                    },
+                    success: (data, textStatus) => {
+                        if (textStatus == 'success') {
+                            console.log('success')
+                            $('input#designed_image').val('//demo.pcinet.com/mm5/custom-designer-backpacks/upload/' + data)
+
+                            $('form#js-purchase-product').submit()
+                        }
+                        else {
+                            $('form#js-purchase-product').submit()
+                        }
+                    }
+                });
+
+                return false;
+
+            });
+</script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<div class="o-wrapper o-wrapper--flush rtrt-oils">
+    <div class="rtrt-oils__inner">
+        <h2>
+            A Grapefruit Like No Other
+            <span>grapefruit | fern | applewood</span>
+        </h2>
+        <p class="rtrt-oils__description">
+           Zesty grapefruit mingles with fresh pineapple and orange peel while creamy gardenia, earthy green fern, and warm apple wood provide a sophisticated foundation to our White Grapefruit fragrance.
+
+        </p>
+
+        <ul class="rtrt-oils__list">
+            <li class="rtrt-oils__list-opener js-rtrt-oils-list-opener" data-name="tab1">
+                <img src="graphics/00000001/1/summer-fling-grapefruit-note.png" alt="">
+                <span>Grapefruit</span>
+            </li>
+            <li class="rtrt-oils__list-opener js-rtrt-oils-list-opener active" data-name="tab2">
+                <img src="graphics/00000001/1/summer-fling-fern-note.png" alt="">
+                <span>Fern </span>
+            </li>
+            <li class="rtrt-oils__list-opener js-rtrt-oils-list-opener" data-name="tab3">
+                <img src="graphics/00000001/1/summer-fling-applewood-note.png" alt="">
+                <span>Apple Wood</span>
+            </li>
+        </ul>
+        <div class="rtrt-oils__content-holder">
+            <div class="rtrt-oils__content" data-name="tab1">
+                <span>refreshing and uplifting</span>
+                <figure class="rtrt-oils__quote">
+                    <blockquote>
+                        <q>There is nothing quite as exhilarating as the mood-lifting aroma of fresh, fully ripened grapefruit. 
+                        </q>
+                    </blockquote>
+                    <figcaption>
+                        - Jon Bresler,
+                        <span>Founder</span>
+                    </figcaption>
+                </figure>
+            </div>
+            <div class="rtrt-oils__content active" data-name="tab2">
+                <span>fresh and green</span>
+                <figure class="rtrt-oils__quote">
+                    <blockquote>
+                        <q>Fern is a mossy, earthy note that lends a watery fresh greenness to a fragrance. 
+ 
+                        </q>
+                    </blockquote>
+                    <figcaption>
+                        - Jon Bresler,
+                        <span>Founder</span>
+                    </figcaption>
+                </figure>
+            </div>
+            <div class="rtrt-oils__content" data-name="tab3">
+                <span>warm and mellow</span>
+                <figure class="rtrt-oils__quote">
+                    <blockquote>
+                        <q>The woodiness of mellow apple wood rounds out a fragrance with warmth and elegance.
+                        </q>
+                    </blockquote>
+                    <figcaption>
+                        - Jon Bresler,
+                        <span>Founder</span>
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+    </div>
+</div>

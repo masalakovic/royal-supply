@@ -1,0 +1,66 @@
+{
+    "hdft": {
+        "footer": {
+            "template_filename": "quot-footer.mvc"
+        },
+        "header": {
+            "template_filename": "quot-header.mvc"
+        }
+    },
+    "quote_content": {
+        "advanced": 1,
+        "b_height": 75,
+        "b_width": 75,
+        "code": 1,
+        "constrain": "B",
+        "created": 1,
+        "expires": 1,
+        "fields_custom": 1,
+        "fields_custom_order": 1,
+        "imagetypes": [
+            "Main"
+        ],
+        "order_id": 1,
+        "paginate": 1,
+        "per_page": 10,
+        "quote_id": 1,
+        "status": 1,
+        "template_filename": "quot-miva-quote-content.mvc"
+    },
+    "quote_info": {
+        "advanced": 0,
+        "b_height": 75,
+        "b_width": 75,
+        "code": 1,
+        "constrain": "B",
+        "created": 1,
+        "expires": 1,
+        "fields_custom": 1,
+        "fields_custom_order": 1,
+        "imagetypes": 1,
+        "order_id": 1,
+        "paginate": 1,
+        "per_page": 10,
+        "quote_id": 1,
+        "status": 1,
+        "template_filename": "quot-miva-quote-info.mvc"
+    },
+    "quote_notes": {
+        "advanced": 0,
+        "b_height": 75,
+        "b_width": 75,
+        "code": 1,
+        "constrain": "B",
+        "created": 1,
+        "expires": 1,
+        "fields_custom": 1,
+        "fields_custom_order": 1,
+        "imagetypes": 1,
+        "order_id": 1,
+        "paginate": 1,
+        "per_page": 10,
+        "quote_id": 1,
+        "status": 1,
+        "template_filename": "quot-miva-quote-notes.mvc"
+    }
+}

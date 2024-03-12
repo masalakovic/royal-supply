@@ -1,0 +1,113 @@
+{
+    "attributemachine": {
+        "dependency_resolution": "first",
+        "displaydiscounts": 0,
+        "enabled": 1,
+        "inv_short": 0,
+        "invalid_msg": "Please select a valid combination of attributes.",
+        "missing_radio_msg": "<br>An option must be selected for <b>%attribute_prompt%</b>.",
+        "missing_text_msg": "<br>A value must be entered for <b>%attribute_prompt%</b>.",
+        "predictdiscounts": 0,
+        "preload": 1,
+        "price": "base",
+        "swatch_element_id": "js-swatches-%product_id%",
+        "template_filename": "ctgy_prod_swatch-attributemachine.mvc",
+        "template_id": 417
+    },
+    "category_listing": {
+        "additionalprice": "base",
+        "advanced": 1,
+        "b_height": 234,
+        "b_width": 234,
+        "button_add": 1,
+        "button_buy": 1,
+        "button_wish": 0,
+        "col_num": 2,
+        "constrain": "B",
+        "default_sort": "disp_order",
+        "displaydiscounts": 1,
+        "field_code": 1,
+        "field_desc": 0,
+        "field_name": 1,
+        "field_price": 1,
+        "field_sku": 0,
+        "field_weight": 0,
+        "fields_custom": [
+            {
+                "code": "main",
+                "module": "productimagecustomfields"
+            }
+        ],
+        "format": "X",
+        "image": "T",
+        "imagemachine_enabled": 1,
+        "invmsg": "L",
+        "items_per_page_filter": 1,
+        "linkexcludecat": 1,
+        "mode": "ctgy",
+        "page_disp_count": 3,
+        "per_page": 12,
+        "predictdiscounts": 1,
+        "price": "sale",
+        "reverse_default_disp_order": 0,
+        "sort_by": {
+            "best": 1,
+            "code": 0,
+            "name": 0,
+            "new": 1,
+            "price": 1,
+            "switch": 1
+        },
+        "template_filename": "ctgy_prod_swatch-category_listing.mvc",
+        "template_id": 418
+    },
+    "category_listing_imagemachine": {
+        "closeup_active": 1,
+        "closeup_height": 500,
+        "closeup_size": "B",
+        "closeup_width": 500,
+        "enabled": 1,
+        "head": {
+            "template_filename": "ctgy_prod_swatch-category_listing_imagemachine-head.mvc",
+            "template_id": 419
+        },
+        "image_height": 384,
+        "image_size": "B",
+        "image_width": 272,
+        "legacy_image": "N",
+        "main_image": "js-main-image-%product_id%",
+        "preload": 0,
+        "thumb_active": 0,
+        "thumb_height": 42,
+        "thumb_width": 42
+    },
+    "hdft": {
+        "footer": {
+            "template_filename": "ctgy_prod_swatch-footer.mvc",
+            "template_id": 421
+        },
+        "header": {
+            "template_filename": "ctgy_prod_swatch-header.mvc",
+            "template_id": 420
+        }
+    },
+    "product_attributes": {
+        "template_filename": "ctgy_prod_swatch-product_attributes.mvc",
+        "template_id": 422
+    },
+    "seo_settings": {
+        "cat_lit": "category",
+        "cat_lit_choice": "category",
+        "plit_in_bc": 0,
+        "prod_lit": "product",
+        "prod_lit_choice": "product",
+        "sc_always": 0,
+        "sf_active": 0,
+        "sl_active": 0,
+        "sm_active": 1,
+        "suffix": "html",
+        "suffix_choice": "html",
+        "url_delim": "/",
+        "urlprefix": "http://demo.pcinet.com/"
+    }
+}

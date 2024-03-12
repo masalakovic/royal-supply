@@ -1,0 +1,31 @@
+<mvt:item name="html_profile" />
+<head>
+    <mvt:if expr="NOT ISNULL l.settings:product:page_title">
+        <title>&mvt:product:page_title;</title>
+    <mvt:elseif expr="NOT ISNULL l.settings:page:title">
+        <title>&mvt:page:title;</title>
+    <mvt:else>
+        <title>&mvt:product:name;: &mvt:store:name;</title>
+    </mvt:if>
+    <mvt:item name="head" param="head_tag" />
+    <mvt:item name="attributemachine" param="head" />
+    <mvt:item name="product_display_imagemachine" param="head" />
+</head>
+<body id="js-&mvte:page:code;" class="<mvt:eval expr="tolower(l.settings:page:code)" /> single-column &mvte:product:code;">
+    <mvt:item name="hdft" param="global_header" />  
+    <div class="row hdft-header">
+        <mvt:item name="hdft" param="header" />
+    </div>
+    <div class="row prod-ctgy-hdft-header">
+        <mvt:item name="prod_ctgy_hdft" param="prod_header" />
+    </div>
+
+    <mvt:item name="product_display" />
+
+
+    <mvt:item name="hdft" param="global_footer" />  
+
+
+    <mvt:item name="hdft" param="footer" />
+</body>
+</html>

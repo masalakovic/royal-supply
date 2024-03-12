@@ -1,0 +1,74 @@
+<mvt:item name="html_profile" />
+
+<head itemscope itemtype="http://schema.org/WebSite">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="&mvt:global:basehref;" />
+    <mvt:if expr="NOT ISNULL l.settings:page:title">
+        <title itemprop="name">&mvt:page:title;</title>
+    <mvt:else>
+        <title itemprop="name">&mvt:store:name;</title>
+    </mvt:if>
+    <meta name="description" content="">
+    <mvt:item name="head" param="css_list" />
+    <mvt:item name="head" param="head_tag" />
+    <style>
+        .rtrt-oils__inner {
+            background-color: #f9fafc;
+            line-height: 1.2;
+            max-width: 1010px;
+            margin: 0 auto 40px;
+            padding: 40px 0 56px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
+</head>
+
+<body id="js-RTRT" class="o-site-wrapper t-page-&mvt:global:pageClass;">
+    <section class="o-layout">
+        <div class="o-layout__item">
+            <mvt:item name="hdft" param="global_header" />
+        </div>
+    </section>
+    <div class="o-wrapper o-wrapper--flush">
+        <div class="rtrt-hero"
+            style="background-image: url('graphics/00000001/spiced_pomander_bkgrd.png'); background-size: cover; background-repeat: no-repeat; height: 532px;">
+
+            <figure class="rtrt-hero__figure">
+                <blockquote>
+                    <mvt:item name="customfields"
+                        param="Read_Category_Code(g.Category_Code, 'subtitle_shop_category')" />
+                    <figcaption>&mvt:customfields</figcaption>
+                    <figcaption>
+                        <h2>&mvt:category:name;<h2>
+                    </figcaption>
+                    <figcaption>
+                        <mvt:item name="prod_ctgy_hdft" param="ctgy_header" />
+                    </figcaption>
+                </blockquote>
+            </figure>
+        </div>
+    </div>
+
+
+    <mvt:item name="readytheme" param="contentsection( 'holiday-collection_category_list' )" />
+
+    <div class="ctg-banner-description">
+        <mvt:item name="prod_ctgy_hdft" param="ctgy_footer" />
+        <p>
+            <mvt:item name="hdft" param="footer" />
+        </p>
+    </div>
+
+    <mvt:item name="readytheme" param="productlisting( 'holiday-listing' )" />
+    <mvt:item name="readytheme" param="contentsection( 'spiced_oils' )" />
+    <mvt:item name="readytheme" param="contentsection( 'shop_the_collection' )" />
+
+    <mvt:item name="hdft" param="global_footer" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+</body>
+
+</html>

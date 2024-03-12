@@ -1,0 +1,39 @@
+<section class="t-storefront-featured-products t-defer-object" data-defer>
+  <div data-ltk-merchandiseblock="e9077ba8-57dc-4968-b3c2-96bd4a170533" class="container">
+    <div class="t-storefront-featured-products__container-top">
+      <h2 class="t-storefront-featured-products__heading">Picked for You</h2>
+    </div>
+    <ul class="x-product-list x-product-list--slicked t-storefront-featured-product-list"
+      data-hook="featured-products">
+      <script type="text/html">
+      <li>
+        <a href="@Recommendation.LinkUrl" id="p-@Recommendation.Sku" class="x-product-list__item" style="text-decoration:none;">
+          <figure class="x-product-list__figure">
+            <picture class="x-product-list__picture">
+              <span class="x-product-list__picture-link" href="@Recommendation.LinkUrl">
+                <img class="x-product-list__image" data-lazy="https://www.lafco.com/@Recommendation.ImageUrl" src=""
+                  width="250" height="250" alt="">
+              </span>
+            </picture>
+            <figcaption class="x-product-list__details">
+              <span class="x-product-list__details-link" href="@Recommendation.LinkUrl">
+                <div class="x-product-list__name">@Recommendation.Subcategory</div>
+                <div class="x-product-list__scent">@Recommendation.Title</div>
+                <div class="box-price">@Recommendation.Price</div>
+              </span>
+            </figcaption>
+            <br />
+            <form method="post" action="https://www.lafco.com/">
+              <input type="hidden" name="Screen" value="BASK">
+              <input type="hidden" name="Action" value="ADPR">
+              <input type="hidden" name="Quantity" value="1">
+              <input type="hidden" name="Product_Code" value="@Recommendation.Sku">
+              <input id="add-@Recommendation.Sku" aria-labelledby="p-@Recommendation.Sku add-@Recommendation.Sku" type="submit" value="Add To Cart" class="btn btn--white btn--s">
+            </form>
+          </figure>
+        </a>
+      </li>
+      </script>
+    </ul>
+  </div>
+</section>

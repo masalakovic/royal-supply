@@ -1,0 +1,25 @@
+<div class="o-layout o-layout--align-center seasonal_gifts">
+	<div class="o-layout__item u-width-12">
+		<div>	
+			<h1> Gifts by mood </h1>
+		</div>
+	</div>
+	<div class="o-layout__item u-width-4">
+		<div>
+			<mvt:item name="readytheme" param="image( 'Comfort' )" />
+			<p class="seasonal_gift_items"> Comfort </p>
+		</div>
+	</div>
+	<div class="o-layout__item u-width-4">
+		<div>
+			<mvt:item name="readytheme" param="image( 'Relaxation' )" />
+			<p class="seasonal_gift_items"> Relaxation </p>
+		</div>
+	</div>
+	<div class="o-layout__item u-width-4">
+		<div>
+			<mvt:item name="readytheme" param="image( 'Positivity' )" />
+			<p class="seasonal_gift_items"> Positivity </p>
+		</div>
+	</div>
+</div>

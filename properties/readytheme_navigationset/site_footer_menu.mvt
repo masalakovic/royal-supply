@@ -1,0 +1,9 @@
+<mvt:if expr="NOT ISNULL l.settings:readytheme:navigationitems">
+	<nav class="site-footer__menu font--uppercase">
+		<mvt:foreach iterator="navigationitem" array="readytheme:navigationitems">
+			&mvt:navigationitem:link;
+		</mvt:foreach>
+		<mvt:item name="affiliatelink" />
+	</nav>
+	<!-- end .site-footer__menu -->
+</mvt:if>

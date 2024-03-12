@@ -1,0 +1,34 @@
+<mvt:item name="html_profile" />
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="&mvt:global:basehref;">
+    <mvt:if expr="NOT ISNULL l.settings:page:title">
+        <title>&mvt:page:title;</title>
+    <mvt:else>
+        <title>&mvt:store:name;: &mvt:page:name;</title>
+    </mvt:if>
+    <mvt:item name="head" param="css_list" />
+    <mvt:item name="head" param="head_tag" />
+</head>
+<body class="&mvt:page:code;" id="JS_&mvt:page:code;">
+
+    <mvt:item name="hdft" param="global_header" />
+
+    <div class="row hdft-header">
+        <mvt:item name="hdft" param="header" />
+    </div>
+    <div class="row reviews-seo-content">
+        <div class="yotpo yotpo-pictures-widget" data-gallery-id="5e7b884e99971d296838b99d"></div>
+        <script type="text/javascript"> (function e(){var e=document.createElement("script");e.type="text/javascript",e.async=!0, e.src="//staticw2.yotpo.com/t1C5E5YEFlh64uhpoHFetSLFp7iTlG1KjK89roBP/widget.js";var t=document.getElementsByTagName("script")[0]; t.parentNode.insertBefore(e,t)})(); </script>
+        <div id='yotpo-testimonials-custom-tab'></div>
+    </div>
+    <div class="row hdft-footer">
+        <mvt:item name="hdft" param="footer" />
+    </div>
+
+    <mvt:item name="hdft" param="global_footer" />  
+
+</body>
+</html>

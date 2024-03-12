@@ -1,0 +1,140 @@
+<mvt:assign name="g.http_referer" value="s.http_referer"/>
+<mvt:if expr="'LOGU' CIN g.http_referer">
+    <mvt:exit>
+</mvt:if>
+<mvt:if expr="s.remote_addr EQ '37.57.3.77'">
+    <mvt:if expr="'LOGNW' CIN g.http_referer">
+        <mvt:exit>
+    </mvt:if>
+    <mvt:else>
+        <mvt:if expr="'LOGU' CIN g.http_referer">
+            <mvt:exit>
+        </mvt:if>
+</mvt:if>
+
+<mvt:if expr="NOT ISNULL g.website">
+    <meta http-equiv="refresh" content="0;url=&mvte:urls:NTFD:auto;"/>
+    <mvt:else>
+        <mvt:assign name="g.eol" value="asciichar(13) $ asciichar(10)"/>
+
+        <mvt:if expr="(ISNULL g.website)">
+
+            <mvt:comment>
+                <!--
+                This will create the From address in proper format: "Store Name" <store_email@store_domain>
+                -->
+            </mvt:comment>
+            <mvt:assign name="l.mail:from"
+                        value="asciichar(34) $ g.store:name $ asciichar(34) $ ' <' $ 'info@lafco.com' $ '>'"/>
+
+            <mvt:comment>
+                <!--
+                This will create the Reply-To address in proper format: "Visitor Name" <visitor_email@visitor_domain>
+                -->
+            </mvt:comment>
+            <mvt:assign name="l.mail:reply"
+                        value="asciichar(34) $ g.register_full_name $ asciichar(34) $ ' <' $ g.register_email $ '>'"/>
+
+            <mvt:comment>
+                <!--
+                By default, this form is designed to send to the store email address.
+                You can change this by replacing g.store:email with 'my_email@my_domain.com'.
+                -->
+            </mvt:comment>
+            <mvt:comment><mvt:if expr="s.remote_addr EQ '37.57.3.77'">
+                <mvt:assign name="l.mail:to" value="'elena.yurievna3@gmail.com'"/>
+                <mvt:else></mvt:comment>
+            <mvt:assign name="l.mail:to" value="'info@lafco.com'"/>
+            <mvt:comment></mvt:if></mvt:comment>
+
+
+
+
+        <mvt:comment>
+            <!--
+            If you would like to CC the form, you can add an address or a comma separated list to CC to
+            multiple addresses.
+            <mvt:assign name="l.mail:cc" value="'my_email@my_domain.com'" />
+            - OR -
+            <mvt:assign name="l.mail:cc" value="'my_email@my_domain.com,my_other_email@my_domain.com'" />
+            -->
+        </mvt:comment>
+        <mvt:assign name="l.mail:cc" value="''"/>
+
+        <mvt:comment>
+            <!--
+            If you would like to BCC the form, you can add an address or a comma separated list to BCC to
+            multiple addresses.
+            <mvt:assign name="l.mail:bcc" value="'my_email@my_domain.com'" />
+            - OR -
+            <mvt:assign name="l.mail:bcc" value="'my_email@my_domain.com,my_other_email@my_domain.com'" />
+            -->
+        </mvt:comment>
+        <mvt:assign name="l.mail:bcc" value="''"/>
+
+        <mvt:comment>
+            <!--
+            This will create a custom subject line for the email.
+            -->
+        </mvt:comment>
+        <mvt:assign name="l.mail:subject" value="g.register_resolve_issue"/>
+
+        <mvt:comment>
+            <!--
+            This will create the store message from user input.
+            -->
+        </mvt:comment>
+        <mvt:assign name="l.mail:message" value="'Full name: ' $ g.register_full_name $ g.eol $
+            'Email address: ' $ g.register_email $ g.eol $
+            'Describe issue: ' $ g.register_describe_issue $ g.eol $
+            'Order number: ' $ g.register_order_number $ g.eol $
+            'Product name: ' $ g.register_product_name $ g.eol $
+            'Resolve issue: ' $ g.register_resolve_issue $ g.eol $" />
+
+        <mvt:comment>
+            <!--
+            If you would like to send any additional SMTP headers, you can do that here.
+            -->
+        </mvt:comment>
+        <mvt:assign name="l.mail:headers" value="l.mail:headers $ 'Reply-To:' $ l.mail:reply $ g.eol"/>
+        <mvt:assign name="l.mail:headers" value="l.mail:headers $ 'Return-Path:' $ l.mail:from $ g.eol"/>
+        <mvt:assign name="l.mail:headers" value="l.mail:headers $ 'MIME-Version: 1.0' $ g.eol"/>
+        <mvt:assign name="l.mail:headers" value="l.mail:headers $ 'Content-Type: text/plain; charset=utf-8' $ g.eol"/>
+
+        <mvt:comment>
+            <!--
+            This function will send an email to the store.
+            -->
+        </mvt:comment>
+        <mvt:do file="g.Module_Library_Utilities" name="g.sent" value="v9_SendEmail(l.mail)"/>
+
+        <mvt:comment>
+            <!--
+            This function will send a confirmation email to the visitor.
+            If you do not wish to send a confirmation email, you can either `mvt:comment` this section
+            out or delete it all together.
+            -->
+
+        <mvt:assign name="l.visitor_mail:from"
+                    value="asciichar(34) $ g.store:name $ asciichar(34) $ ' <' $ 'info@lafco.com' $ '>'"/>
+        <mvt:assign name="l.visitor_mail:to"
+                    value="asciichar(34) $ g.register_full_name $ asciichar(34) $ ' <' $ g.register_email $ '>'"/>
+        <mvt:assign name="l.visitor_mail:subject"
+                    value="'[' $ g.store:name $ ' New Customer] ' $ g.contactSubject"/>
+        <mvt:assign name="l.visitor_mail:message"
+                    value="'Dear ' $ g.register_full_name $ ',' $ g.eol $ g.eol $ 'Thanks for your contacts! They have been saved! We will contact you shortly' $ g.eol $ g.eol $"/>
+        <mvt:assign name="l.visitor_mail:headers"
+                    value="'Reply-To:' $ asciichar(34) $ g.store:name $ asciichar(34) $ ' <' $ 'info@lafco.com' $ '>' $ g.eol"/>
+        <mvt:do file="g.Module_Library_Utilities" name="g.visitor_sent" value="v9_SendEmail(l.visitor_mail)"/>
+        </mvt:comment>
+
+        <mvt:if expr="g.sent">
+            <meta http-equiv="refresh" content="0;url=&mvte:urls:NDHLPFRM:auto_sep;status=submitted"/>
+            <mvt:else>
+                <meta http-equiv="refresh" content="0;url=&mvte:urls:NDHLPFRM:auto_sep;status=error"/>
+        </mvt:if>
+        <mvt:else>
+            <meta http-equiv="refresh"
+                  content="0;url=&mvte:urls:LOGN:auto_sep;status=error&amp;register_full_name=&mvte:global:register_full_name;&amp;register_email=&mvte:global:register_email;&amp;register_describe_issue=&mvte:global:register_describe_issue;&amp;register_order_number=&mvte:global:register_order_number;&amp;register_product_name=&mvte:global:register_product_name;&amp;register_resolve_issue=&mvte:global:register_resolve_issue;&amp;fault=has-error"/>
+</mvt:if>
+</mvt:if>

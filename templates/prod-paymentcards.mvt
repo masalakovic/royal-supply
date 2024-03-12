@@ -1,0 +1,57 @@
+<mvt:if expr="l.settings:paymentcards:paymentcard_count EQ 0">
+	<div class="customer_account_payment_cards_empty_container">No payment cards found</div>
+	<mvt:exit />
+</mvt:if>
+
+<div class="customer_account_payment_cards">
+	<mvt:foreach iterator="paymentcard" array="paymentcards:paymentcards">
+		<span class="customer_account_payment_card">
+			<span class="customer_account_payment_card_title">
+				&mvte:paymentcard:type; ending in &mvte:paymentcard:lastfour;
+				<span class="customer_account_payment_card_expiration">
+					<mvt:if expr="mktime_t( l.settings:paymentcard:exp_year, l.settings:paymentcard:exp_month, s.tm_mday, s.tm_hour, s.tm_min, s.tm_sec, 'local') LT s.time_t">
+						<span class="customer_account_payment_card_expired">(expired)</span>
+					</mvt:if>
+
+					&mvte:paymentcard:exp_month;/&mvte:paymentcard:exp_year;
+				</span>
+			</span>
+
+			<span class="customer_account_payment_card_row">
+				<span class="customer_account_payment_card_name">&mvte:paymentcard:fname; &mvte:paymentcard:lname;</span>
+				<span class="customer_account_payment_card_actions">
+					<a href="&mvte:urls:CPCE:auto_sep;PaymentMethod=paymentcard:&mvta:paymentcard:id;">Edit</a> |
+					<a href="#" onclick="if ( confirm( 'Deleting this payment card cannot be undone.\x0A\x0AContinue?' ) ) { MMDynamic_Form_Submit( '&mvtj:urls:CPCD:secure;', { 'Action': 'DCPC', 'PaymentCard_ID': '&mvtj:paymentcard:id;', 'CSRF_Token': '&mvtj:global:Basket:csrf_token;' } ); } return false;">Delete</a>
+				</span>
+			</span>
+
+			<mvt:if expr="NOT ISNULL l.settings:paymentcard:addr1">
+				<span class="customer_account_payment_card_row">&mvte:paymentcard:addr1;</span>
+			</mvt:if>
+
+			<mvt:if expr="NOT ISNULL l.settings:paymentcard:addr2">
+				<span class="customer_account_payment_card_row">&mvte:paymentcard:addr2;</span>
+			</mvt:if>
+
+			<mvt:if expr="NOT ISNULL l.settings:paymentcard:city OR NOT ISNULL l.settings:paymentcard:state OR NOT ISNULL l.settings:paymentcard:zip">
+				<span class="customer_account_payment_card_row">
+					<mvt:if expr="NOT ISNULL l.settings:paymentcard:city">
+						&mvte:paymentcard:city;<mvt:if expr="NOT ISNULL l.settings:paymentcard:city AND NOT ISNULL l.settings:paymentcard:state">,</mvt:if>
+					</mvt:if>
+
+					<mvt:if expr="NOT ISNULL l.settings:paymentcard:state">
+						&mvte:paymentcard:state;
+					</mvt:if>
+
+					<mvt:if expr="NOT ISNULL l.settings:paymentcard:zip">
+						&mvte:paymentcard:zip;
+					</mvt:if>
+				</span>
+			</mvt:if>
+
+			<mvt:if expr="NOT ISNULL l.settings:paymentcard:cntry">
+				<span class="customer_account_payment_card_row">&mvte:paymentcard:cntry;</span>
+			</mvt:if>
+		</span>
+	</mvt:foreach>
+</div>

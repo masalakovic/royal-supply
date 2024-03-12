@@ -1,0 +1,21 @@
+{
+    "code": "vertical_carousel_light",
+    "type": "L",
+    "branchless_filepath": "css/00000001/b04/vertical_carousel_light.css",
+    "is_global": true,
+    "active": false,
+    "attributes": [
+        {
+            "name": "type",
+            "value": "text/css"
+        },
+        {
+            "name": "media",
+            "value": "all"
+        },
+        {
+            "name": "rel",
+            "value": "stylesheet"
+        }
+    ]
+}

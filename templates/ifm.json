@@ -1,0 +1,12 @@
+{
+    "hdft": {
+        "footer": {
+            "template_filename": "ifm-footer.mvc",
+            "template_id": 435
+        },
+        "header": {
+            "template_filename": "ifm-header.mvc",
+            "template_id": 434
+        }
+    }
+}

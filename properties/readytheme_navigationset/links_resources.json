@@ -1,0 +1,54 @@
+{
+    "items": [
+        {
+            "active": 1,
+            "id": "02be6818635fb0413fcb355081dd680d",
+            "link": "<a href=\"https://demo.pcinet.com/customer-account.html\" target=\"_self\">Manage Your Account</a>",
+            "link_dest": "ACLN",
+            "link_targ": "_self",
+            "link_type": "G",
+            "name": "Manage Your Account",
+            "url": "https://demo.pcinet.com/customer-account.html"
+        },
+        {
+            "active": 1,
+            "id": "498c4c2549b5ccbc5daef45e8433a643",
+            "link": "<a href=\"https://demo.pcinet.com/faqs.html\" target=\"_self\">Frequently Asked Questions</a>",
+            "link_dest": "FAQS",
+            "link_targ": "_self",
+            "link_type": "G",
+            "name": "Frequently Asked Questions",
+            "url": "https://demo.pcinet.com/faqs.html"
+        },
+        {
+            "active": 1,
+            "id": "2620d2def8f0e14e6143f88669666785",
+            "link": "<a href=\"https://demo.pcinet.com/shipping-and-return-policy.html\" target=\"_self\">Shipping Information</a>",
+            "link_dest": "SARP",
+            "link_targ": "_self",
+            "link_type": "G",
+            "name": "Shipping Information",
+            "url": "https://demo.pcinet.com/shipping-and-return-policy.html"
+        },
+        {
+            "active": 1,
+            "id": "df62759ca4b94836dfc9ef6860d22778",
+            "link": "Returns and Exchanges",
+            "link_targ": "_self",
+            "link_type": "N",
+            "name": "Returns and Exchanges"
+        },
+        {
+            "active": 1,
+            "id": "2855b2c50e4b0745e2a4da0eaf0667b8",
+            "link": "<a href=\"https://demo.pcinet.com/contact-us.html\" target=\"_self\">Contact Us</a>",
+            "link_dest": "CTUS",
+            "link_targ": "_self",
+            "link_type": "G",
+            "name": "Contact Us",
+            "url": "https://demo.pcinet.com/contact-us.html"
+        }
+    ],
+    "layout": "S",
+    "name": "Global Footer Customer Services"
+}

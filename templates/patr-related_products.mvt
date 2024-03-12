@@ -1,0 +1,38 @@
+<div class="breaker show medium-hide"></div>
+<div class="breaker show medium-hide"></div>
+<div class="row related-products">
+	<div class="column whole">
+		<h4 class="nm">You May Also Like</h4>
+		<div class="sky">&bull;&bull;&bull;&bull;&bull;</div>
+	</div>
+	<div class="breaker show medium-hide"></div>
+	<div class="column whole related-products-carousel">
+		<div id="js-related-products-carousel" class="column whole np">
+			<mvt:foreach iterator="product" array="related_products:products">
+				<div class="category-product">
+					<a href="&mvte:product:link;" title="&mvt:product:name;">
+						<span class="category-product-image-wrapper flag &mvt:product:flag;">
+							<mvt:if expr="NOT ISNULL l.settings:product:imagetypes:main">
+								<img src="&mvte:product:imagetypes:main;" alt="&mvte:product:name;" title="&mvte:product:name;" />
+							<mvt:else>
+								<img src="&mvte:global:theme_path;/images/img_no_thumb.jpg" alt="&mvte:product:name;" title="&mvte:product:name;" />
+							</mvt:if>
+						</span>
+						<span class="breaker"></span>
+						<p class="category-product-name"><a href="&mvte:product:link;">&mvt:product:name;</a></p>
+						<p>
+							<mvt:if expr="l.settings:product:base_price GT l.settings:product:price">
+								<span class="category-product-retail-price">&mvt:product:formatted_base_price;</span> <span class="category-product-sale-price">&mvt:product:formatted_price;</span>
+							<mvt:else>
+								<span class="category-product-price">&mvt:product:formatted_price;</span>
+							</mvt:if>
+							<mvt:if expr="l.settings:product:customfield_values:customfields:product_flag">
+								<span class="category-product-flag">&mvt:product:customfield_values:customfields:product_flag;</span>
+							</mvt:if>
+						</p>
+					</a>
+				</div>
+			</mvt:foreach>
+		</div>
+	</div>
+</div>

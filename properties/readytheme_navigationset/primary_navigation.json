@@ -1,0 +1,120 @@
+{
+    "items": [
+        {
+            "active": 1,
+            "id": "df2456e86e40bb1352c4af3e4be530a7",
+            "link": "<a href=\"https://royalsupply.mivatest.com/our-catalog.html\" target=\"_self\">Shop All</a>",
+            "link_dest": "CTLG",
+            "link_targ": "_self",
+            "link_type": "G",
+            "name": "Shop All",
+            "url": "https://royalsupply.mivatest.com/our-catalog.html"
+        },
+        {
+            "active": 1,
+            "id": "97db766ebde7c2087b698ba3b47e70ce",
+            "items": [
+                {
+                    "active": 1,
+                    "id": "89600b47f1af681a450c7632d5abb386",
+                    "link": "<a href=\"https://royalsupply.mivatest.com/sub-category-1.html\" target=\"_self\">Subcategory 1</a>",
+                    "link_dest": "sub-cat-1",
+                    "link_targ": "_self",
+                    "link_type": "C",
+                    "name": "Subcategory 1",
+                    "url": "https://royalsupply.mivatest.com/sub-category-1.html"
+                },
+                {
+                    "active": 1,
+                    "id": "bbb677cdee96e1b8a60a1ed132af9de8",
+                    "link": "<a href=\"https://royalsupply.mivatest.com/sub-category-2.html\" target=\"_self\">Subcategory 2</a>",
+                    "link_dest": "sub-cat-2",
+                    "link_targ": "_self",
+                    "link_type": "C",
+                    "name": "Subcategory 2",
+                    "url": "https://royalsupply.mivatest.com/sub-category-2.html"
+                }
+            ],
+            "link": "<a href=\"https://royalsupply.mivatest.com/category-1.html\" target=\"_self\">Category 1</a>",
+            "link_dest": "category_01",
+            "link_targ": "_self",
+            "link_type": "C",
+            "name": "Category 1",
+            "url": "https://royalsupply.mivatest.com/category-1.html"
+        },
+        {
+            "active": 1,
+            "id": "b8e919ba4dd75181463cfa406642fa6a",
+            "items": [
+                {
+                    "active": 1,
+                    "id": "02fc3c31f2ab1fb029f6681034fb399f",
+                    "link": "<a href=\"https://royalsupply.mivatest.com/sub-category-3.html\" target=\"_self\">Subcategory 3</a>",
+                    "link_dest": "sub-cat-3",
+                    "link_targ": "_self",
+                    "link_type": "C",
+                    "name": "Subcategory 3",
+                    "url": "https://royalsupply.mivatest.com/sub-category-3.html"
+                },
+                {
+                    "active": 1,
+                    "id": "f7ea92b23cfe0636b6f8e89b33c248c6",
+                    "link": "<a href=\"https://royalsupply.mivatest.com/sub-category-4.html\" target=\"_self\">Subcategory 4</a>",
+                    "link_dest": "Sub-cat-4",
+                    "link_targ": "_self",
+                    "link_type": "C",
+                    "name": "Subcategory 4",
+                    "url": "https://royalsupply.mivatest.com/sub-category-4.html"
+                }
+            ],
+            "link": "<a href=\"https://royalsupply.mivatest.com/category-2.html\" target=\"_self\">Category 2</a>",
+            "link_dest": "category_02",
+            "link_targ": "_self",
+            "link_type": "C",
+            "name": "Category 2",
+            "url": "https://royalsupply.mivatest.com/category-2.html"
+        },
+        {
+            "active": 1,
+            "id": "f38cb797bb2d90fca7329dfd49c40d72",
+            "link": "<a href=\"https://royalsupply.mivatest.com/category-3.html\" target=\"_self\">Category 3</a>",
+            "link_dest": "category_03",
+            "link_targ": "_self",
+            "link_type": "C",
+            "name": "Category 3",
+            "url": "https://royalsupply.mivatest.com/category-3.html"
+        },
+        {
+            "active": 1,
+            "id": "94ec2644390bf1021eba57dfb83e8c26",
+            "link": "<a href=\"https://royalsupply.mivatest.com/category-4.html\" target=\"_self\">Category 4</a>",
+            "link_dest": "category_04",
+            "link_targ": "_self",
+            "link_type": "C",
+            "name": "Category 4",
+            "url": "https://royalsupply.mivatest.com/category-4.html"
+        },
+        {
+            "active": 1,
+            "id": "13b716c2e05c03ea4aa854c024e7237b",
+            "link": "<a href=\"https://royalsupply.mivatest.com/sale.html\" target=\"_self\">Sale</a>",
+            "link_dest": "sale",
+            "link_targ": "_self",
+            "link_type": "C",
+            "name": "Sale",
+            "url": "https://royalsupply.mivatest.com/sale.html"
+        },
+        {
+            "active": 1,
+            "id": "a96acad8ad3b13c545be3713bb53cf49",
+            "link": "<a href=\"https://royalsupply.mivatest.com/featured-products.html\" target=\"_self\">Featured Products</a>",
+            "link_dest": "featured",
+            "link_targ": "_self",
+            "link_type": "C",
+            "name": "Featured Products",
+            "url": "https://royalsupply.mivatest.com/featured-products.html"
+        }
+    ],
+    "layout": "H",
+    "name": "Primary Site Navigation Bar"
+}

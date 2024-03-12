@@ -1,0 +1,21 @@
+{
+    "code": "mmx-video",
+    "type": "Z",
+    "is_global": false,
+    "active": true,
+    "attributes": [
+        {
+            "name": "type",
+            "value": "text/javascript"
+        },
+        {
+            "name": "integrity",
+            "value": "sha256-gKDwcH8vYXDGmb2dKTX8+VS5LlvsHSRx7Ll8ZpveHgk= sha384-0rnAAK3OKPR+WKlEHx2RCpKsOxnxOIr+Q5Oq9B/SsjqjXMe8tXPWipHGVLTuUQ4r sha512-BlIc7XBJv+AIPzr7jV2tqaZVmPmJQhHVgJRiNxaFmYwIyB3B74tWnCL8SpVK3adgqX8ecyEFa05tyNJYnnTFzQ=="
+        },
+        {
+            "name": "crossorigin",
+            "value": "anonymous"
+        }
+    ],
+    "linked_pages": []
+}

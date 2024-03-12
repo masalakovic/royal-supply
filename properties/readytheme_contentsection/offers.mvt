@@ -1,0 +1,101 @@
+<mvt:if expr="l.settings:promo_1">
+<div class="container">
+	<div class="o-layout u-grids-1 u-grids-2--m">
+		<div class="o-layout__item offers-image">
+			<mvt:item name="readytheme" param="image( 'offers_2' )" />
+		</div>
+		<div class="o-layout__item offers-text">
+			<h2>Free shipping on all orders!</h2>
+			<p>There's still time to receive your order by Christmas! For a limited time enjoy free shipping on ALL orders.
+Use code: FREESHIPPING at checkout. Offer valid 12/12-12/14 only. Offer excludes AK & HI and cannot be applied to previous purchases. 
+ 	
+		</div>
+	</div>
+	<div class="o-layout">
+		<div class="o-layout__item offers-shopnow ">
+			<a class="btn btn--white" href="/">SHOP NOW</a>
+		</div>
+	</div>
+</div>
+</mvt:if>
+
+<mvt:if expr="l.settings:promo_2">
+
+</mvt:if>
+
+<div class="container">
+	<div class="o-layout u-grids-1 u-grids-2--m">
+		<div class="o-layout__item offers-image">
+			<mvt:item name="readytheme" param="image( 'chamomile-lavender-offer' )" />
+		</div>
+		<div class="o-layout__item offers-text">
+			<h2>Free 6.5oz Chamomile Lavender Candle</h2>
+			<p>Receive a free 6.5oz Chamomile Lavender candle on orders $145+. Use code: CLASSIC. Discovery Trio and gift certificates do not count toward qualifying total.  
+			</p>
+		</div>
+	</div>
+	<div class="o-layout">
+		<div class="o-layout__item offers-shopnow ">
+			<a class="btn btn--white" href="/">SHOP NOW</a>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<div class="o-layout u-grids-1 u-grids-2--m">
+		<div class="o-layout__item offers-image">
+			<mvt:item name="readytheme" param="image( 'hand-sanitizer-gift' )" />
+		</div>
+		<div class="o-layout__item offers-text">
+			<h2>Free Sample Bar Soap</h2>
+			<p>Receive a free sample Chamomile Lavender Bar Soap on orders $75+. Use code: SOAP. Discovery Trio and gift certificates do not count toward qualifying total.  
+			</p>
+		</div>
+	</div>
+	<div class="o-layout">
+		<div class="o-layout__item offers-shopnow ">
+			<a class="btn btn--white" href="/">SHOP NOW</a>
+		</div>
+	</div>
+</div>
+
+
+
+
+<div class="container">
+	<div class="o-layout u-grids-1 u-grids-2--m">
+		<div class="o-layout__item offers-image">
+			<mvt:item name="readytheme" param="image( 'offers_3' )" />
+		</div>
+		<div class="o-layout__item offers-text">
+			<h2>Perks on Orders $75+</h2>
+			<p>On orders $75+ receive free shipping, free gift wrap, and samples. Selections can be made during checkout. 
+			</p>
+		</div>
+	</div>
+	<div class="o-layout">
+		<div class="o-layout__item offers-shopnow ">
+			<a class="btn btn--white" href="/">SHOP NOW</a>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<div class="o-layout u-grids-1 u-grids-2--m">
+		<div class="o-layout__item offers-image">
+			<mvt:item name="readytheme" param="image( 'offers_4' )" />
+		</div>
+		<div class="o-layout__item offers-text">
+			<h2>Buy Now, Pay Later</h2>
+			<p>Purchase those products you've been eyeing, and enjoy the convenience of paying back later 
+                            in 4 Easy Payments! Select Paypal during checkout and when taken to the PayPal portal select Pay Later (Pay in 4) on the checkout
+page to complete payment. 
+			</p>
+		</div>
+	</div>
+	<div class="o-layout">
+		<div class="o-layout__item offers-shopnow ">
+			<a class="btn btn--white" href="/">SHOP NOW</a>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,13 @@
+<div class="tranding" style="text-align: left;">
+    <div class="header">Trending Now</div>
+    <mvt:assign name="l.settings:count_trending" value="0" />
+	<mvt:foreach iterator="prod_item" array="readytheme:products">
+        <mvt:if expr="l.settings:prod_item:price GT 16">
+            <div class="product-name"><a href="&mvte:prod_item:link;">&mvt:prod_item:name;</a></div>
+            <mvt:assign name="l.settings:count_trending" value="l.settings:count_trending + 1" />
+        </mvt:if>
+        <mvt:if expr="l.settings:count_trending GE 4">
+            <mvt:foreachstop/>
+        </mvt:if>
+	</mvt:foreach>
+</div>

@@ -1,0 +1,36 @@
+<div id="subscribe" class="t-newsletter-form">
+	<h2 class="c-menu__title">Join Our Newsletter and get 15% off.</h2>
+	<fieldset>
+		<legend>Join Our Newsletter</legend>
+		<ul class="c-form-list">
+			<li class="c-form-list__item c-form-list__item--full c-control-group u-flex &mvte:global:fault;">
+				<label for="contactHuman" style="display: inline; line-height: 20px; white-space: nowrap; font-size: 16px; color: #000; text-align: left">
+					Are you human?<br>
+					<mvt:assign name="l.settings:humanOne" value="random('25')" />
+					<mvt:assign name="l.settings:humanTwo" value="random('25')" />
+					<mvt:assign name="l.settings:verify" value="crypto_base64_encode(l.settings:humanOne + l.settings:humanTwo)" />
+					Please Add:&nbsp;<input class="c-form-input contact__input c-control-group__field u-text-center" type="text" value="&mvte:humanOne; + &mvte:humanTwo; =" disabled aria-label="What is &mvte:humanOne; + &mvte:humanTwo;?" style="color: #000; max-width: 80px;">
+				</label>
+				<mvt:comment>
+					This is a basic math challenge to confirm there is a person
+					entering the information. The numbers are random and the
+					answer key is passed to the process in Base64 for comparison.
+				</mvt:comment>
+
+				<input autocomplete="off" id="contactHuman" class="c-form-input c-form-input--large c-control-group__field" aria-labelledby="contactHuman" type="text" inputmode="decimal" maxlength="2"  
+					placeholder="" name="human" value="" required aria-required="true" style="text-align: center; margin-top: 30px; border: 1px solid silver; width: 40px; height: 24px;">
+				<input id="verify" type="hidden" name="verify" value="&mvte:verify;">
+				<input id="website" class="u-hide-visually" type="text" name="website" aria-hidden="true" aria-label="website" tabindex="-1" value="">
+			</li>	
+
+			<li class="c-form-list__item c-form-list__item--full c-control-group u-flex">
+				<label for="footersignup" class="sr-only">Enter your email</label>
+				<input id="footersignup" class="c-form-input c-form-input--large c-control-group__field" aria-labelledby="emailsubscriberesults" autocomplete="email" type="text" name="input" maxlength="40" placeholder="Enter your email" value="" required aria-required="true"/>
+				<input id="sendsubscribeform" class="o-layout--no-shrink c-button c-button--large c-control-group__button" type="submit" onClick="sendEmailToDb()" value="Submit" />
+			</li>
+			<div id="waitsubscribeform" ><div class="loader2"> </div></div>
+			<div id="emailsubscriberesults" style="font-weight: bold;"></div>
+		</ul>
+	</fieldset>
+</div>
+<script type="text/javascript" src="scripts/00000001/b19/listrak.js"></script>

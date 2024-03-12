@@ -1,0 +1,94 @@
+<form action="&mvte:urls:_self:secure;" method="post" autocomplete="off">
+	<div class="breaker"></div>
+	<div class="customer-account-links gray bg-white bottom-shadow">
+		<input type="hidden" name="Action" value="ICSA" />
+		<div class="row black">
+			<div class="column whole h5 uppercase color--gray">Your Info</div>
+			<div class="column whole &mvte:global:Address_Description_Row;">
+				<label class="required" for="l-Address_Description">Nickname</label>
+				<input id="l-Address_Description" type="text" name="Address_Description" value="&mvte:global:Address_Description;" required>
+			</div>
+			<div class="column whole medium-one-third &mvte:global:Address_FirstName_Row;">
+				<label class="required" for="l-Address_FirstName">First Name</label>
+				<input id="l-Address_FirstName" type="text" name="Address_FirstName" value="&mvte:global:Address_FirstName;" required>
+			</div>
+			<div class="column whole medium-one-third &mvte:global:Address_LastName_Row;">
+				<label class="required" for="l-Address_LastName">Last Name</label>
+				<input id="l-Address_LastName" type="text" name="Address_LastName" value="&mvte:global:Address_LastName;" required>
+			</div>
+			<div class="column whole medium-one-third &mvte:global:Address_Company_Row;">
+				<label class="italic" for="l-Address_Company">Company (Optional)</label>
+				<input id="l-Address_Company" type="text" name="Address_Company" value="&mvte:global:Address_Company;">
+			</div>
+			<div class="column whole medium-two-thirds &mvte:global:Address_Email_Row;">
+				<label class="required" for="l-Address_Email">Email Address</label>
+				<input id="l-Address_Email" data-hook="Address_Email" type="email" name="Address_Email" value="&mvte:global:Address_Email;" required>
+			</div>
+			<div class="column whole medium-one-third &mvte:global:Address_Phone_Row;">
+				<label class="required" for="l-Address_Phone">Phone Number</label>
+				<input id="l-Address_Phone" type="tel" name="Address_Phone" value="&mvte:global:Address_Phone;" required>
+			</div>
+		</div>
+		<hr>
+		<div class="row black">
+			<div class="column whole h5 uppercase color--gray">Address</div>
+			<div class="column whole medium-two-thirds &mvte:global:Address_Address1_Row;">
+				<label class="required" for="l-Address_Address1">Address</label>
+				<input id="l-Address_Address1" type="text" name="Address_Address1" value="&mvte:global:Address_Address1;" required>
+			</div>
+			<div class="column whole medium-one-third &mvte:global:Address_Address2_Row;">
+				<label class="italic" for="l-Address_Address2">Address 2</label>
+				<input id="l-Address_Address2" type="text" name="Address_Address2" value="&mvte:global:Address_Address2;">
+			</div>
+			<div class="column whole medium-one-third &mvte:global:Address_City_Row;">
+				<label class="required" for="l-Address_City">City</label>
+				<input id="l-Address_City" type="text" name="Address_City" value="&mvte:global:Address_City;" required>
+			</div>
+			<div class="column whole medium-one-third &mvte:global:Address_State_Row;">
+				<label class="required" for="l-Address_StateSelect">State/Province</label>
+				<mvt:if expr="g.Address_States_Empty">
+					<input id="l-Address_State" type="text" name="Address_State" value="&mvte:global:Address_State;" required>
+				<mvt:else>
+					<mvt:item name="states" param="Address_StateSelect" />
+				</mvt:if>
+			</div>
+			<mvt:if expr="g.Address_States_Empty">
+				<div class="column whole medium-one-third"></div>
+			<mvt:else>
+				<div class="column whole medium-one-third &mvte:global:Address_State_Row;">
+					<label class="required" for="l-Address_State">&nbsp;</label>
+					<input id="l-Address_State" type="text" name="Address_State" value="&mvte:global:Address_State;" placeholder="Other State/Province">
+				</div>
+			</mvt:if>
+			<div class="column whole medium-one-third &mvte:global:Address_Zip_Row;">
+				<label class="required" for="l-Address_Zip">Zip/Postal Code</label>
+				<input id="l-Address_Zip" type="text" name="Address_Zip" value="&mvte:global:Address_Zip;">
+			</div>
+			<div class="column whole medium-one-third &mvte:global:Address_Country_Row;">
+				<label class="required" for="l-Address_Country">Country</label>
+				<mvt:item name="countries" param="Address_Country" />
+			</div>
+		</div>
+		<hr>
+		<div class="row black">
+			<div class="column whole small &mvte:global:Address_Default_Shipping_Row;">
+				<mvt:if expr="g.Address_Default_Shipping">
+					<label class="italic"><input class="align-middle" type="checkbox" name="Address_Default_Shipping" value="1" checked> Set as Default Shipping Address</label>
+				<mvt:else>
+					<label class="italic"><input class="align-middle" type="checkbox" name="Address_Default_Shipping" value="1"> Set as Default Shipping Address</label>
+				</mvt:if>
+			</div>
+			<div class="column whole small &mvte:global:Address_Default_Billing_Row;">
+				<mvt:if expr="g.Address_Default_Billing">
+					<label class="italic"><input class="align-middle" type="checkbox" name="Address_Default_Billing" value="1" checked> Set as Default Billing Address</label>
+				<mvt:else>
+					<label class="italic"><input class="align-middle" type="checkbox" name="Address_Default_Billing" value="1"> Set as Default Billing Address</label>
+				</mvt:if>
+			</div>
+			<ul class="column whole inline-list">
+				<li><mvt:item name="buttons" param="Save" /></li>
+				<li><a class="button button-square button-medium bg-gray black" href="&mvte:urls:_self:secure;">Cancel</a></li>
+			</ul>
+		</div>
+	</div>
+</form>

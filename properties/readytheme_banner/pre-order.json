@@ -1,0 +1,9 @@
+{
+    "active": 1,
+    "css_class": "u-hidden",
+    "css_id": "pre-order-banner",
+    "descrip": "Pre-order message",
+    "link_targ": "_self",
+    "link_type": "N",
+    "message": "<br><span style=\"font-weight: 600; font-size: 17px;\">*Pre-order now and we'll ship when it's available. Estimated ship date\n<mvt:if expr=\"l.settings:product:code EQ 'HH58_m'\">\n 7/15\n<mvt:elseif expr=\"l.settings:product:code EQ 'HH18L'\">\n 7/15\n<mvt:elseif expr=\"l.settings:product:code EQ 'HH5L'\">\n 7/15\n</mvt:if>\n.\n</span>"
+}

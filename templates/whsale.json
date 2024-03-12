@@ -1,0 +1,22 @@
+{
+    "hdft": {
+        "footer": {
+            "template_filename": "whsale-footer.mvc"
+        },
+        "header": {
+            "template_filename": "whsale-header.mvc"
+        }
+    },
+    "mivapay": {
+        "paymentcardfields": {
+            "cardtype_prompt": "Card Type:",
+            "mode": "paymentcard_add",
+            "storecard_checkedbydefault": 0,
+            "storecard_prompt": "Store This Card For Future Use",
+            "template_filename": "whsale-mivapay.mvc"
+        },
+        "paymentcardfields_css": {
+            "template_filename": "whsale-mivapay_css.mvc"
+        }
+    }
+}

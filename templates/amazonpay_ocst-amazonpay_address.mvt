@@ -1,0 +1,34 @@
+
+<mvt:if expr="NOT l.settings:amazonpay_address:center">
+	<div id="addressBookWidgetDiv"></div>
+<mvt:else>
+	<div class="amazonpay_outer">
+		<div class="amazonpay_inner">
+			<div id="addressBookWidgetDiv"></div>
+		</div>
+	</div>
+</mvt:if>
+
+<script>
+new OffAmazonPayments.Widgets.AddressBook(
+{
+	sellerId: '&mvtj:amazonpay:merchantid;',
+	amazonOrderReferenceId: '&mvtj:amazonpay:amazonOrderReferenceId;',
+	displayMode: '&mvtj:amazonpay_address:editable;',
+	onAddressSelect: function( orderReference )
+	{
+	},
+	design:
+	{
+		size:
+		{
+			width:'&mvtj:amazonpay_address:width;px',
+			height:'&mvtj:amazonpay_address:height;px'
+		}
+	},
+	onError: function( error )
+	{
+		return alert( error.getErrorMessage() );
+	}
+} ).bind( "addressBookWidgetDiv" );
+</script>

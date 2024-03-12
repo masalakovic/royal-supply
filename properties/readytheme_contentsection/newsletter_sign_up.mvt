@@ -1,0 +1,8 @@
+<section class="cmp-newsletter-sign-up bg--blue" data-scroll>
+	<form>
+		<label class="secondary-font color--silver" for="l-newsletter-email">Stay On Trend.</label>
+		<input id="l-newsletter-email" class="input--large bg--silver font--uppercase" type="email" placeholder="Enter Your Email Address&hellip;" required>
+		<input class="button button--large cta-primary font--semibold font--uppercase" type="submit" value="Sign Up">
+	</form>
+</section>
+<!-- end .cmp-newsletter-sign-up -->

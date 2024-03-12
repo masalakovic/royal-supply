@@ -1,0 +1,85 @@
+<mvt:item name="html_profile"/>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<base href="&mvte:global:basehref;">
+	<mvt:if expr="NOT ISNULL l.settings:product:page_title">
+		<title>&mvt:product:page_title;</title>
+	<mvt:elseif expr="NOT ISNULL l.settings:page:title">
+		<title>&mvt:page:title;</title>
+	<mvt:else>
+		<title>&mvt:store:name;: &mvt:product:name;</title>
+	</mvt:if>
+	<mvt:item name="head" param="css_list" />
+	<mvt:item name="head" param="head_tag" />
+	<mvt:item name="attributemachine" param="head_deferred" />
+	<mvt:item name="product_display_imagemachine" param="head_deferred" />
+	<mvt:assign name="g.socialURL" value="l.settings:product:link" />
+	<mvt:assign name="g.socialText" value="'Check out the deal on ' $ l.settings:product:name $ ' at ' $ g.store:name" />
+	<mvt:do file="g.Module_Library_DB" name="l.image_count" value="ProductImageDataList_Load_Product(l.settings:product:id, l.settings:imagedata)" />
+	<mvt:if expr="l.image_count GT 0">
+		<mvt:assign name="g.socialImage" value="g.baseurl $ l.settings:imagedata[1]:image:image" />
+	<mvt:else>
+		<mvt:assign name="g.socialImage" value="g.baseurl $ 'graphics/en-US/admin/blank.gif'" />
+	</mvt:if>
+	<meta property="og:title" content="&mvte:product:name;">
+	<meta property="og:type" content="product">
+	<meta property="og:image" content="&mvt:global:socialImage;">
+	<meta property="og:url" content="&mvt:global:socialURL;">
+	<meta property="og:site_name" content="&mvte:global:store:name;">
+	<meta property="og:description" content="&mvte:global:socialText;">
+	<meta property="og:locale" content="en_US">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:site" content="@TWITTER_ACCOUNT">
+	<meta name="twitter:creator" content="@TWITTER_ACCOUNT">
+	<meta name="twitter:url" content="&mvt:global:socialURL;">
+	<meta name="twitter:title" content="&mvte:product:name;">
+	<meta name="twitter:description" content="&mvte:global:socialText;">
+	<meta name="twitter:image" content="&mvt:global:socialImage;">
+	<meta name="twitter:image:alt" content="&mvte:product:name;">
+</head>
+<body id="js-&mvte:page:code;" class="o-site-wrapper t-page-&mvte:global:pageClass;">
+	<mvt:item name="hdft" param="global_header" />
+
+	<section class="o-layout">
+		<div class="o-layout__item">
+			<mvt:item name="header_sequence" />
+			<mvt:item name="hdft" param="header" />
+		</div>
+	</section>
+
+	<section class="o-layout">
+		<div class="o-layout__item">
+			<mvt:item name="prod_ctgy_hdft" param="prod_header" />
+		</div>
+	</section>
+
+	<mvt:item name="product_display" />
+	<mvt:item name="attributemachine" param="body_deferred" />
+	<script>
+		if (typeof am&mvt:product:id; !== 'undefined') {
+			let attrMachCall = am&mvt:product:id;;
+			let attrPossible = amPossible&mvt:product:id;;
+		}
+	</script>
+
+	<mvt:if expr="l.settings:related_product_count NE 0">
+		<mvt:item name="related_products" />
+	</mvt:if>
+
+	<section class="o-layout">
+		<div class="o-layout__item">
+			<mvt:item name="prod_ctgy_hdft" param="prod_footer" />
+		</div>
+	</section>
+
+	<section class="o-layout">
+		<div class="o-layout__item">
+			<mvt:item name="hdft" param="footer" />
+			<mvt:item name="footer_sequence" />
+		</div>
+	</section>
+
+	<mvt:item name="hdft" param="global_footer" />
+</body>
+</html>

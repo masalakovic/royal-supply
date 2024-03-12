@@ -1,0 +1,35 @@
+
+<mvt:if expr="NOT l.settings:amazonpay_wallet:center">
+	<div id="walletWidgetDiv"></div>
+<mvt:else>
+	<div class="amazonpay_outer">
+		<div class="amazonpay_inner">
+			<div id="walletWidgetDiv"></div>
+		</div>
+	</div>
+</mvt:if>
+
+<script>
+new OffAmazonPayments.Widgets.Wallet(
+{
+	sellerId: '&mvtj:amazonpay:merchantid;',
+	amazonOrderReferenceId: '&mvtj:amazonpay:amazonOrderReferenceId;',
+	displayMode: '&mvtj:amazonpay_wallet:editable;',
+	design:
+	{
+		size:
+		{
+			width: '&mvtj:amazonpay_wallet:width;px',
+			height:'&mvtj:amazonpay_wallet:height;px'
+		}
+	},
+	onPaymentSelect: function( orderReference )
+	{
+	},
+	onError: function( error )
+	{
+		return alert( error.getErrorMessage() );
+	}
+} ).bind( "walletWidgetDiv" );
+</script>
+

@@ -1,0 +1,111 @@
+<mvt:item name="html_profile" />
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<base href="&mvte:global:basehref;">
+	<mvt:if expr="NOT ISNULL l.settings:page:title">
+		<title>&mvt:page:title;</title>
+	<mvt:else>
+		<title>&mvt:store:name;: &mvt:page:name;</title>
+	</mvt:if>
+	<mvt:item name="head" param="css_list" />
+	<mvt:item name="head" param="head_tag" />
+</head>
+<body id="js-&mvte:page:code;" class="o-site-wrapper t-page-&mvte:global:pageClass;">
+	<mvt:item name="hdft" param="global_header" />
+
+	<section class="o-layout">
+		<div class="o-layout__item">
+			<mvt:item name="hdft" param="header" />
+			<mvt:item name="readytheme" param="contentsection( 'messages' )" />
+		</div>
+	</section>
+
+	<mvt:if expr="g.Customer_Temporary_Password">
+		<mvt:assign name="g.cpwd_justify" value="'o-layout--justify-center'"/>
+		<mvt:assign name="g.cpwd_width" value="'u-width-12--l'"/>
+	<mvt:else>
+		<mvt:assign name="g.cpwd_justify" value="''"/>
+		<mvt:assign name="g.cpwd_width" value="'u-width-9--l'"/>
+	</mvt:if>
+	<section class="o-layout o-layout--column-reverse o-layout--row-reverse--l &mvt:global:cpwd_justify;">
+		<div class="o-layout__item u-width-12 &mvt:global:cpwd_width;">
+			<h1 class="c-heading-delta">&mvt:page:name;</h1>
+			<hr class="c-keyline">
+			<br>
+			<form class="o-layout o-layout--justify-center" method="post" action="&mvte:urls:ACLN:secure;" autocomplete="off">
+				<fieldset class="o-layout__item u-width-12 u-width-6--m">
+					<legend>&mvt:page:name;</legend>
+					<input type="hidden" name="Action" value="CPWD" />
+					<input type="hidden" name="CSRF_Token" value="&mvte:global:Basket:csrf_token;">
+					<p class="x-messages x-messages--info x-messages--with-icon">
+						<span class="x-messages__icon u-icon-info" aria-hidden="true">&nbsp;</span>
+						<span>For security purposes, please enter your current password.</span>
+					</p>
+					<div class="c-form-list">
+						<mvt:if expr="g.Customer_Temporary_Password">
+							<input type="hidden" name="Customer_CurrentPassword" value="&mvte:global:Customer_Temporary_Password;">
+							<input type="hidden" name="Customer_Temporary_Password" value="&mvte:global:Customer_Temporary_Password;">
+						<mvt:else>
+							<div class="c-form-list__item c-form-list__item--full">
+								<mvt:if expr="g.Customer_CurrentPassword_Invalid">
+									<label class="c-form-label u-text-medium is-required u-color-red" for="l-Customer_CurrentPassword">Current Password</label>
+								<mvt:else>
+									<label class="c-form-label u-text-medium is-required" for="l-Customer_CurrentPassword">Current Password</label>
+								</mvt:if>
+								<input id="l-Customer_CurrentPassword" class="c-form-input" type="password" name="Customer_CurrentPassword" required autocomplete="current-password" aria-required="true">
+							</div>
+							<div class="c-form-list__item c-form-list__item--full">
+								<hr class="c-divider">
+							</div>
+						</mvt:if>
+						<mvt:do file="g.Module_Feature_CUS_DB" name="l.success" value="CustomerSettings_Load(l.settings:customersettings)" />
+						<p class="x-messages x-messages--warning">
+							<span class="c-heading-foxtrot u-block u-text-center">Requirements</span>
+							&bull; Minimum Password Length: &mvte:customersettings:pw_min_len;<br>
+							<mvt:if expr="l.settings:customersettings:pw_complex EQ 1">
+								&bull; At Least one Letter and one Number or Punctuation Character
+							<mvt:elseif expr="l.settings:customersettings:pw_complex EQ 2">
+								&bull; Mixed Case Letters and at Least one Number or Punctuation Character
+							</mvt:if>
+						</p>
+						<div class="c-form-list__item c-form-list__item--full">
+							<mvt:if expr="g.Customer_Password_Invalid">
+								<label class="c-form-label u-text-medium is-required u-color-red" for="l-Customer_Password">New Password</label>
+							<mvt:else>
+								<label class="c-form-label u-text-medium is-required" for="l-Customer_Password">New Password</label>
+							</mvt:if>
+							<input id="l-Customer_Password" class="c-form-input" type="password" name="Customer_Password" required autocomplete="new-password" aria-required="true">
+						</div>
+						<div class="c-form-list__item c-form-list__item--full">
+							<mvt:if expr="g.Customer_VerifyPassword_Invalid">
+								<label class="c-form-label u-text-medium is-required u-color-red" for="l-Customer_VerifyPassword">Confirm Password</label>
+							<mvt:else>
+								<label class="c-form-label u-text-medium is-required" for="l-Customer_VerifyPassword">Confirm Password</label>
+							</mvt:if>
+							<input id="l-Customer_VerifyPassword" class="c-form-input" type="password" name="Customer_VerifyPassword" required autocomplete="new-password" aria-required="true">
+						</div>
+						<div class="c-form-list__item c-form-list__item--full u-text-right">
+							<mvt:item name="buttons" param="Save" />
+						</div>
+					</div>
+				</fieldset>
+			</form>
+		</div>
+		<mvt:if expr="g.Customer_Temporary_Password">
+		<mvt:else>
+			<aside class="o-layout__item u-width-12 u-width-3--l">
+				<mvt:item name="readytheme" param="navigationset( 'account_navigation' )" />
+			</aside>
+		</mvt:if>
+	</section>
+	
+	<section class="o-layout">
+		<div class="o-layout__item">
+			<mvt:item name="hdft" param="footer" />
+		</div>
+	</section>
+
+	<mvt:item name="hdft" param="global_footer" />
+</body>
+</html>

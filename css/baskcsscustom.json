@@ -1,0 +1,22 @@
+{
+    "code": "baskcsscustom",
+    "type": "L",
+    "branchless_filepath": "css/00000001/b04/b09/baskcsscustom.css",
+    "is_global": false,
+    "active": false,
+    "attributes": [
+        {
+            "name": "type",
+            "value": "text/css"
+        },
+        {
+            "name": "media",
+            "value": "all"
+        },
+        {
+            "name": "rel",
+            "value": "stylesheet"
+        }
+    ],
+    "linked_pages": []
+}

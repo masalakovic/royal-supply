@@ -1,0 +1,69 @@
+<div class="o-wrapper o-wrapper--flush rtrt-oils">
+    <div class="rtrt-oils__inner">
+        <h2>
+            Welcome to the Jungle
+            <span>coconut water | wild lily | mango wood</span>
+        </h2>
+        <p class="rtrt-oils__description">
+           To capture this elusive scent, Jungle Bloom features three original fragrance note blends known as “accords.” In perfumery, a fragrance accord blends several different notes to create one distinctive note.
+
+        </p>
+
+        <ul class="rtrt-oils__list">
+            <li class="rtrt-oils__list-opener js-rtrt-oils-list-opener" data-name="tab1">
+                <img src="graphics/00000001/1/coconut-water-note.png" alt="">
+                <span>Coconut Water</span>
+            </li>
+            <li class="rtrt-oils__list-opener js-rtrt-oils-list-opener active" data-name="tab2">
+                <img src="graphics/00000001/1/wild-lily-note.png" alt="">
+                <span>Wild Lily</span>
+            </li>
+            <li class="rtrt-oils__list-opener js-rtrt-oils-list-opener" data-name="tab3">
+                <img src="graphics/00000001/1/mango-wood-note.png" alt="">
+                <span>Mango Wood</span>
+            </li>
+        </ul>
+        <div class="rtrt-oils__content-holder">
+            <div class="rtrt-oils__content" data-name="tab1">
+                <span>refreshing and subtly sweet</span>
+                <figure class="rtrt-oils__quote">
+                    <blockquote>
+                        <q>The coconut water accord combines earthy, mossy, and aquatic notes to capture the scents of rain, damp earth, and endless paths dotted with fallen pine needles. 
+                        </q>
+                    </blockquote>
+                    <figcaption>
+                        - Jon Bresler,
+                        <span>Founder</span>
+                    </figcaption>
+                </figure>
+            </div>
+            <div class="rtrt-oils__content active" data-name="tab2">
+                <span>fresh and dewy</span>
+                <figure class="rtrt-oils__quote">
+                    <blockquote>
+                        <q>Wild lily is an accord inspired by the thick, lush greenery of a rainforest. This blend of verdant, tropical plants, and leafy green notes is the heart of Jungle Bloom.
+ 
+                        </q>
+                    </blockquote>
+                    <figcaption>
+                        - Jon Bresler,
+                        <span>Founder</span>
+                    </figcaption>
+                </figure>
+            </div>
+            <div class="rtrt-oils__content" data-name="tab3">
+                <span>slightly woody with exotic floral hints</span>
+                <figure class="rtrt-oils__quote">
+                    <blockquote>
+                        <q>This accord captures the sheer, airy woods and hints of exotic florals permeating the jungle air. Mango wood beautifully ties together coconut water and wild lily for a luminous composition.
+                        </q>
+                    </blockquote>
+                    <figcaption>
+                        - Jon Bresler,
+                        <span>Founder</span>
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+    </div>
+</div>

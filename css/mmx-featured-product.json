@@ -1,0 +1,29 @@
+{
+    "code": "mmx-featured-product",
+    "type": "Z",
+    "is_global": false,
+    "active": true,
+    "attributes": [
+        {
+            "name": "type",
+            "value": "text/css"
+        },
+        {
+            "name": "media",
+            "value": "all"
+        },
+        {
+            "name": "rel",
+            "value": "stylesheet"
+        },
+        {
+            "name": "integrity",
+            "value": "sha256-ZK2F5IDTaKJkwRpZhyB16eryWApx5hc+bxKI8sRs4R8= sha384-RJz/E1MppShKonCkkBuo7DlZRxJYeRbx8TfoX1vv8Ikrtlq0UTDtVuWXtWREXEm/ sha512-QDb3TKBcKS6NVF4cN7aeavAXCt+fi2WLBSHvD9iUSxRDrC9Wxu/hgFjMpbv2QJiKahlE2bqAnDdpwb4/QQ1FiQ=="
+        },
+        {
+            "name": "crossorigin",
+            "value": "anonymous"
+        }
+    ],
+    "linked_pages": []
+}

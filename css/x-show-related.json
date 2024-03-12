@@ -1,0 +1,21 @@
+{
+    "code": "x-show-related",
+    "type": "L",
+    "branchless_filepath": "b03/themes/colossus/extensions/show-related/show-dont-tell.css",
+    "is_global": true,
+    "active": false,
+    "attributes": [
+        {
+            "name": "type",
+            "value": "text/css"
+        },
+        {
+            "name": "media",
+            "value": "all"
+        },
+        {
+            "name": "rel",
+            "value": "stylesheet"
+        }
+    ]
+}

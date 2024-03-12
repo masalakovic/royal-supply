@@ -1,0 +1,26 @@
+{
+    "items": [
+        {
+            "active": 1,
+            "id": "db3f0706e2ea1e831505a9080b391132",
+            "link": "<a href=\"https://demo.pcinet.com/privacy-policy.html\" target=\"_self\">Privacy Statement</a>",
+            "link_dest": "PRPO",
+            "link_targ": "_self",
+            "link_type": "G",
+            "name": "Privacy Statement",
+            "url": "https://demo.pcinet.com/privacy-policy.html"
+        },
+        {
+            "active": 1,
+            "id": "1d63da956a854ccb149224f0bd575be7",
+            "link": "<a href=\"https://demo.pcinet.com/shipping-and-return-policy.html\" target=\"_self\">Shipping and Return Policies</a>",
+            "link_dest": "SARP",
+            "link_targ": "_self",
+            "link_type": "G",
+            "name": "Shipping and Return Policies",
+            "url": "https://demo.pcinet.com/shipping-and-return-policy.html"
+        }
+    ],
+    "layout": "S",
+    "name": "Global Footer Disclaimer Navigation"
+}

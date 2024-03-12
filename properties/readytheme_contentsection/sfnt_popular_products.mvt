@@ -1,0 +1,36 @@
+<section class="sfnt-popular-products t-defer-object" data-defer>
+    <div class="container">
+        <div class="heading-line">
+            <div class="heading-line-in">
+                <h2 class="heading-line__title">Popular items</h2>
+            </div>
+        </div>
+        <div class="tabs-popular-products">
+            <ul class="tabs-popular-products__caption">
+                <li class="active">All category</li>
+                <li>Mushrooms</li>
+ 		<li>Truffles</li>
+                <li>Specialty Produce</li>
+                <li>Pantry</li>
+                <li>Seafood</li>
+		<li>Noble handcrafted</li>
+
+            </ul>
+            <div class="tabs-popular-products__content active">
+                <mvt:item name="readytheme" param="productlisting( 'sfnt_popular_all_category' )" />
+            </div>
+            <div class="tabs-popular-products__content">
+                <mvt:item name="readytheme" param="productlisting( 'sfnt_popular_mushrooms' )" />
+            </div>
+            <div class="tabs-popular-products__content">
+                <mvt:item name="readytheme" param="productlisting( 'sfnt_popular_noble_handcrafted' )" />
+            </div>
+            <div class="tabs-popular-products__content">
+                <mvt:item name="readytheme" param="productlisting( 'sfnt_popular_oils' )" />
+            </div>
+            <div class="tabs-popular-products__content">
+                <mvt:item name="readytheme" param="productlisting( 'sfnt_popular_wild_foraged' )" />
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,62 @@
+<head>
+<mvt:if expr="NOT ISNULL l.settings:product:metafield:title">
+	<title>&mvt:product:metafield:title;</title>         
+<mvt:else>
+	<title>&mvt:product:name;: &mvt:store:name;</title>
+</mvt:if>
+<mvt:item name="product_display_imagemachine" param="head" />
+<mvt:item name="head" param="head_tag" />
+</head>
+<body id="js-PRODP" class="<mvt:eval expr="tolower(l.settings:page:code)" /> single-column &mvte:product:code;">
+	<div class="row product-information">
+		<div class="column half product-information--images">
+			<img src="graphics/en-US/cssui/blank.gif" alt="&mvte:product:name;" title="&mvte:product:name;" id="js-main-image" />
+			<div class="row thumbnail-wrapper all-hidden">
+				<div id="js-thumbnails" class="column whole thumbnails"></div>
+			</div>
+			<div id="js-closeup-container" class="lightbox-me all-hidden">
+				<a id="js-closeup-close"><img src="graphics/en-US/cssui/blank.gif" alt="&mvt:product:name;" title="&mvt:product:name;" id="js-closeup-image" /></a>
+			</div>
+			<mvt:item name="product_display_imagemachine" param="body:product:id" />
+		</div>
+		<!-- end product-information--images -->
+		<div class="column half product-information--purchase">
+			<div class="row">
+				<h3 class="column whole">&mvte:product:name;</h3>
+			</div>
+			<div class="row">
+				<div class="column whole">
+					<mvt:if expr="l.settings:product:price GT 0">
+						<div id="js-price-value" class="h2 blue">&mvt:product:formatted_price;</div>
+					</mvt:if>
+					<mvt:if expr="NOT ISNULL l.settings:product:customfield_values:customfields:comp_price">
+						<p>Compare to $&mvt:product:customfield_values:customfields:comp_price;<br /><span class="blue uppercase">You Save $<mvt:eval expr="rnd((l.settings:product:customfield_values:customfields:comp_price - l.settings:product:price), 0)" /></span>
+					</mvt:if>
+				</div>
+			</div>
+		</div>
+		<!-- end product-information--purchase -->
+		<div class="column whole product-information--description">
+			<hr noshade />
+			<p><strong>Description</strong></p>
+			&mvt:product:descrip;
+			<hr noshade />
+			<p>Sold By: &mvt:global:store:name;.</p>
+			<p>More information available at: https://&mvt:global:domain:name;/product/&mvta:product:code;.html</p>
+		</div>
+		<!-- end product-information--description -->
+	</div>
+	<!--[if lt IE 9]>
+		<script src="&mvte:global:theme_path;/js/vendor.ie.min.js"></script>
+	<![endif]-->
+	<!--[if gte IE 9]><!-->
+		<script src="&mvte:global:theme_path;/js/vendor.min.js"></script>
+	<!--<![endif]-->
+	<script src="&mvte:global:theme_path;/js/plugins.js"></script>
+	<script src="&mvte:global:theme_path;/js/mvscreen.js"></script>
+	<!--[if lt IE 9]>
+		<script src="&mvte:global:theme_path;/js/rem.min.js"></script>
+	<![endif]-->
+	<mvt:item name="ga_tracking" />
+</body>
+</html>

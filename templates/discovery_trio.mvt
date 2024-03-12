@@ -1,0 +1,260 @@
+<mvt:if expr="g.api AND g.fragrance_type">
+    <mvt:item name="ry_toolbelt" param="category_children|g.fragrance_type" />
+        <mvt:if expr="l.settings:category_children">
+            <mvt:foreach iterator="subcat" array="category_children">
+                <mvt:item name="customfields" param="Read_Category_Code(l.settings:subcat:code, 'excluded_from_trio', g.excluded_from_trio)"/>
+                <mvt:if expr="ISNULL g.excluded_from_trio">
+                    <li role="button" tabindex="0" data-code="&mvt:subcat:code;">
+                        <div class="img-wrap">
+                            <img alt src="&mvt:subcat:image_tree;">
+                        </div>
+                        <div class="title">&mvte:subcat:name;</div>
+                    </li>  
+
+
+                </mvt:if>
+            </mvt:foreach>
+
+            <mvt:if expr="tolower(g.fragrance_type) EQ 'fresh'">
+                        		
+                <mvt:assign name="g.excluded_from_trio" value="NULL" />
+                <mvt:item name="customfields" param="Read_Category_Code('Marine', 'excluded_from_trio', g.excluded_from_trio)"/>
+	            <mvt:if expr="ISNULL g.excluded_from_trio">
+	                <li role="button" tabindex="0" data-code="Marine">
+	                    <div class="img-wrap">
+	                        <img alt src="graphics/00000001/marine-discovery-trio.png">
+	                    </div>
+	                    <div class="title">Marine</div>
+	                </li>  
+	            </mvt:if>
+
+                <mvt:assign name="g.excluded_from_trio" value="NULL" />
+                <mvt:item name="customfields" param="Read_Category_Code('Celery_Thyme', 'excluded_from_trio', g.excluded_from_trio)"/>
+	            <mvt:if expr="ISNULL g.excluded_from_trio">
+	                <li role="button" tabindex="0" data-code="Celery_Thyme">
+	                    <div class="img-wrap">
+	                        <img alt src="graphics/00000001/Celery-thyme-discovery-trio.png">
+	                    </div>
+	                    <div class="title">Celery Thyme</div>
+	                </li>  
+	            </mvt:if>
+
+                <mvt:assign name="g.excluded_from_trio" value="NULL" />
+                <mvt:item name="customfields" param="Read_Category_Code('Rosemary_Eucalyptus', 'excluded_from_trio', g.excluded_from_trio)"/>
+	            <mvt:if expr="ISNULL g.excluded_from_trio">
+	                <li role="button" tabindex="0" data-code="Rosemary_Eucalyptus">
+	                    <div class="img-wrap">
+	                        <img alt src="graphics/00000001/Rosemary-Eucalyptus-discovery-trio.png">
+	                    </div>
+	                    <div class="title">Rosemary Eucalyptus</div>
+	                </li>  
+	            </mvt:if>
+
+                <mvt:assign name="g.excluded_from_trio" value="NULL" />
+                <mvt:item name="customfields" param="Read_Category_Code('chamomile-lavender', 'excluded_from_trio', g.excluded_from_trio)"/>
+	            <mvt:if expr="ISNULL g.excluded_from_trio">
+	                <li role="button" tabindex="0" data-code="chamomile-lavender">
+	                    <div class="img-wrap">
+	                        <img alt src="graphics/00000001/chamomile-lavender-discovery-trio.png">
+	                    </div>
+	                    <div class="title">Chamomile Lavender</div>
+	                </li>  
+	            </mvt:if>
+
+            <mvt:elseif expr="tolower(g.fragrance_type) EQ 'woody'">
+                <mvt:assign name="g.excluded_from_trio" value="NULL" />
+                <mvt:item name="customfields" param="Read_Category_Code('Redwood', 'excluded_from_trio', g.excluded_from_trio)"/>
+	            <mvt:if expr="ISNULL g.excluded_from_trio">
+	                <li role="button" tabindex="0" data-code="Redwood">
+	                    <div class="img-wrap">
+	                        <img alt src="graphics/00000001/Redwood-discovery-trio.png">
+	                    </div>
+	                    <div class="title">Redwood</div>
+	                </li>  
+	            </mvt:if>
+
+                <mvt:assign name="g.excluded_from_trio" value="NULL" />
+                <mvt:item name="customfields" param="Read_Category_Code('Feu_deBois', 'excluded_from_trio', g.excluded_from_trio)"/>
+	            <mvt:if expr="ISNULL g.excluded_from_trio">
+	                <li role="button" tabindex="0" data-code="Feu_deBois">
+	                    <div class="img-wrap">
+	                        <img alt src="graphics/00000001/feu-de-bois-discovery-trio.png">
+	                    </div>
+	                    <div class="title">Feu de Bois</div>
+	                </li>  
+	            </mvt:if>
+            </mvt:if>
+
+            <mvt:comment><mvt:item name="ry_toolbelt" param="eval|varlist('l', 'category_children', l.all_settings)" /></mvt:comment>
+        </mvt:if>
+    <mvt:exit />
+</mvt:if>
+
+
+<mvt:item name="html_profile" />
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <mvt:if expr="NOT ISNULL l.settings:page:title">
+        <title>&mvt:page:title;</title>
+    <mvt:else>
+        <title>&mvt:store:name;: Discovery Trio</title>
+    </mvt:if>
+    
+    <base href="&mvt:global:basehref;" />
+    <link rel="canonical" href="&mvte:urls:_self:auto;" />
+    <mvt:item name="head" param="css_list" />
+    <mvt:item name="head" param="head_tag" />
+    <link type="text/css" media="all" rel="stylesheet" href="css/00000001/custom-css.css"></link>
+<style> .yotpo.bottomLine .yotpo-bottomline .yotpo-stars {
+    margin-right: 10px; } 
+.yotpo .yotpo-bottomline .yotpo-icon-star, .yotpo .yotpo-bottomline .yotpo-icon-half-star, .yotpo .yotpo-bottomline .yotpo-icon-empty-star { color: black !important} 
+</style>
+</head>
+<body class="&mvt:page:code;" id="JS_&mvt:page:code;">
+
+    <mvt:item name="hdft" param="global_header" />
+    <div data-hook="mini-basket"></div>
+
+<main class="o-wrapper o-wrapper--flush u-bg-white">
+    <section class="t-expanded-block u-bg-white">
+        <nav class="o-wrapper x-collapsing-breadcrumbs t-breadcrumbs t-wrapper" data-hook="collapsing-breadcrumbs" aria-label="Breadcrumb">
+            <ul class="o-list-inline x-collapsing-breadcrumbs__list" data-hook="collapsing-breadcrumbs__list" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+                <li class="o-list-inline__item u-hidden" data-hook="collapsing-breadcrumbs__trigger-area">
+                    <button class="c-button c-button--hollow u-border-none u-color-black u-bg-transparent x-collapsing-breadcrumbs__button" data-hook="collapsing-breadcrumbs__button">…</button>
+                </li>
+                <li class="o-list-inline__item" data-hook="collapsing-breadcrumbs__item" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                    <a class="u-inline-block" href="https://www.lafco.com/storefront.html" title="Home" itemprop="item">
+                        <span itemprop="name">Home</span>
+                    </a>
+                    <meta itemprop="position" content="1">
+                </li>
+                <li class="o-list-inline__item" data-hook="collapsing-breadcrumbs__item" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                    <span class="u-inline-block" title="Our Ingredients" itemprop="item" aria-current="page">
+                        <span itemprop="name">DISCOVERY TRIO</span>
+                    </span>
+                    <meta itemprop="url" content="https://www.lafco.com/discovery-trio-760.html">
+                    <meta itemprop="position" content="3">
+                </li>
+            </ul>
+        </nav>
+    <!-- end .x-collapsing-breadcrumbs -->
+    </section>
+
+    <div>
+        <img alt class="full-width" src="graphics/00000001/discover-trio-selection.jpg">
+    </div>
+
+    <div class="main-content">
+        <div class="content text-center o-wrapper">
+            <h1 class="chm-84">Discovery Trio</h1>
+    <div class="" style="
+    max-width: 200px;
+    margin: -20px auto 20px;
+"> <div <div class="yotpo bottomLine"
+                                                data-product-id="22084"
+                                                data-url="https://www.lafco.com/discovery-trio">
+                                            </div>
+                                        </div>
+            <p class="cf-style">Commitment issues? Try our Discovery Trio sample set!<br>You have over 30 unique fragrance options to build your trio.<br>Pick three different fragrances to sample for $16 (free shipping included).<br>We’ll email you a code for $16 which can be applied to your next full-sized purchase.</p>
+        </div>
+        
+        <div id="discovery-trio-bg">
+            <div id="discovery-trio-content">
+                <div class="dtrio-grid">
+                    <div class="dtrio-grid-left">
+                        <div class="js-fade-in" style="opacity:0;">
+                            <h2>Your Discovery Trio</h2>
+                            <ul id="trio-samples">
+                                <li class="empty">
+                                    <div class="img-wrap">
+                                        <img class="sample-img" src="" alt="" >
+                                        <button aria-label="Remove Fragrance 1" class="remove">×</button>
+                                    </div>
+                                    <div class="title">Fragrance 1</div>
+                                </li>
+                                <li class="empty">
+                                    <div class="img-wrap">
+                                        <img class="sample-img" src="" alt="" >
+                                        <button aria-label="Remove Fragrance 2" class="remove">×</button>
+                                    </div>
+                                    <div class="title">Fragrance 2</div>
+                                </li>
+                                <li class="empty">
+                                    <div class="img-wrap">
+                                        <img class="sample-img" src="" alt="" >
+                                        <button aria-label="Remove Fragrance 3" class="remove">×</button>
+                                    </div>
+                                    <div class="title">Fragrance 3</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="dtrio-grid-right">
+                        <div id="discovery-fragrance-types">
+                            <mvt:item name="ry_toolbelt" param="category_children|'Fragrance_type'" />
+                            <mvt:if expr="l.settings:category_children">
+                                <mvt:foreach iterator="subcat" array="category_children">
+                                    <h2 class="&mvt:subcat:code; subcat" data-code="&mvt:subcat:code;" style="display:none;">
+                                        <div aria-expanded="false" tabindex="0" role="button" class="categoty_title" data-code="&mvt:subcat:code;">&mvte:subcat:name;</div>
+                                        <div class="content">
+                                            <ul class="discovery-fragrances"></ul>
+                                        </div>
+                                    </h2>
+                                </mvt:foreach>
+                            </mvt:if>
+                        </div>
+                        <ul id="discovery-fragrances"></ul>
+                    </div>
+                </div>
+                <div class="dtrio-grid-footer o-wrapper">
+                    <div class="row cart-details">
+                <h2 class="float-left cart-title" >Your Customized Discovery Trio</h2>
+                        <div class="float-right cart-price">$16.00</div>
+                    <ul class="cart-description">
+                    </ul>
+                </div>
+                <div class="row buttons">
+                    <button id="reset" class="button with-hover float-left"><span>Create a new trio</span></button>
+                    <mvt:item name="ry_toolbelt" param="Product_Load|g.found|'22084'|myproduct" />
+                    <input type="hidden" name='Product_Code' id="discovery-trio-product-code" value="22084"/>
+                    <mvt:item name="product_attributes" param="myproduct:id" />
+                    <button id="add-to-cart" class="button with-hover float-right" disabled><span>Add to cart</span></button>
+                </div>
+                <div class="row addtional-information">
+                    <p>Please Note:</p>
+                    <ul>
+                        <li>Discovery Trio coupon code cannot be combined with other promotions & discounts.</li>
+                        <li>Coupon codes cannot be applied towards a purchase of a Discovery Trio.</li>
+                        <li>One coupon code per order.</li>
+                        <li>Coupon code is delivered via email with your order confirmation.</li>
+                        <li>Discovery Trio is final sale.</li>
+                    </ul>
+                </div> 
+
+
+
+                <mvt:comment>
+                    <mvt:if expr="s.Remote_Addr IN '188.163.83.66,46.201.97.218 '">
+                        <mvt:item name="ry_toolbelt" param="eval|varlist('l', '', l.all_settings)" />
+                        <mvt:item name="ry_toolbelt" param="eval|varlist('g', '', l.all_settings)" />
+                        <mvt:item name="ry_toolbelt" param="eval|varlist('s', '', l.all_settings)" />
+                    </mvt:if>
+                </mvt:comment>
+                <div id="confirm-reset-popup-overlay"></div>
+                <div id="confirm-reset-popup">
+                    Are you sure you want to reset or do you want to add the current trio to the cart first?  
+                    <div class="buttons">
+                        <button id="confirm-reset" class="button with-hover"><span>Reset</span></button>
+                        <button id="add-to-cart-first" class="button with-hover"><span>Add to cart</span></button>
+                    </div>
+                    <button id="confirm-reset-popup-close">×</button>
+                </div>
+            </div>
+        </div>
+    </div>
+                <mvt:item name="hdft" param="global_footer" />
+
+</body>
+</html>

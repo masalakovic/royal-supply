@@ -1,0 +1,27 @@
+<mvt:item name="ry_toolbelt" param="call_post|g.returnpage|g.url|g.crvs, g.email" />
+
+<mvt:if expr="g.from EQ 'OFFR'">
+	{
+	<mvt:if expr="g.MvCALL_Error">
+		"error": "&mvt:global:MvCALL_Error;"
+	<mvt:else>
+		<mvt:assign name="g.stripped" value="trim(miva_html_strip( substring( g.returnpage, '<body>' IN g.returnpage, len(g.returnpage) ), '' ))" />
+		<mvt:assign name="g.msg" value="g.stripped" />
+		<mvt:if expr="'Subscribe' IN g.stripped">
+			<mvt:assign name="g.msg" value="trim( substring( g.stripped, 1, (' Subscribe' IN g.stripped) ) )" />
+		</mvt:if>
+		<mvt:if expr="'not a valid' IN g.msg">
+			"error": "&mvt:global:msg;"
+		<mvt:else>
+			"msg": "&mvt:global:msg;"
+		</mvt:if>
+	</mvt:if>
+	}
+	<mvt:exit />
+</mvt:if>
+
+&mvt:global:returnpage;
+
+<mvt:comment>
+https://www.lafco.com/listrak?url=https%3A%2F%2Fenews.lafco.com%2Fq%2F8eA-qUOkZRb2c2Qg6HMZTuSqkKRAKgnN4D&crvs=2JUr0Yl9dI-x3MK2Acmcu5eC1MP-aT30UxJrdKwpnMCgeBlgS07mOm9SyfY4lC5fa9xL2MJWHN_EZ2fsRjsqlhYqgEve1_P-g3s0zJraMP-2yhMIq5k4yNk82erMuihJ&email=test-test.ca&from=OFFR
+</mvt:comment>

@@ -1,0 +1,42 @@
+<div class="holiday-categories-lim-wrapper">
+
+             <div class="holiday-categories-lim-wrapper__item">
+                <a href="/red-currant.html" class="hilday-cat_link">
+                    <div class="holiday-categories-lim__img" style="background-image: url('graphics/00000001/1/iStock-867895694.jpg');"></div>    
+                    <p class="holiday-cat_link_text">Winter Currant</p>  
+                </a>
+            </div>
+            <div class="holiday-categories-lim-wrapper__item">
+                <a href="/spiced-pomader.html" class="hilday-cat_link">
+                    <div class="holiday-categories-lim__img" style="background-image: url('graphics/00000001/1/iStock-464398355.jpg');"></div>    
+                    <p class="holiday-cat_link_text">Spiced Pomander</p>
+                </a>
+            </div>
+
+             <div class="holiday-categories-lim-wrapper__item">
+                <a href="/champagne-holiday.html" class="hilday-cat_link">
+                    <div class="holiday-categories-lim__img" style="background-image: url('graphics/00000001/1/iStock-163729949.jpg');"></div>    
+                    <p class="holiday-cat_link_text">Champagne Holiday</p>
+                </a>
+            </div>
+             <div class="holiday-categories-lim-wrapper__item">
+                <a href="/frosted-pine.html" class="hilday-cat_link">
+                    <div class="holiday-categories-lim__img" style="background-image: url('graphics/00000001/1/iStock-133279852.jpg');"></div>    
+                    <p class="holiday-cat_link_text">Frosted Pine</p>
+                </a>
+            </div>
+
+             <div class="holiday-categories-lim-wrapper__item">
+                <a href="/fragrances/woody/feu-de-bois" class="hilday-cat_link">
+                    <div class="holiday-categories-lim__img" style="background-image: url('graphics/00000001/1/iStock-537356918.jpg');"></div>    
+                    <p class="holiday-cat_link_text">Feu de Bois</p>
+                </a>
+            </div>
+            <div class="holiday-categories-lim-wrapper__item">
+                <a href="/white-maple-bourbon.html" class="hilday-cat_link">
+                    <div class="holiday-categories-lim__img" style="background-image: url('graphics/00000001/1/White-Maple-Bourbon.png');"></div>    
+                    <p class="holiday-cat_link_text">White Maple Bourbone</p>
+                </a>
+            </div>
+
+        </div>

@@ -1,0 +1,46 @@
+{
+    "items": [
+        {
+            "active": 1,
+            "id": "5b40fbf1304784fa4f4d019c484f9915",
+            "link": "<a href=\"https://demo.pcinet.com/customer-account.html\" target=\"_self\">My Account</a>",
+            "link_dest": "ACLN",
+            "link_targ": "_self",
+            "link_type": "G",
+            "name": "My Account",
+            "url": "https://demo.pcinet.com/customer-account.html"
+        },
+        {
+            "active": 1,
+            "id": "c2789cd8a53978d4a2cb334f70b810b8",
+            "link": "<a href=\"#rewards\" target=\"_self\">LAFCO Rewards</a>",
+            "link_dest": "#rewards",
+            "link_targ": "_self",
+            "link_type": "U",
+            "name": "LAFCO Rewards",
+            "url": "#rewards"
+        },
+        {
+            "active": 1,
+            "id": "7f26a9e364617b3105c5c3d374db8436",
+            "link": "<a href=\"https://demo.pcinet.com/order-history-list.html\" target=\"_self\">My Orders</a>",
+            "link_dest": "ORDH",
+            "link_targ": "_self",
+            "link_type": "G",
+            "name": "My Orders",
+            "url": "https://demo.pcinet.com/order-history-list.html"
+        },
+        {
+            "active": 1,
+            "id": "9f2c225c6d6152a43e83badf17d68603",
+            "link": "<a href=\"https://demo.pcinet.com/wish-list.html\" target=\"_self\">Wish List</a>",
+            "link_dest": "WISH",
+            "link_targ": "_self",
+            "link_type": "G",
+            "name": "Wish List",
+            "url": "https://demo.pcinet.com/wish-list.html"
+        }
+    ],
+    "layout": "S",
+    "name": "customer menu"
+}

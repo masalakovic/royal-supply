@@ -1,0 +1,116 @@
+<mvt:item name="html_profile" />
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<base href="&mvt:global:basehref;">
+	<mvt:if expr="NOT ISNULL l.settings:category:page_title">
+		<title>&mvt:category:page_title;</title>
+	<mvt:elseif expr="NOT ISNULL l.settings:page:title">
+		<title>&mvt:page:title;</title>
+	<mvt:else>
+		<title>&mvt:store:name;: &mvt:category:name;</title>
+	</mvt:if>
+	<mvt:item name="head" param="css_list" />
+	<mvt:item name="head" param="head_tag" />
+</head>
+<body id="js-&mvte:page:code;" class="o-site-wrapper t-page-&mvt:global:pageClass;">
+	<mvt:item name="hdft" param="global_header" />
+
+	<mvt:item name="customfields" param="Read_Category_Code(g.Category_Code, 'secondary_title_image', l.settings:secondary_title_image)" />
+	<mvt:if expr="NOT ISNULL l.settings:category_title:image OR NOT ISNULL l.settings:secondary_title_image">
+		<mvt:if expr="NOT ISNULL l.settings:category_title:image AND NOT ISNULL l.settings:secondary_title_image">
+			<mvt:assign name="l.settings:category_title:image_grid" value="'u-grids-1 u-grids-2--l'"/>
+		</mvt:if>
+		<section class="o-layout &mvte:category_title:image_grid; t-category-title-images t-defer-object" data-defer>
+			<mvt:if expr="NOT ISNULL l.settings:category_title:image">
+				<div class="o-layout__item">
+					<div class="x-hero">
+						<img data-src="&mvte:category_title:image;" src="" alt="&mvte:category:name;">
+					</div>
+				</div>
+			</mvt:if>
+			<mvt:if expr="NOT ISNULL l.settings:secondary_title_image">
+				<div class="o-layout__item">
+					<div class="x-hero">
+						<img data-src="&mvte:secondary_title_image;" src="" alt="&mvte:category:name;">
+					</div>
+				</div>
+			</mvt:if>
+		</section>
+	</mvt:if>
+
+	<section class="o-wrapper t-wrapper">
+		<div class="category-content">
+			<div class="category-description">
+				<mvt:item name="prod_ctgy_hdft" param="ctgy_header" />
+			</div>
+			
+			<section class="subcategory-section-all">
+				<mvt:item name="ry_toolbelt" param="category_children|l.all_settings:category:code" />
+				<mvt:if expr="l.settings:category_children">
+					<mvt:foreach iterator="subcat" array="category_children">
+						<div class="subcategory-section">
+							<div class="category-title">
+								<h1>&mvte:subcat:name;</h1>
+							</div>
+							<section class="o-layout u-grids-2 u-grids-3--l x-product-list">
+								<mvt:item name="ry_toolbelt" param="Category_Products|999|l.all_settings:subcat:code" />
+								<mvt:foreach iterator="product" array="products">
+									<div class="o-layout__item x-product-list__item t-defer-object" data-defer>
+										<figure class="x-product-list__figure">
+											<picture class="x-product-list__picture">
+												<a class="x-product-list__picture-link" href="&mvt:product:href;">
+													<img class="x-product-list__image" src="&mvte:product:thumbnail;" alt="&mvt:product:name;">
+												</a>
+											</picture>
+											<figcaption class="x-product-list__details">
+												<a class="x-product-list__details-link" href="&mvt:product:href;">
+													<div class="x-product-list__col">
+														<mvt:item name="ry_toolbelt" param="custom_products|g.extprod|l.all_settings:product:id" />
+														<mvt:if expr="NOT ISNULL g.extprod:value:product_size">
+															<div class="x-product-list__name">&mvt:global:extprod:value:product_size;</div>
+														</mvt:if>
+														<mvt:item name="ry_toolbelt" param="custom_products|g.extprod|l.all_settings:product:id" />
+														<mvt:if expr="NOT ISNULL g.extprod:value:product_scent">
+															<div class="x-product-list__scent">&mvt:global:extprod:value:product_scent;</div>
+														</mvt:if>
+							                            <div class="yotpo bottomLine"
+							                                data-product-id="&mvt:product:code;"
+							                                data-url="&mvt:product:link;">
+							                            </div>
+													</div>
+													<div class="x-product-list__col">
+														<mvt:if expr="l.settings:product:base_price GT l.settings:product:price">
+															<div class="x-product-list__price"><s>&mvt:product:formatted_base_price;</s></div>
+															<div class="x-product-list__price-red">&mvt:product:formatted_price;</div>
+														<mvt:else>
+															<div class="x-product-list__price">&mvt:product:formatted_price;</div>
+														</mvt:if>
+													</div>
+												</a>
+											</figcaption>
+										</figure>
+									</div>
+								</mvt:foreach>
+							</section>
+						</div>
+					</mvt:foreach>
+				</mvt:if>
+			</section>
+
+			<section class="category-instagram lafco-instagram">
+				<h2>Get Inspired</h2>
+				<p>See what’s happening at LAFCO on Instagram.</p>
+				<div class="yotpo yotpo-pictures-widget"
+				    data-gallery-id="5e6983850a404428fa4ab3f1">
+				</div>
+			</section>
+
+			<mvt:item name="prod_ctgy_hdft" param="ctgy_footer" />
+		</div>
+	</section>
+	
+	<mvt:item name="hdft" param="global_footer" />
+</body>
+</html>

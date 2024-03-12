@@ -1,0 +1,13 @@
+{
+    "code": "slick_min_js",
+    "type": "L",
+    "branchless_filepath": "scripts/00000001/b08/slick.min.js",
+    "is_global": true,
+    "active": false,
+    "attributes": [
+        {
+            "name": "type",
+            "value": "text/javascript"
+        }
+    ]
+}

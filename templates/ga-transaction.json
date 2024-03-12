@@ -1,0 +1,22 @@
+{
+    "ad_sup": 0,
+    "advanced": 0,
+    "anon_ip": 0,
+    "crossdom": 0,
+    "disable": 0,
+    "domain": "levels-theme.mivamerchantdev.com",
+    "dsblecom": 0,
+    "force_ssl": 0,
+    "google_id": 123445,
+    "link_att": 0,
+    "mode": "universal",
+    "simple": 0,
+    "track": {
+        "id": 403
+    },
+    "tracksub": 0,
+    "tracktype": 0,
+    "trans": {
+        "id": 404
+    }
+}

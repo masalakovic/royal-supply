@@ -1,0 +1,87 @@
+<mvt:item name="amp" />
+<mvt:item name="html_profile" />
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="&mvt:global:basehref;">
+    <mvt:if expr="NOT ISNULL l.settings:category:page_title">
+        <title>&mvt:category:page_title;</title>
+        <mvt:elseif expr="NOT ISNULL l.settings:page:title">
+            <title>&mvt:page:title;</title>
+            <mvt:else>
+                <title>&mvt:store:name;: &mvt:category:name;</title>
+    </mvt:if>
+    <mvt:item name="head" param="css_list" />
+    <mvt:item name="head" param="head_tag" />
+
+<style>
+.holiday-categories-lim__img.hover {
+    top: 0;
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    transition: opacity 400ms ease-out;
+}
+
+.holiday-categories-lim__img.hover:hover {
+    opacity: 1;
+}
+
+.holiday-categories-lim-wrapper a {
+    position: relative;
+display:block;
+}
+
+</style>
+    
+</head>
+
+<body id="js-&mvte:page:code;" class="o-site-wrapper t-page-&mvt:global:pageClass;">
+    
+    <mvt:item name="hdft" param="global_header" />
+    <mvt:item name="hdft" param="header" />
+
+    <mvt:item name="readytheme" param="contentsection( 'holiday-shop-gifts-text' )" />
+
+
+    <mvt:item name="ry_toolbelt" param="category_children|'Holiday'" />
+
+
+
+        <div class="holiday-categories-lim-wrapper">
+
+            <mvt:foreach iterator="subcat" array="category_children">
+
+                <mvt:item name="customfields" param="Read_Category_Code(l.settings:subcat:code, 'gift_set_image', l.settings:subcat:gift_set_image)" />
+
+                <mvt:comment> Pull canonical URi </mvt:comment>
+                    <mvt:assign name="l.uri:store_id" value="g.Store:id" />
+                    <mvt:assign name="l.uri:screen" value="''" />
+                    <mvt:assign name="l.uri:page_id" value="0" />
+                    <mvt:assign name="l.uri:cat_id" value="l.settings:subcat:id" />
+                    <mvt:assign name="l.uri:product_id" value="0" />
+                    <mvt:do file="g.Module_Feature_URI_DB" name="l.have_uri" value="URI_Load_Item_Canonical( l.uri, l.settings:canonical_uri )" />
+                <mvt:comment></mvt:comment>
+
+                 <div class="holiday-categories-lim-wrapper__item">
+                    <a href="&mvt:canonical_uri:uri;" class="hilday-cat_link">
+                        <div class="holiday-categories-lim__img" style="background-image: url('&mvt:subcat:image_title;');"></div>    
+                        <div class="holiday-categories-lim__img hover" style="background-image: url('&mvt:subcat:gift_set_image;');"></div>    
+                        <p class="holiday-cat_link_text">&mvt:subcat:name;</p>  
+                    </a>
+                </div>
+            </mvt:foreach>
+
+        </div>
+
+
+    <mvt:item name="readytheme" param="contentsection( 'holiday-shop-gifts' )" />
+
+
+    <mvt:item name="hdft" param="footer" />
+    <mvt:item name="hdft" param="global_footer" />
+</body>
+
+</html>

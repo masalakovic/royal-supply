@@ -1,0 +1,185 @@
+<mvt:item name="amp" />
+<mvt:item name="html_profile" />
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<base href="&mvt:global:basehref;">
+	<mvt:if expr="NOT ISNULL l.settings:category:page_title">
+		<title>&mvt:category:page_title;</title>
+	<mvt:elseif expr="NOT ISNULL l.settings:page:title">
+		<title>&mvt:page:title;</title>
+	<mvt:else>
+		<title>&mvt:store:name;: &mvt:category:name;</title>
+	</mvt:if>
+	<mvt:item name="head" param="css_list" />
+	<mvt:item name="head" param="head_tag" />
+<mvt:item name="amp" param="discover" />
+
+</head>
+<body id="js-&mvte:page:code;" class="o-site-wrapper t-page-&mvt:global:pageClass;">
+	<mvt:item name="hdft" param="global_header" />
+
+	<mvt:item name="readytheme" param="contentsection( 'fragrance_family_category' )" />
+
+	<section class="o-wrapper t-wrapper">
+		<div class="category-content">
+			<div class="category-description u-hidden u-shown--l">
+				<mvt:item name="prod_ctgy_hdft" param="ctgy_header" />
+			</div>
+
+			<mvt:if expr="g.category_code EQ 'Fragrance_Finder'">
+					<div class="category-control fragrance_finder">
+				<mvt:else>
+					<div style="margin-bottom: 20px;" class="category-control">
+			</mvt:if>
+
+
+				<mvt:comment> FRAGRANCE/PRODUCT TYPES </mvt:comment>
+				<mvt:if expr="g.category_code EQ 'Fragrance_Finder'">
+
+					<mvt:else>
+						<mvt:item name="customfields" param="Read_Category_Code( l.settings:category:code, 'hide_filter_and_complimentary_section', l.settings:hide_filter_and_complimentary_section )" />
+					<mvt:if expr="ISNULL l.settings:hide_filter_and_complimentary_section">
+						<mvt:comment> Determine the parent category and load appropriate children categories </mvt:comment>
+						<mvt:assign name="g.parent_category" value="l.settings:breadcrumbs:links[1]" />
+						<mvt:if expr="g.parent_category:code EQ 'Fragrance_type'">
+							<mvt:item name="ry_toolbelt" param="category_children|g.parent_category:code" />
+							<mvt:assign name="g.filter_title" value="'Fragrance Types'"/>
+						<mvt:elseif expr="g.parent_category:code EQ 'Product_Types'">
+							<mvt:item name="ry_toolbelt" param="category_children|g.parent_category:code" />
+							<mvt:assign name="g.filter_title" value="'Product Types'"/>
+						</mvt:if>
+
+
+
+					</mvt:if>
+				<mvt:comment> FRAGRANCE/PRODUCT TYPES end </mvt:comment>
+				</mvt:if>
+
+
+				<div class="block-control-in">
+
+					<mvt:if expr="g.category_code EQ 'Fragrance_Finder'">
+
+					<mvt:else>
+						<mvt:comment> SORTING </mvt:comment>
+						<mvt:if expr="l.settings:category_listing:products_on_page_count GT 1">
+							<div class="block-sorting sorting">
+								<form method="post" action="&mvte:urls:_self:auto;">
+									<input type="hidden" name="Store_Code" value="&mvte:global:Store_Code;" />
+									<input type="hidden" name="Search" value="&mvte:global:Search;" />
+									<input type="hidden" name="Per_Page" value="&mvte:global:Per_Page;" />
+
+									<mvt:foreach iterator="facet" array="facets:facets">
+										<mvt:foreach iterator="facet_value" array="facet:values">
+											<mvt:if expr="l.settings:facet_value:selected">
+												<input type="hidden" name="&mvte:facet:code;" value="&mvte:facet_value:value;" />
+											</mvt:if>
+										</mvt:foreach>
+									</mvt:foreach>
+
+									<label class="sr-only" for="Sort-By">Sort_By</label>
+									<select style="display: none;" id="Sort-By" name="Sort_By" onchange="this.form.submit();">
+										<mvt:if expr="ISNULL g.Sort_By">
+											<option data-display="Sort By" value="disp_order" selected="selected">No Sort</option>
+										<mvt:else>
+											<option data-display="Sort By" value="disp_order">No Sort</option>
+										</mvt:if>
+
+										<mvt:if expr="g.Sort_By EQ 'bestsellers'">
+											<option data-display="Sort By" value="bestsellers" selected="selected">Best Seller</option>
+										<mvt:else>
+											<option data-display="Sort By" value="bestsellers">Best Seller</option>
+										</mvt:if>
+
+										<mvt:comment>
+											<mvt:if expr="g.Sort_By EQ ''">
+												<option data-display="Sort By" value="" selected="selected">Top Rated</option>
+											<mvt:else>
+												<option data-display="Sort By" value="">Top Rated</option>
+											</mvt:if>
+										</mvt:comment>
+
+										<mvt:if expr="g.Sort_By EQ 'price_asc'">
+											<option data-display="Sort By" value="price_asc" selected="selected">Price: Low to High</option>
+										<mvt:else>
+											<option data-display="Sort By" value="price_asc">Price: Low to High</option>
+										</mvt:if>
+
+										<mvt:if expr="g.Sort_By EQ 'price_desc'">
+											<option data-display="Sort By" value="price_desc" selected="selected">Price: High to Low</option>
+										<mvt:else>
+											<option data-display="Sort By" value="price_desc">Price: High to Low</option>
+										</mvt:if>
+
+										<mvt:if expr="g.Sort_By EQ 'newest'">
+											<option data-display="Sort By" value="newest" selected="selected">New Product</option>
+										<mvt:else>
+											<option data-display="Sort By" value="newest">New Product</option>
+										</mvt:if>
+									</select>
+
+									<mvt:comment>
+										<li class="block-links">
+											<a id="sorting-clear" href="#">Clear All</a>
+											<a id="sorting-apply" href="#">Apply Filters</a>
+										</li>
+									</mvt:comment>
+								</form>
+							</div>
+						</mvt:if>
+					<mvt:comment> SORTING end </mvt:comment>
+					</mvt:if>
+
+
+
+					<mvt:comment> FILTERS </mvt:comment>
+					<mvt:if expr="g.category_code EQ 'Fragrance_Finder'">
+						<div class="info_bloc u-text-center">
+							<h3>Product Matcher</h3>
+							<p>Deciding what product will work well with your skin can be hard!
+Let us help you uncover the perfect product for your unique skin type no matter the concern - whether it's anti-aging, dark spots, or anything in-between, we have something for everyone.</p>
+						</div>
+							<mvt:item name="facets" />
+						<mvt:else>
+							<mvt:item name="facets" />
+					</mvt:if>
+
+					<mvt:comment> FILTERS end </mvt:comment>
+				</div>
+			</div>
+
+
+			<mvt:if expr="g.category_code EQ 'Fragrance_Finder'">
+
+			<mvt:else>
+				<div style="display:flex; justify-content: center; margin-bottom: 10px;" class="media-mention-category-title">
+					<h1>&mvte:category:name;</h1>
+				</div>
+			</mvt:if>
+
+			<mvt:item name="category_listing" />
+
+			
+			<mvt:if expr="l.settings:category:code EQ 'absolute'">
+				<mvt:item name="prod_ctgy_hdft" param="ctgy_footer" />
+			<mvt:else>
+				<mvt:comment>
+					Moved to ready theme content 'fragrance_family_category'
+				</mvt:comment>
+			</mvt:if>
+			
+		<mvt:item name="readytheme" param="banner( 'yotpo-pictures-widget' )" />
+
+		</div>
+	</section>
+
+<mvt:if expr="s.Remote_Addr EQ '118.173.196.106'">
+	<mvt:item name="ry_toolbelt" param="eval|varlist('l', '', l.all_settings)" />
+	<mvt:item name="ry_toolbelt" param="eval|varlist('g', '', l.all_settings)" />
+</mvt:if>
+
+	<mvt:item name="hdft" param="global_footer" />
+</body>
+</html>

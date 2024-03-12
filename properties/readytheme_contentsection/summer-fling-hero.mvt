@@ -1,0 +1,27 @@
+<style>
+  #jungle-bloom_hero {
+    background-image: url("graphics/00000001/1/summer-fling-mobile.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .rtrt-hero figure {
+    display: none;
+  }
+#js-RTRT .rtrt-hero {
+    background-image: url("graphics/00000001/1/Summer-Fling.png");
+}
+
+  @media (min-width: 540px) {
+    #jungle-bloom_hero {
+      background-image: url("graphics/00000001/1/Summer-Fling.png");
+      background-position: left;
+    }
+    .rtrt-hero figure {
+      display: block;
+    }
+  }
+</style>
+<div class="o-wrapper o-wrapper--flush">
+  <div id="jungle-bloom_hero" class="rtrt-hero"></div>
+</div>

@@ -1,0 +1,10 @@
+<div class="o-wrapper o-wrapper--flush rtrt-wellness">
+		<h2>A Treehouse in the Wild
+			<span>lush tranquility awaits</span>
+		</h2>
+		<p>
+			Jungle Bloom takes you on an exotic journey into the wild. Drops of fresh coconut water collect on a canopy of lush palm leaves as dense vines mingle with the exotic sweetness of wild lily and frangipani blossoms. High above, the warmth of sun-bleached mango wood gives shelter to the tangled green below. 
+		</p>
+ 	<mvt:item name="readytheme" param="image( 'jungle-room' )" />
+
+	</div>

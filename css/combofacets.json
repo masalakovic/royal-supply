@@ -1,0 +1,21 @@
+{
+    "code": "combofacets",
+    "type": "L",
+    "branchless_filepath": "css/00000001/combofacets.css",
+    "is_global": true,
+    "active": true,
+    "attributes": [
+        {
+            "name": "type",
+            "value": "text/css"
+        },
+        {
+            "name": "media",
+            "value": "all"
+        },
+        {
+            "name": "rel",
+            "value": "stylesheet"
+        }
+    ]
+}

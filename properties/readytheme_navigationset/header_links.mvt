@@ -1,0 +1,52 @@
+<ul class="t-site-header__links">
+    <mvt:foreach iterator="navigationitem" array="readytheme:navigationitems">
+        <mvt:if expr="NOT ISNULL l.settings:navigationitem:items">
+            <mvt:assign name="l.settings:has:children" value="'has-child-menu' $ asciichar(34) $ ' data-hook=' $ asciichar(34) $ 'has-drop-down has-child-menu'"/>
+            <mvt:assign name="l.settings:show:child" value="'<span class=' $ asciichar(34) $ 'c-navigation__link-carat' $ asciichar(34) $ '><span class=' $ asciichar(34) $ 'icon-chevron' $ asciichar(34) $ '></span></span>'"/>
+        <mvt:else>
+            <mvt:assign name="l.settings:has:children" value="''"/>
+            <mvt:assign name="l.settings:show:child" value="''"/>
+        </mvt:if>
+        <li class="c-navigation__list &mvt:has:children;">
+            <a class="c-navigation__link" href="&mvte:navigationitem:url;" target="&mvt:navigationitem:link_targ;">&mvt:navigationitem:name;&mvt:show:child;</a>
+            <mvt:if expr="NOT ISNULL l.settings:navigationitem:items">
+                <ul class="c-navigation__row is-hidden">
+                    <mvt:assign name="l.settings:has:children" value="''"/>
+                    <li class="c-navigation__list u-hidden--l" data-hook="show-previous-menu">
+                        <span class="c-navigation__link"><span class="icon-chevron">&nbsp;</span><span class="o-layout--grow">Main Menu</span></span>
+                    </li>
+                    <mvt:foreach iterator="navigationitem_level2" array="navigationitem:items">
+                        <mvt:if expr="NOT ISNULL l.settings:navigationitem_level2:items">
+                            <mvt:assign name="l.settings:has:children" value="'has-child-menu' $ asciichar(34) $ ' data-hook=' $ asciichar(34) $ 'has-child-menu'"/>
+                            <mvt:assign name="l.settings:show:child" value="'<span class=' $ asciichar(34) $ 'c-navigation__link-carat' $ asciichar(34) $ '><span class=' $ asciichar(34) $ 'icon-chevron' $ asciichar(34) $ '></span></span>'"/>
+                        <mvt:else>
+                            <mvt:assign name="l.settings:has:children" value="''"/>
+                            <mvt:assign name="l.settings:show:child" value="''"/>
+                        </mvt:if>
+                        <li class="c-navigation__list &mvt:has:children;">
+                            <a class="c-navigation__link" href="&mvte:navigationitem_level2:url;" target="&mvt:navigationitem_level2:link_targ;">&mvt:navigationitem_level2:name;&mvt:show:child;</a>
+                            <mvt:if expr="NOT ISNULL l.settings:navigationitem_level2:items">
+                                <ul class="c-navigation__row is-hidden">
+                                    <li class="c-navigation__list u-hidden--l" data-hook="show-previous-menu">
+                                        <span class="c-navigation__link"><span class="icon-chevron">&nbsp;</span><span class="o-layout--grow">Main Menu</span></span>
+                                    </li>
+                                    <mvt:foreach iterator="navigationitem_level3" array="navigationitem_level2:items">
+                                        <li class="c-navigation__list">
+                                            <a class="c-navigation__link" href="&mvte:navigationitem_level3:url;" target="&mvt:navigationitem_level3:link_targ;">&mvt:navigationitem_level3:name;</a>
+                                        </li>
+                                    </mvt:foreach>
+                                    <li class="c-navigation__list u-hidden--l">
+                                        <a class="c-navigation__link" href="&mvte:navigationitem_level2:url;" target="&mvt:navigationitem_level2:link_targ;">View All &mvt:navigationitem_level2:name;</a>
+                                    </li>
+                                </ul>
+                            </mvt:if>
+                        </li>
+                    </mvt:foreach>
+                    <li class="c-navigation__list u-hidden--l">
+                        <a class="c-navigation__link" href="&mvte:navigationitem:url;" target="&mvt:navigationitem:link_targ;">View All &mvt:navigationitem:name;</a>
+                    </li>
+                </ul>
+            </mvt:if>
+        </li>
+    </mvt:foreach>
+</ul>

@@ -1,0 +1,73 @@
+<div class="o-wrapper o-wrapper--flush rtrt-oils limited-slider">
+    <div class="rtrt-oils__inner rtrt-oils_indent ">
+        <div class="limited-slider-title">
+            
+        
+        <span>Limited Edition</span>
+        <h2>
+            Champain Holiday
+        </h2>
+        <ul>
+            <li>neroli </li>
+            <li>frosted ginger </li>
+            <li>honey</li>
+        </ul>
+    </div>
+
+        <ul class="rtrt-oils__list list_indent">
+            <li class="rtrt-oils__list-opener js-rtrt-oils-list-opener" data-name="tab1">
+                <mvt:item name="readytheme" param="image( 'spctgy_test_image' )" />
+                <span>Neroli</span>
+            </li>
+            <li class="rtrt-oils__list-opener js-rtrt-oils-list-opener active" data-name="tab2">
+                <mvt:item name="readytheme" param="image( 'spctgy_test_image' )" />
+                <span>Frosted Ginger</span>
+            </li>
+            <li class="rtrt-oils__list-opener js-rtrt-oils-list-opener" data-name="tab3">
+                <mvt:item name="readytheme" param="image( 'spctgy_test_image' )" />
+                <span>Honey</span>
+            </li>
+        </ul>
+        <div class="rtrt-oils__content-holder">
+            <div class="rtrt-oils__content content-border" data-name="tab1">
+                <figure class="rtrt-oils__quote">
+                    <blockquote>
+                        <q>Frosted Ginger smells spicy and fizzy with a citrus underdone. 
+                            Ginger enhances the fragrance with a sparkling effervescence.
+                        </q>
+                    </blockquote>
+                    <figcaption>
+                        - Jon Bresler,
+                        <span>Founder</span>
+                    </figcaption>
+                </figure>
+            </div>
+            <div class="rtrt-oils__content content-border active" data-name="tab2">
+                <figure class="rtrt-oils__quote">
+                    <blockquote>
+                        <q>Frosted Ginger smells spicy and fizzy with a citrus underdone. 
+                            Ginger enhances the fragrance with a sparkling effervescence.
+                        </q>
+                    </blockquote>
+                    <figcaption>
+                        - Jon Bresler,
+                        <span>Founder</span>
+                    </figcaption>
+                </figure>
+            </div>
+            <div class="rtrt-oils__content content-border" data-name="tab3">
+                <figure class="rtrt-oils__quote">
+                    <blockquote>
+                        <q>Frosted Ginger smells spicy and fizzy with a citrus underdone. 
+                            Ginger enhances the fragrance with a sparkling effervescence.
+                        </q>
+                    </blockquote>
+                    <figcaption>
+                        - Jon Bresler,
+                        <span>Founder</span>
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+    </div>
+</div>

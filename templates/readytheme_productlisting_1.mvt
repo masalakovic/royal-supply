@@ -1,0 +1,60 @@
+<div class="row product-carousel">
+	<div class="column whole hide medium-show medium-two-fifths large-one-fourth">
+		<div class="well carrot-right featured-products-descrip" id="js-featured-products-height">
+			<h3 class="nm">Featured Products</h3>
+			<div class="sky">&bull;&bull;&bull;&bull;&bull;</div>
+			<p><mvt:item name="readytheme" param="contentsection( 'home_featured_products' )" /></p>
+			<a href="&mvt:urls:PLST:auto;" class="button button-hollow align-center uppercase featured-products-view-all">View All</a>
+		</div>
+	</div>
+	<div class="column whole align-center show medium-hide mobile-featured-products">
+		<h3 class="nm">Featured Products</h3>
+		<div class="sky">&bull;&bull;&bull;&bull;&bull;</div>
+	</div>
+	<div class="column whole large-three-fourths medium-three-fifths whats-popular-carousel">
+		<div id="js-whats-popular-carousel">
+			<mvt:foreach iterator="product" array="readytheme:products">
+				<div class="category-product align-center medium-align-left js-featured-products-height-min">
+					<div class="flag">
+						<mvt:if expr="NOT ISNULL l.settings:product:imagetypes:main">
+							<mvt:assign name="l.settings:product:src" value="l.settings:product:imagetypes:main" />
+						<mvt:else>
+							<mvt:assign name="l.settings:product:src" value="g.theme_path $ '/images/img_no_thumb.jpg'" />
+						</mvt:if>
+						<a href="&mvte:product:link;" class="category-product-image-wrapper">
+							<img src="&mvt:product:src;" alt="&mvte:product:name;">
+						</a>
+						<div class="category-product-cta-wrapper">
+							<button type="button" class="button category-product-cta-button category-product-cta-quickview js-quick-view" data-product-link="&mvte:urls:PROD:auto_sep;Product_Code=&mvte:product:code;&amp;show=quickview">
+								<span class="levels-icon-eye"></span>
+								<span class="category-product-cta-quickview-text"> Quickview</span>
+							</button>
+							<form action="&mvte:urls:BASK:auto;" method="POST" class="category-product-form">
+								<input type="hidden" name="Action" value="ADPR">
+								<input type="hidden" name="Product_Code" value="&mvte:product:code;">
+								<input type="hidden" name="Category_Code" value="&mvte:global:Category_Code;">
+								<input type="hidden" name="Quantity" value="1">
+								<button class="button category-product-cta-button category-product-cta-button-adpr">
+									<span data-icon="&#xe07a;"></span><span class="category-product-cta-adpr-text"> Add to Cart</span>
+								</button>
+							</form>
+						</div>
+					</div>
+					<div class="featured-product-bottom">
+						<p class="category-product-name"><a href="&mvte:product:link;">&mvt:product:name;</a></p>
+						<p>
+							<mvt:if expr="l.settings:product:base_price GT l.settings:product:price">
+								<span class="category-product-retail-price">&mvt:product:formatted_base_price;</span> <span class="category-product-sale-price">&mvt:product:formatted_price;</span>
+							<mvt:else>
+								<span class="category-product-price bold">&mvt:product:formatted_price;</span>
+							</mvt:if>
+							<mvt:if expr="l.settings:product:customfield_values:customfields:product_flag">
+								<span class="category-product-flag">&mvt:product:customfield_values:customfields:product_flag;</span>
+							</mvt:if>
+						</p>
+					</div>
+				</div>
+			</mvt:foreach>
+		</div>
+	</div>
+</div>

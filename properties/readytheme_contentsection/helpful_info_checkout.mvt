@@ -1,0 +1,10 @@
+<div class="helpful_info text_block">
+    <h2>Need Assistance?</h2>
+    <mvt:item name="readytheme" param="image( 'call_icon' )" />
+    <h3>CALL US</h3>
+    <p>
+        MONDAY THROUGH FRIDAY<br>
+        9:00 AM TO 5:30 PM EST.<br>
+        <strong><a href="tel:800.362.3677">800.362.3677</a></strong>
+    </p>
+</div>

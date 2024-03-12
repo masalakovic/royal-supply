@@ -1,0 +1,13 @@
+{
+    "code": "nice-select",
+    "type": "L",
+    "branchless_filepath": "b04/b24/themes/colossus/plugins/nice-select/jquery.nice-select.min.js",
+    "is_global": true,
+    "active": false,
+    "attributes": [
+        {
+            "name": "type",
+            "value": "text/javascript"
+        }
+    ]
+}

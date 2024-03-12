@@ -1,0 +1,21 @@
+{
+    "code": "marketing_slider_style",
+    "type": "L",
+    "branchless_filepath": "css/00000001/b08/marketing_slider_style.css",
+    "is_global": true,
+    "active": false,
+    "attributes": [
+        {
+            "name": "type",
+            "value": "text/css"
+        },
+        {
+            "name": "media",
+            "value": "all"
+        },
+        {
+            "name": "rel",
+            "value": "stylesheet"
+        }
+    ]
+}

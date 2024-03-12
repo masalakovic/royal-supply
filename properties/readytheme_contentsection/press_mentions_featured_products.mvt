@@ -1,0 +1,129 @@
+<style>
+    .featured-products-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .featured-products-container h2 {
+        text-align: center;
+    }
+
+    @media (max-width: 29.9em) {
+        .featured-products-container h2 {
+            font-size: 26px;
+        }
+    }
+
+    .featured-products-list {
+        display: flex;
+        justify-content: center;
+    }
+
+    .featured-products-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 10px 20px;
+    }
+
+    @media (max-width: 630px) {
+        .featured-products-container .more-th-two {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    @media (max-width: 420px) {
+        .featured-products-list {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    .featured-products-container a {
+        text-align: center;
+    }
+
+    .featured-products-container .btn {
+        min-width: 120px;
+    }
+
+    .featured-products-container img {
+        transition: 0.2s;
+        width: 100%;
+        max-width: 250px;
+    }
+
+    .featured-products-container img:hover {
+        opacity: 0.5;
+    }
+</style>
+<section>
+    <div class="featured-products-container">
+        <mvt:assign name="l.void"
+            value="miva_splitstring( l.settings:product:customfield_values:customfields:press_mentions_recommended_products, ',', l.settings:mentioned_products, 'trim' )" />
+        <mvt:if expr="miva_array_elements(l.settings:mentioned_products) GT 0">
+            <mvt:if expr="miva_array_elements(l.settings:mentioned_products) GT 1">
+                <h2>Shop Featured Products</h2>
+                <mvt:else>
+                    <h2>Shop Featured Product</h2>
+            </mvt:if>
+
+            <mvt:if expr="miva_array_elements(l.settings:mentioned_products) GT 2">
+                <div class="featured-products-list more-th-two">
+                    <mvt:else>
+                        <div class="featured-products-list">
+            </mvt:if>
+
+
+
+            <mvt:foreach iterator="mentioned_product_code" array="mentioned_products">
+                <mvt:do name="l.return" file="g.Module_Library_DB"
+                    value="Runtime_Product_Load_Code( l.settings:mentioned_product_code, l.settings:mentioned_product )" />
+                <mvt:item name="customfields"
+                    param="Read_Product_Code( l.settings:mentioned_product_code, 'product_scent', l.settings:mentioned_product:product_scent )" />
+                <mvt:item name="customfields"
+                    param="Read_Product_Code( l.settings:mentioned_product_code, 'Listrak-Sub-Category', l.settings:mentioned_product:listrak_sub_category )" />
+
+                <mvt:assign name="l.uri:store_id" value="g.Store:id" />
+                <mvt:assign name="l.uri:screen" value="''" />
+                <mvt:assign name="l.uri:page_id" value="0" />
+                <mvt:assign name="l.uri:cat_id" value="0" />
+                <mvt:assign name="l.uri:product_id" value="l.settings:mentioned_product:id" />
+                <mvt:do file="g.Module_Feature_URI_DB" name="l.have_uri"
+                    value="URI_Load_Item_Canonical( l.uri, l.settings:canonical_uri )" />
+                <mvt:if expr="l.have_uri">
+                    <mvt:assign name="l.settings:mentioned_product:link" value="l.settings:canonical_uri:uri" />
+                </mvt:if>
+
+                <mvt:do name="l.image_count" file="g.Module_Library_DB"
+                    value="ProductImageDataList_Load_Product(l.settings:mentioned_product:id, l.settings:imagedata)" />
+
+                <div class="featured-products-item">
+                    <a class="t-primary-link" href="&mvt:mentioned_product:link;">
+                        <picture>
+                            <img class="x-product-list__image"
+                                src="https://www.lafco.com/mm5/&mvt:imagedata[1]:image:image;"
+                                alt="&mvt:mentioned_product:product_scent;" height="250">
+                        </picture>
+                        <figcaption class="x-product-list__details">
+                            <div class="x-product-list__name">&mvt:mentioned_product:listrak_sub_category;</div>
+                            <div class="x-product-list__scent">&mvt:mentioned_product:product_scent;</div>
+                            <div class="box-price">&mvt:mentioned_product:price;</div>
+                        </figcaption>
+                    </a>
+                    <br />
+                    <form method="post" action="https://www.lafco.com/">
+                        <input type="hidden" name="Screen" value="BASK">
+                        <input type="hidden" name="Action" value="ADPR">
+                        <input type="hidden" name="Quantity" value="1">
+                        <input type="hidden" name="Product_Code" value="&mvt:mentioned_product_code;">
+                        <input type="submit" value="Add To Cart" class="btn btn--white btn--s">
+                    </form>
+                </div>
+            </mvt:foreach>
+    </div>
+    </mvt:if>
+    </div>
+</section>

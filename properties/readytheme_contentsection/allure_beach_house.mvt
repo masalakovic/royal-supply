@@ -1,0 +1,11 @@
+<section class="allure-beach container">
+    <p style="font-size: 18px;">BEACH HOUSE</p>
+    <h2>Sea & Dune</h2>
+    <p style="padding: 0 20px 10px;letter-spacing: 1.8px;line-height: 30px;">
+        Sunlight scatters across the waves as they meet the windswept coast. Fresh lemon and spicy coastal lily fall into watery blue lotus and natural sea grass. Warm golden amber and cool sea spray invite you to escape to endless summer days.
+    </p>
+ <mvt:item name="readytheme" param="image( 'allure_beach_house' )" />
+
+<a class="btn btn--s allure-btn" href="https://www.lafco.com/fragrances/fresh/sea-and-dune">Shop the fragrance</a>
+
+</section>

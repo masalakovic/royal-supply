@@ -1,0 +1,16 @@
+<div class="o-layout gift_certificate"> 
+	<div class="o-layout__item u-width-4">	
+		<div class="gift_certificate_text"> 
+			<h1> A Gift You Can Give Anytime <h1>
+			<br>
+			<p> Looking for the perfect </p>
+			<p> last-minute gift? Share the </p>
+			<p> joy of LAFCO New York with </p>
+			<p> a Gift Certificate emailed </p>
+			<p> directly to your recipient. </p>
+		</div>
+	</div>
+	<div class="o-layout__item u-width-8">	
+		<div> </div>
+	</div>
+</div>

@@ -1,0 +1,81 @@
+<mvt:item name="readytheme" param="Load_Image('storefront_hero_section', g.storefront_hero_section)" />
+<section class="storefront-hero-section newletter-sect" style="background-image: url('&mvt:global:storefront_hero_section:image;');">
+    <div class="container">
+        <div class="outer-box">
+<div class="inner-box">
+<div class="section-heading">
+<h1>Create an account</h1>
+</div>
+<div class="sub-heading">
+<p>Earn your first 250 <strong>LAFCO Rewards</strong> points by creating an account.</p>
+</div>
+                    <mvt:if expr="l.settings:messages:error_message_count">
+                        <br>
+                        <div class="error-message u-color-red u-text-center">
+                            <mvt:foreach iterator="error" array="messages:error_messages">
+                                &mvt:error;
+                            </mvt:foreach>
+                        </div>
+                    <mvt:elseif expr="g.iem">
+                        <mvt:assign name="g.iem_decoded" value="crypto_base64_decode(g.iem)" />
+                        <br>
+                        <div class="error-message u-color-red u-text-center">
+                            &mvt:global:iem_decoded;
+                        </div>
+                    <mvt:elseif expr="g.ipm">
+                        <mvt:assign name="g.ipm_decoded" value="crypto_base64_decode(g.ipm)" />
+                        <br>
+                        <div class="error-message u-color-red u-text-center">
+                            &mvt:global:ipm_decoded;
+                        </div>
+                    <mvt:elseif expr="l.settings:messages:information_message_count">
+                        <br>
+                        <div class="information-message u-text-center">
+                        <mvt:foreach iterator="message" array="messages:information_messages">
+                            &mvt:message;
+                        </mvt:foreach>
+                        </div>
+                    </mvt:if>
+
+<div class="email-box">
+<form class="u-inline-block u-text-left" method="post" action="&mvte:urls:CACT:secure;">
+                                <fieldset>
+                                    <mvt:if expr="g.Order">
+                                        <input type="hidden" name="current_location" value="&mvte:urls:OINF:secure_sep;">
+                                        <input type="hidden" name="Order" value="&mvte:global:Order;">
+                                    <mvt:elseif expr="g.Redeem">
+                                        <input type="hidden" name="current_location" value="&mvte:urls:RGFT:secure_sep;">
+                                        <input type="hidden" name="Redeem" value="&mvte:global:Redeem;">
+                                    <mvt:elseif expr="g.WishList">
+                                        <input type="hidden" name="current_location" value="&mvte:urls:WISH:secure_sep;">
+                                        <input type="hidden" name="WishList" value="&mvte:global:WishList;">
+                                    <mvt:else>
+                                        <input type="hidden" name="current_location" value="&mvte:urls:ACLN:secure_sep;">
+                                    </mvt:if>
+                                    <ul class="c-form-list">
+                                      
+                                        <li class="c-form-list__item">
+                                            <input id="l-register_email" placeholder="Email*" class="field" type="email" name="register_email" value="&mvte:global:register_email;" autocomplete="email">
+                                        </li>
+                                        <li class="c-form-list__item">
+                                            <input iiiid="l-register_password" id="Customer_PasswordEmail" class="field" type="password" name="register_password" autocomplete="new-password" placeholder="Password*">
+                                        </li>
+                                        <li class="c-form-list__item">
+                                            <input id="l-register_fname" class="field" type="text" name="register_fname" value="" placeholder="Your first name*" autocomplete="name given-name">
+                                        </li>
+                                        <li class="c-form-list__item">
+                                            <input id="l-register_lname" class="field" type="text" name="register_lname" autocomplete="name family-name" placeholder="Your last name*">
+                                        </li>
+                                        <li class="c-form-list__item u-text-center">
+                                            <input class="" type="submit" value="CONTINUE">
+                                        </li>
+                                        
+                                    </ul>
+                                </fieldset>
+                            </form>
+</div>
+
+</div>
+</div>
+    </div>
+</section>

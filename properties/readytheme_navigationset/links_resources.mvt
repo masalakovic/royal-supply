@@ -1,0 +1,13 @@
+<mvt:if expr="NOT ISNULL l.settings:readytheme:navigationitems">
+	<nav class="c-menu c-collapsible-menu">
+		<input id="&mvte:readytheme:code;" class="c-collapsible-menu__trigger" type="checkbox">
+		<label class="c-collapsible-menu__label" for="&mvte:readytheme:code;">Customer Services</label>
+		<ul class="c-menu__list">
+			<mvt:foreach iterator="navigationitem" array="readytheme:navigationitems">
+				<li>
+					<a class="c-menu__link" href="&mvte:navigationitem:url;" target="&mvt:navigationitem:link_targ;">&mvt:navigationitem:name;</a>
+				</li>
+			</mvt:foreach>
+		</ul>
+	</nav>
+</mvt:if>

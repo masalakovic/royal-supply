@@ -1,0 +1,32 @@
+<mvt:assign name="g.currency_prefix" value="''" />
+<mvt:assign name="g.currency" value="trim(g.currency)" />
+<mvt:if expr="len(g.currency) EQ 3">
+	<mvt:item name="ry_toolbelt" param="Assign|g.result|Cookie_Save('currency', g.currency, 0)" />
+<mvt:else>
+	<mvt:assign name="g.currency" value="g.request_cookies:currency" />
+</mvt:if>
+
+<mvt:if expr="g.currency EQ 'CAD'">
+	<mvt:assign name="g.currency_prefix" value="'CA'" />
+	<mvt:assign name="g.currency_cad" value="'checked'" />
+	<mvt:do file="g.Module_Feature_PGR_UT" name="l.add_result" value="Basket_Assign_Persistent_PriceGroup( g.basket:basket_id, 'Canadian Currency' )" />
+<mvt:else>
+	<mvt:assign name="g.currency_usd" value="'checked'" />
+	<mvt:do file="g.Module_Feature_PGR_UT" name="l.del_result" value="Basket_Remove_Persistent_PriceGroup( g.basket:basket_id, 'Canadian Currency' )" />
+</mvt:if>
+
+<mvt:if expr="l.settings:page:code CIN 'BASK,ORDL,OCST,OUS1,OUSM,UATM,UATR,OSEL,OPAY,INVC' OR (g.Customer_Temporary_Password) OR ('AMAZONPAY' CIN l.settings:page:code)">
+	<!-- &mvt:global:screen; / &mvt:page:code; -->
+	<mvt:exit />
+</mvt:if>
+
+<style type="text/css">
+.currency_wrapper { position: absolute; top: -18px; right: 7px; font-size: 14px; font-weight: 900; color: #212D39; }
+</style>
+<li class="currency_wrapper" class="u-block--l">
+	<form id="js-currency" method="post" action="&mvt:urls:_self:auto;">
+		<label for="">Currency: </label> &nbsp;
+		<input type="radio" name="currency" value="USD" &mvt:global:currency_usd><span> USD </span>&nbsp;&nbsp;&nbsp;
+		<input type="radio" name="currency" value="CAD" &mvt:global:currency_cad><span> CAD </span>
+	</form>
+</li>

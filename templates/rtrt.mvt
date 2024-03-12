@@ -1,0 +1,55 @@
+<mvt:item name="html_profile" />
+<head itemscope itemtype="http://schema.org/WebSite">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="&mvt:global:basehref;" />
+    <mvt:if expr="NOT ISNULL l.settings:page:title">
+        <title itemprop="name">&mvt:page:title;</title>
+    <mvt:else>
+        <title itemprop="name">&mvt:store:name;</title>
+    </mvt:if>
+	<meta name="description" content="LAFCO is a New York based home fragrance and body care company that refines and innovates classical approaches to personal care and the art of perfumery.">
+	<meta name="google-site-verification" content="mzJuky29Ny3IGEkT31ZtqbqMSoBThnAN3Wc-MIs1bGI" />
+    <mvt:item name="head" param="css_list" />
+    <mvt:item name="head" param="head_tag" />
+    <meta name="facebook-domain-verification" content="zdfl8tkwofpyckcjisdft6upk87rdh" />
+    <meta name="facebook-domain-verification" content="32rvi8haxbunwwogila5bi15yfymfg" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
+<style>
+x-product-list--slicked .x-product-list__image, .x-product-list__image {
+    margin-left: 16px;
+}
+</style>
+</head>
+<body id="js-&mvte:page:code;" class="o-site-wrapper t-page-&mvt:global:pageClass;">
+    <mvt:item name="hdft" param="global_header" />
+    <section class="o-layout">
+        <div class="o-layout__item">
+            <mvt:item name="hdft" param="header" />
+        </div>
+    </section>
+    
+    <mvt:item name="readytheme" param="contentsection( 'rtrt_hero' )" />
+
+    <mvt:item name="readytheme" param="contentsection( 'rtrt_wellness' )" />
+
+    <mvt:item name="readytheme" param="productlisting( 'rtrt-listing' )" />
+
+    <mvt:item name="readytheme" param="contentsection( 'rtrt_oils' )" />
+
+    <mvt:item name="readytheme" param="contentsection( 'rtrt_collection' )" />
+
+    <mvt:item name="readytheme" param="contentsection( 'storefront_press_quotes' )" />
+
+    <section class="o-layout">
+        <div class="o-layout__item">
+            <mvt:item name="hdft" param="footer" />
+        </div>
+    </section>
+    <mvt:item name="hdft" param="global_footer" />
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+</body>
+</html>

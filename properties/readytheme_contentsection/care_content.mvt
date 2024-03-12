@@ -1,0 +1,144 @@
+<div class="o-wrapper">
+	<blockquote><p>Do you dream about truffles? Do you view eating as more than an act… instead as an experience? Do you care about sustainability and where your food comes from? So do we!</p></blockquote>
+	<p>Our company was founded by three entrepreneurs who have a profound respect for this industry and the myriad of business potential which surrounds it. We are a young, growing company with more opportunity than we have time to pursue.</p>
+	<p>Do you have an idea for a potential collaboration with Mikuni? Or maybe you’re interested in a partnership for a new start up branch or program in a major metropolitan area? We at Mikuni are always in search of intelligent, imaginative, enthusiastic, self-motivated and entrepreneurial minded people. Whether you want to join our growing team of dedicated food and business enthusiasts, or you have a great idea for a unique and original partnership, we look forward to hearing from you.</p>
+	<p><strong>If food is your life, then make it your career.</strong> Mikuni Wild Harvest is currently looking for passionate, driven individuals for the following positions:</p>
+	<br>
+	<ul>
+		<li><strong class="u-text-uppercase"><a id="link-las-vegas" href="javascript:void(0);">Las Vegas – Sales Representative</a></strong></li>
+		<li><strong class="u-text-uppercase"><a id="link-seattle" href="javascript:void(0);">Seattle – Sales Representative</a></strong></li>
+		<li><strong class="u-text-uppercase"><a id="link-vancouver" href="javascript:void(0);">Vancouver – Sales Representative</a></strong></li>
+	</ul>
+</div>
+<mvt:item name="readytheme" param="Load_Image('careers_banner_las_vegas', g.careers_banner_las_vegas)" />
+<mvt:if expr="NOT ISNULL g.careers_banner_las_vegas">
+	<br><br><br>
+    <section id="section-las-vegas" class="t-static-banner t-static-banner--shadow t-static-banner--big t-defer-object" data-defer style="background-image: url('&mvte:global:careers_banner_las_vegas:image;');">
+        <div class="o-wrapper">
+            <h2 id="las-vegas">Las Vegas</h2>
+        </div>
+    </section>
+</mvt:if>
+<div class="o-wrapper">
+	<br><br>
+	<h2>Sales Representative</h2>
+	<h3>Responsibilities</h3>
+	<ul>
+		<li>Manage existing account base and increase product sales to existing customers</li>
+		<li>Communicate information about new products and special offers to wholesale customers</li>
+		<li>Research and contact new potential customers</li>
+		<li>Canvass local areas to identify new potential customers</li>
+		<li>Aggressively open new accounts in person and over the phone</li>
+		<li>Advise and educate customers about the best product choices for their needs</li>
+		<li>Provide excellent customer service to accounts in your territory</li>
+	</ul>
+	<br>
+	<h3>Required Qualifications</h3>
+	<ul>
+		<li>Engaging, energetic and customer focused personality</li>
+		<li>Quick learner and able to adapt to changing needs in a fast-paced company</li>
+		<li>Great phone personality and ability to be very efficient over the phone</li>
+		<li>Attention to detail</li>
+		<li>Ability to multitask</li>
+		<li>Great memory and follow up skills</li>
+		<li>Assertive and motivated to close sales</li>
+		<li>Previous food service sales experience</li>
+		<li>Tech-savvy</li>
+		<li>Must have a car and valid driver’s license</li>
+	</ul>
+	<br>
+	<h3>Desired Qualifications</h3>
+	<ul>
+		<li>Interest and passion for food and cooking</li>
+		<li>Experience with Google Apps</li>
+	</ul>
+	<p>To apply, please email your resume and cover letter to <strong><a title="Las Vegas Sales Position" href="mailto:info@mikuniwildharvest.com?subject=Las%20Vegas%20Sales%20Position">info@mikuniwildharvest.com</a></strong>. Include “Las Vegas Sales Position” in the email subject line.</p>
+</div>
+<mvt:item name="readytheme" param="Load_Image('careers_banner_seattle', g.careers_banner_seattle)" />
+<mvt:if expr="NOT ISNULL g.careers_banner_seattle">
+	<br><br><br>
+    <section id="section-seattle" class="t-static-banner t-static-banner--shadow t-static-banner--big t-defer-object" data-defer style="background-image: url('&mvte:global:careers_banner_seattle:image;');">
+        <div class="o-wrapper">
+            <h2 id="seattle">Seattle</h2>
+        </div>
+    </section>
+</mvt:if>
+<div class="o-wrapper">
+	<br><br>
+	<h2>Sales Representative</h2>
+	<h3>Responsibilities</h3>
+	<ul>
+		<li>Manage existing account base and increase product sales to existing customers</li>
+		<li>Communicate information about new products and special offers to wholesale customers</li>
+		<li>Research and contact new potential customers</li>
+		<li>Canvass local areas to identify new potential customers</li>
+		<li>Aggressively open new accounts in person and over the phone</li>
+		<li>Advise and educate customers about the best product choices for their needs</li>
+		<li>Provide excellent customer service to accounts in your territory</li>
+	</ul>
+	<br>
+	<h3>Required Qualifications</h3>
+	<ul>
+		<li>Engaging, energetic and customer focused personality</li>
+		<li>Quick learner and able to adapt to changing needs in a fast-paced company</li>
+		<li>Great phone personality and ability to be very efficient over the phone</li>
+		<li>Attention to detail</li>
+		<li>Ability to multitask</li>
+		<li>Great memory and follow up skills</li>
+		<li>Assertive and motivated to close sales</li>
+		<li>Previous food service sales experience</li>
+		<li>Tech-savvy</li>
+		<li>Must have a car and valid driver’s license</li>
+	</ul>
+	<br>
+	<h3>Desired Qualifications</h3>
+	<ul>
+		<li>Interest and passion for food and cooking</li>
+		<li>Experience with Google Apps</li>
+	</ul>
+	<p>To apply, please email your resume and cover letter to <strong><a title="Seattle Sales Position" href="mailto:info@mikuniwildharvest.com?subject=Seattle%20Sales%20Position">info@mikuniwildharvest.com</a></strong>. Include “Seattle Sales Position” in the email subject line.</p>
+</div>
+<mvt:item name="readytheme" param="Load_Image('careers_banner_vancouver', g.careers_banner_vancouver)" />
+<mvt:if expr="NOT ISNULL g.careers_banner_vancouver">
+	<br><br><br>
+    <section id="section-vancouver" class="t-static-banner t-static-banner--shadow t-static-banner--big t-defer-object" data-defer style="background-image: url('&mvte:global:careers_banner_vancouver:image;');">
+        <div class="o-wrapper">
+            <h2 id="vancouver">Vancouver</h2>
+        </div>
+    </section>
+</mvt:if>
+<div class="o-wrapper">
+	<br><br>
+	<h2>Sales Representative</h2>
+	<h3>Responsibilities</h3>
+	<ul>
+		<li>Manage existing account base and increase product sales to existing customers</li>
+		<li>Communicate information about new products and special offers to wholesale customers</li>
+		<li>Research and contact new potential customers</li>
+		<li>Canvass local areas to identify new potential customers</li>
+		<li>Aggressively open new accounts in person and over the phone</li>
+		<li>Advise and educate customers about the best product choices for their needs</li>
+		<li>Provide excellent customer service to accounts in your territory</li>
+	</ul>
+	<br>
+	<h3>Required Qualifications</h3>
+	<ul>
+		<li>Engaging, energetic and customer focused personality</li>
+		<li>Quick learner and able to adapt to changing needs in a fast-paced company</li>
+		<li>Great phone personality and ability to be very efficient over the phone</li>
+		<li>Attention to detail</li>
+		<li>Ability to multitask</li>
+		<li>Great memory and follow up skills</li>
+		<li>Assertive and motivated to close sales</li>
+		<li>Previous food service sales experience</li>
+		<li>Tech-savvy</li>
+		<li>Must have a car and valid driver’s license</li>
+	</ul>
+	<br>
+	<h3>Desired Qualifications</h3>
+	<ul>
+		<li>Interest and passion for food and cooking</li>
+		<li>Experience with Google Apps</li>
+	</ul>
+	<p>To apply, please email your resume and cover letter to <strong><a title="Vancouver Sales Position" href="mailto:info@mikuniwildharvest.com?subject=Vancouver%20Sales%20Position">info@mikuniwildharvest.com</a></strong>. Include “Vancouver Sales Position” in the email subject line.</p>
+</div>

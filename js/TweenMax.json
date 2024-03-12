@@ -1,0 +1,13 @@
+{
+    "code": "TweenMax",
+    "type": "E",
+    "filepath": "https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js",
+    "is_global": true,
+    "active": false,
+    "attributes": [
+        {
+            "name": "type",
+            "value": "text/javascript"
+        }
+    ]
+}

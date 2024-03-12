@@ -1,0 +1,7 @@
+{
+    "active": 1,
+    "descrip": "Yotpo picture widget",
+    "link_targ": "_self",
+    "link_type": "N",
+    "message": "<section class=\"category-instagram lafco-instagram\">\n                <h2>Get Inspired</h2>\n                <p>See what\u2019s happening at LAFCO on Instagram.</p>\n                <div role=\"region\" aria-live=\"polite\" aria-label=\"Carousel\" class=\"yotpo yotpo-pictures-widget\"\n                    data-gallery-id=\"5e6983850a404428fa4ab3f1\">\n                </div>\n            </section>"
+}

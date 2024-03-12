@@ -1,0 +1,116 @@
+<div class="row bg-white product-information">
+	<div class="column whole large-seven-twelfths medium-half product-information--images">
+		<div class="row">
+			<div class="column whole">
+				<mvt:if expr="l.settings:product:customfield_values:customfields:product_flag NE 'none'">
+					<mvt:assign name="l.settings:product:flag" value="'flag--' $ tolower(l.settings:product:customfield_values:customfields:product_flag)" />
+				</mvt:if>
+				<span class="flag">
+					<span id="js-main-image-zoom" class="main-image" data-index="0">
+						<img src="&mvt:product:imagetypes:main;" alt="&mvt:product:name;">
+					</span>
+				</span>
+				<div id="js-main-dots" class="main-image-nav main-image-nav--dots show large-hide"></div>
+			</div>
+		</div>
+		<mvt:item name="product_display_imagemachine" param="body:product:id" />
+	</div>
+	<!-- end product-information--images -->
+	<div class="column whole large-five-twelfths medium-half product-information--purchase">
+		<div id="js-processing-purchase" class="processing-purchase"><img src="&mvte:global:theme_path;/images/img_ajax_processing.gif" alt="Processing..." title="Processing..." /></div>
+		<div id="js-purchase-message" class="message message-warning purchase-message"></div>
+		<div class="row">
+			<div class="column whole">
+				<h1 class="nm">&mvte:product:name;</h1>
+				<div class="product-code">Code: &mvte:product:code;</div>
+				<hr noshade />
+				<div class="h3 nbm">
+					<mvt:if expr="l.settings:product:base_price GT l.settings:product:price">
+					<s id="js-additional-price" class="product-additional-price">&mvt:product:formatted_base_price;</s>
+					</mvt:if>
+					<span id="js-price-value" class="product-price" data-base-price="&mvt:product:price;">&mvt:product:formatted_price;</span>
+					<mvt:if expr="l.settings:product:customfield_values:customfields:product_flag">
+						<span class="product-product-flag">&mvt:product:customfield_values:customfields:product_flag;</span>
+					</mvt:if>
+				</div>
+				<div id="js-product-discounts"></div>
+			</div>
+		</div>
+		<hr noshade />
+	
+<div  id="custom_designer_toggle" class="button  white bg-violet ocdc-button">DESIGN YOUR OWN BACKPACK</div>
+
+	    <div id="designed-thumbnails"></div>
+
+ <form method="post" action="https://demo.pcinet.com/basket-contents.html" id="js-purchase-product" style="display:none;">
+                        <input type="hidden" name="Store_Code" value="&mvte:store:code;" />
+                        <input type="hidden" name="Action" value="ADPR" />
+                        <input type="hidden" name="Product_Code" value="&mvte:product:code;" />
+<input type="hidden" name="Quantity" value="1">
+<input type="hidden" name="Product_Attributes[1]:code" value="designed_image">
+<input type="hidden" name="Product_Attributes[1]:value" value="" id="designed_image">
+			<input type="submit" class="add-to-cart" value="Add to Cart"/>
+</form>
+
+	</div>
+	<!-- end product-information--purchase -->
+</div>
+
+
+ <div id="custom_designer">
+        <div class="close"></div>
+        <div id="custom_designer_root"></div>
+ </div>
+
+    <link rel="stylesheet" href="/mm5/custom-designer-backpacks/custom-designer-styles.css">
+
+   <script type="text/javascript" src="/mm5/custom-designer-backpacks/src/fabric.js"></script>
+
+<script>
+var custom_designer_image = "&mvt:product:customfield_values:customfields:custom_designer_image;";
+var custom_designer_colors = "&mvt:product:customfield_values:customfields:e_color;";
+
+var custom_designer_x = "&mvt:product:customfield_values:customfields:designer_x_coordinate;";
+var custom_designer_y = "&mvt:product:customfield_values:customfields:designer_y_coordinate;";
+
+     window.headerTitle = "Personalization";
+
+        window.headerNote = "Choose your options below. ";
+
+        window.editBoxHeader = "Enter Text (Up To 9 Characters)";
+
+        window.fontBoxHeader = "Choose font";
+
+        window.fontBoxInstructions = "Instructions: Select any combination of letters A-Z. Monograms: Enter initials in this order: First Initial, Last Initial, Middle Initial";
+
+        window.colorBoxHeader = "Choose Stitching Color";
+
+        window.agreementText = "I agree to the Terms and Conditions and approve this customization";
+
+        window.saveFilesTitle = "Save on my PC";
+
+        window.bottomNote = "Actual product may vary slightly from previewed image";
+</script>
+
+<script src="/mm5/custom-designer-backpacks/bundle.js"></script>
+
+<script>
+    
+$(function() {
+    $('#custom_designer_toggle').click(function() {
+        $('#custom_designer').animate({opacity:1}, 200, function() {
+            $(this).addClass('opened')
+        })
+    });
+    $('#custom_designer .close').click(function() {
+        $('#custom_designer').animate({opacity:0}, 200, function() {
+            $(this).removeClass('opened')
+        })
+    });
+})
+
+</script>
+
+
+
+<!-- end product-information -->

@@ -1,0 +1,11 @@
+{
+    "code": "REMINDER",
+    "enabled": 1,
+    "name": "Quote Reminder: Customer",
+    "page_code": "QUOTEEMAIL_REMINDER",
+    "tfn_cc": "quote-email-REMINDER-cc.mvc",
+    "tfn_from": "quote-email-REMINDER-from.mvc",
+    "tfn_mime": "quote-email-REMINDER-mime.mvc",
+    "tfn_subj": "quote-email-REMINDER-subj.mvc",
+    "tfn_to": "quote-email-REMINDER-to.mvc"
+}

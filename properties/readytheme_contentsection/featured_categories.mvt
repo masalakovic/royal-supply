@@ -1,0 +1,47 @@
+<section class="cmp-featured-categories" data-scroll="lazyImage">
+	<mvt:item name="readytheme" param="Load_Image('featured_category_01', l.settings:featured_category_01)" />
+	<figure class="h-nm font--uppercase font--semibold">
+		<img data-src="&mvt:readytheme:featured_category_01:image;" src="graphics/en-US/cssui/blank.gif" width="&mvt:readytheme:featured_category_01:image_wdth;" height="&mvt:readytheme:featured_category_01:image_hght;">
+		<figcaption><span>&mvt:readytheme:featured_category_01:image_alt;</span></figcaption>
+		<mvt:if expr="l.settings:readytheme:featured_category_01:link_type NE 'N'">
+			<mvt:if expr="l.settings:readytheme:featured_category_01:link_type EQ 'G'">
+				<mvt:do file="g.Module_Feature_TUI_DB" name="l.success" value="Page_Load_Code( l.settings:readytheme:featured_category_01:link_dest, l.settings:rt_page )" />
+				<mvt:do file="g.Module_Feature_URI_UT" name="l.settings:readytheme:featured_category_01:uri" value="Store_Page_URL(l.settings:rt_page, NULL)" />
+			<mvt:elseif expr="l.settings:readytheme:featured_category_01:link_type EQ 'C'">
+				<mvt:do file="g.Module_Library_DB" name="l.success" value="Category_Load_Code( l.settings:readytheme:featured_category_01:link_dest, l.settings:rt_category )" />
+				<mvt:do file="g.Module_Feature_URI_UT" name="l.settings:readytheme:featured_category_01:uri" value="Store_Category_URL(l.settings:rt_category, NULL)" />
+			<mvt:elseif expr="l.settings:readytheme:featured_category_01:link_type EQ 'P'">
+				<mvt:do file="g.Module_Library_DB" name="l.success" value="Product_Load_Code( l.settings:readytheme:featured_category_01:link_dest, l.settings:rt_product )" />
+				<mvt:do file="g.Module_Feature_URI_UT" name="l.settings:readytheme:featured_category_01:uri" value="Store_Product_URL(l.settings:rt_product, NULL)" />
+			<mvt:elseif expr="l.settings:readytheme:featured_category_01:link_type EQ 'U'">
+				<mvt:assign name="l.settings:readytheme:featured_category_01:uri" value="l.settings:readytheme:featured_category_01:link_dest" />
+			<mvt:else>
+				<mvt:assign name="l.settings:readytheme:featured_category_01:uri" value="NULL" />
+			</mvt:if>
+			<a href="&mvt:readytheme:featured_category_01:uri;" target="&mvte:readytheme:featured_category_01:link_targ;"></a>
+		</mvt:if>
+	</figure>
+	<mvt:item name="readytheme" param="Load_Image('featured_category_02', l.settings:featured_category_02)" />
+	<figure class="h-nm font--uppercase font--semibold">
+		<img data-src="&mvt:readytheme:featured_category_02:image;" src="graphics/en-US/cssui/blank.gif" width="&mvt:readytheme:featured_category_02:image_wdth;" height="&mvt:readytheme:featured_category_02:image_hght;">
+		<figcaption><span>&mvt:readytheme:featured_category_02:image_alt;</span></figcaption>
+		<mvt:if expr="l.settings:readytheme:featured_category_02:link_type NE 'N'">
+			<mvt:if expr="l.settings:readytheme:featured_category_02:link_type EQ 'G'">
+				<mvt:do file="g.Module_Feature_TUI_DB" name="l.success" value="Page_Load_Code( l.settings:readytheme:featured_category_02:link_dest, l.settings:rt_page )" />
+				<mvt:do file="g.Module_Feature_URI_UT" name="l.settings:readytheme:featured_category_02:uri" value="Store_Page_URL(l.settings:rt_page, NULL)" />
+			<mvt:elseif expr="l.settings:readytheme:featured_category_02:link_type EQ 'C'">
+				<mvt:do file="g.Module_Library_DB" name="l.success" value="Category_Load_Code( l.settings:readytheme:featured_category_02:link_dest, l.settings:rt_category )" />
+				<mvt:do file="g.Module_Feature_URI_UT" name="l.settings:readytheme:featured_category_02:uri" value="Store_Category_URL(l.settings:rt_category, NULL)" />
+			<mvt:elseif expr="l.settings:readytheme:featured_category_02:link_type EQ 'P'">
+				<mvt:do file="g.Module_Library_DB" name="l.success" value="Product_Load_Code( l.settings:readytheme:featured_category_02:link_dest, l.settings:rt_product )" />
+				<mvt:do file="g.Module_Feature_URI_UT" name="l.settings:readytheme:featured_category_02:uri" value="Store_Product_URL(l.settings:rt_product, NULL)" />
+			<mvt:elseif expr="l.settings:readytheme:featured_category_02:link_type EQ 'U'">
+				<mvt:assign name="l.settings:readytheme:featured_category_02:uri" value="l.settings:readytheme:featured_category_02:link_dest" />
+			<mvt:else>
+				<mvt:assign name="l.settings:readytheme:featured_category_02:uri" value="NULL" />
+			</mvt:if>
+			<a href="&mvt:readytheme:featured_category_02:uri;" target="&mvte:readytheme:featured_category_02:link_targ;"></a>
+		</mvt:if>
+	</figure>
+</section>
+<!-- end .cmp-featured-categories -->

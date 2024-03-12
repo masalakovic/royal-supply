@@ -1,0 +1,207 @@
+{
+    "items": [
+        {
+            "active": 1,
+            "disp_order": 41,
+            "id": 41,
+            "items": [
+                {
+                    "active": 1,
+                    "disp_order": 42,
+                    "id": 42,
+                    "items": [
+                        {
+                            "active": 1,
+                            "disp_order": 43,
+                            "id": 43,
+                            "link": "<a href=\"https://demo.pcinet.com/mm5/merchant.mvc?Screen=CTGY&Category_Code=pattern\" target=\"_self\">Pattern</a>",
+                            "link_dest": "pattern",
+                            "link_targ": "_self",
+                            "link_type": "C",
+                            "name": "Pattern",
+                            "parent_id": 42,
+                            "set_id": 5,
+                            "url": "https://demo.pcinet.com/mm5/merchant.mvc?Screen=CTGY&Category_Code=pattern"
+                        },
+                        {
+                            "active": 1,
+                            "disp_order": 44,
+                            "id": 44,
+                            "link": "<a href=\"https://demo.pcinet.com/mm5/merchant.mvc?Screen=CTGY&Category_Code=solid\" target=\"_self\">Solid</a>",
+                            "link_dest": "solid",
+                            "link_targ": "_self",
+                            "link_type": "C",
+                            "name": "Solid",
+                            "parent_id": 42,
+                            "set_id": 5,
+                            "url": "https://demo.pcinet.com/mm5/merchant.mvc?Screen=CTGY&Category_Code=solid"
+                        },
+                        {
+                            "active": 1,
+                            "disp_order": 45,
+                            "id": 45,
+                            "link": "<a href=\"https://demo.pcinet.com/mm5/merchant.mvc?Screen=CTGY&Category_Code=silk\" target=\"_self\">View All Silk</a>",
+                            "link_dest": "silk",
+                            "link_targ": "_self",
+                            "link_type": "C",
+                            "name": "View All Silk",
+                            "parent_id": 42,
+                            "set_id": 5,
+                            "url": "https://demo.pcinet.com/mm5/merchant.mvc?Screen=CTGY&Category_Code=silk"
+                        }
+                    ],
+                    "link": "<a href=\"https://demo.pcinet.com/mm5/merchant.mvc?Screen=CTGY&Category_Code=silk\" target=\"_self\">Silk</a>",
+                    "link_dest": "silk",
+                    "link_targ": "_self",
+                    "link_type": "C",
+                    "name": "Silk",
+                    "parent_id": 41,
+                    "set_id": 5,
+                    "url": "https://demo.pcinet.com/mm5/merchant.mvc?Screen=CTGY&Category_Code=silk"
+                },
+                {
+                    "active": 1,
+                    "disp_order": 46,
+                    "id": 46,
+                    "link": "<a href=\"https://demo.pcinet.com/mm5/merchant.mvc?Screen=CTGY&Category_Code=pattern\" target=\"_self\">Pattern</a>",
+                    "link_dest": "pattern",
+                    "link_targ": "_self",
+                    "link_type": "C",
+                    "name": "Pattern",
+                    "parent_id": 41,
+                    "set_id": 5,
+                    "url": "https://demo.pcinet.com/mm5/merchant.mvc?Screen=CTGY&Category_Code=pattern"
+                },
+                {
+                    "active": 1,
+                    "disp_order": 47,
+                    "id": 47,
+                    "link": "<a href=\"https://demo.pcinet.com/mm5/merchant.mvc?Screen=CTGY&Category_Code=wool\" target=\"_self\">Wool</a>",
+                    "link_dest": "wool",
+                    "link_targ": "_self",
+                    "link_type": "C",
+                    "name": "Wool",
+                    "parent_id": 41,
+                    "set_id": 5,
+                    "url": "https://demo.pcinet.com/mm5/merchant.mvc?Screen=CTGY&Category_Code=wool"
+                },
+                {
+                    "active": 1,
+                    "disp_order": 48,
+                    "id": 48,
+                    "link": "<a href=\"https://demo.pcinet.com/mm5/merchant.mvc?Screen=CTGY&Category_Code=ties\" target=\"_self\">View All Ties</a>",
+                    "link_dest": "ties",
+                    "link_targ": "_self",
+                    "link_type": "C",
+                    "name": "View All Ties",
+                    "parent_id": 41,
+                    "set_id": 5,
+                    "url": "https://demo.pcinet.com/mm5/merchant.mvc?Screen=CTGY&Category_Code=ties"
+                }
+            ],
+            "link": "<a href=\"/\" target=\"_self\">Home</a>",
+            "link_dest": "/",
+            "link_targ": "_self",
+            "link_type": "U",
+            "name": "Home",
+            "parent_id": 0,
+            "set_id": 5,
+            "url": "/"
+        },
+        {
+            "active": 1,
+            "disp_order": 49,
+            "id": 49,
+            "items": [
+                {
+                    "active": 1,
+                    "disp_order": 50,
+                    "id": 50,
+                    "link": "<a href=\"https://demo.pcinet.com/mm5/merchant.mvc?Screen=CTGY&Category_Code=pattern-bow-tie\" target=\"_self\">Pattern</a>",
+                    "link_dest": "pattern-bow-tie",
+                    "link_targ": "_self",
+                    "link_type": "C",
+                    "name": "Pattern",
+                    "parent_id": 49,
+                    "set_id": 5,
+                    "url": "https://demo.pcinet.com/mm5/merchant.mvc?Screen=CTGY&Category_Code=pattern-bow-tie"
+                },
+                {
+                    "active": 1,
+                    "disp_order": 51,
+                    "id": 51,
+                    "link": "<a href=\"https://demo.pcinet.com/mm5/merchant.mvc?Screen=CTGY&Category_Code=solid-bowtie\" target=\"_self\">Solid</a>",
+                    "link_dest": "solid-bowtie",
+                    "link_targ": "_self",
+                    "link_type": "C",
+                    "name": "Solid",
+                    "parent_id": 49,
+                    "set_id": 5,
+                    "url": "https://demo.pcinet.com/mm5/merchant.mvc?Screen=CTGY&Category_Code=solid-bowtie"
+                },
+                {
+                    "active": 1,
+                    "disp_order": 52,
+                    "id": 52,
+                    "link": "<a href=\"https://demo.pcinet.com/mm5/merchant.mvc?Screen=CTGY&Category_Code=wool-bowties\" target=\"_self\">Wool</a>",
+                    "link_dest": "wool-bowties",
+                    "link_targ": "_self",
+                    "link_type": "C",
+                    "name": "Wool",
+                    "parent_id": 49,
+                    "set_id": 5,
+                    "url": "https://demo.pcinet.com/mm5/merchant.mvc?Screen=CTGY&Category_Code=wool-bowties"
+                },
+                {
+                    "active": 1,
+                    "disp_order": 53,
+                    "id": 53,
+                    "link": "<a href=\"https://demo.pcinet.com/mm5/merchant.mvc?Screen=CTGY&Category_Code=silk-bowties\" target=\"_self\">Silk</a>",
+                    "link_dest": "silk-bowties",
+                    "link_targ": "_self",
+                    "link_type": "C",
+                    "name": "Silk",
+                    "parent_id": 49,
+                    "set_id": 5,
+                    "url": "https://demo.pcinet.com/mm5/merchant.mvc?Screen=CTGY&Category_Code=silk-bowties"
+                },
+                {
+                    "active": 1,
+                    "disp_order": 54,
+                    "id": 54,
+                    "link": "<a href=\"https://demo.pcinet.com/mm5/merchant.mvc?Screen=CTGY&Category_Code=bow-ties\" target=\"_self\">View All Bow Ties</a>",
+                    "link_dest": "bow-ties",
+                    "link_targ": "_self",
+                    "link_type": "C",
+                    "name": "View All Bow Ties",
+                    "parent_id": 49,
+                    "set_id": 5,
+                    "url": "https://demo.pcinet.com/mm5/merchant.mvc?Screen=CTGY&Category_Code=bow-ties"
+                }
+            ],
+            "link": "<a href=\"https://demo.pcinet.com/about-us.html\" target=\"_self\">About Us</a>",
+            "link_dest": "ABUS",
+            "link_targ": "_self",
+            "link_type": "G",
+            "name": "About Us",
+            "parent_id": 0,
+            "set_id": 5,
+            "url": "https://demo.pcinet.com/about-us.html"
+        },
+        {
+            "active": 1,
+            "disp_order": 55,
+            "id": 55,
+            "link": "<a href=\"https://demo.pcinet.com/contact-us.html\" target=\"_self\">Contact Us</a>",
+            "link_dest": "CTUS",
+            "link_targ": "_self",
+            "link_type": "G",
+            "name": "Contact Us",
+            "parent_id": 0,
+            "set_id": 5,
+            "url": "https://demo.pcinet.com/contact-us.html"
+        }
+    ],
+    "layout": "S",
+    "name": "Footer: Customer Service"
+}

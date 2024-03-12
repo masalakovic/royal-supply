@@ -1,0 +1,5 @@
+<mvt:item name="customfields" param="Read_Product_Code(l.settings:product:code, 'show_anniversary_badge', l.settings:product:show_anniversary_badge)"/>
+
+<mvt:if expr="l.settings:product:show_anniversary_badge">
+	<span class="badge-first-fragrance" href="/foundational-fragrances.html" title="Foundational Fragrances" target="_blank"></span>
+</mvt:if>

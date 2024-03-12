@@ -1,0 +1,17 @@
+<div class="o-layout u-grids-3">
+	<div class="o-layout__item" style="background-color: #f1f8df">
+		<div style="display: flex; flex-direction: column; justify-content: center; text-transform: uppercase">
+			Open an account
+		</div>
+	</div>
+	<div class="o-layout__item" style="background-color: #faecc9">
+		<div style="display: flex; flex-direction: column; justify-content: center; text-transform: uppercase">
+			Join the mailing list
+		</div>
+	</div>
+	<div class="o-layout__item" style="background-color: #f3eaf3">
+		<div style="display: flex; flex-direction: column; justify-content: center; text-transform: uppercase">
+			Read the blog
+		</div>
+	</div>
+</div>

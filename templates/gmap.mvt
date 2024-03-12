@@ -1,0 +1,48 @@
+<mvt:item name="html_profile" />
+<head>
+    <title>&mvt:maps_header;: &mvt:store:name;</title>
+    <base href="&mvt:global:basehref;" />
+    <mvt:item name="head" param="css_list" />
+    <mvt:item name="head" param="head_tag" />
+<mvt:item name="gmap" param="head"/>
+<mvt:item name="gmap" param="mapdata" />
+<style type="text/css">
+#loc_stores .store .icon { background-color: #&mvt:maps_icons_color; }
+</style>
+</head>
+
+<body class="MAP">
+
+<div id="site-container">
+    <div id="global-header"><mvt:item name="hdft" param="global_header" /></div>
+    <div id="navigation-bar"><mvt:item name="navbar" /></div>
+
+    <table id="content-container">
+        <tr>
+            <mvt:comment>
+            <td id="left-navigation"><mvt:item name="category_tree" /></td>
+            </mvt:comment>
+
+            <td id="main-content">
+                <div id="page-header"><mvt:item name="hdft" param="header" /></div>
+
+                <mvt:item name="gmap" param="content"/>
+
+                <div id="page-footer"><mvt:item name="hdft" param="footer" /></div>
+            </td>
+        </tr>
+    </table>
+
+    <div id="bottom-wrap"></div>
+    <div id="global-footer"><mvt:item name="hdft" param="global_footer" /></div>
+</div>
+
+	<mvt:comment> Map Locations goes just above the closing body tag. </mvt:comment>
+	<script type="text/javascript">
+	var icon_bgcolor = "&mvt:maps_icons_color;";    // default icon background color
+	var icon_fontsize = 11;                         // default icon font-size
+	var map_zoom = 13;                              // default zoom level for 1 map
+	</script>
+	<script type="text/javascript" src="&mvt:maps_path;map_icons.js"></script>
+</body>
+</html>

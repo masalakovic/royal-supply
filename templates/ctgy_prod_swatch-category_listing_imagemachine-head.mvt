@@ -1,0 +1,21 @@
+<script>
+ImageMachine.prototype.ImageMachine_Generate_Thumbnail = function( thumbnail_image, main_image, closeup_image, type_code )
+{
+	var thumbnail, span, img;
+
+	thumbnail	= document.createElement( 'li' );
+	span		= document.createElement( 'span' ); // to vertically center the thumbnail images
+
+	thumbnail.appendChild( span );
+
+	if ( typeof( thumbnail_image ) == 'string' && thumbnail_image.length > 0 )
+	{
+		img		= document.createElement( 'img' );
+		img.src	= thumbnail_image;
+		
+		thumbnail.appendChild( img );
+	}
+
+	return thumbnail;
+}
+</script>

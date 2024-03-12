@@ -1,0 +1,13 @@
+{
+    "code": "vertical_carousel_light",
+    "type": "L",
+    "branchless_filepath": "scripts/00000001/b04/vertical_carousel_light.js",
+    "is_global": true,
+    "active": false,
+    "attributes": [
+        {
+            "name": "type",
+            "value": "text/javascript"
+        }
+    ]
+}

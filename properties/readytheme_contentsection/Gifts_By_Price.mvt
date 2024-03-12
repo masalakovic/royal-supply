@@ -1,0 +1,28 @@
+<div class="o-layout o-layout--align-center seasonal_gifts">
+	<div class="o-layout__item u-width-12">
+		<div>	
+			<h1> Gifts by price </h1>
+		</div>
+	</div>
+	<div class="o-layout__item u-width-4">
+		<div>
+			<mvt:item name="readytheme" param="image( 'Under_50' )" />
+			<br>
+			<p class="seasonal_gift_items"> Under $50 </p>
+		</div>
+	</div>
+	<div class="o-layout__item u-width-4">
+		<div>
+			<mvt:item name="readytheme" param="image( 'Under_100' )" />
+			<br>
+			<p class="seasonal_gift_items"> Under $100 </p>
+		</div>
+	</div>
+	<div class="o-layout__item u-width-4">
+		<div>
+			<mvt:item name="readytheme" param="image( 'Awe_Inspiring' )" />
+			<br>
+			<p class="seasonal_gift_items"> Awe Inspiring </p>
+		</div>
+	</div>
+</div>

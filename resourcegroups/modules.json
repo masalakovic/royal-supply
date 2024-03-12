@@ -1,0 +1,13 @@
+{
+    "code": "modules",
+    "linked_js_resources": [
+        "runtimecombofacets"
+    ],
+    "linked_css_resources": [
+        "minibasket",
+        "readytheme",
+        "paypalcp",
+        "combofacets",
+        "quote"
+    ]
+}

@@ -1,0 +1,103 @@
+<mvt:item name="html_profile" />
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<base href="&mvt:global:basehref;">
+	<mvt:if expr="NOT ISNULL l.settings:page:title">
+		<title>&mvt:page:title;</title>
+	<mvt:else>
+		<title>&mvt:store:name;: &mvt:page:name;</title>
+	</mvt:if>
+	<mvt:item name="head" param="css_list" />
+	<mvt:item name="head" param="head_tag" />
+</head>
+<body id="js-&mvte:page:code;" class="o-site-wrapper t-page-&mvt:global:pageClass;">
+	<mvt:item name="hdft" param="global_header" />
+
+	<section class="o-wrapper o-wrapper--flush">
+		<section class="o-layout">
+			<div class="o-layout__item">
+				<mvt:item name="hdft" param="header" />
+			</div>
+		</section>
+
+		<section class="o-layout">
+			<div class="o-layout__item">
+				<mvt:item name="readytheme" param="contentsection( 'absolute-collection' )" />
+			</div>
+		</section>
+
+		<section class="o-layout">
+			<div class="o-layout__item">
+				<div style="
+					    max-width: 1027px;
+					    margin: auto;
+					    background: #efefee;
+					    padding: 50px;
+					">
+					<p style="font-family: &quot;made_canvasregular&quot;; ">take a trip with us to bohemia</p>
+					<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/682064679?h=7c913133f5&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+				</div>
+			</div>
+		</section>
+		<section class="o-layout">
+			<div class="o-layout__item">
+				<mvt:item name="hdft" param="footer" />
+			</div>
+		</section>
+	</section>
+	<br>
+	
+	<mvt:item name="hdft" param="global_footer" />
+</body>
+</html>
+
+
+
+
+
+
+<!-- <section class="section-static absolute-collection">
+	<div class="container">
+		<div class="o-layout u-grids-1 u-grids-2--s collection-category">
+			<div class="o-layout__item">
+				<mvt:item name="readytheme" param="image( 'fragrance' )" />
+			</div>
+			<div class="o-layout__item">
+				<h2>fragrance.</h2>
+				<p>Rendered through a complex process of extraction and concentration, absolute fragrance oils capture and preserve the subtle and delicate olfactory notes found in natural botanical materials.</p>
+                <div class="button_block">
+                    <a href="#" class="back" style="display:none;"><span></span></a>
+                    <a href="javascript:void(0)" class="next_block begin btn btn--white btn--s">DISCOVER MORE</a>
+                </div>
+			</div>
+		</div>
+        <div class="o-layout u-grids-1 u-grids-2--s collection-category">
+            <div class="o-layout__item">
+                <mvt:item name="readytheme" param="image( 'glass' )" />
+            </div>
+            <div class="o-layout__item">
+                <h2>glass.</h2>
+                <p>Each glass vessel in our Absolute Collection is a brilliantly colorful one-of-kind work of art, crafted by master artisans using time-honored tools and techniques.</p>
+                <div class="button_block">
+                    <a href="#" class="back" style="display:none;"><span></span></a>
+                    <a href="javascript:void(0)" class="next_block begin btn btn--white btn--s">DISCOVER MORE</a>
+                </div>
+            </div>
+        </div>
+        <div class="o-layout u-grids-1 u-grids-2--s collection-category">
+            <div class="o-layout__item">
+                <mvt:item name="readytheme" param="image( 'heritage' )" />
+            </div>
+            <div class="o-layout__item">
+                <h2>heritage.</h2>
+                <p>To create this definitive LAFCO collection, founder Jon Bresler collaborated with the family-run Glassworks Harrachov, the oldest glassblowing studio in Bohemia.</p>
+                <div class="button_block">
+                    <a href="#" class="back" style="display:none;"><span></span></a>
+                    <a href="javascript:void(0)" class="next_block begin btn btn--white btn--s">DISCOVER MORE</a>
+                </div>
+            </div>
+        </div>
+	</div>
+</section> -->

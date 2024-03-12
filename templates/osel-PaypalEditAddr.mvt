@@ -1,0 +1,7 @@
+
+<mvt:if expr="l.settings:PaypalEditAddr:ExpressCheckoutToken">
+  <br />
+  <a href="&mvte:global:secure_sessionurl;Store_Code=&mvta:global:Store_Code;&amp;Action=PAL1&amp;Screen=PAL1&amp;NextScreen=&mvta:global:Screen;&amp;CancelScreen=&mvta:global:Screen;" style="font-weight:bold;">Edit Address</a>
+  <br />
+</mvt:if>
+	

@@ -1,0 +1,12 @@
+<div class="o-wrapper o-wrapper--flush rtrt-wellness">
+		<h2>A Wellness Retreat
+			<span>create your own sanctuary</span>
+		</h2>
+		<p>
+			Our newest home fragrance is inspired by the current trends in wellness and self-care that continue to grow. As we
+			travel less and spend more time at home, our Retreat Collection is intended to create a tranquil ambiance in any
+			space, your personal sanctuary.
+		</p>
+ 	<mvt:item name="readytheme" param="image( 'rtrt_wellness' )" />
+
+	</div>

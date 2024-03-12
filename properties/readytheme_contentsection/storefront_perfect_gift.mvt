@@ -1,0 +1,53 @@
+<div style="position: relative;" id="storefront_perfect_gift" class="readytheme-contentsection">
+    <mvt:item name="readytheme" param="image( 'perfect_gift' )" />
+    <style>
+        .create-gift-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: absolute;
+            top: 12.2vw;
+            left: 63.9vw;
+        }
+        .create-gift-header {
+            display: block;
+            margin: 0;
+            text-align: center;
+            font-size: 3.15vw;
+            line-height: 3.9vw;
+            letter-spacing: 0.1vw;
+        }
+        .create-gift-text {
+            display: block;
+            text-align: center;
+            font-family: 'Futura PT';
+            letter-spacing: 0.005vw;
+            font-size: 2.4vw;
+            line-height: 2.75vw;
+            margin-top: 0.2vw;
+        }
+        @media (min-width: 1200px) {
+            .create-gift-container {
+                top: 149px;
+                left: 767px;
+            }
+            .create-gift-header {
+                font-size: 41px;
+                line-height: 41px;
+                letter-spacing: 0;
+            }
+            .create-gift-text {
+                letter-spacing: 0;
+                font-size: 29px;
+                line-height: 35px;
+                margin-top: 3px;
+            }
+        }
+    </style>
+    <mvt:comment> <div class="create-gift-container">
+        <h2 class="create-gift-header">Create the Perfect Gift.</h2>
+        <p class="create-gift-text">
+            Select the contents of your own <br/> personalized, wrapped gift box.
+        </p>
+    </div> </mvt:comment>
+</div>

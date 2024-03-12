@@ -1,0 +1,8 @@
+<div class="mailchimp">
+	<div class="mailchimp_title">Newsletter Signup</div>
+	<div>
+		<input class="mailchimp_email" data-mailchimp-identifier="global-mailchimp-email" type="text" name="Email_Address" placeholder="Email Address" />
+		<input class="mailchimp_button_signup" type="button" title="Sign Up" value="Sign Up" onclick="MailChimp_NewsLetter_Signup_Submit( 'global-mailchimp' );" />
+	</div>
+	<div class="mailchimp_message" data-mailchimp-identifier="global-mailchimp-message">Sign up to receive coupons, discounts and product updates.</div>
+</div>

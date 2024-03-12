@@ -1,0 +1,21 @@
+{
+    "code": "x-custom-select",
+    "type": "L",
+    "branchless_filepath": "b03/themes/colossus/extensions/custom-elements/selects/custom-select.css",
+    "is_global": true,
+    "active": false,
+    "attributes": [
+        {
+            "name": "type",
+            "value": "text/css"
+        },
+        {
+            "name": "media",
+            "value": "all"
+        },
+        {
+            "name": "rel",
+            "value": "stylesheet"
+        }
+    ]
+}

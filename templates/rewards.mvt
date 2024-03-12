@@ -1,0 +1,260 @@
+<mvt:item name="html_profile" />
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="&mvt:global:basehref;">
+    <mvt:if expr="NOT ISNULL l.settings:page:title">
+        <title>&mvt:page:title;</title>
+        <mvt:else>
+            <title>&mvt:store:name;: &mvt:page:name;</title>
+    </mvt:if>
+    <mvt:item name="head" param="css_list" />
+    <mvt:item name="head" param="head_tag" />
+</head>
+
+<body class="&mvt:page:code;" id="JS_&mvt:page:code;">
+    <div id="site-container">
+        <mvt:item name="hdft" param="global_header" />
+        <mvt:item name="hdft" param="header" />
+        <div class="wrap">
+            <div id="lafco-rewards">
+                <div class="content">
+                    <h2>LAFCO Rewards</h2>
+                    <p>Get rewarded for purchases, social <br> activity, referrals and more!</p>
+                    <mvt:if expr="g.customer:pw_email">
+                        <mvt:else>
+                            <p style="font-size: 20px;">Earn your first 250 points <br> by joining today!</p>
+                            <a href="&mvt:urls:acad:secure;" class="btn btn--white"><span>Join now</span></a>
+                            <p class="u-font-small"><b><a href="&mvt:urls:acln:secure;"
+                                        onclick="$('html, body').animate({ scrollTop: '0px' }, 300); setTimeout(function() {$('.t-global-account').addClass('is-open');}, 300);  return false;">LOG
+                                        IN</a></b> if you already have an account.</p>
+                    </mvt:if>
+                </div>
+                <img src="graphics/00000001/Champagne_Fragrance_Story_046a (1).png" alt="lafco rewards">
+            </div>
+            <div id="refer-friend">
+                <div class="content">
+                    <h2>Refer a friend</h2>
+                    <p>Give your friend the gift $15 Off their purchase of $100+<br> and receive $15 in reward points
+                        when they redeem.</p>
+                </div>
+                <img src="graphics/00000001/Hand_Cream_150 3.png" alt="refer a friend">
+                <div id="share" class="earn-points">
+                    <div id="" class="readytheme-contentsection">
+                        <div class="bg"></div>
+                        <div class="container">
+                            <div id="referral-sent-message" style="display: none; ">
+                                Your referral link has been sent! <br><br>
+                                <button id="send-another-referral">Share More!</button>
+                            </div>
+                            <div class="content">
+                                <h3>Share the Love</h3>
+                                <form id="send-zinrelo-referral-link">
+                                    <label class="sr-only" for="friendsEmail">Friend's Email</label>
+                                    <input id="friendsEmail" type="email" required placeholder="Friend's Email*">
+                                    <input type="submit" class="submit" value="Submit">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="earn-points" class="earn-points">
+                <div class="readytheme-contentsection">
+                    <div class="bg"></div>
+                    <div class="container">
+                        <div class="content">
+                            <h2>Earn points</h2>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <img src="images/LAFCO Perks-11.png" alt="">
+                                    <h3>Create an Account</h3>
+                                    <p>250 points</p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <img src="images/LAFCO Perks-12.png" alt="">
+                                    <h3>Refer a Friend</h3>
+                                    <p>3700 points</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <img src="images/LAFCO Perks-05.png" alt="">
+                                    <h3>Online Purchase</h3>
+                                    <p>$ 1 - 10 points</p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <img src="images/LAFCO Perks-07.png" alt="">
+                                    <h3>Share on Social</h3>
+                                    <p>
+                                        Twitter 50 points <br>
+                                        Facebook 50 points <br>
+                                        Pinterest 50 points
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <img src="graphics/00000001/Marine_Fragrance_Story_112a (1).png" alt="earn points">
+            </div>
+            <div id="get-rewarded" class="earn-points">
+                <div id="" class="readytheme-contentsection">
+                    <div class="bg"></div>
+                    <div class="container">
+                        <div class="content">
+                            <h2>Get rewarded</h2>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <img src="images/LAFCO Perks-04.png" alt="">
+                                    <h3>Free shipping</h3>
+                                    <p>On all orders over $100</p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <img src="images/LAFCO Perks-09.png" alt="">
+                                    <h3>Free Samples</h3>
+                                    <p>With every order</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <img src="images/LAFCO Perks-03.png" alt="">
+                                    <h3>Birthday Gift</h3>
+                                    <p>On your special day</p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <img src="images/LAFCO Perks-01.png" alt="">
+                                    <h3>Exclusive Rewards</h3>
+                                    <p>For Gold + Platinum tiers</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <img src="images/LAFCO Perks-30.png" alt="">
+                                    <h3>Redeem Points</h3>
+                                    <p>To receive LAFCO products</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <img src="graphics/00000001/Room_Sprays_266-2.png" alt="Get Rewarded">
+            </div>
+            <div id="rewards-benefits">
+                <div class="row">
+                    <div class="column whole">
+                        <h2>LAFCO Rewards Benefits</h2>
+                        <p>Take advantage of LAFCO Rewards. Earn 10 points per $1 spent.</p>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-hover table-bordere">
+                            <thead>
+                                <tr>
+                                    <th style="background-color: #f3f3f5;
+                                ">Benefits</th>
+                                    <th style="background: #c9d3e1;
+                                ">Silver</th>
+                                    <th style="background: #ddccb4;
+                                ">Gold</th>
+                                    <th style="background: #cc8278;
+                                ">Platinum</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th>Quality points</th>
+                                    <td>0 points*</td>
+                                    <td>2,500 points*</td>
+                                    <td>5,000 points*</td>
+                                </tr>
+                                <tr>
+                                    <th>Points per $ Spent</th>
+                                    <td>1 x</td>
+                                    <td>1.25 x</td>
+                                    <td>1.5 x</td>
+                                </tr>
+                                <tr>
+                                    <th>Samples per Order</th>
+                                    <td>1 Mystery Sample</td>
+                                    <td>2 Choice Sample</td>
+                                    <td>3 Choice Sample</td>
+                                </tr>
+                                <tr>
+                                    <th>Birthday Gift</th>
+                                    <td><i class="fa fa-star" aria-hidden="true"></i></td>
+                                    <td><i class="fa fa-star" aria-hidden="true"></i></td>
+                                    <td><i class="fa fa-star" aria-hidden="true"></i></td>
+                                </tr>
+                                <tr>
+                                    <th>Tier Celebration</th>
+                                    <td></td>
+                                    <td><i class="fa fa-star" aria-hidden="true"></i></td>
+                                    <td><i class="fa fa-star" aria-hidden="true"></i></td>
+                                </tr>
+                                <tr>
+                                    <th>Unlock New Rewards</th>
+                                    <td></td>
+                                    <td><i class="fa fa-star" aria-hidden="true"></i></td>
+                                    <td><i class="fa fa-star" aria-hidden="true"></i></td>
+                                </tr>
+                                <tr>
+                                    <th>Early access to products</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td><i class="fa fa-star" aria-hidden="true"></i></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p>
+                        * Only points earned from purchases count toward reaching the next tier level
+                    </p>
+                    <div class="u-text-center">
+                        <a href="" class="btn btn--white" id="view-rewards-button"><span>View Rewards</span></a>
+                    </div>
+                </div>
+            </div>
+            <div id="rewards-faqs">
+                <div class="row">
+                    <div class="column whole">
+                        <h3>LAFCO Rewards FAQs</h3>
+                        <p>Take advantage of LAFCO Rewards. Earn 10 points per $1 spent.</p>
+                        <div class="faqs">
+                            <mvt:item name="readytheme" param="contentsection( 'rewards_page_faq' )" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="lafco-info">
+                <div class="content">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h5>Can't Find What you are looking for?</h5>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 col-md-5 col-md-offset-1">
+                            <img src="images/LAFCO Perks-21.png" alt="Call Us">
+                            <h4>Call Us</h4>
+                            <p>(Monday through Friday | <span style="display: inline-block;">9:00 AM - 5:30 AM
+                                    EST.)</span></p>
+                            <p><a href="tel:800.362.3677">800.362.3677</a></p>
+                        </div>
+                        <div class="col-sm-6 col-md-5">
+                            <img src="images/LAFCO Perks-05.png" alt="Email Us">
+                            <h4>Email Us</h4>
+                            <p>We will reply as soon as possible</p>
+                            <p><a href="mailto:INFO@LAFCO.COM">INFO@LAFCO.COM</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <mvt:item name="hdft" param="footer" />
+        <mvt:item name="hdft" param="global_footer" />
+    </div>
+</body>
+
+</html>

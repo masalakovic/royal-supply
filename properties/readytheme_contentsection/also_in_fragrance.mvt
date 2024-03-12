@@ -1,0 +1,43 @@
+<mvt:if expr="l.settings:product:customfield_values:customfields:product_options">
+	<div style="margin-top:-60px;"> 
+    	<h2 style="display:none;" id="js-also-in-this-fragrance-title" aria-expanded="false" class="active_slider t-product-description__details-heading">Also In this Fragrance</h2>                                       
+        <mvt:item name="ry_toolbelt" param="Array_FromList|l.all_settings:product:product_options|l.all_settings:product:customfield_values:customfields:product_options" />
+        
+        <div class="t-product-description__details-content" style="position: relative;">
+            <button class="slick-prev slick-arrow also-in-this-fragrance" aria-label="Previous" type="button" style="">Previous</button>
+            <ul class="fragrance-list-slider">
+                <mvt:foreach iterator="option_code" array="product:product_options">
+                    <mvt:do name="l.return" file="g.Module_Library_DB" value="Product_Load_Code( trim(l.settings:option_code), l.settings:option )" />
+                    <mvt:if expr="l.settings:option">
+                        
+                            <mvt:assign name="l.uri:store_id" value="g.Store:id" />
+                            <mvt:assign name="l.uri:screen" value="''" />
+                            <mvt:assign name="l.uri:page_id" value="0" />
+                            <mvt:assign name="l.uri:cat_id" value="0" />
+                            <mvt:assign name="l.uri:product_id" value="l.settings:option:id" />
+                            <mvt:do file="g.Module_Feature_URI_DB" name="l.have_uri" value="URI_Load_Item_Canonical( l.uri, l.settings:canonical_uri )" />
+                            <mvt:if expr="l.have_uri">
+                                    <a href="&mvt:canonical_uri:uri;" data-product-code="&mvt:option:code;">
+
+                                        <mvt:item name="customfields" param="Read_Product_ID( l.settings:option:id, 'product_scent', l.settings:option:product_scent )" />
+                                        <mvt:item name="customfields" param="Read_Product_ID( l.settings:option:id, 'product_size', l.settings:option:product_size )" />
+
+                                        <mvt:item name="customfields" param="Read_Product_Code( code, 'product_scent', l.settings:customfields:test )" />
+
+                                        <mvt:item name="ry_toolbelt" param="Product_Images|EXTRA|images:extra|l.all_settings:option:code" />
+                                        <mvt:if expr="l.settings:images:extra">
+                                          <img src="&mvt:images:extra[1]:src;" alt="&mvt:option:name;">
+                                        </mvt:if>
+                                        
+                                        <span class="name_size">&mvt:option:product_size;</span><br>
+                                        <span>&mvt:option:product_scent;</span>
+                                    </a>
+                            </mvt:if>
+                    </mvt:if>
+                </mvt:foreach>
+            </ul>
+            <button class="slick-next slick-arrow also-in-this-fragrance" aria-label="Next" type="button" style="">Next</button>
+        </div>
+
+    </div>
+</mvt:if>

@@ -1,0 +1,78 @@
+<mvt:item name="readytheme" param="Load_Image('sfnt_best_products', g.sfnt_best_products)" />
+<section class="sfnt-best-products t-defer-object" data-defer style="background-image: url('&mvt:global:sfnt_best_products:image;');">
+    <div class="container">
+        <mvt:do name="l.result" file="g.Module_Library_DB" value="Category_Load_Code(l.settings:readytheme:productlisting:prod_cat, l.settings:product_list_category)" />
+        <mvt:assign name="l.uri:store_id" value="g.Store:id" />
+        <mvt:assign name="l.uri:screen" value="''" />
+        <mvt:assign name="l.uri:page_id" value="0" />
+        <mvt:assign name="l.uri:cat_id" value="l.settings:product_list_category:id" />
+        <mvt:assign name="l.uri:product_id" value="0" />
+        <mvt:do file="g.Module_Feature_URI_DB" name="l.have_uri" value="URI_Load_Item_Canonical(l.uri, l.settings:canonical_uri)" />
+        <mvt:comment>
+            The above code will load the category code used to pull the category name and then load the cannonical URI.
+        </mvt:comment>
+        <div class="heading-line">
+            <div class="heading-line-in">
+                <h2 class="heading-line__title">Best sellers</h2>
+                <div class="heading-line__subtitle">Deals of the week</div>
+            </div>
+            <div class="slick-slider-control">
+                <div id="best-products-arrow-prev" class="slick-slider-arrow slick-slider-arrow-prev">
+                    <span class="icon-arrow icon-arrow-left"></span>
+                </div>
+                <div id="best-products-arrow-next" class="slick-slider-arrow slick-slider-arrow-next">
+                    <span class="icon-arrow icon-arrow-right"></span>
+                </div>
+            </div>
+        </div>
+        <div class="x-product-list" data-hook="best-products">
+            <mvt:foreach iterator="product" array="readytheme:products">
+                <mvt:if expr="pos1 EQ 1">
+                <div class="x-product-list__item-first">
+                <mvt:else>
+                <div class="x-product-list__item">
+                </mvt:if>
+                    <div class="x-product-list__item-in">
+                        <a class="icon-loupe" href="#quick-view-popup-&mvte:product:code;" data-mini-modal data-mini-modal-type="inline"></a>
+                        <div id="quick-view-popup-&mvte:product:code;" class="quick-view-popup u-hide-visually">
+                            <img class="quick-view-popup__image" src="&mvte:product:imagetypes:main;" alt="&mvte:product:name;">
+                        </div>
+                        <a class="u-block x-product-list__link" href="&mvte:product:link;">
+                            <figure class="x-product-list__figure">
+                                <picture class="x-product-list__picture">
+                                    <mvt:item name="customfields" param="Read_Product_Code(l.settings:product:code, 'product_label', l.settings:product:product_label )" />
+                                    <mvt:if expr="NOT ISNULL l.settings:product:product_label AND l.settings:product:product_label NE 'none'">
+                                        <span class="x-product-label">&mvt:product:product_label;</span>
+                                    </mvt:if>
+                                    <img class="x-product-list__image" src="&mvte:product:imagetypes:main;" alt="&mvte:product:name;">
+                                </picture>
+                                <figcaption class="x-product-list__figure-caption">
+                                    <div class="x-product-list__category subtitle-line">&mvte:product:canonical_category:name;</div>
+                                    <div class="x-product-list__name">&mvte:product:name;</div>
+                                    <div class="x-product-list__bottom">
+                                        <div class="x-product-list__price-box">
+	                            			<mvt:if expr="(NOT ISNULL g.currency_prefix) AND (NOT ISNULL l.settings:product:customfield_values:discount_saleprice:2)">
+												<mvt:do file="g.Module_Store_Module_Currency" name="l.settings:product:customfield_values:discount_saleprice:2"
+													value="CurrencyModule_AddFormatting(g.Store:currncy_mod, l.settings:product:customfield_values:discount_saleprice:2)" />
+                                        		<span class="x-product-list__price">&mvt:global:currency_prefix;&mvt:product:customfield_values:discount_saleprice:2;</span>
+                                            <mvt:elseif expr="l.settings:product:base_price GT l.settings:product:price">
+                                                <span class="x-product-list__price x-product-list__price--red">&mvt:product:formatted_price;</span>
+                                                <span class="x-product-list__price"><s>&mvt:product:formatted_base_price;</s></span>
+                                            <mvt:else>
+                                                <span class="x-product-list__price">&mvt:product:formatted_price;</span>
+                                            </mvt:if>
+                                        </div>
+                                        <span class="icon-cart"></span>
+                                    </div>
+                                    <mvt:if expr="pos1 EQ 1">
+                                        <div class="x-product-list__descrip">&mvt:product:descrip;</div>
+                                    </mvt:if>
+                                </figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+            </mvt:foreach>
+        </div>
+    </div>
+</section>

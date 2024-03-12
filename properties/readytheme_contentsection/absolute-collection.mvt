@@ -1,0 +1,103 @@
+<section class="section-static section-static-banner-hero absolute-collection">
+	<mvt:item name="readytheme" param="image( 'main-image-collection' )" />
+</section>
+
+<section class="section-static section-static-promise absolute-collection">
+	<div class="container">
+		<div class="static-centered">
+			<h1>the ultimate expression of LAFCO</h1>
+		</div>
+		<p>We are honored to introduce the new Absolute Collection, which harnesses the power of highly concentrated fragrance oils known as absolutes to create an exquisitely aromatic experience that is uniquely true to nature. Paired with layers of color in handblown glass to create a shimmer of hues, each candle has been designed to illuminate your space and your senses. A pure expression of our commitment to natural ingredients, traditional craftsmanship, and principled practices, the Absolute Collection brings a new level of artistry to home fragrance and luxury candles.</p>
+
+	</div>
+</section>
+
+<section class="section-static section-static-discover-more absolute-collection-content">
+	<div class="container">
+		<div class="o-layout u-grids-1 u-grids-2--s u-grids-3--l block-discover-more">
+			<div class="o-layout__item">
+				<a href="/orange-blossom-signature-155oz-candle.html">
+				<mvt:item name="readytheme" param="image( 'clary-1' )" />
+				<span>ORANGE BLOSSOM</span>
+			</div>
+			</a>
+			<div class="o-layout__item">
+				<a href="/lavender-flower-signature-155oz-candle.html">
+				<mvt:item name="readytheme" param="image( 'rose-2' )" />
+				<span>LAVENDER FLOWER</span>
+				</a>
+			</div>
+			<div class="o-layout__item">
+				<a href="/clary-sage-signature-155oz-candle.html">
+				<mvt:item name="readytheme" param="image( 'orange-3' )" />
+				<span>CLARY SAGE</span>
+				</a>
+			</div>
+			<div class="o-layout__item">
+				<a href="/rose-de-mai-signature-155oz-candle.html">
+				<mvt:item name="readytheme" param="image( 'clary-4' )" />
+				<span>ROSE DE MAI</span>
+				</a>
+			</div>
+			<div class="o-layout__item">
+				<a href="/forest-oakmoss-signature-155oz-candle.html">
+				<mvt:item name="readytheme" param="image( 'rose-5' )" />
+				<span>FOREST OAKMOSS</span>
+				</a>
+			</div>
+			<div class="o-layout__item">
+				<a href="/balsam-black-pepper-signature-155oz-candle.html">
+				<mvt:item name="readytheme" param="image( 'orange-6' )" />
+				<span>BALSAM BLACK PEPPER</span>
+				</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="button_block static-centered black">
+        <a href="/absolute" class="next_block begin btn btn--s">SHOP THE COLLECTION</a>
+    </div>
+</section>
+
+<section class="absolute-collection">
+	<div class="container category-wrapper">
+		<div class="u-grids-1 u-grids-2--s collection-category">
+			<div class="image-wrapper">
+				<mvt:item name="readytheme" param="image( 'fragrance' )" />
+			</div>
+			<div class="info-wrapper">
+				<h2>fragrance.</h2>
+				<p>
+
+Rendered through a complex process of extraction and concentration, absolute fragrance oils capture and preserve the subtle and delicate olfactory notes found in natural botanical materials.</p>
+				<div class="button_block black">
+					<a href="/absolute-collection/fragrance.html" class="next_block begin btn btn--s">DISCOVER MORE</a>
+				</div>
+			</div>
+		</div>
+		<div class="u-grids-1 u-grids-2--s collection-category">
+			<div class="image-wrapper">
+				<mvt:item name="readytheme" param="image( 'glass' )" />
+			</div>
+			<div class="info-wrapper">
+				<h2>glass.</h2>
+				<p>Each glass vessel in our Absolute Collection is a brilliantly colorful one-of-kind work of art, crafted by master artisans using time-honored tools and techniques. </p>
+				<div class="button_block black">
+					<a href="/absolute-collection/glass.html" class="next_block begin btn btn--s">DISCOVER MORE</a>
+				</div>
+			</div>
+		</div>
+		<div class="u-grids-1 u-grids-2--s collection-category">
+			<div class="image-wrapper">
+				<mvt:item name="readytheme" param="image( 'heritage' )" />
+			</div>
+			<div class="info-wrapper">
+				<h2>heritage.</h2>
+				<p>To create this definitive LAFCO collection, founder Jon Bresler collaborated with the family-run Glassworks Harrachov, the oldest glassblowing studio in Bohemia.</p>
+				<div class="button_block black">
+					<a href="/absolute-collection/heritage.html" class="next_block begin btn btn--s">DISCOVER MORE</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

@@ -1,0 +1,44 @@
+<mvt:item name="html_profile" />
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="&mvt:global:basehref;">
+    <mvt:if expr="NOT ISNULL l.settings:page:title">
+        <title>&mvt:page:title;</title>
+        <mvt:else>
+            <title>&mvt:store:name;: &mvt:page:name;</title>
+    </mvt:if>
+    <mvt:item name="head" param="css_list" />
+    <style>
+        .influencer-form-holder label {
+            display: none;
+        }
+    </style>
+    <mvt:item name="head" param="head_tag" />
+</head>
+
+<body class="&mvt:page:code;" id="JS_&mvt:page:code;">
+
+    <mvt:item name="hdft" param="global_header" />
+    
+    <div class="o-wrapper preference-center-content influencer">
+        <section class="o-layout o-layout--justify-center">
+            <div class="o-layout__item u-width-12 u-width-6--m">
+                <h1>Are you an influencer?</h1>
+                <span class="influencer-form-description">If you’re interested in working with us as a an influencer,
+                    please fill out the form below with
+                    your information.</span>
+                    <div class="influencer-form-holder">
+                        <mvt:item name="readytheme" param="contentsection( 'influencer_form' )" />
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    <mvt:item name="hdft" param="global_footer" />
+    <script type="text/javascript" src="scripts/00000001/b19/influencer.js"></script>
+</body>
+
+</html>

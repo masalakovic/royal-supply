@@ -1,0 +1,12 @@
+{
+    "tbr_order_contents": {
+        "advanced": 0,
+        "b_height": 75,
+        "b_width": 75,
+        "constrain": "B",
+        "groups": 1,
+        "lineitemcoupons": 0,
+        "lineitemdiscounts": 0,
+        "template_filename": "order_b2c_export-tbr_order_contents.mvc"
+    }
+}

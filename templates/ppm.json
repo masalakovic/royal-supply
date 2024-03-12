@@ -1,0 +1,17 @@
+{
+    "content": {
+        "advanced": 0,
+        "template_filename": "ppm-content.mvc",
+        "template_id": 452
+    },
+    "hdft": {
+        "footer": {
+            "template_filename": "ppm-footer.mvc",
+            "template_id": 454
+        },
+        "header": {
+            "template_filename": "ppm-header.mvc",
+            "template_id": 453
+        }
+    }
+}

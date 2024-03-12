@@ -1,0 +1,11 @@
+<section class="cmp-global-search off-canvas" data-hook="cmp-global-search off-canvas">
+	<form class="bg--gray h-nm" method="post" action="&mvte:urls:SRCH:rr;">
+		<div class="input-group">
+			<span class="icon--search"></span>
+			<input class="input-group__element input--medium bg--transparent h-nb font--uppercase" type="search" name="Search" value="&mvte:global:Search;" placeholder="Search&hellip;" required>
+			<input class="button button--font-small button--medium bg--gray border--primary color--primary font--bold font--uppercase" type="submit" value="Search">
+			<button class="bg--transparent h-nb h-np icon--cross" data-hook="close-off-canvas"></button>
+		</div>
+	</form>
+</section>
+<!-- end .cmp-global-search -->

@@ -1,0 +1,54 @@
+<mvt:item name="html_profile" />
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="&mvt:global:basehref;">
+    <mvt:if expr="NOT ISNULL l.settings:page:title">
+        <title>&mvt:page:title;</title>
+    <mvt:else>
+        <title>&mvt:store:name;: &mvt:page:name;</title>
+    </mvt:if>
+    <mvt:item name="head" param="css_list" />
+    <mvt:item name="head" param="head_tag" />
+</head>
+<body id="js-&mvte:page:code;" class="o-site-wrapper t-page-&mvt:global:pageClass;">
+    <mvt:item name="hdft" param="global_header" />
+
+    <section class="o-layout">
+        <div class="o-layout__item">
+            <mvt:item name="hdft" param="header" />
+        </div>
+    </section>
+
+    <mvt:item name="readytheme" param="Load_Image('about_us_banner_northernfish', g.about_us_banner_northernfish)" />
+    <mvt:if expr="NOT ISNULL g.about_us_banner_northernfish">
+        <section class="t-static-banner t-defer-object" data-defer style="background-image: url('&mvte:global:about_us_banner_northernfish:image;');">
+            <div class="o-wrapper">
+                <mvt:item name="readytheme" param="contentsection( 'about_us_banner_northernfish_content' )" />
+            </div>
+        </section>
+    </mvt:if>
+
+    <mvt:item name="breadcrumbs" />
+
+    <section class="t-static-content">
+        <div class="o-wrapper">
+            <div class="heading-line">
+                <div class="heading-line-in">
+                    <h1 class="heading-line__title">&mvte:page:name;</h1>
+                </div>
+            </div>
+            <mvt:item name="readytheme" param="contentsection( 'aboutus_content_northernfish' )" />
+        </div>
+    </section>
+    
+    <section class="o-layout">
+        <div class="o-layout__item">
+            <mvt:item name="hdft" param="footer" />
+        </div>
+    </section>
+
+    <mvt:item name="hdft" param="global_footer" />
+</body>
+</html>

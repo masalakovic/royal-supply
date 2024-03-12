@@ -1,0 +1,315 @@
+<mvt:comment>
+    Load resized main image 
+</mvt:comment>
+<mvt:if expr="l.settings:product:customfield_values:productimagecustomfields:main">
+    
+    <mvt:assign name="l.resize:width" value="250" />
+    <mvt:assign name="l.resize:height" value="250" />
+    <mvt:assign name="l.resize:file" value="glosub( l.settings:product:customfield_values:productimagecustomfields:main, '_' $ l.resize:width $ 'x' $ l.resize:height, '' )" />
+    <mvt:do file="g.Module_Library_DB" name="l.resize:results:Image_FindOrInsert_ExistingFile" value="Image_FindOrInsert_ExistingFile( l.resize:file, l.resize:image )" />
+    <mvt:do file="g.Module_Library_DB" name="l.resize:results:GeneratedImage_FindOrInsert_Image_Dimensions" value="GeneratedImage_FindOrInsert_Image_Dimensions( l.resize:image, l.resize:width, l.resize:height, g.resize:generated )" />
+    
+    <mvt:assign name="l.settings:product:resized_image" value="g.resize:generated:image" />
+
+</mvt:if>
+
+<!doctype html>
+<html amp lang="en">
+    <head>
+     
+        <meta charset="utf-8">
+        <link rel="canonical" href="&mvte:urls:_self:auto;" />
+        <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+        <title>Lafco | &mvte:product:name;</title>
+        <mvt:comment>
+        |
+        | uses description from SEO tab on original store page (such as SFNT, ABUS, etc...)
+        |
+        </mvt:comment>
+        <meta name="description" content="&mvte:amp:page:description;">
+        <mvt:comment>
+        |
+        | AMP js must be loaded in head
+        |
+        </mvt:comment>
+        <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script> <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+        <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
+        <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
+        <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+        <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+        <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
+        <mvt:comment>
+        |
+        | required AMP boilerplate CSS and AMP js
+        |
+        </mvt:comment>
+        &mvt:amp:boilerplate_css;
+        <script async src="https://cdn.ampproject.org/v0.js"></script>
+
+        <script async custom-element="amp-yotpo" src="https://cdn.ampproject.org/v0/amp-yotpo-0.1.js"></script>
+        <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+
+        <mvt:comment>
+        |
+        | microdata
+        |
+        </mvt:comment>
+        <script type="application/ld+json">
+            {
+            "@context": "http://schema.org",
+            "@type": "WebPage",
+            "name": "&mvt:store:name;: &mvt:amp:page:name;",
+            "description": "&mvte:amp:page:description;",
+            "image": "&mvt:amp:page:image;"
+            }
+        </script>
+        <!-- Twitter Card data -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="&mvt:amp:twitter_handle;">
+        <meta name="twitter:creator" content="&mvt:amp:twitter_handle;">
+        <meta name="twitter:title" content="&mvt:store:name; - &mvt:amp:page:name;">
+        <meta name="twitter:description" content="&mvte:amp:page:description;">
+        <meta name="twitter:image" content="&mvt:amp:page:image;">
+        <!-- Open Graph data -->
+        <meta property="og:title" content="&mvt:store:name; - &mvt:amp:page:name;">
+        <mvt:if expr="l.settings:amp:page:homepage">
+        <meta property="og:type" content="website">
+        <mvt:else>
+        <meta property="og:type" content="article">
+        </mvt:if>
+        <meta property="og:url" content="&mvte:urls:_self:auto;">
+        <meta property="og:description" content="&mvte:amp:page:description;">
+        <meta property="og:site_name" content="&mvt:store:name;">
+        <meta property="og:image" content="&mvt:amp:page:image;">
+
+        <mvt:comment>
+            All custom CSS should go here. Only one <style amp-custom> is allowed per page 
+        </mvt:comment>
+        <style amp-custom>
+
+@font-face{font-family:"Futura PT Book";src:url(https://www.lafco.com/mm5/fonts/FuturaPT-Light.eot);src:url(https://www.lafco.com/mm5/fonts/FuturaPT-Light.eot?#iefix) format("embedded-opentype"),url(https://www.lafco.com/mm5/fonts/FuturaPT-Light.woff2) format("woff2"),url(https://www.lafco.com/mm5/fonts/FuturaPT-Light.woff) format("woff"),url(https://www.lafco.com/mm5/fonts/FuturaPT-Light.ttf) format("truetype"),url(https://www.lafco.com/mm5/fonts/FuturaPT-Light.svg#FuturaPT-Light) format("svg");font-weight:400;font-style:normal}*{font-family:"Futura PT Book",Arial,sans-serif;font-weight:400}amp-sidebar .topheader a.home{display:none}amp-sidebar .topheader a.close{float:right;width:40px;height:40px;line-height:40px;text-align:center}amp-sidebar .topheader{height:40px}.amp-product-scent{font-size:14px;font-weight:400;letter-spacing:.07em;margin-bottom:20px}p.amp-product-name{font-size:30px;font-weight:300;letter-spacing:.031em;margin-bottom:10px;margin-top:0}.amp-product-placement{font-size:16px;text-transform:uppercase;letter-spacing:.078em;margin-bottom:5px;margin-top:10px}body{padding-bottom:100px;padding-top:80px}.covid-top-header{background-color:#d49883;margin:0 auto;font-size:13px;font-weight:500;padding:10px 5px;text-align:center;z-index:20;line-height:1.3;letter-spacing:-.3px;margin-bottom:5px}amp-sidebar .category{border-bottom:1px solid #dfdfdf;margin:0}amp-sidebar .category a{display:block;padding:10px 20px;color:#000;text-decoration:none;font-size:18px;font-weight:400}amp-sidebar{width:100%}.amp-product-description{font-size:16px}.amp-page-content{padding:0 25px;max-width:600px;margin:auto}#amp-hamburger-menu{line-height:0;margin-left:10px}#amp-site-search{margin-right:10px;line-height:0}#amp-lafco-logo{line-height:0}#amp-header{height:80px;width:100%;background-color:#fbf9f9;position:fixed;top:0;z-index:9999}#amp-header .wrap{display:flex;align-items:center;max-width:600px;margin:auto;width:100%;justify-content:space-between}#sticky_add_to_bag{position:fixed;width:100%;height:90px;background:#fbf9f9;bottom:70px;left:0;z-index:1499;border-top:1px solid #919191}#sticky_add_to_bag .wrap{max-width:1200px;height:100%;margin:0 auto;display:flex;align-items:center;border-top:1px solid #111;justify-content:space-around}#sticky_add_to_bag .product_info{display:flex;align-items:center;color:#000;font-weight:300;font-size:16px;line-height:16px}#sticky_add_to_bag .image{width:40px;height:40px;margin-right:10px}#sticky_add_to_bag .t-product-layout-purchase__add-to-cart{margin-bottom:0}#sticky_add_to_bag .main_image{max-height:70px;margin-right:10px}#sticky_add_to_bag form{margin:0}#sticky_add_to_bag .button .btn{color:#000;font-weight:300;text-transform:uppercase;text-align:center;cursor:pointer;text-decoration:none;outline:0;transition:.3s;padding:6px 17px;font-size:14px;width:auto;min-width:auto;margin:0 0 0 10px;background-color:#fff;border:1px solid #000}#sticky_add_to_bag .button a{padding:8px;font-size:14px;min-width:auto}#sticky_add_to_bag .main_image{max-height:45px}#sticky_add_to_bag .button{display:flex;align-items:center;font-size:17px}#sticky_add_to_bag .product_info h4{font-size:16px;line-height:11px;margin:0 0 5px 0}#sticky_add_to_bag .prod_name{font-size:11px}#amp-footer{height:70px;position:fixed;width:100%;background:#222;z-index:99999;bottom:-1px}#amp-footer .wrap{max-width:600px;margin:auto;display:flex;justify-content:space-between}#ampSearchForm input{transition:all .4s;position:absolute;right:0;z-index:999;height:35px;line-height:30px;padding:0 10px;border-radius:3px;-webkit-border-radius:3px;border:1px solid #444;border-right:none;border-top-right-radius:0;-webkit-border-top-right-radius:0;border-bottom-right-radius:0;-webkit-border-bottom-right-radius:0;opacity:0;right:0;width:60px;height:60px}#ampSearchForm input:focus{right:35px;opacity:1;max-width:80vw;width:150px;height:35px}#ampSearchForm .search-button{border:none;background:0 0;padding:0;width:55px;transition:all .4s;height:55px}#ampSearchForm input:focus+.search-button{border:1px solid #444;height:35px;width:35px;border-radius:3px;-webkit-border-radius:3px;background:#fff;margin-left:23px}#ampSearchForm{position:relative;margin-right:10px}
+/*# sourceURL=bob.css */
+        </style>
+
+        <mvt:comment><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet"></mvt:comment>
+    </head>
+    <body>
+        <div id="amp-header">
+            <div class="wrap">
+                <a id="amp-hamburger-menu" on='tap:drawermenu.toggle'>
+                    <amp-img data-amp-auto-lightbox-disable src="https://www.lafco.com/mm5/graphics/00000001/amp_icon_burger.svg" alt="Menu" width="60" height="60"></amp-img>
+                </a>
+                <a id="amp-lafco-logo" href="https://www.lafco.com/" title="Lafco New York" rel="nofollow">
+                    <amp-img data-amp-auto-lightbox-disable src="https://www.lafco.com/mm5/graphics/00000001/lafco_logo.svg" alt="LAFCO New York" width="80" height="80"></amp-img>
+                </a>
+
+                <form id="ampSearchForm" method="get" action="&mvte:urls:SRCH:secure;" novalidate target="_top">
+                    <input name="Search" type="search" placeholder="Search…" />
+                    <button class="button button-primary search-button">
+                        <amp-img data-amp-auto-lightbox-disable layout="responsive" src="https://www.lafco.com/mm5/graphics/00000001/amp_icon_search.svg" alt="Search" width="60" height="28"></amp-img>
+                    </button>
+                </form> 
+
+            </div>
+
+            <mvt:comment>
+            <form  method="get" action="&mvte:urls:SRCH:secure;" target="_top">
+                <input name="Search" type="search" placeholder="Search…" />
+                <button class="button button-primary search-button"><i class="fa fa-search search-icon"></i></button>
+            </form>
+            </mvt:comment>
+        </div> 
+        <amp-sidebar id="drawermenu" layout="nodisplay">
+            <div class="topheader">
+            <a class="close" on="tap:drawermenu.toggle">
+            <span class="gray">X</span>
+            </a>
+            <a href="&mvte:urls:SFNT:auto;" class="home">&mvte:global:store:name;</a>
+            </div>
+            <mvt:if expr="miva_array_elements(l.settings:amp:sidebar)">
+            <mvt:foreach iterator="entry" array="amp:sidebar">
+            <h4 class="category">&mvt:entry:link;</h4>
+            </mvt:foreach>
+            <mvt:else>
+            <mvt:item name="readytheme" param="navigationset( 'amp' )" />
+            </mvt:if>
+        </amp-sidebar>
+
+
+
+        <mvt:item name="readytheme" param="contentsection( 'covid_top_header' )" />
+
+        <mvt:comment>
+        |
+        | main content
+        |
+        </mvt:comment>
+        <div class="amp-page-content">
+
+            <div class="amp-product-placement">
+                                &mvt:product:customfield_values:customfields:product_placement;
+            </div>
+            <p class="amp-product-name">
+                 <span>&mvt:product:name;</span>
+            </p>
+                <mvt:if
+                    expr="NOT ISNULL l.settings:product:customfield_values:customfields:product_ingredient_1_name OR NOT ISNULL l.settings:product:customfield_values:customfields:product_ingredient_2_name OR NOT ISNULL l.settings:product:customfield_values:customfields:product_ingredient_3_name">
+                    <div class="amp-product-scent">
+                        &mvt:product:customfield_values:customfields:product_ingredient_1_name; |
+                        &mvt:product:customfield_values:customfields:product_ingredient_2_name; |
+                        &mvt:product:customfield_values:customfields:product_ingredient_3_name;
+                    </div>
+                </mvt:if>
+                <amp-yotpo
+                      width="200"
+                      height="30"
+                      data-app-key="t1C5E5YEFlh64uhpoHFetSLFp7iTlG1KjK89roBP"
+                      data-widget-type="BottomLine"
+                      data-product-id="&mvt:product:code;"
+                    >
+                    </amp-yotpo>
+            <div class="amp-product-images">
+
+
+
+                <mvt:if expr="l.settings:product:customfield_values:productimagecustomfields:main">
+
+                    <mvt:assign name="l.resize:width" value="250" />
+                    <mvt:assign name="l.resize:height" value="250" />
+                    <mvt:assign name="l.resize:file" value="glosub( l.settings:product:customfield_values:productimagecustomfields:main, '_' $ l.resize:width $ 'x' $ l.resize:height, '' )" />
+                    <mvt:do file="g.Module_Library_DB" name="l.resize:results:Image_FindOrInsert_ExistingFile" value="Image_FindOrInsert_ExistingFile( l.resize:file, l.resize:image )" />
+                    <mvt:do file="g.Module_Library_DB" name="l.resize:results:GeneratedImage_FindOrInsert_Image_Dimensions" value="GeneratedImage_FindOrInsert_Image_Dimensions( l.resize:image, l.resize:width, l.resize:height, g.resize:generated )" />
+                    
+                    <amp-img data-amp-auto-lightbox-disable class="x-product-layout-images__image" layout="responsive" width="200" height="200" src="https://www.lafco.com/mm5/&mvt:global:resize:generated:image;" alt="&mvt:product:name;" layout="responsive"  title="&mvt:product:name;"></amp-img>
+
+                </mvt:if>
+
+                <mvt:comment>
+                <mvt:if expr="l.settings:product:customfield_values:productimagecustomfields:first">
+                    <amp-img data-amp-auto-lightbox-disable class="x-product-layout-images__image" layout="responsive"  width="200" height="200" src="&mvt:product:customfield_values:productimagecustomfields:first;" alt="&mvt:product:name;" title="&mvt:product:name;"></amp-img>
+                </mvt:if>
+                <mvt:if expr="l.settings:product:customfield_values:productimagecustomfields:second">
+                    <amp-img data-amp-auto-lightbox-disable class="x-product-layout-images__image" layout="responsive"  width="200" height="200" src="&mvt:product:customfield_values:productimagecustomfields:second;" alt="&mvt:product:name;" title="&mvt:product:name;"></amp-img>
+                </mvt:if>
+                </mvt:comment>
+            </div>
+            <div class="amp-product-description">
+                 &mvt:product:descrip;
+            </div>
+
+
+                <amp-yotpo
+                  width="550"
+                  height="700"
+                  layout="responsive"
+                  data-app-key="t1C5E5YEFlh64uhpoHFetSLFp7iTlG1KjK89roBP"
+                  data-widget-type="MainWidget"
+                  data-product-id="&mvt:product:code;"
+                  data-name="&mvt:product:name;"
+                  data-url="&mvt:product:link;"
+                  data-image-url="&mvt:product:resized_image;"
+                  data-descriptipn="&mvt:product:descrip;"
+                  data-yotpo-element-id="1"
+                >
+                </amp-yotpo>
+
+
+        </div>
+
+
+        <mvt:comment>
+        |
+        | Custom category ##slider for featured products, new products, etc... TO DO TO DO
+        |
+        </mvt:comment>
+        <mvt:if expr="l.settings:amp:page:slider_products">
+            <mvt:if expr="l.settings:amp:page:slider_heading">
+                <h5 class="category-slider-heading">
+                &mvt:amp:page:slider_heading;
+                </h5>
+            </mvt:if>
+            <amp-carousel class="product-carousel" width="auto" height="160" layout="fixed-height" type="carousel">
+                <mvt:foreach iterator="product" array="amp:page:slider_products">
+                    <a class="tile" href="&mvt:product:link;" role="listitem">
+                    <amp-img data-amp-auto-lightbox-disable layout="responsive" width="640" height="426" alt="&mvte:product:name;" src="&mvt:global:domain:base_surl;&mvt:product:images[1]:src;"></amp-img>
+                    <p class="name">&mvt:product:name;</p>
+                    <p class="price">&mvt:product:formatted_price;</p>
+                </a>
+                </mvt:foreach>
+            </amp-carousel>
+        </mvt:if>
+
+
+        <mvt:comment>
+        |
+        | google analytics - configured in the module
+        |
+        </mvt:comment>
+        <mvt:if expr="l.settings:amp:google_analytics">
+        &mvt:amp:google_analytics;
+        </mvt:if>
+
+        <div id="sticky_add_to_bag">
+            <div class="wrap">
+
+                <div class="product_info product-info">
+                    <div class="image">
+                        <amp-img data-amp-auto-lightbox-disable  class="main_image" width="40" height="40" src="https://www.lafco.com/mm5/&mvt:product:resized_image;" alt="&mvte:product:name;" title="&mvte:product:name;" /></amp-img>
+                    </div>
+                    <div class="prod_name">
+                        <h4>&mvt:product:customfield_values:customfields:product_scent;</h4>
+                        &mvt:product:customfield_values:customfields:product_size;
+                    </div>
+
+                </div>
+                <div class="button">
+                       <mvt:if expr="l.settings:product:base_price GT l.settings:product:price"> 
+                                                            <div class="x-product-list__price"><s>&mvt:product:formatted_base_price;</s> </div>
+                                                            <div class="x-product-list__price-red">  &mvt:product:formatted_price;</div>
+                                                        <mvt:else>
+                                                            <div class="x-product-list__price">&mvt:product:formatted_price;</div>
+                                                        </mvt:if>
+
+                    <div class="qty-container">
+                        <input type="hidden" name="Quantity" value="1" class="js-product-quantity">
+                        <input type="hidden" name="Product_Code" value="&mvte:product:code;" class="js-product-code">
+                    </div>
+      
+                    <mvt:if expr="l.settings:product:inv_level NE 'out'">
+
+                        <a  class="btn btn--s btn--white add-to-cart js-add-to-cart" href="&mvt:urls:BASK:auto;?Action=ADPR&product_code=&mvt:product:code;&quantity=1">
+                            <span>add to cart</span>
+                        </a>
+
+                    <mvt:else>
+                        <span class="out-of-stock-product">out of stock</span>
+                    </mvt:if>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <div id="amp-footer">
+            <div class="wrap">
+                
+                <a id="amp-hamburger-menu-footer" on='tap:drawermenu.toggle'>
+                    <amp-img data-amp-auto-lightbox-disable src="https://www.lafco.com/mm5/graphics/00000001/amp_icon_burger_white.svg" alt="Menu" width="60" height="60"></amp-img>
+                </a>
+                <a id="amp-rewards-link" href="https://www.lafco.com/rewards" title="Rewards" rel="nofollow">
+                    <amp-img data-amp-auto-lightbox-disable src="https://www.lafco.com/mm5/graphics/00000001/amp_icon_rewards.svg" alt="Rewards" width="60" height="60"></amp-img>
+                </a>
+                <a id="amp-account-link" href="&mvt:urls:ACLN:auto;">
+                    <amp-img data-amp-auto-lightbox-disable src="https://www.lafco.com/mm5/graphics/00000001/amp_icon_account.svg" alt="Account" width="60" height="60"></amp-img>
+                </a>
+                <a id="amp-cart-icon" href="&mvt:urls:BASK:auto;">
+                    <amp-img data-amp-auto-lightbox-disable src="https://www.lafco.com/mm5/graphics/00000001/amp_icon_cart.svg" alt="Cart" width="60" height="60"></amp-img>
+                </a>
+
+            </div>
+        </div>
+
+    </body>
+</html>

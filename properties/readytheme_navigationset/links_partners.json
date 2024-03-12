@@ -1,0 +1,36 @@
+{
+    "items": [
+        {
+            "active": 0,
+            "id": "fdf1d6cd98419eab62d25809815cc818",
+            "link": "<a href=\"https://demo.pcinet.com/coming-soon.html\" target=\"_self\">Become a Retailer</a>",
+            "link_dest": "coming_soon",
+            "link_targ": "_self",
+            "link_type": "G",
+            "name": "Become a Retailer",
+            "url": "https://demo.pcinet.com/coming-soon.html"
+        },
+        {
+            "active": 0,
+            "id": "af3a8e8b8ea4beab3db2f6235ed0aa16",
+            "link": "<a href=\"https://demo.pcinet.com/coming-soon.html\" target=\"_self\">Portal Login</a>",
+            "link_dest": "coming_soon",
+            "link_targ": "_self",
+            "link_type": "G",
+            "name": "Portal Login",
+            "url": "https://demo.pcinet.com/coming-soon.html"
+        },
+        {
+            "active": 1,
+            "id": "d3d8307fb5ac948c251a36e7dfc5f23a",
+            "link": "<a href=\"https://www.shareasale.com/shareasale.cfm?merchantID=54004\" target=\"_self\">Become an Affiliate</a>",
+            "link_dest": "https://www.shareasale.com/shareasale.cfm?merchantID=54004",
+            "link_targ": "_self",
+            "link_type": "U",
+            "name": "Become an Affiliate",
+            "url": "https://www.shareasale.com/shareasale.cfm?merchantID=54004"
+        }
+    ],
+    "layout": "S",
+    "name": "Partners"
+}

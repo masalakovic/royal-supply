@@ -1,0 +1,47 @@
+<mvt:item name="html_profile" />
+<head>
+	<mvt:if expr="NOT ISNULL l.settings:category:page_title">
+		<title>&mvt:category:page_title;</title>
+	<mvt:elseif expr="NOT ISNULL l.settings:page:title">
+		<title>&mvt:page:title;</title>
+	<mvt:else>
+		<title>&mvt:store:name;: &mvt:category:name;</title>
+	</mvt:if>
+	<mvt:item name="head" param="head_tag" />
+	<mvt:item name="attributemachine" param="head" />
+	<mvt:item name="category_listing_imagemachine" param="head" />
+</head>
+<body id="js-&mvte:page:code;" class="&mvt:global:pageClass;">
+	<section class="cmp-product-quick-view off-canvas" data-hook="cmp-product-quick-view off-canvas">
+		<div class="cmp-product-quick-view__wrap bg--white h-nm" data-hook="cmp-product-quick-view__wrap">
+			<div class="off-canvas__close">
+				<button class="bg--transparent h-nb h-np icon--cross" data-hook="close-off-canvas"></button>
+			</div>
+		</div>
+	</section>
+	<!-- end .cmp-product-quick-view -->
+	<mvt:item name="hdft" param="global_header" />
+	<section class="row">
+		<div class="column hdft-header">
+			<mvt:item name="hdft" param="header" />
+		</div>
+	</section>
+	<section class="row">
+		<div class="column prod-ctgy-hdft-header">
+			<mvt:item name="prod_ctgy_hdft" param="ctgy_header" />
+		</div>
+	</section>
+	<mvt:item name="category_listing" />
+	<section class="row">
+		<div class="column prod-ctgy-hdft-footer">
+			<mvt:item name="prod_ctgy_hdft" param="ctgy_footer" />
+		</div>
+	</section>
+	<section class="row">
+		<div class="column hdft-footer">
+			<mvt:item name="hdft" param="footer" />
+		</div>
+	</section>
+	<mvt:item name="hdft" param="global_footer" />
+</body>
+</html>

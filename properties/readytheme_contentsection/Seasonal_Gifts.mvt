@@ -1,0 +1,27 @@
+<div class="o-layout o-layout--align-center seasonal_gifts">
+	<div class="o-layout__item u-width-12">
+		<div>	
+			<h1> Seasonal Gifts </h1>
+		</div>
+	</div>
+	<div class="o-layout__item u-width-4">
+		<div>
+			<mvt:item name="readytheme" param="image( 'Most_Gifted' )" />
+			<p class="seasonal_gift_items"> Most Gifted </p>
+		</div>
+	</div>
+	<div class="o-layout__item u-width-4">
+		<div>
+			<mvt:item name="readytheme" param="image( 'Stocking_Stuffers' )" />
+			<p class="seasonal_gift_items"> Stocking Stuffers </p>
+		</div>
+	</div>
+	<div class="o-layout__item u-width-4">
+		<div>
+			<mvt:item name="readytheme" param="image( 'By_Fragrance' )" />
+			<p class="seasonal_gift_items"> By Fragrance </p>
+		</div>
+	</div>
+</div>
+<br>
+<br>

@@ -1,0 +1,79 @@
+<mvt:if expr="l.settings:navigation_version EQ 'mobile'">
+	<ul id="js-navigation-set" class="navigation-set horizontal-drop-down">
+		<mvt:foreach iterator="navigationitem" array="readytheme:navigationitems">
+			<li class="level-1">
+				<mvt:if expr="NOT ISNULL l.settings:navigationitem:items">
+					<span class="parent">&mvt:navigationitem:link;</span>
+					<ul>
+						<mvt:foreach iterator="navigationitem_level2" array="navigationitem:items">
+							<li class="level-2">
+								<mvt:if expr="NOT ISNULL l.settings:navigationitem_level2:items">
+									<span class="parent">&mvt:navigationitem_level2:link;</span>
+									<ul>
+										<mvt:foreach iterator="navigationitem_level3" array="navigationitem_level2:items">
+											<li class="level-3"><span>&mvt:navigationitem_level3:link;</span></li>
+										</mvt:foreach>
+									</ul>
+									<span data-name="&mvt:navigationitem_level2:name;" data-rt-icon="d" class="next"></span>
+								<mvt:else>
+									<span>&mvt:navigationitem_level2:link;</span>
+								</mvt:if>
+							</li>
+						</mvt:foreach>
+					</ul>
+					<span data-name="&mvt:navigationitem:name;" data-rt-icon="d" class="next"></span>
+				<mvt:else>
+					<span>&mvt:navigationitem:link;</span>
+				</mvt:if>
+			</li>
+		</mvt:foreach>
+		<mvt:item name="readytheme" param="navigationset( 'navigation_main' )" />
+	</ul>
+	<mvt:assign name="l.settings:navigation_version" value="0" />
+<mvt:exit />
+</mvt:if>
+<div class="row" id="js-all-categories-nav">
+	<div class="column one-fourth nav-group-2">
+		<mvt:foreach iterator="navigationitem" array="readytheme:navigationitems">
+			<mvt:if expr="NOT ISNULL l.settings:navigationitem:items">
+				<mvt:assign name="l.settings:navigationitem:children_class" value="'has-children'" />
+			<mvt:else>
+				<mvt:assign name="l.settings:navigationitem:children_class" value="''" />
+			</mvt:if>
+			<mvt:assign name="l.settings:navigationitem:link_href" value="gettoken( l.settings:navigationitem:link, asciichar(34), 2 )" />
+			<a href="&mvte:navigationitem:link_href;" target="&mvt:navigationitem:link_targ;" class="nav-item-2 &mvte:navigationitem:children_class;" data-navigationitem-id="&mvte:navigationitem:id;" data-link-type="&mvt:navigationitem:link_targ;">&mvt:navigationitem:name;</a>
+		</mvt:foreach>
+	</div>
+	<div class="column three-fourths nav-group-3">
+		<mvt:foreach iterator="navigationitem" array="readytheme:navigationitems">
+			<mvt:if expr="NOT ISNULL l.settings:navigationitem:items">
+				<div class="nav-item-3 nav-group-4" data-navigationitem-id="&mvte:navigationitem:id;">
+					<div class="column three-fourths nav-item-4 nav-item-4--left">
+						<mvt:foreach iterator="navigationitem_level2" array="navigationitem:items">
+							<div class="nav-group-5">
+								<h4 class="nav-heading-5">
+									<mvt:assign name="l.settings:navigationitem_level2:link_href" value="gettoken( l.settings:navigationitem_level2:link, asciichar(34), 2 )" />
+									<a href="&mvte:navigationitem_level2:link_href;" target="&mvt:navigationitem_level2:link_targ;" class="nav-item-5" data-link-type="&mvt:navigationitem_level2:link_targ;">&mvt:navigationitem_level2:name;</a>
+								</h4>
+								<mvt:if expr="NOT ISNULL l.settings:navigationitem_level2:items">
+									<mvt:foreach iterator="navigationitem_level3" array="navigationitem_level2:items">
+										<mvt:assign name="l.settings:navigationitem_level3:link_href" value="gettoken( l.settings:navigationitem_level3:link, asciichar(34), 2 )" />
+										<a href="&mvte:navigationitem_level3:link_href;" target="&mvt:navigationitem_level3:link_targ;" class="nav-item-5" data-link-type="&mvt:navigationitem_level3:link_targ;">&mvt:navigationitem_level3:name;</a>
+									</mvt:foreach>
+								</mvt:if>
+							</div>
+						</mvt:foreach>
+					</div>
+					<mvt:if expr="l.settings:navigationitem:link_type EQ 'C'">
+						<mvt:item name="customfields" param="Read_Category_Code(l.settings:navigationitem:link_dest, 'category_menu_image', l.settings:navigationitem:cf:category_menu_image)" />
+						<mvt:if expr="l.settings:navigationitem:cf:category_menu_image">
+							<div class="column one-fourth nav-item-4 nav-item-4--right">
+								<a href="&mvte:navigationitem:link_href;"><img src="&mvt:navigationitem:cf:category_menu_image;" alt="&mvte:navigationitem:name;"></a>
+							</div>
+						</mvt:if>
+					</mvt:if>
+				</div>
+			</mvt:if>
+		</mvt:foreach>
+	</div>
+</div>

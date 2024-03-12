@@ -1,0 +1,134 @@
+<mvt:item name="html_profile" />
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="&mvt:global:basehref;">
+    <mvt:if expr="NOT ISNULL l.settings:page:title">
+        <title>&mvt:page:title;</title>
+        <mvt:else>
+            <title>&mvt:store:name;: &mvt:page:name;</title>
+    </mvt:if>
+    <mvt:item name="head" param="css_list" />
+    <mvt:item name="head" param="head_tag" />
+</head>
+<body id="js-&mvte:page:code;" class="o-site-wrapper t-page-&mvt:global:pageClass;">
+<mvt:item name="hdft" param="global_header" />
+<div class="o-wrapper">
+    <section class="o-layout">
+        <div class="o-layout__item">
+            <mvt:item name="hdft" param="header" />
+        </div>
+    </section>
+
+    <section class="o-layout">
+        <div class="o-layout__item u-width-12 t-account-landing-section">
+            <mvt:item name="readytheme" param="contentsection( 'messages' )" />
+            <div class="o-layout o-layout--wide o-layout--justify-between">
+                <mvt:comment> <div class="o-layout__item u-width-12 u-width-6--l u-width-5--w t-customer-profile">
+                    <div class="t-account-landing-section__header">
+                        <span class="c-heading-delta t-account-landing-section__heading">Welcome Back</span>
+                    </div>
+                    <mvt:if expr="g.Customer_Temporary_Password">
+                        <mvt:assign name="l.settings:url" value="l.settings:urls:CPWD:secure" />
+                        <mvt:elseif expr="g.Order">
+                            <mvt:assign name="l.settings:url" value="l.settings:urls:OINF:secure" />
+                            <mvt:else>
+                                <mvt:assign name="l.settings:url" value="l.settings:urls:ACLN:secure" />
+                    </mvt:if>
+                    <form class="u-inline-block u-text-left" method="post" action="&mvte:url;">
+                        <fieldset>
+                            <legend>&mvt:page:name;</legend>
+                            <input type="hidden" name="Action" value="LOGN" />
+                            <ul class="c-form-list">
+                                <li class="c-form-list__item">
+                                    <label class="c-form-label u-font-tiny u-text-bold u-text-uppercase is-required &mvte:global:invalid_credentials;" for="l-Customer_LoginEmail">Email Address</label>
+                                    <input id="l-Customer_LoginEmail" class="c-form-input c-form-input--large" type="email" name="Customer_LoginEmail" value="&mvte:global:Customer_LoginEmail;" autocomplete="email" required>
+                                </li>
+                                <li class="c-form-list__item">
+                                    <label class="c-form-label u-font-tiny u-text-bold u-text-uppercase is-required &mvte:global:invalid_credentials;" for="l-Customer_Password">Password:</label>
+                                    <mvt:if expr="g.Customer_Temporary_Password">
+                                        <input type="hidden" name="Customer_Temporary_Password" value="&mvte:global:Customer_Temporary_Password;" autocomplete="off">
+                                        <input type="hidden" name="Customer_Password" value="&mvte:global:Customer_Temporary_Password;" autocomplete="off">
+                                        <input id="l-Customer_Password" class="c-form-input c-form-input--large" type="text" value="&mvte:global:Customer_Temporary_Password;" autocomplete="off" disabled readonly>
+                                        <mvt:else>
+                                            <input id="l-Customer_Password" class="c-form-input c-form-input--large" type="password" name="Customer_Password" autocomplete="current-password" required>
+                                    </mvt:if>
+                                </li>
+                                <li class="c-form-list__item u-text-right">
+                                    <mvt:item name="buttons" param="Login" />
+                                </li>
+                            </ul>
+                        </fieldset>
+                    </form>
+                    <p class="u-font-small"><a data-mini-modal data-mini-modal-type="inline" data-mini-modal-content="data-forgot-password" href="&mvte:urls:FPWD:secure;" title="Forgot Password">Forgot your password?</a></p>
+                </div> </mvt:comment>
+                <div class="o-layout__item u-width-12 u-width-12--m">
+                    <mvt:item name="readytheme" param="Load_Image('image_need_help_page', g.image_need_help_page)" />
+                    <div class="need-help-banner" style="background-image: url('&mvt:global:image_need_help_page:image;')"></div>
+                    <div class="section-heading">
+                        <h1 class="u-text-center">Need Help?</h1>
+                        <p class="u-text-center">We want your online experience with us to be
+                            smooth like butter, so we created this form to help</p>
+                    </div>
+                    <form class="u-text-left register-form" method="post" data-hook="login-form" action="&mvte:urls:NDHLP:secure;">
+                        <fieldset>
+                            <legend>Customer Log In</legend>
+
+                            <mvt:if expr="g.status EQ 'submitted'">
+                                <li class="c-form-list__item c-form-list__item--full x-messages x-messages--success">Thank you for your inquiry. A &mvt:global:store:company; representative will contact you shortly.
+                                </li>
+
+                                <mvt:elseif expr="g.status EQ 'error'">
+                                    <li class="c-form-list__item c-form-list__item--full x-messages x-messages--error">We're sorry, there was a problem processing your request.</li>
+                            </mvt:if>
+
+                            <ul class="c-form-list need-help-form">
+                                <li class="c-form-list__item">
+                                    <input id="l-full_name" class="c-form-input" type="text" placeholder="Full name*" name="register_full_name" value="" autocomplete="" required>
+                                </li>
+                                <li class="c-form-list__item">
+                                    <input id="l-enter_email" class="c-form-input" type="email" placeholder="Email*" name="register_email" value="&mvte:global:register_email;" autocomplete="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 4}$" required>
+                                </li>
+                                <li class="c-form-list__item">
+                                    <textarea id="l-describe_issue" class="c-form-input" placeholder="Describe the issue*" name="register_describe_issue" value="" autocomplete="" required></textarea>
+                                </li>
+                                <li class="c-form-list__item">
+                                    <input id="l-order_number" class="c-form-input" type="text" placeholder="Order number" name="register_order_number" value="">
+                                </li>
+                                <li class="c-form-list__item">
+                                    <input id="l-product_name" class="c-form-input" type="text" placeholder="Product name" name="register_product_name" value="" autocomplete="">
+                                </li>
+                                <li class="c-form-list__item">
+                                    <strong class="title-select">How do you want to resolve the issue?</strong>
+                                    <select id="l-resolve_issue" selected name="register_resolve_issue" class="c-form-select x-stock-select-element">
+                                        <option selected disabled >Select One</option>
+                                        <option value="Order-Inquiry">Order Inquiry</option>
+                                        <option value="Product-Return">Return</option>
+                                        <option value="Product-Exchange">Product Exchange</option>
+                                        <option value="Re-ship">Re-ship</option>
+                                    </select>
+                                </li>
+                                <li class="c-form-list__item c-form-list__item--full u-text-center btn-holder">
+                                    <input class="need-help-btn" type="submit" value="Continue">
+                                </li>
+                            </ul>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="o-layout">
+        <div class="o-layout__item">
+            <mvt:item name="hdft" param="footer" />
+            <mvt:item name="readytheme" param="contentsection( 'forgot-password' )" />
+        </div>
+    </section>
+</div>
+
+
+<mvt:item name="hdft" param="global_footer" />
+</body>
+</html>

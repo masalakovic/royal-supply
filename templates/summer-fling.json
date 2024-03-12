@@ -1,0 +1,10 @@
+{
+    "hdft": {
+        "footer": {
+            "template_filename": "summer-fling-footer.mvc"
+        },
+        "header": {
+            "template_filename": "summer-fling-header.mvc"
+        }
+    }
+}

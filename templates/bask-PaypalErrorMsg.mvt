@@ -1,0 +1,11 @@
+
+<mvt:if expr="g.PaypalPro_ErrorMessage">
+<table style="width:100%; border:0;">
+	<tr>
+		<td style="vertical-align:top; padding:2px; font-weight:bold; color:#0000ff;">
+			&mvt:global:PaypalPro_ErrorMessage;
+		</td>
+	</tr>
+</table>
+</mvt:if>
+	

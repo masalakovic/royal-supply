@@ -1,0 +1,59 @@
+<mvt:comment>
+	Set the width and height dimensions here so the proper images will show.
+</mvt:comment>
+<mvt:assign name="l.settings:img:width" value="200"/>
+<mvt:assign name="l.settings:img:height" value="267"/>
+<mvt:if expr="NOT ISNULL l.settings:readytheme:navigationitems">
+	<section class="cmp-featured-items cmp-featured-items--alt h-align-center" data-scroll="lazyImage">
+		<mvt:foreach iterator="navigationitem" array="readytheme:navigationitems">
+			<div class="cmp-featured-items__details bg--blue color--silver">
+				<header class="h2 font--uppercase h-nm secondary-font">&mvt:navigationitem:name;</header>
+				<p>Quality Design. Exceptional Style.</p>
+				<a class="button button--large cta-primary font--semibold font--uppercase" href="&mvt:navigationitem:url;">Shop &mvt:navigationitem:name;</a>
+			</div>
+			<div class="cmp-featured-items__item-wrap" data-hook="cmp-featured-items__item-wrap">
+				<mvt:if expr="NOT ISNULL l.settings:navigationitem:items">
+					<mvt:foreach iterator="navigationitem_level2" array="navigationitem:items">
+						<mvt:assign name="l.settings:link:image" value="''" />
+						<mvt:if expr="l.settings:navigationitem_level2:link_type EQ 'C'">
+							<mvt:assign name="l.settings:category_tree" value="''" />
+							<mvt:do name="l.result" file="g.Module_Library_DB" value="Category_Load_Code(l.settings:navigationitem_level2:link_dest, l.settings:category)" />
+							<mvt:do name="l.module_loaded" file="g.Module_Library_DB" value="Module_Load_Code('cmp-cssui-cattree', l.module)" />
+							<mvt:if expr="l.module_loaded">
+								<mvt:do name="l.result" file="g.Module_Root $ l.module:module" value="CSSUI_CatTree_Load(l.settings:category:id, l.settings:category_tree)" />
+								<mvt:assign name="l.settings:link:image" value="l.settings:category_tree:image" />
+							</mvt:if>
+						<mvt:elseif expr="l.settings:navigationitem_level2:link_type EQ 'P'">
+							<mvt:do file="g.Module_Library_DB" name="l.success" value="Product_Load_Code( l.settings:navigationitem_level2:link_dest, l.settings:product )" />
+							<mvt:do file="g.Module_Library_DB" name="l.settings:sub_category:product:image_count" value="ProductImageDataList_Load_Product(l.settings:product:id, l.settings:product:images)" />
+							<mvt:foreach iterator="image" array="product:images">
+								<mvt:if expr="l.settings:image:imagetype:code EQ 'main'">
+									<mvt:assign name="l.settings:product:main_image" value="l.settings:image" />
+									<mvt:foreachstop/>
+								</mvt:if>
+							</mvt:foreach>
+							<mvt:if expr="l.settings:product:main_image:image:id">
+								<mvt:do file="g.Module_Library_DB" name="l.result" value="GeneratedImage_FindOrInsert_Image_Dimensions( l.settings:product:main_image:image, l.settings:img:width, l.settings:img:height, l.settings:product:main_image:generated )" />
+							</mvt:if>
+							<mvt:if expr="l.settings:product:main_image:generated:id">
+								<mvt:assign name="l.settings:link:image" value="l.settings:product:main_image:generated:image" />
+							</mvt:if>
+						</mvt:if>
+						<div class="cmp-featured-items__item">
+							<figure class="h-nm font--uppercase font--semibold">
+								<mvt:if expr="l.settings:link:image">
+									<img data-src="&mvte:link:image;" src="graphics/en-US/cssui/blank.gif" alt="&mvte:navigationitem_level2:name;" title="&mvte:navigationitem_level2:name;" width="&mvt:img:width;" height="&mvt:img:height;">
+								<mvt:else>
+									<img data-src="&mvte:global:theme_path;/images/img_coming_soon.png" src="graphics/en-US/cssui/blank.gif" alt="&mvte:navigationitem_level2:name;" title="&mvte:navigationitem_level2:name;" style="max-width: &mvt:img:width;px; max-height: &mvt:img:height;px;">
+								</mvt:if>
+								<figcaption><span>&mvt:navigationitem_level2:name;</span></figcaption>
+								<a href="&mvt:navigationitem_level2:url;"></a>
+							</figure>
+						</div>
+					</mvt:foreach>
+				</mvt:if>
+			</div>
+		</mvt:foreach>
+	</section>
+	<!-- end .cmp-featured-items -->
+</mvt:if>

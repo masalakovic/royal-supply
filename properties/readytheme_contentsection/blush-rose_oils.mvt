@@ -1,0 +1,69 @@
+<div class="o-wrapper o-wrapper--flush rtrt-oils">
+    <div class="rtrt-oils__inner">
+        <h2>
+            A Celebration of Roses
+            <span>damask rose | bergamot | may rose</span>
+        </h2>
+        <p class="rtrt-oils__description">
+           To create a fresh and modern interpretation of rose, we combined the contrasting qualities of both damask and may rose with accents of crisp bergamot and pink pepper. Sandalwood and musk ground the fragrance in a warm, mellow base. 
+
+        </p>
+
+        <ul class="rtrt-oils__list">
+            <li class="rtrt-oils__list-opener js-rtrt-oils-list-opener" data-name="tab1">
+                <img src="graphics/00000001/1/damask.png" alt="">
+                <span>Damask Rose</span>
+            </li>
+            <li class="rtrt-oils__list-opener js-rtrt-oils-list-opener active" data-name="tab2">
+                <img src="graphics/00000001/1/bergamot.png" alt="">
+                <span>Bergamot</span>
+            </li>
+            <li class="rtrt-oils__list-opener js-rtrt-oils-list-opener" data-name="tab3">
+                <img src="graphics/00000001/1/may.png" alt="">
+                <span>May Rose</span>
+            </li>
+        </ul>
+        <div class="rtrt-oils__content-holder">
+            <div class="rtrt-oils__content" data-name="tab1">
+                <span>Dark and Voluptuous</span>
+                <figure class="rtrt-oils__quote">
+                    <blockquote>
+                        <q>The most recognizable rose scent in perfumery, damask rose is richly sweet, deep, and mellow with soft nuances of fresh-green notes.  
+                        </q>
+                    </blockquote>
+                    <figcaption>
+                        - Jon Bresler,
+                        <span>Founder</span>
+                    </figcaption>
+                </figure>
+            </div>
+            <div class="rtrt-oils__content active" data-name="tab2">
+                <span>Crisp and Refreshing</span>
+                <figure class="rtrt-oils__quote">
+                    <blockquote>
+                        <q>Bergamot is a highly fragrant citrus fruit. It has a sparkling, crisp, and balanced blend of bright-citrusy and watery-green notes with a hint of floralcy.
+ 
+                        </q>
+                    </blockquote>
+                    <figcaption>
+                        - Jon Bresler,
+                        <span>Founder</span>
+                    </figcaption>
+                </figure>
+            </div>
+            <div class="rtrt-oils__content" data-name="tab3">
+                <span>Elegant and Intoxicating</span>
+                <figure class="rtrt-oils__quote">
+                    <blockquote>
+                        <q>A rose hybrid widely cultivated for its singular aroma, may rose is crisp, clear, and dryly sweet with light honey notes and subtle green undertones.
+                        </q>
+                    </blockquote>
+                    <figcaption>
+                        - Jon Bresler,
+                        <span>Founder</span>
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+    </div>
+</div>
